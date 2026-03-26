@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE — Privilege Limo",
+  title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE - Privilege Limo",
   description:
     "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
   keywords: [
@@ -458,15 +458,15 @@ export default function LuxuryChauffeurServicePage() {
             </MiniCard>
           </div>
 
-          {/* Row 3: Why Choose — 4 reasons across 2 rows of 2 */}
+          {/* Row 3: Why Choose - 4 reasons across 2 rows of 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Why Us — 01" title="Extensive Fleet">
+            <MiniCard tag="Why Us - 01" title="Extensive Fleet">
               <p>
                 We offer a wide range of vehicles to cater to your specific requirements. From sedans and SUVs to limousines and luxury vans, our fleet has something for everyone. All our vehicles are equipped with modern amenities to ensure a comfortable and enjoyable journey.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Why Us — 02" title="Professional Chauffeurs">
+            <MiniCard tag="Why Us - 02" title="Professional Chauffeurs">
               <p>
                 Our chauffeurs are not just skilled drivers but also trained professionals who prioritize your safety and comfort. They are well-versed in the city's roads and can provide you with valuable insights and recommendations to enhance your stay in Dubai.
               </p>
@@ -474,7 +474,7 @@ export default function LuxuryChauffeurServicePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Why Us — 03" title="Personalized Service">
+            <MiniCard tag="Why Us - 03" title="Personalized Service">
               <p>
                 At Privilege Luxury Travel, we understand that every client is unique. That's why we offer personalized services tailored to your specific needs.
               </p>
@@ -483,7 +483,7 @@ export default function LuxuryChauffeurServicePage() {
               </p>
             </MiniCard>
 
-            <MiniCard tag="Why Us — 04" title="Competitive Pricing">
+            <MiniCard tag="Why Us - 04" title="Competitive Pricing">
               <p>
                 We believe that luxury travel should be accessible to everyone. That's why we offer competitive pricing without compromising on the quality of our services.
               </p>
@@ -548,7 +548,7 @@ export default function LuxuryChauffeurServicePage() {
                 Some of our luxury fleet boasts industry leaders such as Rolls-Royce, Mercedes-Benz, Tesla, and BMW. Apart from having elegant and modern looks, these vehicles are equipped with cutting edge technology tailored to improve the travel experience.
               </p>
               <p>
-                Our fleet has advanced climate control systems, quality sound systems, and supple leather seats that provide maximum comfort. Enhanced comfort and space are offered by our Premium Sprinter Vans — perfect for groups, business travel, or families.
+                Our fleet has advanced climate control systems, quality sound systems, and supple leather seats that provide maximum comfort. Enhanced comfort and space are offered by our Premium Sprinter Vans - perfect for groups, business travel, or families.
               </p>
             </MiniCard>
 
@@ -578,7 +578,7 @@ export default function LuxuryChauffeurServicePage() {
                 Extreme customization and flexibility are among the most exclusive traits of chauffeur services in Dubai. Dubai chauffeur services go above and beyond to meet their client's demands. Customers have comfort and satisfaction guaranteed during their journeys, right from the moment they place a booking.
               </p>
               <p>
-                Clients with specific preferences are provided with bespoke itineraries that showcase the best of Dubai — be it a quick visit to the popular Burj Khalifa or a slow drive through the beautiful Palm Jumeirah.
+                Clients with specific preferences are provided with bespoke itineraries that showcase the best of Dubai - be it a quick visit to the popular Burj Khalifa or a slow drive through the beautiful Palm Jumeirah.
               </p>
             </MiniCard>
           </div>
@@ -654,7 +654,7 @@ export default function LuxuryChauffeurServicePage() {
               <span className="text-[#c9a84c] italic font-extralight">in Comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
-              On Your Next Trip — Do You Want To Talk With Us?
+              On Your Next Trip - Do You Want To Talk With Us?
               <br />
               So Don't Be Late.
             </p>

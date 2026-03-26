@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Privilege Limo",
   },
   description:
-    "Privilege Luxury Travel LLC — Dubai's most trusted chauffeur service. Premium airport transfers, corporate travel, weddings & events across Dubai, Abu Dhabi & Sharjah. Available 24/7. Call +971 50 920 0818.",
+    "Privilege Luxury Travel LLC - Dubai's most trusted chauffeur service. Premium airport transfers, corporate travel, weddings & events across Dubai, Abu Dhabi & Sharjah. Available 24/7. Call +971 50 920 0818.",
   keywords: [
     "luxury chauffeur Dubai",
     "chauffeur service Dubai",

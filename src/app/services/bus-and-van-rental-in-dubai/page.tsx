@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Bus and Van Rental Dubai | Luxury Coach Hire UAE — Privilege Limo",
+  title: "Bus and Van Rental Dubai | Luxury Coach Hire UAE - Privilege Limo",
   description:
     "Privilege Luxury Travel LLC provides affordable luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire. Book 24/7.",
   keywords: [
@@ -138,7 +138,7 @@ const stats = [
 const faqs = [
   {
     q: "What group sizes do your buses and vans accommodate?",
-    a: "Our fleet covers groups of all sizes — from 7-seater Mercedes vans up to the 50-seater luxury coach. We have the right vehicle for every group size and occasion.",
+    a: "Our fleet covers groups of all sizes - from 7-seater Mercedes vans up to the 50-seater luxury coach. We have the right vehicle for every group size and occasion.",
   },
   {
     q: "Do you offer city tours by luxury coach in Dubai?",
@@ -146,15 +146,15 @@ const faqs = [
   },
   {
     q: "Can I hire a bus for a corporate event or conference?",
-    a: "Absolutely. We specialize in corporate group transport for conferences, events, and roadshows. Multi-vehicle fleet coordination is available — contact us for a tailored quote.",
+    a: "Absolutely. We specialize in corporate group transport for conferences, events, and roadshows. Multi-vehicle fleet coordination is available - contact us for a tailored quote.",
   },
   {
     q: "Are Scania and King Long luxury buses available?",
-    a: "Yes. Our bus fleet includes Mercedes Sprinters, Scania Luxury Buses, and King Long Luxury Buses — suitable for city tours, airport transfers, and large group travel across the UAE.",
+    a: "Yes. Our bus fleet includes Mercedes Sprinters, Scania Luxury Buses, and King Long Luxury Buses - suitable for city tours, airport transfers, and large group travel across the UAE.",
   },
   {
     q: "Are prices fixed for bus and van rentals?",
-    a: "All prices are confirmed before your journey with no hidden fees. Please note prices are subject to change depending on season — contact us on WhatsApp for an up-to-date quote.",
+    a: "All prices are confirmed before your journey with no hidden fees. Please note prices are subject to change depending on season - contact us on WhatsApp for an up-to-date quote.",
   },
 ];
 
@@ -194,7 +194,7 @@ export default function BusVanRentalPage() {
                 <span className="text-[#c9a84c] italic font-extralight">in Dubai</span>
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-md mb-10">
-                Privilege Luxury Travel LLC provides affordable Luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire — city tours by luxury coaches across the UAE.
+                Privilege Luxury Travel LLC provides affordable Luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire - city tours by luxury coaches across the UAE.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -238,7 +238,7 @@ export default function BusVanRentalPage() {
               City Tours by Luxury Coaches in UAE
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Luxury Bus and Van Rental —
+              Luxury Bus and Van Rental -
               <br />
               <span className="text-[#c9a84c] italic font-extralight">choose your vehicle</span>
             </h2>
@@ -318,14 +318,14 @@ export default function BusVanRentalPage() {
               Experience the Best of Dubai
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Bus and Van Rentals —{" "}
+              Bus and Van Rentals -{" "}
               <span className="text-[#c9a84c] italic font-extralight">Dubai, UAE</span>
             </h2>
           </div>
 
           <div className="flex flex-col gap-6">
 
-            {/* Row 1 — image left, text right */}
+            {/* Row 1 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
@@ -382,7 +382,7 @@ export default function BusVanRentalPage() {
               </div>
             </div>
 
-            {/* Row 2 — text left, image right */}
+            {/* Row 2 - text left, image right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
@@ -439,7 +439,7 @@ export default function BusVanRentalPage() {
               </div>
             </div>
 
-            {/* Row 3 — image left, text right */}
+            {/* Row 3 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
@@ -502,7 +502,7 @@ export default function BusVanRentalPage() {
               </div>
             </div>
 
-            {/* Row 4 — text left, image right */}
+            {/* Row 4 - text left, image right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
@@ -597,7 +597,7 @@ export default function BusVanRentalPage() {
                 <span className="text-[#c9a84c] italic font-extralight">answered</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-10">
-                Can't find your answer? Message us on WhatsApp — we respond instantly, 24 hours a day.
+                Can't find your answer? Message us on WhatsApp - we respond instantly, 24 hours a day.
               </p>
               <a
                 href="https://wa.me/971509200818"
@@ -657,7 +657,7 @@ export default function BusVanRentalPage() {
               <span className="text-[#c9a84c] italic font-extralight">in comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
-              On your next trip — do you want to talk with us? So don't be late.
+              On your next trip - do you want to talk with us? So don't be late.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

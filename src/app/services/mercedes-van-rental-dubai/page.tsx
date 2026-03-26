@@ -5,9 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Mercedes Van Rental Dubai | Luxury Mercedes Benz Van Hire UAE — Privilege Limo",
+  title: "Mercedes Van Rental Dubai | Luxury Mercedes Benz Van Hire UAE - Privilege Limo",
   description:
-    "Explore our full range of luxury Mercedes van rentals in Dubai, UAE. Mercedes V-Class, Vito, Sprinter — with professional chauffeur service for airport transfers, corporate travel, and city tours.",
+    "Explore our full range of luxury Mercedes van rentals in Dubai, UAE. Mercedes V-Class, Vito, Sprinter - with professional chauffeur service for airport transfers, corporate travel, and city tours.",
   keywords: [
     "mercedes van rental dubai",
     "mercedes viano rental dubai",
@@ -121,11 +121,11 @@ const faqs = [
   },
   {
     q: "Do you offer flexible rental durations for Mercedes vans?",
-    a: "Yes. You can rent a Mercedes van by the hour, day, or for longer periods depending on your needs — whether it's a short city tour or extended corporate travel across Dubai and the UAE.",
+    a: "Yes. You can rent a Mercedes van by the hour, day, or for longer periods depending on your needs - whether it's a short city tour or extended corporate travel across Dubai and the UAE.",
   },
   {
     q: "How do I book a Mercedes van rental in Dubai?",
-    a: "Booking is easy — you can contact Privilege Limo online, via phone, or WhatsApp. Provide your travel details (date, time, destination, passenger count) and our team will arrange the best Mercedes van for your needs.",
+    a: "Booking is easy - you can contact Privilege Limo online, via phone, or WhatsApp. Provide your travel details (date, time, destination, passenger count) and our team will arrange the best Mercedes van for your needs.",
   },
 ];
 
@@ -168,7 +168,7 @@ export default function MercedesVanRentalPage() {
                 Explore our full range of luxury car rentals in Dubai for your premium travel needs.
               </p>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-md mb-10">
-                Mercedes Benz Van Hire — Experience the Elegance.
+                Mercedes Benz Van Hire - Experience the Elegance.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -212,7 +212,7 @@ export default function MercedesVanRentalPage() {
               Mercedes Luxury Van Rental
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Mercedes Van Rental Dubai —
+              Mercedes Van Rental Dubai -
               <br />
               <span className="text-[#c9a84c] italic font-extralight">choose your vehicle</span>
             </h2>
@@ -292,14 +292,14 @@ export default function MercedesVanRentalPage() {
               Experience Luxury On Wheels
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Mercedes-Benz Van Rentals —{" "}
+              Mercedes-Benz Van Rentals -{" "}
               <span className="text-[#c9a84c] italic font-extralight">in the UAE</span>
             </h2>
           </div>
 
           <div className="flex flex-col gap-6">
 
-            {/* Row 1 — image left, text right */}
+            {/* Row 1 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
@@ -353,7 +353,7 @@ export default function MercedesVanRentalPage() {
               </div>
             </div>
 
-            {/* Row 2 — text left, image right */}
+            {/* Row 2 - text left, image right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
@@ -410,7 +410,7 @@ export default function MercedesVanRentalPage() {
               </div>
             </div>
 
-            {/* Row 3 — image left, text right */}
+            {/* Row 3 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
@@ -495,7 +495,7 @@ export default function MercedesVanRentalPage() {
               FAQ
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              FAQs — Mercedes Van
+              FAQs - Mercedes Van
               <br />
               <span className="text-[#c9a84c] italic font-extralight">Rental Dubai</span>
             </h2>
@@ -558,7 +558,7 @@ export default function MercedesVanRentalPage() {
               <span className="text-[#c9a84c] italic font-extralight">in comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
-              On your next trip — do you want to talk with us? So don't be late.
+              On your next trip - do you want to talk with us? So don't be late.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

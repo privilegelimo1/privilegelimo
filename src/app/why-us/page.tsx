@@ -68,7 +68,7 @@ const services = [
     title: "Dubai City Tour",
     sub: "Old Dubai · Sightseeing · Family",
     href: "/luxury-chauffeur-service-in-dubai",
-    desc: "We will arrange the best car with the chauffeur so you can have a comfortable ride throughout the trip. Whether traveling with family, friends or alone — enjoy Dubai in style.",
+    desc: "We will arrange the best car with the chauffeur so you can have a comfortable ride throughout the trip. Whether traveling with family, friends or alone - enjoy Dubai in style.",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function WhyUsPage() {
                 Welcome to Privilege Luxury Travel LLC, a premium transportation company committed to delivering world-class chauffeur service in Dubai, reliable airport transfer UAE, professional business transfer solutions, and luxury car rental with driver services for travelers who demand excellence.
               </p>
               <p className="text-[#9a9a9a] text-sm font-light leading-relaxed max-w-lg mb-10">
-                Built on a foundation of trust, quality, and hospitality, Privilege Luxury Travel has grown into one of the UAE's most reputable names in luxury ground transportation. Our mission is simple — to create a seamless, stylish, and comfortable travel experience for every client.
+                Built on a foundation of trust, quality, and hospitality, Privilege Luxury Travel has grown into one of the UAE's most reputable names in luxury ground transportation. Our mission is simple - to create a seamless, stylish, and comfortable travel experience for every client.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -177,7 +177,7 @@ export default function WhyUsPage() {
           {/* Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <MiniCard tag="Who We Are" title="Privilege Luxury Travel LLC">
-              <p>Privilege Luxury Travel LLC is a team of dedicated professionals with years of experience in the transportation and hospitality sector. We understand the importance of punctuality, safety, and comfort — and we combine all three to deliver a truly premium travel experience.</p>
+              <p>Privilege Luxury Travel LLC is a team of dedicated professionals with years of experience in the transportation and hospitality sector. We understand the importance of punctuality, safety, and comfort - and we combine all three to deliver a truly premium travel experience.</p>
             </MiniCard>
 
             <MiniCard tag="Who We Serve" title="From Individuals to VIPs">
@@ -187,7 +187,7 @@ export default function WhyUsPage() {
 
             <MiniCard tag="Our Promise" title="Seamless, Stylish & Comfortable">
               <p>Built on a foundation of trust, quality, and hospitality, Privilege Luxury Travel has grown into one of the UAE's most reputable names in luxury ground transportation.</p>
-              <p>Our mission is simple — to create a seamless, stylish, and comfortable travel experience for every client.</p>
+              <p>Our mission is simple - to create a seamless, stylish, and comfortable travel experience for every client.</p>
             </MiniCard>
           </div>
         </div>
@@ -254,7 +254,7 @@ export default function WhyUsPage() {
 
             <MiniCard tag="Our Chauffeurs" title="Professionally Trained & Verified">
               <p>Our chauffeurs are professionally trained, licensed and background-verified, and experienced in handling VIP and executive clients.</p>
-              <p>They are knowledgeable about Dubai's routes, traffic patterns, and landmarks — making us one of the most trusted names for chauffeur service in Dubai and luxury transportation in the UAE.</p>
+              <p>They are knowledgeable about Dubai's routes, traffic patterns, and landmarks - making us one of the most trusted names for chauffeur service in Dubai and luxury transportation in the UAE.</p>
             </MiniCard>
           </div>
         </div>
@@ -362,12 +362,12 @@ export default function WhyUsPage() {
               <p>We aim to redefine the standards of comfort, professionalism, and reliability by offering exceptional travel experiences that reflect Dubai's world-class hospitality.</p>
             </MiniCard>
 
-            <MiniCard tag="Vision — Fleet" title="A Premium Fleet for Every Need">
+            <MiniCard tag="Vision - Fleet" title="A Premium Fleet for Every Need">
               <p>We strive to lead the region with a premium fleet of luxury vehicles and highly trained and professional chauffeurs available around the clock.</p>
               <p>Cutting-edge travel technology and seamless, personalized transportation solutions form the backbone of our vision for the future.</p>
             </MiniCard>
 
-            <MiniCard tag="Vision — Future" title="Safe, Elegant, Stress-Free Travel">
+            <MiniCard tag="Vision - Future" title="Safe, Elegant, Stress-Free Travel">
               <p>Our vision is to create a future where every resident, tourist, and business traveler enjoys safe, elegant, and stress-free travel.</p>
               <p>Through our commitment to luxury and customer satisfaction, we are building a legacy of excellence in Dubai's transportation industry.</p>
             </MiniCard>
@@ -396,32 +396,32 @@ export default function WhyUsPage() {
               <p>We are dedicated to providing luxury transportation that prioritizes safety, punctuality, comfort, and exceptional customer service.</p>
             </MiniCard>
 
-            <MiniCard tag="Mission — Core Purpose" title="Every Journey Memorable">
-              <p>Our purpose is to provide a seamless blend of luxury, comfort, and professionalism — making every journey memorable, smooth, and stress-free.</p>
+            <MiniCard tag="Mission - Core Purpose" title="Every Journey Memorable">
+              <p>Our purpose is to provide a seamless blend of luxury, comfort, and professionalism - making every journey memorable, smooth, and stress-free.</p>
               <p>As a leader in chauffeur service in Dubai, we are committed to building long-term trust with our clients through transparency, dedication, and exceptional service.</p>
             </MiniCard>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Mission — 01" title="Excellence in Luxury Transportation">
+            <MiniCard tag="Mission - 01" title="Excellence in Luxury Transportation">
               <p>To offer top-tier travel experiences with a refined fleet of sedans, SUVs, vans, limousines, and premium business vehicles for every occasion.</p>
             </MiniCard>
 
-            <MiniCard tag="Mission — 02" title="Professionalism & Service Quality">
+            <MiniCard tag="Mission - 02" title="Professionalism & Service Quality">
               <p>To maintain the highest standards of courtesy, discipline, and professionalism through our team of skilled chauffeurs on every single trip.</p>
             </MiniCard>
 
-            <MiniCard tag="Mission — 03" title="Safety & Reliability">
-              <p>To ensure every trip is secure, reliable, and carefully managed — from airport transfers to long-distance and corporate travel across the UAE.</p>
+            <MiniCard tag="Mission - 03" title="Safety & Reliability">
+              <p>To ensure every trip is secure, reliable, and carefully managed - from airport transfers to long-distance and corporate travel across the UAE.</p>
             </MiniCard>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Mission — 04" title="Customer-Centric Approach">
+            <MiniCard tag="Mission - 04" title="Customer-Centric Approach">
               <p>To deliver tailored travel solutions that meet the needs of families, corporate clients, VIP guests, and business travelers across Dubai and the UAE.</p>
             </MiniCard>
 
-            <MiniCard tag="Mission — 05" title="Innovation & Growth">
+            <MiniCard tag="Mission - 05" title="Innovation & Growth">
               <p>To continuously invest in technology, fleet upgrades, and service enhancements that elevate the luxury transportation experience in Dubai and beyond.</p>
             </MiniCard>
           </div>
@@ -441,10 +441,10 @@ export default function WhyUsPage() {
               <span className="text-[#c9a84c] italic font-extralight">in Comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-3 max-w-sm mx-auto leading-relaxed">
-              Chauffeur Service in Dubai — Unparalleled Service and Convenience
+              Chauffeur Service in Dubai - Unparalleled Service and Convenience
             </p>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
-              On Your Next Trip — Do You Want To Talk With Us?
+              On Your Next Trip - Do You Want To Talk With Us?
               <br />So Don't Be Late.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">

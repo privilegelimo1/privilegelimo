@@ -36,12 +36,12 @@ const reasons = [
   {
     number: "05",
     title: "Fixed Transparent Pricing",
-    desc: "No surge pricing. No hidden fees. Your fare is confirmed upfront — always, without exception.",
+    desc: "No surge pricing. No hidden fees. Your fare is confirmed upfront - always, without exception.",
   },
   {
     number: "06",
     title: "24 / 7 Availability",
-    desc: "Day or night, weekday or public holiday — our team is always ready to serve across Dubai and the UAE.",
+    desc: "Day or night, weekday or public holiday - our team is always ready to serve across Dubai and the UAE.",
   },
 ];
 
@@ -99,12 +99,12 @@ const testimonials = [
   {
     name: "Nadia Karoui",
     date: "February 2025",
-    text: "Excellent service, fast replies and reliable — they accommodated all our requests. I 100% recommend them for your Dubai visit.",
+    text: "Excellent service, fast replies and reliable - they accommodated all our requests. I 100% recommend them for your Dubai visit.",
   },
   {
     name: "Dayle Carden",
     date: "October 2024",
-    text: "We hired Privilege for a one-day city experience. The service was exceptional, they accommodated multiple schedule changes. The driver was excellent — pleasant, friendly, and very skilled. Will definitely hire them again.",
+    text: "We hired Privilege for a one-day city experience. The service was exceptional, they accommodated multiple schedule changes. The driver was excellent - pleasant, friendly, and very skilled. Will definitely hire them again.",
   },
   {
     name: "Jonny McCarthy",
@@ -135,7 +135,7 @@ const faqs = [
   },
   {
     q: "Can I book a luxury van or bus for a group?",
-    a: "Absolutely. We offer Mercedes Sprinter vans (11–19 seats), GMC Yukon Limousine (18 seats), and a 50-seater Luxury Bus — perfect for groups, corporate delegations, and events.",
+    a: "Absolutely. We offer Mercedes Sprinter vans (11–19 seats), GMC Yukon Limousine (18 seats), and a 50-seater Luxury Bus - perfect for groups, corporate delegations, and events.",
   },
   {
     q: "Is the service available outside Dubai?",
@@ -143,7 +143,7 @@ const faqs = [
   },
   {
     q: "How far in advance should I book?",
-    a: "We recommend booking at least 24 hours in advance. However, we accommodate last-minute bookings subject to availability — simply call or WhatsApp us on +971 50 920 0818.",
+    a: "We recommend booking at least 24 hours in advance. However, we accommodate last-minute bookings subject to availability - simply call or WhatsApp us on +971 50 920 0818.",
   },
 ];
 
@@ -206,19 +206,29 @@ function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
       aria-label="Luxury chauffeur service Dubai"
     >
+      {/* Background blobs */}
       <motion.div style={{ y }} className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 right-0 w-[800px] h-[800px] rounded-full bg-[#c9a84c] opacity-[0.06] blur-[130px]" />
+        <div className="absolute -top-40 right-0 w-[800px] h-[800px] rounded-full bg-[#c9a84c] opacity-[0.07] blur-[130px]" />
         <div className="absolute bottom-0 -left-40 w-[600px] h-[600px] rounded-full bg-[#c9a84c] opacity-[0.04] blur-[100px]" />
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: "linear-gradient(#0a0a0a 1px, transparent 1px), linear-gradient(90deg, #0a0a0a 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
       </motion.div>
 
       <motion.div style={{ opacity }} className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 25
+           }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="inline-flex items-center gap-4 mb-12"
         >
@@ -235,7 +245,7 @@ function HeroSection() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-            className="text-white text-5xl md:text-7xl lg:text-[86px] font-extralight leading-[1.04] tracking-[-0.03em]"
+            className="text-[#0a0a0a] text-5xl md:text-7xl lg:text-[86px] font-extralight leading-[1.04] tracking-[-0.03em]"
           >
             Travel the
           </motion.h1>
@@ -248,7 +258,7 @@ function HeroSection() {
             className="text-5xl md:text-7xl lg:text-[86px] font-extralight leading-[1.04] tracking-[-0.03em]"
           >
             <span className="text-[#c9a84c] italic">Privileged </span>
-            <span className="text-white">Way</span>
+            <span className="text-[#0a0a0a]">Way</span>
           </motion.div>
         </div>
 
@@ -257,10 +267,10 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-white/45 text-base md:text-lg font-light max-w-xl mx-auto mb-14 leading-relaxed"
+          className="text-[#7a7a7a] text-base md:text-lg font-light max-w-xl mx-auto mb-14 leading-relaxed"
         >
           Dubai&apos;s most trusted luxury chauffeur service. Airport transfers,
-          corporate travel, weddings, and VIP events — available 24/7 across
+          corporate travel, weddings, and VIP events - available 24/7 across
           Dubai, Abu Dhabi, Sharjah, and the UAE.
         </motion.p>
 
@@ -273,16 +283,21 @@ function HeroSection() {
         >
           <a
             href="#booking"
-            className="group relative px-10 py-4 rounded-full bg-white text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium overflow-hidden transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+            className="group relative px-10 py-4 rounded-full bg-[#0a0a0a] text-white text-[11px] tracking-[0.3em] uppercase font-medium overflow-hidden transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
           >
             <span className="relative z-10">Reserve Your Ride</span>
-            <div className="absolute inset-0 bg-[#ececec] translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full" />
+            <div className="absolute inset-0 bg-[#c9a84c] translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full" />
           </a>
           <a
-            href="tel:+971509200818"
-            className="px-10 py-4 rounded-full border border-white/20 text-white text-[11px] tracking-[0.3em] uppercase font-light hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+            href="https://wa.me/971509200818"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full border border-[#e0e0e0] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-light hover:border-[#0a0a0a] hover:bg-[#fafafa] transition-all duration-300"
           >
-            +971 50 920 0818
+            <svg className="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            WhatsApp Us
           </a>
         </motion.div>
 
@@ -291,7 +306,7 @@ function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/[0.08] max-w-2xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-[#efefef] max-w-2xl mx-auto"
         >
           {stats.map((s, i) => (
             <motion.div
@@ -301,10 +316,10 @@ function HeroSection() {
               transition={{ duration: 0.6, delay: 1.3 + i * 0.1 }}
               className="text-center"
             >
-              <div className="text-white text-2xl md:text-3xl font-extralight mb-1 tracking-tight">
+              <div className="text-[#0a0a0a] text-2xl md:text-3xl font-extralight mb-1 tracking-tight">
                 {s.value}
               </div>
-              <div className="text-white/25 text-[9px] tracking-[0.35em] uppercase">
+              <div className="text-[#b0b0b0] text-[9px] tracking-[0.35em] uppercase">
                 {s.label}
               </div>
             </motion.div>
@@ -319,11 +334,11 @@ function HeroSection() {
         transition={{ delay: 1.8 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
       >
-        <span className="text-white/20 text-[9px] tracking-[0.4em] uppercase">Scroll</span>
+        <span className="text-[#c0c0c0] text-[9px] tracking-[0.4em] uppercase">Scroll</span>
         <motion.div
           animate={{ scaleY: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent origin-top"
+          className="w-px h-10 bg-gradient-to-b from-[#c9a84c]/50 to-transparent origin-top"
         />
       </motion.div>
     </section>
@@ -389,7 +404,7 @@ export default function HomePage() {
                 Welcome to Privilege
               </span>
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight mb-8">
-                Luxury is not an option —
+                Luxury is not an option -
                 <br />
                 <span className="text-[#c9a84c] italic font-extralight">
                   it is a standard.
@@ -438,43 +453,28 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ── SERVICES ────────────────────────────────────────────────── */}
+{/* ── SERVICES ────────────────────────────────────────────────── */}
 <section id="services" className="py-36 md:py-44 bg-white border-t border-[#efefef]">
   <div className="max-w-7xl mx-auto px-6">
     <AnimateIn>
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-        <div className="max-w-xl">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-            What We Offer
+      <div className="mb-16">
+        <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+          What We Offer
+        </span>
+        <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
+          Luxury chauffeur services
+          <br />
+          <span className="text-[#c0c0c0] font-extralight italic">
+            tailored for you
           </span>
-          <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
-            Luxury chauffeur services
-            <br />
-            <span className="text-[#c0c0c0] font-extralight italic">
-              tailored for you
-            </span>
-          </h2>
-        </div>
-        <Link
-          href="/services"
-          className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors flex items-center gap-2 flex-shrink-0"
-        >
-          View All Services
-          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </Link>
+        </h2>
       </div>
     </AnimateIn>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {servicesList.map((s, i) => (
         <AnimateIn key={s.id} delay={i * 0.08} direction="up">
-          <Link
-            href={`/services/${s.slug}`}
-            className="group p-9 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.06)] transition-all duration-500 h-full bg-white flex flex-col"
-          >
+          <div className="group p-9 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.06)] transition-all duration-500 h-full bg-white flex flex-col">
             <div className="h-px w-8 bg-[#c9a84c] mb-2 group-hover:w-16 transition-all duration-500" />
             <span className="text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] font-light block mb-6">
               {s.subtitle}
@@ -482,21 +482,38 @@ export default function HomePage() {
             <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">
               {s.title}
             </h3>
-            <p className="text-sm text-[#9a9a9a] leading-relaxed font-light flex-1 mb-6">
+            <p className="text-sm text-[#9a9a9a] leading-relaxed font-light flex-1">
               {s.shortDesc}
             </p>
-            <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors flex items-center gap-2">
-              Learn More
-              <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </span>
-          </Link>
+          </div>
         </AnimateIn>
       ))}
     </div>
+
+    {/* View All Button */}
+    <AnimateIn delay={0.3}>
+      <div className="flex justify-center mt-12">
+        <Link
+          href="/services"
+          className="group inline-flex items-center gap-3 px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
+        >
+          View All Services
+          <svg
+            className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </Link>
+      </div>
+    </AnimateIn>
+
   </div>
 </section>
+
 
       {/* ── STATEMENT ───────────────────────────────────────────────── */}
       <section className="py-28 bg-white border-t border-[#efefef]">
@@ -512,7 +529,7 @@ export default function HomePage() {
               </h2>
               <div className="max-w-xs">
                 <p className="text-[#9a9a9a] text-sm leading-relaxed font-light mb-8">
-                  From the moment you book to the moment you arrive — every aspect
+                  From the moment you book to the moment you arrive - every aspect
                   of your experience is curated with absolute care and professionalism.
                 </p>
                 <a
@@ -798,7 +815,7 @@ export default function HomePage() {
                 <option value="">Preferred Vehicle (optional)</option>
                 {fleet.map((v) => (
                   <option key={v.id} value={v.name}>
-                    {v.name} — {v.priceLabel}
+                    {v.name} - {v.priceLabel}
                   </option>
                 ))}
               </select>

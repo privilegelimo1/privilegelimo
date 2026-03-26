@@ -6,11 +6,11 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Client Reviews & Testimonials | Privilege Luxury Travel Dubai",
   description:
-    "Read real Google reviews from our clients. 5-star chauffeur service, luxury van rentals, airport transfers and more — trusted by hundreds across Dubai and UAE.",
+    "Read real Google reviews from our clients. 5-star chauffeur service, luxury van rentals, airport transfers and more - trusted by hundreds across Dubai and UAE.",
   alternates: { canonical: "https://privilegelimo.com/testimonials" },
 };
 
-// ─── DATA — only reviews with actual text ────────────────────────────────────
+// ─── DATA - only reviews with actual text ────────────────────────────────────
 
 const reviews = [
   {
@@ -46,7 +46,7 @@ const reviews = [
     badge: "2 reviews",
     time: "a year ago",
     rating: 5,
-    text: "We hired Privilege for a one-day city experience. The service was exceptional, they accommodated the multiple schedule changes and adjusted to all our requests. The driver, Sudheer, was excellent — pleasant, friendly, and very skilled.",
+    text: "We hired Privilege for a one-day city experience. The service was exceptional, they accommodated the multiple schedule changes and adjusted to all our requests. The driver, Sudheer, was excellent - pleasant, friendly, and very skilled.",
   },
   {
     name: "Giuliana Krebs",
@@ -81,7 +81,7 @@ const reviews = [
     badge: "Local Guide · 32 reviews",
     time: "a year ago",
     rating: 5,
-    text: "Excellent service, fast replies and reliable — they accommodated all our requests. I 100% recommend them for your Dubai visit.",
+    text: "Excellent service, fast replies and reliable - they accommodated all our requests. I 100% recommend them for your Dubai visit.",
   },
   {
     name: "Dina El Jisr",
@@ -280,7 +280,7 @@ export default function TestimonialsPage() {
                 <span className="text-[#c9a84c] italic font-extralight">say about us</span>
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-lg mb-10">
-                Real reviews from real clients — from individual travelers and families to VIP delegations and corporate event managers across Dubai and the UAE.
+                Real reviews from real clients - from individual travelers and families to VIP delegations and corporate event managers across Dubai and the UAE.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -428,7 +428,7 @@ export default function TestimonialsPage() {
               <span className="text-[#c9a84c] italic font-extralight">clients in Dubai</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
-              Book Now and Travel in Comfort — On Your Next Trip.
+              Book Now and Travel in Comfort - On Your Next Trip.
               <br />
               Do You Want To Talk With Us? So Don't Be Late.
             </p>

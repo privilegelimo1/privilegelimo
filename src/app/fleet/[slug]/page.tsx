@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!vehicle) return {};
   return {
     title: `${vehicle.name} Chauffeur Service Dubai | Privilege Limo`,
-    description: `Hire a ${vehicle.name} with professional chauffeur in Dubai. ${vehicle.description} From ${vehicle.priceLabel}. Book now — +971 50 920 0818.`,
+    description: `Hire a ${vehicle.name} with professional chauffeur in Dubai. ${vehicle.description} From ${vehicle.priceLabel}. Book now - +971 50 920 0818.`,
     keywords: [
       `${vehicle.name} hire Dubai`,
       `${vehicle.name} chauffeur Dubai`,
@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     q: "Is this vehicle available 24/7?",
-    a: "Yes. Our entire fleet is available 24 hours a day, 7 days a week — including public holidays and late-night transfers.",
+    a: "Yes. Our entire fleet is available 24 hours a day, 7 days a week - including public holidays and late-night transfers.",
   },
   {
     q: "How do I confirm my booking?",
@@ -114,7 +114,7 @@ export default async function FleetDetailPage({
     .slice(0, 3);
 
   const waUrl = buildWhatsAppURL(
-    buildQuickEnquiry(`${vehicle.name} — ${vehicle.priceLabel}`)
+    buildQuickEnquiry(`${vehicle.name} - ${vehicle.priceLabel}`)
   );
 
   return (
@@ -250,13 +250,13 @@ export default async function FleetDetailPage({
               </p>
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">
                 Every journey in the {vehicle.name} is prepared to concierge-level
-                standards — sanitized, inspected, and ready to deliver an exceptional
+                standards - sanitized, inspected, and ready to deliver an exceptional
                 experience from the moment you step in. Your chauffeur will be
                 uniformed, punctual, and professional at all times.
               </p>
               <p className="text-[#9a9a9a] text-sm leading-relaxed font-light">
                 Available 24 hours a day across Dubai, Abu Dhabi, Sharjah and all UAE
-                emirates — with fixed pricing confirmed before every journey.
+                emirates - with fixed pricing confirmed before every journey.
               </p>
             </div>
 
@@ -275,7 +275,7 @@ export default async function FleetDetailPage({
                   "Complimentary waiting time",
                   "Real-time traffic & flight monitoring",
                   "Luggage assistance door to door",
-                  "Fixed price — no hidden fees",
+                  "Fixed price - no hidden fees",
                   "24/7 customer support",
                   "Sanitized & inspected vehicle",
                   "Complimentary water on board",
@@ -385,7 +385,7 @@ export default async function FleetDetailPage({
                 <span className="text-[#c9a84c] italic font-extralight">luxury chauffeur service</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-5">
-                We built Privilege Luxury Travel on a single belief — that luxury ground transportation in Dubai should be genuinely exceptional, not just acceptably convenient.
+                We built Privilege Luxury Travel on a single belief - that luxury ground transportation in Dubai should be genuinely exceptional, not just acceptably convenient.
               </p>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-10">
                 From the moment you book to the moment you arrive, every detail is handled with the care and precision of a five-star concierge service. Every vehicle in our fleet reflects that standard.

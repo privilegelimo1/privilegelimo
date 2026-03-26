@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Book Luxury Chauffeur Service Dubai — Privilege Limo",
+  title: "Contact Us | Book Luxury Chauffeur Service Dubai - Privilege Limo",
   description:
     "Get in touch with Privilege Luxury Travel LLC. Book a luxury chauffeur, van, sprinter or bus in Dubai. Available 24/7 via WhatsApp, phone or email.",
   alternates: { canonical: "https://privilegelimo.com/booking" },
@@ -459,7 +459,7 @@ export default function ContactPage() {
 
               <MiniCard tag="Quick Book" title="Prefer WhatsApp?">
                 <p className="text-sm text-[#7a7a7a] font-light leading-relaxed mb-4">
-                  Skip the form — message us directly on WhatsApp for the fastest booking confirmation.
+                  Skip the form - message us directly on WhatsApp for the fastest booking confirmation.
                 </p>
                 <a
                   href="https://wa.me/971509200818"
@@ -494,7 +494,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Privilege Luxury Travel LLC — Suite 45, Shraifi One Building, Za'abeel St, Dubai"
+              title="Privilege Luxury Travel LLC - Suite 45, Shraifi One Building, Za'abeel St, Dubai"
             />
           </div>
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light mt-4 text-center">

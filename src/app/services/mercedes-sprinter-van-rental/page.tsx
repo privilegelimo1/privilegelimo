@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE — Privilege Limo",
+  title: "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE - Privilege Limo",
   description:
     "Book a Mercedes Sprinter van rental in Dubai & UAE. Choose from Avant Garde VIP, Ultra Luxury, Business Class & standard Sprinter. Up to 19 seats. Professional chauffeurs. Fixed rates.",
   keywords: [
@@ -113,12 +113,12 @@ const whyCards = [
 const relatedLinks = [
   {
     title: "Rent a Car with Driver in Dubai",
-    desc: "The Allure of Luxury Travel in Dubai — Rent a Car with Driver in Dubai. Dubai stands as a testament to...",
+    desc: "The Allure of Luxury Travel in Dubai - Rent a Car with Driver in Dubai. Dubai stands as a testament to...",
     href: "https://privilegelimo.com/rent-a-car-with-driver-in-dubai/",
   },
   {
     title: "Mercedes Sprinter Chauffeur Service",
-    desc: "Luxury Sprinter Van in Dubai — Mercedes-Benz Sprinter Van Rent. Experience the Height of Comfort and Style...",
+    desc: "Luxury Sprinter Van in Dubai - Mercedes-Benz Sprinter Van Rent. Experience the Height of Comfort and Style...",
     href: "https://privilegelimo.com/mercedes-sprinter-chauffeur-service/",
   },
 ];
@@ -172,7 +172,7 @@ export default function MercedesSprinterRentalPage() {
                 Looking for a reliable and stylish van rental in UAE? Our Mercedes Sprinter rental service offers unmatched luxury and comfort. Choose from our Sprinter Avant Garde VIP and Mercedes Sprinter Ultra Luxury vans for your transportation needs in Dubai.
               </p>
               <p className="text-[#9a9a9a] text-sm font-light leading-relaxed max-w-lg mb-10">
-                Book now and experience the luxury of a Mercedes Sprinter Van rental in UAE — Premium Luxury Sprinter in Dubai.
+                Book now and experience the luxury of a Mercedes Sprinter Van rental in UAE - Premium Luxury Sprinter in Dubai.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -240,14 +240,14 @@ export default function MercedesSprinterRentalPage() {
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-            {/* Tag — top left */}
+            {/* Tag - top left */}
             <div className="absolute top-4 left-4">
               <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] font-medium">
                 {car.tag}
               </span>
             </div>
 
-            {/* Price — bottom left over gradient */}
+            {/* Price - bottom left over gradient */}
             <div className="absolute bottom-4 left-5">
               <div className="text-[10px] tracking-[0.3em] uppercase text-white/60 font-light mb-0.5">
                 Starting from
@@ -262,7 +262,7 @@ export default function MercedesSprinterRentalPage() {
           <div className="p-7">
             <h3 className="text-lg font-light text-[#0a0a0a] mb-6 tracking-tight">{car.name}</h3>
 
-            {/* Specs — clean divider style */}
+            {/* Specs - clean divider style */}
             <div className="flex items-center divide-x divide-[#efefef] mb-7">
               <div className="flex-1 pr-4">
                 <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
@@ -338,7 +338,7 @@ export default function MercedesSprinterRentalPage() {
 
             <MiniCard tag="Explore UAE" title="Explore the UAE in Style">
               <p>With our Mercedes Sprinter van rental service, you can explore the UAE in style. Whether you are visiting Dubai, Abu Dhabi, or any other city in the country, our experienced drivers will take you to your destination safely and efficiently.</p>
-              <p className="mt-2">From iconic landmarks such as the Burj Khalifa and the Palm Jumeirah to the stunning beaches and desert landscapes — our drivers are knowledgeable about local attractions and can provide valuable insights.</p>
+              <p className="mt-2">From iconic landmarks such as the Burj Khalifa and the Palm Jumeirah to the stunning beaches and desert landscapes - our drivers are knowledgeable about local attractions and can provide valuable insights.</p>
             </MiniCard>
           </div>
         </div>
@@ -413,7 +413,7 @@ export default function MercedesSprinterRentalPage() {
               <span className="text-[#c9a84c] italic font-extralight">in Comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
-              On Your Next Trip — Do You Want To Talk With Us?
+              On Your Next Trip - Do You Want To Talk With Us?
               <br />So Don't Be Late.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -70,7 +70,7 @@ export default function Footer() {
                 { label: "Phone", value: "+971 XX XXX XXXX", href: "tel:+97100000000" },
                 { label: "Email", value: "info@privilegelimo.com", href: "mailto:info@privilegelimo.com" },
                 { label: "Location", value: "Dubai, UAE", href: undefined },
-                { label: "Hours", value: "24 / 7 — Always Available", href: undefined },
+                { label: "Hours", value: "24 / 7 - Always Available", href: undefined },
               ].map((item) => (
                 <li key={item.label}>
                   <span className="text-[9px] tracking-[0.35em] uppercase text-white/25 block mb-1">

@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 import { fleet } from "@/data/index";
 
 export const metadata: Metadata = {
-  title: "Our Fleet | Luxury Chauffeur Vehicles Dubai — Privilege Limo",
+  title: "Our Fleet | Luxury Chauffeur Vehicles Dubai - Privilege Limo",
   description:
-    "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai — Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
+    "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai - Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
   keywords: [
     "luxury car hire Dubai",
     "chauffeur fleet Dubai",
@@ -59,7 +59,7 @@ export default function FleetPage() {
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-md mb-10">
                 Every vehicle in our fleet is maintained to the highest concierge
-                standard — sanitized, inspected, and prepared before every single
+                standard - sanitized, inspected, and prepared before every single
                 journey. From executive sedans to luxury coaches, choose the perfect
                 vehicle for your occasion.
               </p>
@@ -270,7 +270,7 @@ export default function FleetPage() {
               { num: "01", title: "25-Point Inspection", desc: "Every vehicle checked before every journey." },
               { num: "02", title: "Deep Cleaned", desc: "Sanitized to concierge standards, every time." },
               { num: "03", title: "Uniformed Chauffeur", desc: "Professional, licensed, English-speaking." },
-              { num: "04", title: "Fixed Pricing", desc: "Confirmed upfront — no hidden charges ever." },
+              { num: "04", title: "Fixed Pricing", desc: "Confirmed upfront - no hidden charges ever." },
             ].map((s) => (
               <div key={s.num} className="p-7 rounded-3xl bg-white border border-[#efefef]">
                 <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light mb-4 block">{s.num}</span>
@@ -295,7 +295,7 @@ export default function FleetPage() {
               <span className="text-[#c9a84c] italic font-extralight">perfect vehicle for you</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
-              Tell us your occasion, group size, and budget — and we'll match you with the ideal vehicle from our fleet instantly.
+              Tell us your occasion, group size, and budget - and we'll match you with the ideal vehicle from our fleet instantly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

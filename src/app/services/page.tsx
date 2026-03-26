@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Chauffeur Service Dubai | Luxury Car with Driver — Privilege Limo",
+  title: "Chauffeur Service Dubai | Luxury Car with Driver - Privilege Limo",
   description:
     "Book a professional chauffeur service in Dubai with Privilege Limo. Airport transfers, corporate travel, weddings, and city tours. Fixed pricing, uniformed drivers, available 24/7.",
   keywords: [
@@ -179,11 +179,11 @@ const stats = [
 const faqs = [
   {
     q: "What areas do you cover with your chauffeur service?",
-    a: "We cover all of Dubai and the wider UAE — including Abu Dhabi, Sharjah, Ajman, and intercity routes. Airport transfers are available from DXB, DWC, AUH, and SHJ.",
+    a: "We cover all of Dubai and the wider UAE - including Abu Dhabi, Sharjah, Ajman, and intercity routes. Airport transfers are available from DXB, DWC, AUH, and SHJ.",
   },
   {
     q: "Are prices fixed or metered?",
-    a: "All our prices are fixed and confirmed before your journey. There are no meters, no surge charges, and no surprises — ever.",
+    a: "All our prices are fixed and confirmed before your journey. There are no meters, no surge charges, and no surprises - ever.",
   },
   {
     q: "Can I book a chauffeur for a full day?",
@@ -195,7 +195,7 @@ const faqs = [
   },
   {
     q: "Can I request a specific vehicle?",
-    a: "Absolutely. Browse our fleet above and mention your preferred vehicle when booking via WhatsApp or phone — subject to availability.",
+    a: "Absolutely. Browse our fleet above and mention your preferred vehicle when booking via WhatsApp or phone - subject to availability.",
   },
 ];
 
@@ -279,7 +279,7 @@ export default function ChauffeurServicePage() {
               Chauffeur Driven Vehicles in UAE
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Rent a Car with Driver —
+              Rent a Car with Driver -
               <br />
               <span className="text-[#c9a84c] italic font-extralight">choose your vehicle</span>
             </h2>
@@ -351,7 +351,7 @@ export default function ChauffeurServicePage() {
         </div>
       </section>
 
-      {/* ── EXPERIENCE LUXURY — ALTERNATING ───────────────────────── */}
+      {/* ── EXPERIENCE LUXURY - ALTERNATING ───────────────────────── */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center pt-20 pb-16">
@@ -359,14 +359,14 @@ export default function ChauffeurServicePage() {
               Experience Luxury Travel
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Chauffeur driven cars —{" "}
+              Chauffeur driven cars -{" "}
               <span className="text-[#c9a84c] italic font-extralight">Dubai, UAE</span>
             </h2>
           </div>
 
           <div className="flex flex-col gap-6">
 
-            {/* Row 1 — image left, text right */}
+            {/* Row 1 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[500px] overflow-hidden lg:order-1">
                 <Image
@@ -413,7 +413,7 @@ export default function ChauffeurServicePage() {
                     <div key={b.num} className="flex gap-3">
                       <span className="text-[#c9a84c] text-[11px] font-light mt-0.5 flex-shrink-0">{b.num}</span>
                       <div>
-                        <span className="text-sm font-semibold text-[#0a0a0a] tracking-tight">{b.title} — </span>
+                        <span className="text-sm font-semibold text-[#0a0a0a] tracking-tight">{b.title} - </span>
                         <span className="text-sm text-[#9a9a9a] font-light leading-relaxed">{b.desc}</span>
                       </div>
                     </div>
@@ -433,7 +433,7 @@ export default function ChauffeurServicePage() {
               </div>
             </div>
 
-            {/* Row 2 — text left, image right */}
+            {/* Row 2 - text left, image right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
@@ -460,7 +460,7 @@ export default function ChauffeurServicePage() {
                     <div key={b.num} className="flex gap-3">
                       <span className="text-[#c9a84c] text-[11px] font-light mt-0.5 flex-shrink-0">{b.num}</span>
                       <div>
-                        <span className="text-sm font-semibold text-[#0a0a0a] tracking-tight">{b.title} — </span>
+                        <span className="text-sm font-semibold text-[#0a0a0a] tracking-tight">{b.title} - </span>
                         <span className="text-sm text-[#9a9a9a] font-light leading-relaxed">{b.desc}</span>
                       </div>
                     </div>
@@ -496,7 +496,7 @@ export default function ChauffeurServicePage() {
               </div>
             </div>
 
-            {/* Row 3 — image left, text right */}
+            {/* Row 3 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[500px] overflow-hidden lg:order-2">
                 <Image
@@ -547,7 +547,7 @@ export default function ChauffeurServicePage() {
               </div>
             </div>
 
-            {/* Row 4 — text left, image right */}
+            {/* Row 4 - text left, image right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
@@ -590,7 +590,7 @@ export default function ChauffeurServicePage() {
               </div>
             </div>
 
-            {/* Row 5 — image left, text right */}
+            {/* Row 5 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[500px] overflow-hidden lg:order-1">
                 <Image
@@ -636,7 +636,7 @@ export default function ChauffeurServicePage() {
               </div>
             </div>
 
-            {/* Row 6 — text left, image right */}
+            {/* Row 6 - text left, image right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
@@ -682,7 +682,7 @@ export default function ChauffeurServicePage() {
               </div>
             </div>
 
-            {/* Row 7 — image left, text right */}
+            {/* Row 7 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[500px] overflow-hidden lg:order-2">
                 <Image
@@ -763,7 +763,7 @@ export default function ChauffeurServicePage() {
                 <span className="text-[#c9a84c] italic font-extralight">answered</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-10">
-                Can't find your answer? Message us on WhatsApp — we respond instantly, 24 hours a day.
+                Can't find your answer? Message us on WhatsApp - we respond instantly, 24 hours a day.
               </p>
               <a
                 href="https://wa.me/971509200818"
