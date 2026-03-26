@@ -288,15 +288,21 @@ export default function ContactPage() {
                         Vehicle Type *
                       </label>
                       <select
-                        name="vehicle"
-                        required
-                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200 appearance-none"
-                      >
-                        <option value="" disabled selected>Select vehicle</option>
-                        {vehicles.map((v) => (
-                          <option key={v} value={v}>{v}</option>
-                        ))}
-                      </select>
+  name="vehicle"
+  required
+  defaultValue=""
+  className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200 appearance-none"
+>
+  <option value="" disabled>
+    Select vehicle
+  </option>
+  {vehicles.map((v) => (
+    <option key={v} value={v}>
+      {v}
+    </option>
+  ))}
+</select>
+
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
