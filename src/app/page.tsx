@@ -10,6 +10,7 @@ import AnimateIn from "@/components/AnimateIn";
 import { fleet } from "@/data/index";
 import NextImage from "next/image";
 import { buildWhatsAppURL, buildBookingMessage, buildQuickEnquiry } from "@/lib/whatsapp";
+import BookingModal from "@/components/BookingModal";
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
@@ -199,6 +200,7 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
 
 {/* Hero Section */}
 function HeroSection() {
+  const [bookingOpen, setBookingOpen] = useState(false);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
@@ -229,13 +231,13 @@ function HeroSection() {
 
         {/* Eyebrow */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: -100 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="inline-flex items-center gap-4 mb-10"
         >
           <div className="h-px w-10 bg-[#c9a84c]" />
-          <span className="text-white/80 text-[10px] tracking-[0.5em] uppercase font-light">
+          <span className="text-white font-semibold text-[10px] tracking-[0.5em] uppercase">
             Privilege Limo · Est. 1999 · Dubai UAE
           </span>
           <div className="h-px w-10 bg-[#c9a84c]" />
@@ -243,8 +245,8 @@ function HeroSection() {
 
         {/* Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: -100 }}
           transition={{ duration: 1.1, delay: 0.7, ease: [0.23, 1, 0.32, 1] }}
           className="text-white text-6xl md:text-8xl lg:text-[110px] font-extralight leading-[1.0] tracking-[-0.03em] mb-10 drop-shadow-lg"
         >
@@ -260,17 +262,18 @@ function HeroSection() {
   transition={{ duration: 0.8, delay: 1.1 }}
   className="flex flex-col sm:flex-row items-center gap-4"
 >
-  <a
-    href="#booking"
+  <button
+    onClick={() => setBookingOpen(true)}
     className="px-10 py-4 rounded-full bg-[#c9a84c] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#b8943e] hover:scale-[1.02] transition-all duration-300"
   >
     Reserve Your Ride
-  </a>
+  </button>
+
   <a
     href="https://wa.me/971509200818"
     target="_blank"
     rel="noreferrer"
-    className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white text-black text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-[1.02]"
+    className="group inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white text-black text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-[1.02]"
   >
     <svg
       className="w-4 h-4 text-[#25D366] group-hover:text-white transition-colors"
@@ -283,6 +286,17 @@ function HeroSection() {
   </a>
 </motion.div>
 
+{/* Booking Modal */}
+<BookingModal
+  isOpen={bookingOpen}
+  onClose={() => setBookingOpen(false)}
+  carName="Our Fleet"
+  carCategory="Luxury Chauffeur Service"
+  transferPrice="AED 350"
+  price5hr="AED 500"
+  price10hr="AED 900"
+  maxPassengers={19}
+/>
 
         {/* Scroll indicator */}
         <motion.div
