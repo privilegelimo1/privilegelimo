@@ -23,7 +23,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Every vehicle,
-              <span className="text-[#c9a84c] italic font-extralight"> every occasion</span>
+              <span className="text-[#AB5461] italic font-extralight"> every occasion</span>
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -45,8 +45,8 @@ export default function FleetGrid({ fleet, categories }: Props) {
             <div key={cat} className="mb-20">
               {/* Category heading */}
               <div className="flex items-center gap-4 mb-8">
-                <div className="h-px w-6 bg-[#c9a84c]" />
-                <h3 className="text-[10px] tracking-[0.45em] uppercase text-[#c9a84c] font-light">{cat}</h3>
+                <div className="h-px w-6 bg-[#AB5461]" />
+                <h3 className="text-[10px] tracking-[0.45em] uppercase text-[#AB5461] font-light">{cat}</h3>
                 <div className="h-px flex-1 bg-[#f0f0f0]" />
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#c0c0c0] font-light">
                   {vehicles.length} vehicle{vehicles.length > 1 ? "s" : ""}
@@ -79,7 +79,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                             {v.badge}
                           </span>
                         )}
-                        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/40 to-transparent" />
                       </div>
                     </Link>
 
@@ -91,11 +91,11 @@ export default function FleetGrid({ fleet, categories }: Props) {
                             <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-1.5">
                               {v.category}
                             </span>
-                            <h3 className="text-base font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#c9a84c] transition-colors duration-300">
+                            <h3 className="text-base font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300">
                               {v.name}
                             </h3>
                           </div>
-                          <span className="text-sm text-[#c9a84c] font-light whitespace-nowrap ml-4 mt-1">
+                          <span className="text-sm text-[#AB5461] font-light whitespace-nowrap ml-4 mt-1">
                             {v.priceLabel}
                           </span>
                         </div>
@@ -130,7 +130,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                       <div className="flex items-center justify-between mb-4">
                         <Link
                           href={`/fleet/${v.slug}`}
-                          className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors flex items-center gap-2"
+                          className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors flex items-center gap-2"
                         >
                           View Details
                           <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -75,14 +75,14 @@ export default function ServicePage({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   {subtitle}
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[62px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-8">
                 {headingLines.map((line, i) => (
-                  <span key={i} className={`block ${i === 1 ? "text-[#c9a84c] italic" : ""}`}>
+                  <span key={i} className={`block ${i === 1 ? "text-[#AB5461] italic" : ""}`}>
                     {line}
                   </span>
                 ))}
@@ -116,8 +116,8 @@ export default function ServicePage({
               <ul className="flex flex-col gap-4">
                 {keyPoints.slice(0, 6).map((point) => (
                   <li key={point} className="flex items-start gap-4">
-                    <div className="w-5 h-5 rounded-full border border-[#c9a84c] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-2.5 h-2.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-5 h-5 rounded-full border border-[#AB5461] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -157,7 +157,7 @@ export default function ServicePage({
                     key={item}
                     className="flex items-center gap-3 p-4 rounded-2xl border border-[#efefef] hover:border-[#0a0a0a] transition-colors duration-300"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#AB5461] flex-shrink-0" />
                     <span className="text-sm text-[#3a3a3a] font-light">{item}</span>
                   </div>
                 ))}
@@ -177,7 +177,7 @@ export default function ServicePage({
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Why clients choose us
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">for {title}</span>
+              <span className="text-[#AB5461] italic font-extralight">for {title}</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -186,7 +186,7 @@ export default function ServicePage({
                 key={item.title}
                 className="p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500"
               >
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light mb-5 block">
+                <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-5 block">
                   0{i + 1}
                 </span>
                 <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">{item.title}</h3>
@@ -214,7 +214,7 @@ export default function ServicePage({
                   className="p-6 rounded-2xl border border-[#efefef] hover:border-[#0a0a0a] transition-all duration-300 text-center"
                 >
                   <div className="w-8 h-8 rounded-full border border-[#efefef] flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-4 h-4 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <svg className="w-4 h-4 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                     </svg>
                   </div>
@@ -258,7 +258,7 @@ export default function ServicePage({
                 >
                   <div className="h-32 rounded-2xl bg-[#fafafa] mb-5 flex items-center justify-center border border-[#f0f0f0] relative overflow-hidden">
                     <span className="text-[9px] tracking-[0.3em] uppercase text-[#d5d5d5]">Image</span>
-                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/30 to-transparent" />
                   </div>
                   <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">{v.category}</span>
                   <h3 className="text-sm font-semibold text-[#0a0a0a] leading-tight mb-2">{v.name}</h3>
@@ -266,8 +266,8 @@ export default function ServicePage({
                     {v.description.substring(0, 70)}...
                   </p>
                   <div className="flex items-center justify-between pt-4 border-t border-[#f4f4f4]">
-                    <span className="text-sm text-[#c9a84c] font-light">{v.priceLabel}</span>
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors flex items-center gap-1">
+                    <span className="text-sm text-[#AB5461] font-light">{v.priceLabel}</span>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-1">
                       Details
                       <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -351,7 +351,7 @@ export default function ServicePage({
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
-                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#c9a84c] transition-colors">{c.value}</span>
+                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}
             </div>

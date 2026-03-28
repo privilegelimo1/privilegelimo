@@ -236,11 +236,11 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="inline-flex items-center gap-4 mb-10"
         >
-          <div className="h-px w-10 bg-[#c9a84c]" />
+          <div className="h-px w-10 bg-[#AB5461]" />
           <span className="text-white font-semibold text-[10px] tracking-[0.5em] uppercase">
             Privilege Limo · Est. 1999 · Dubai UAE
           </span>
-          <div className="h-px w-10 bg-[#c9a84c]" />
+          <div className="h-px w-10 bg-[#AB5461]" />
         </motion.div>
 
         {/* Heading */}
@@ -252,7 +252,7 @@ function HeroSection() {
         >
           Travel the
           <br />
-          <span className="italic text-[#c9a84c]">Privileged</span> Way
+          <span className="italic text-[#AB5461]">Privileged</span> Way
         </motion.h1>
 
         {/* CTAs */}
@@ -264,7 +264,7 @@ function HeroSection() {
 >
   <button
     onClick={() => setBookingOpen(true)}
-    className="px-10 py-4 rounded-full bg-[#c9a84c] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#b8943e] hover:scale-[1.02] transition-all duration-300"
+    className="px-10 py-4 rounded-full bg-[#AB5461] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#b8943e] hover:scale-[1.02] transition-all duration-300"
   >
     Reserve Your Ride
   </button>
@@ -305,13 +305,13 @@ function HeroSection() {
           transition={{ delay: 1.8 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[#c9a84c] text-[9px] tracking-[0.4em] uppercase font-light">Scroll</span>
+          <span className="text-[#AB5461] text-[9px] tracking-[0.4em] uppercase font-light">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
             <svg
-              className="w-6 h-6 text-[#c9a84c]"
+              className="w-6 h-6 text-[#AB5461]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -366,12 +366,12 @@ export default function HomePage() {
         >
           {[...Array(6)].map((_, i) => (
             <span key={i} className="flex items-center gap-12 px-6 text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0]">
-              <span>Airport Transfers</span><span className="text-[#c9a84c]">·</span>
-              <span>Corporate Travel</span><span className="text-[#c9a84c]">·</span>
-              <span>Weddings &amp; Events</span><span className="text-[#c9a84c]">·</span>
-              <span>Mercedes Sprinter Rental</span><span className="text-[#c9a84c]">·</span>
-              <span>Luxury Bus Rental</span><span className="text-[#c9a84c]">·</span>
-              <span>Rent a Car with Driver</span><span className="text-[#c9a84c]">·</span>
+              <span>Airport Transfers</span><span className="text-[#AB5461]">·</span>
+              <span>Corporate Travel</span><span className="text-[#AB5461]">·</span>
+              <span>Weddings &amp; Events</span><span className="text-[#AB5461]">·</span>
+              <span>Mercedes Sprinter Rental</span><span className="text-[#AB5461]">·</span>
+              <span>Luxury Bus Rental</span><span className="text-[#AB5461]">·</span>
+              <span>Rent a Car with Driver</span><span className="text-[#AB5461]">·</span>
             </span>
           ))}
         </motion.div>
@@ -388,7 +388,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight mb-8">
                 Luxury is not an option -
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">
+                <span className="text-[#AB5461] italic font-extralight">
                   it is a standard.
                 </span>
               </h2>
@@ -457,8 +457,8 @@ export default function HomePage() {
       {servicesList.map((s, i) => (
         <AnimateIn key={s.id} delay={i * 0.08} direction="up">
           <div className="group p-9 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.06)] transition-all duration-500 h-full bg-white flex flex-col">
-            <div className="h-px w-8 bg-[#c9a84c] mb-2 group-hover:w-16 transition-all duration-500" />
-            <span className="text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] font-light block mb-6">
+            <div className="h-px w-8 bg-[#AB5461] mb-2 group-hover:w-16 transition-all duration-500" />
+            <span className="text-[9px] tracking-[0.4em] uppercase text-[#AB5461] font-light block mb-6">
               {s.subtitle}
             </span>
             <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">
@@ -505,7 +505,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-extralight text-[#0a0a0a] leading-[1.05] tracking-tight max-w-2xl">
                 Every detail.
                 <br />
-                <span className="text-[#c9a84c] italic">Every time.</span>
+                <span className="text-[#AB5461] italic">Every time.</span>
                 <br />
                 No exceptions.
               </h2>
@@ -546,7 +546,7 @@ export default function HomePage() {
               </h2>
             </AnimateIn>
             <AnimateIn direction="right">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] md:text-right">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] md:text-right">
                 All prices for transfer within Dubai
                 <br />
                 <span className="text-[#b0b0b0]">Subject to seasonal change</span>
@@ -582,7 +582,7 @@ export default function HomePage() {
                 {car.badge}
               </span>
             )}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/40 to-transparent" />
           </div>
         </Link>
 
@@ -621,7 +621,7 @@ export default function HomePage() {
             </div>
             <Link
               href={`/fleet/${car.slug}`}
-              className="ml-auto text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors duration-300 flex items-center gap-1.5"
+              className="ml-auto text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors duration-300 flex items-center gap-1.5"
             >
               Details
               <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -675,7 +675,7 @@ export default function HomePage() {
             {reasons.map((r, i) => (
               <AnimateIn key={r.number} delay={i * 0.08} direction="up">
                 <div className="p-9 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.05)] transition-all duration-500 bg-white h-full">
-                  <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light mb-6 block">
+                  <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-6 block">
                     {r.number}
                   </span>
                   <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">
@@ -712,7 +712,7 @@ export default function HomePage() {
                 <blockquote className="p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.05)] transition-all duration-500 h-full flex flex-col bg-white">
                   <div className="flex gap-0.5 mb-5">
                     {[...Array(5)].map((_, j) => (
-                      <svg key={j} className="w-3 h-3 fill-[#c9a84c]" viewBox="0 0 20 20">
+                      <svg key={j} className="w-3 h-3 fill-[#AB5461]" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
@@ -833,7 +833,7 @@ export default function HomePage() {
                 <a key={c.label} href={c.href} target={c.href.startsWith("https") ? "_blank" : undefined} rel="noreferrer"
                   className="group p-6 rounded-2xl border border-[#efefef] hover:border-[#0a0a0a] transition-all duration-300">
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-2">{c.label}</span>
-                  <span className="text-sm text-[#0a0a0a] font-light group-hover:text-[#c9a84c] transition-colors duration-300">{c.value}</span>
+                  <span className="text-sm text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors duration-300">{c.value}</span>
                 </a>
               ))}
             </div>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { X, CheckCircle, CalendarCheck } from "lucide-react";
 
-const goldGradient = "linear-gradient(135deg, #c9a84c, #e8c97a, #b8943e)";
+const goldGradient = "linear-gradient(135deg, #AB5461, #BA737E, #C9929A)";
 
 type BookingType = "transfer" | "5hr" | "10hr" | "point" | "weekly" | "monthly";
 
@@ -99,7 +99,7 @@ export default function BookingButton({
 
   const isValid = name && phone && date && pickup;
 
-  const inputClass = "w-full border border-[#e8d9a0] rounded-xl px-3 py-2.5 text-sm text-[#0a0a0a] focus:outline-none focus:border-[#c9a84c] bg-[#fdf8ec]/50 placeholder:text-[#b0b0b0]";
+  const inputClass = "w-full border border-[#e8d9a0] rounded-xl px-3 py-2.5 text-sm text-[#0a0a0a] focus:outline-none focus:border-[#AB5461] bg-[#fdf8ec]/50 placeholder:text-[#b0b0b0]";
   const labelClass = "text-[10px] font-semibold text-[#9a9a9a] uppercase tracking-[0.3em] mb-1.5 block";
 
   return (
@@ -167,7 +167,7 @@ export default function BookingButton({
                           key={key}
                           onClick={() => setBookingType(key)}
                           className={`rounded-xl p-2.5 text-center border transition-all ${
-                            bookingType === key ? "border-[#c9a84c] text-white" : "border-[#efefef] text-[#5a5a5a] hover:border-[#c9a84c]/40"
+                            bookingType === key ? "border-[#AB5461] text-white" : "border-[#efefef] text-[#5a5a5a] hover:border-[#AB5461]/40"
                           }`}
                           style={bookingType === key ? { background: goldGradient } : { background: "#fdf8ec" }}
                         >
@@ -184,7 +184,7 @@ export default function BookingButton({
                   {/* Price Preview */}
                   <div className="rounded-xl px-4 py-2.5 flex items-center justify-between bg-[#fdf8ec] border border-[#e8d9a0]">
                     <span className="text-[10px] font-medium text-[#9a9a9a] uppercase tracking-[0.3em]">Estimated Price</span>
-                    <span className="font-medium text-sm text-[#c9a84c]">{displayPrice(bookingType)}</span>
+                    <span className="font-medium text-sm text-[#AB5461]">{displayPrice(bookingType)}</span>
                   </div>
 
                   {/* Info banners */}

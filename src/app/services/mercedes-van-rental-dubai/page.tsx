@@ -133,15 +133,15 @@ export default function MercedesVanRentalPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Mercedes Benz Van Hire
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-8">
                 Mercedes Van
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">Rental Dubai, UAE</span>
+                <span className="text-[#AB5461] italic font-extralight">Rental Dubai, UAE</span>
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-md mb-4">
                 Explore our full range of luxury car rentals in Dubai for your premium travel needs.
@@ -193,7 +193,7 @@ export default function MercedesVanRentalPage() {
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Mercedes Van Rental Dubai —
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">choose your vehicle</span>
+              <span className="text-[#AB5461] italic font-extralight">choose your vehicle</span>
             </h2>
             <p className="text-sm text-[#b0b0b0] font-light mt-4">
               All these prices are subject to change depending on season
@@ -237,13 +237,13 @@ export default function MercedesVanRentalPage() {
                   {/* Specs */}
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.passengers} Seats</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.luggage} Bags</span>
@@ -265,7 +265,7 @@ export default function MercedesVanRentalPage() {
                       href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#c9a84c] transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
                     >
                       Book Now
                     </a>
@@ -286,7 +286,7 @@ export default function MercedesVanRentalPage() {
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Mercedes-Benz Van Rentals —{" "}
-              <span className="text-[#c9a84c] italic font-extralight">in the UAE</span>
+              <span className="text-[#AB5461] italic font-extralight">in the UAE</span>
             </h2>
           </div>
 
@@ -312,15 +312,15 @@ export default function MercedesVanRentalPage() {
               </div>
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-2">
                 <div className="inline-flex items-center gap-2 mb-5">
-                  <div className="h-px w-5 bg-[#c9a84c]" />
-                  <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                  <div className="h-px w-5 bg-[#AB5461]" />
+                  <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                     Unparalleled Comfort
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                   Unparalleled comfort with
                   <br />
-                  <span className="text-[#c9a84c] italic font-extralight">Mercedes-Benz V-Class</span>
+                  <span className="text-[#AB5461] italic font-extralight">Mercedes-Benz V-Class</span>
                 </h2>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-8">
                   When it comes to luxury travel in the UAE, nothing beats the elegant and spacious Mercedes-Benz V-Class. This high-end van offers a perfect blend of comfort and style, making it an ideal choice for business travel, family vacations, or special events. The V-Class is designed to provide a smooth ride, with plush seating and ample space for luggage, ensuring you and your companions travel in utmost comfort.
@@ -336,7 +336,7 @@ export default function MercedesVanRentalPage() {
                   href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors duration-300"
+                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
                 >
                   Book Now
                   <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -350,15 +350,15 @@ export default function MercedesVanRentalPage() {
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
-                  <div className="h-px w-5 bg-[#c9a84c]" />
-                  <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                  <div className="h-px w-5 bg-[#AB5461]" />
+                  <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                     Comprehensive Solutions
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                   Comprehensive solutions with
                   <br />
-                  <span className="text-[#c9a84c] italic font-extralight">Sprinter Van Rentals</span>
+                  <span className="text-[#AB5461] italic font-extralight">Sprinter Van Rentals</span>
                 </h2>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   For larger groups or events, explore the Sprinter van rental in Dubai options available with Privilege Luxury Travel. These versatile Mercedes-Benz Sprinter vans offer flexible passenger capacities and are equipped with modern, high-end amenities to ensure a comfortable and enjoyable ride, no matter the distance. Choosing a Sprinter Van Rental in Dubai with a professional driver allows you to fully relax and experience the breathtaking sights of Dubai without the hassle of navigating busy city streets.
@@ -377,7 +377,7 @@ export default function MercedesVanRentalPage() {
                   href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors duration-300"
+                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
                 >
                   Explore Sprinter Options
                   <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -423,15 +423,15 @@ export default function MercedesVanRentalPage() {
               </div>
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-2">
                 <div className="inline-flex items-center gap-2 mb-5">
-                  <div className="h-px w-5 bg-[#c9a84c]" />
-                  <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                  <div className="h-px w-5 bg-[#AB5461]" />
+                  <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                     Explore Dubai in Style
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                   Explore Dubai
                   <br />
-                  <span className="text-[#c9a84c] italic font-extralight">in style</span>
+                  <span className="text-[#AB5461] italic font-extralight">in style</span>
                 </h2>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-8">
                   Renting a luxury Mercedes van in Dubai is more than just transportation; it's a statement of elegance and sophistication. Whether you're heading to a business meeting, a wedding, or exploring the vibrant city, having a professional driver at your service adds a touch of luxury to your trip. With Privilege Luxury Travel, you can expect a seamless rental experience that prioritizes your needs and preferences, allowing you to focus on enjoying your journey.
@@ -447,7 +447,7 @@ export default function MercedesVanRentalPage() {
                   href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors duration-300"
+                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
                 >
                   Book Your Mercedes Van
                   <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -490,7 +490,7 @@ export default function MercedesVanRentalPage() {
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               FAQs - Mercedes Van
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">Rental Dubai</span>
+              <span className="text-[#AB5461] italic font-extralight">Rental Dubai</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl mx-auto">
@@ -548,7 +548,7 @@ export default function MercedesVanRentalPage() {
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Book now and travel
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">in comfort</span>
+              <span className="text-[#AB5461] italic font-extralight">in comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               On your next trip - do you want to talk with us? So don't be late.
@@ -586,7 +586,7 @@ export default function MercedesVanRentalPage() {
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
-                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#c9a84c] transition-colors">{c.value}</span>
+                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}
             </div>

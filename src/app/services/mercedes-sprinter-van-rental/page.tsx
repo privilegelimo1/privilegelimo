@@ -112,7 +112,7 @@ const relatedLinks = [
 function MiniCard({ tag, title, children }: { tag: string; title: string; children: React.ReactNode }) {
   return (
     <div className="rounded-[1.75rem] border border-[#efefef] bg-white p-7 md:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:border-[#e8d9a0] transition-all duration-300 hover:-translate-y-0.5">
-      <span className="text-[9px] tracking-[0.45em] uppercase text-[#c9a84c] mb-3 block font-light">{tag}</span>
+      <span className="text-[9px] tracking-[0.45em] uppercase text-[#AB5461] mb-3 block font-light">{tag}</span>
       <h3 className="text-base md:text-lg font-light text-[#0a0a0a] mb-4 tracking-tight leading-snug">{title}</h3>
       <div className="text-[#7a7a7a] text-sm font-light leading-relaxed">{children}</div>
     </div>
@@ -140,15 +140,15 @@ export default function MercedesSprinterRentalPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Mercedes Sprinter Rent in UAE
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
                 Mercedes
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">Sprinter Van</span>
+                <span className="text-[#AB5461] italic font-extralight">Sprinter Van</span>
                 <br />
                 Rental Dubai
               </h1>
@@ -182,7 +182,7 @@ export default function MercedesSprinterRentalPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s) => (
-                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#c9a84c] transition-colors duration-300">
+                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#AB5461] transition-colors duration-300">
                   <div className="text-4xl font-extralight text-[#0a0a0a] tracking-tight mb-2">{s.value}</div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">{s.label}</div>
                 </div>
@@ -195,13 +195,13 @@ export default function MercedesSprinterRentalPage() {
       {/* ── FLEET CARDS ───────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Our Fleet</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Our Fleet</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Premium Luxury
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">Sprinter in Dubai</span>
+          <span className="text-[#AB5461] italic font-extralight">Sprinter in Dubai</span>
         </h2>
       </div>
 
@@ -226,7 +226,7 @@ export default function MercedesSprinterRentalPage() {
 
                   {/* Category + badge - top left */}
                   <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] font-medium">
+                    <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.4em] uppercase text-[#AB5461] font-medium">
                       {car.category}
                     </span>
                     {car.badge && (
@@ -303,13 +303,13 @@ export default function MercedesSprinterRentalPage() {
       {/* ── EXPERIENCE SECTION ────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">About Our Service</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">About Our Service</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Experience Our
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">Mercedes Sprinter Van Rental</span>
+          <span className="text-[#AB5461] italic font-extralight">Mercedes Sprinter Van Rental</span>
         </h2>
       </div>
 
@@ -344,13 +344,13 @@ export default function MercedesSprinterRentalPage() {
       {/* ── WHY CHOOSE US ─────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Why Choose Us</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Why Choose Us</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Professional &
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">Reliable Service</span>
+          <span className="text-[#AB5461] italic font-extralight">Reliable Service</span>
         </h2>
       </div>
 
@@ -370,22 +370,22 @@ export default function MercedesSprinterRentalPage() {
       <section className="py-16 border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-8">
-            <div className="h-px w-8 bg-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Related Articles</span>
+            <div className="h-px w-8 bg-[#AB5461]" />
+            <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Related Articles</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {relatedLinks.map((r) => (
               <a
                 key={r.href}
                 href={r.href}
-                className="group rounded-[1.75rem] border border-[#efefef] bg-white p-7 hover:border-[#c9a84c] hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-300"
+                className="group rounded-[1.75rem] border border-[#efefef] bg-white p-7 hover:border-[#AB5461] hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-300"
               >
-                <span className="text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] font-light mb-2 block">Read More</span>
-                <h3 className="text-base font-light text-[#0a0a0a] mb-3 group-hover:text-[#c9a84c] transition-colors tracking-tight">
+                <span className="text-[9px] tracking-[0.4em] uppercase text-[#AB5461] font-light mb-2 block">Read More</span>
+                <h3 className="text-base font-light text-[#0a0a0a] mb-3 group-hover:text-[#AB5461] transition-colors tracking-tight">
                   {r.title}
                 </h3>
                 <p className="text-sm text-[#7a7a7a] font-light leading-relaxed mb-4">{r.desc}</p>
-                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] group-hover:text-[#c9a84c] transition-colors">
+                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors">
                   Read More
                   <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -407,7 +407,7 @@ export default function MercedesSprinterRentalPage() {
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Book Now and Travel
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">in Comfort</span>
+              <span className="text-[#AB5461] italic font-extralight">in Comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               On Your Next Trip - Do You Want To Talk With Us?

@@ -73,7 +73,7 @@ const socials = [
 function MiniCard({ tag, title, children }: { tag: string; title: string; children: React.ReactNode }) {
   return (
     <div className="rounded-[1.75rem] border border-[#efefef] bg-white p-7 shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] hover:border-[#e8d9a0] transition-all duration-300">
-      <span className="text-[9px] tracking-[0.45em] uppercase text-[#c9a84c] mb-2 block font-light">{tag}</span>
+      <span className="text-[9px] tracking-[0.45em] uppercase text-[#AB5461] mb-2 block font-light">{tag}</span>
       <h3 className="text-base font-light text-[#0a0a0a] mb-4 tracking-tight">{title}</h3>
       {children}
     </div>
@@ -111,15 +111,15 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Available 24/7
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
                 Get in touch
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">with us</span>
+                <span className="text-[#AB5461] italic font-extralight">with us</span>
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-lg mb-10">
                 Book a luxury chauffeur, van, sprinter or bus in Dubai. Our team is available 24/7 to assist with your travel needs across Dubai and the UAE.
@@ -151,13 +151,13 @@ export default function ContactPage() {
                   href={c.href}
                   target={c.external ? "_blank" : undefined}
                   rel={c.external ? "noreferrer" : undefined}
-                  className="group flex items-center justify-between px-6 py-4 rounded-2xl border border-[#efefef] bg-white hover:border-[#c9a84c] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300"
+                  className="group flex items-center justify-between px-6 py-4 rounded-2xl border border-[#efefef] bg-white hover:border-[#AB5461] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300"
                 >
                   <div>
                     <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-0.5">{c.tag}</div>
                     <div className="text-sm font-light text-[#0a0a0a]">{c.value}</div>
                   </div>
-                  <svg className="w-4 h-4 text-[#d0d0d0] group-hover:text-[#c9a84c] group-hover:translate-x-0.5 transition-all duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <svg className="w-4 h-4 text-[#d0d0d0] group-hover:text-[#AB5461] group-hover:translate-x-0.5 transition-all duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
@@ -175,7 +175,7 @@ export default function ContactPage() {
             {/* Booking Form */}
             <div className="lg:col-span-2">
               <div className="rounded-[2rem] border border-[#efefef] bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
-                <span className="text-[9px] tracking-[0.45em] uppercase text-[#c9a84c] mb-3 block font-light">
+                <span className="text-[9px] tracking-[0.45em] uppercase text-[#AB5461] mb-3 block font-light">
                   Booking Form
                 </span>
                 <h2 className="text-2xl md:text-3xl font-light text-[#0a0a0a] mb-8 tracking-tight">
@@ -198,7 +198,7 @@ export default function ContactPage() {
                         name="name"
                         required
                         placeholder="Your full name"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200"
+                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
@@ -210,7 +210,7 @@ export default function ContactPage() {
                         name="phone"
                         required
                         placeholder="+971 xx xxx xxxx"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200"
+                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                       type="email"
                       name="email"
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                     />
                   </div>
 
@@ -238,7 +238,7 @@ export default function ContactPage() {
                         name="vehicle"
                         required
                         defaultValue=""
-                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200 appearance-none"
+                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200 appearance-none"
                       >
                         <option value="" disabled>Select vehicle</option>
                         {vehicles.map((v) => (
@@ -254,7 +254,7 @@ export default function ContactPage() {
                         type="datetime-local"
                         name="datetime"
                         required
-                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200"
+                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -270,7 +270,7 @@ export default function ContactPage() {
                         name="pickup"
                         required
                         placeholder="e.g. Dubai International Airport"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200"
+                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
@@ -282,7 +282,7 @@ export default function ContactPage() {
                         name="dropoff"
                         required
                         placeholder="e.g. Burj Al Arab, Dubai"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200"
+                        className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -298,7 +298,7 @@ export default function ContactPage() {
                       min={1}
                       max={55}
                       placeholder="e.g. 4"
-                      className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                     />
                   </div>
 
@@ -311,7 +311,7 @@ export default function ContactPage() {
                       name="message"
                       rows={4}
                       placeholder="Any special requests, flight number, or additional details..."
-                      className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#c9a84c] focus:bg-white transition-all duration-200 resize-none"
+                      className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200 resize-none"
                     />
                   </div>
 
@@ -319,7 +319,7 @@ export default function ContactPage() {
                   <div className="flex flex-col sm:flex-row gap-3 pt-2">
                     <button
                       type="submit"
-                      className="flex-1 inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#0a0a0a] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#c9a84c] transition-all duration-300"
+                      className="flex-1 inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#0a0a0a] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
                     >
                       Send Booking Request
                     </button>
@@ -348,7 +348,7 @@ export default function ContactPage() {
                   href="https://goo.gl/maps/EHr2xahUB4ajmKf89"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm text-[#7a7a7a] font-light leading-relaxed hover:text-[#c9a84c] transition-colors block"
+                  className="text-sm text-[#7a7a7a] font-light leading-relaxed hover:text-[#AB5461] transition-colors block"
                 >
                   Suite# 45, Shraifi One Building,
                   <br />Za'abeel St, Dubai, UAE
@@ -356,7 +356,7 @@ export default function ContactPage() {
               </MiniCard>
 
               <MiniCard tag="Email" title="Send Us an Email">
-                <a href="mailto:booking@privilegelimo.com" className="text-sm text-[#7a7a7a] font-light hover:text-[#c9a84c] transition-colors block">
+                <a href="mailto:booking@privilegelimo.com" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors block">
                   booking@privilegelimo.com
                 </a>
                 <p className="text-xs text-[#b0b0b0] font-light mt-2">We respond within 1–2 hours.</p>
@@ -364,8 +364,8 @@ export default function ContactPage() {
 
               <MiniCard tag="Phone" title="Call Us 24/7">
                 <div className="flex flex-col gap-2">
-                  <a href="tel:+971509200818" className="text-sm text-[#7a7a7a] font-light hover:text-[#c9a84c] transition-colors">+971 50 920 0818</a>
-                  <a href="tel:+971509852818" className="text-sm text-[#7a7a7a] font-light hover:text-[#c9a84c] transition-colors">+971 50 985 2818</a>
+                  <a href="tel:+971509200818" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors">+971 50 920 0818</a>
+                  <a href="tel:+971509852818" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors">+971 50 985 2818</a>
                 </div>
               </MiniCard>
 
@@ -377,7 +377,7 @@ export default function ContactPage() {
                       href={s.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-3 py-1.5 rounded-full border border-[#efefef] text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] hover:text-[#c9a84c] hover:border-[#c9a84c] transition-all duration-200"
+                      className="px-3 py-1.5 rounded-full border border-[#efefef] text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] hover:text-[#AB5461] hover:border-[#AB5461] transition-all duration-200"
                     >
                       {s.name}
                     </a>
@@ -408,12 +408,12 @@ export default function ContactPage() {
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-px w-8 bg-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Our Location</span>
+            <div className="h-px w-8 bg-[#AB5461]" />
+            <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Our Location</span>
           </div>
           <div className="rounded-[2rem] overflow-hidden border border-[#efefef] shadow-[0_4px_24px_rgba(0,0,0,0.06)] h-[420px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.5!2d55.3047!3d25.2285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zPrivilege+Luxury+Travel!5e0!3m2!1sen!2sae!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.7725322075275!2d55.304793375539916!3d25.24458532977937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43f28654be41%3A0x42ce892abda4c3e9!2sPrivilege%20Luxury%20Travel%20LLC!5e0!3m2!1sen!2sae!4v1774699232244!5m2!1sen!2sae"
               width="100%"
               height="100%"
               style={{ border: 0 }}

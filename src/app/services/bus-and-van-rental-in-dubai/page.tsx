@@ -122,15 +122,15 @@ export default function BusVanRentalPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Luxury Bus and Van Rental in Dubai
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-8">
                 Bus & Van Rental
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">in Dubai</span>
+                <span className="text-[#AB5461] italic font-extralight">in Dubai</span>
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-md mb-10">
                 Privilege Luxury Travel LLC provides affordable Luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire - city tours by luxury coaches across the UAE.
@@ -179,7 +179,7 @@ export default function BusVanRentalPage() {
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Luxury Bus and Van Rental —
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">choose your vehicle</span>
+              <span className="text-[#AB5461] italic font-extralight">choose your vehicle</span>
             </h2>
             <p className="text-sm text-[#b0b0b0] font-light mt-4">
               All these prices are subject to change depending on season
@@ -229,13 +229,13 @@ export default function BusVanRentalPage() {
                   {/* Specs */}
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.passengers} Seats</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.luggage} Bags</span>
@@ -257,7 +257,7 @@ export default function BusVanRentalPage() {
                       href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#c9a84c] transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
                     >
                       Book Now
                     </a>
@@ -278,7 +278,7 @@ export default function BusVanRentalPage() {
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Bus and Van Rentals —{" "}
-              <span className="text-[#c9a84c] italic font-extralight">Dubai, UAE</span>
+              <span className="text-[#AB5461] italic font-extralight">Dubai, UAE</span>
             </h2>
           </div>
 
@@ -303,15 +303,15 @@ export default function BusVanRentalPage() {
               </div>
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-2">
                 <div className="inline-flex items-center gap-2 mb-5">
-                  <div className="h-px w-5 bg-[#c9a84c]" />
-                  <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                  <div className="h-px w-5 bg-[#AB5461]" />
+                  <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                     Privilege Luxury Travel LLC
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                   Experience the best of Dubai
                   <br />
-                  <span className="text-[#c9a84c] italic font-extralight">with our Bus and Van Rentals</span>
+                  <span className="text-[#AB5461] italic font-extralight">with our Bus and Van Rentals</span>
                 </h2>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   Luxury Bus and Van Rental in Dubai, UAE at an affordable price so that you can enjoy the ride without any worries. You can have a good and happy ride with our Bus and Van rental services in Dubai to share a wonderful experience with them. They will help you with the timely pickup and drop so that you will not feel any inconvenience during this trip. Our services are characterized by professionalism hence our drivers will be punctual, friendly, and courteous and know all the major routes across Dubai. Hence they will help you reach any location easily.
@@ -330,7 +330,7 @@ export default function BusVanRentalPage() {
                   href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors duration-300"
+                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
                 >
                   Book Now
                   <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -344,15 +344,15 @@ export default function BusVanRentalPage() {
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
-                  <div className="h-px w-5 bg-[#c9a84c]" />
-                  <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                  <div className="h-px w-5 bg-[#AB5461]" />
+                  <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                     Trusted Excellence
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                   A trusted name in
                   <br />
-                  <span className="text-[#c9a84c] italic font-extralight">luxury transport</span>
+                  <span className="text-[#AB5461] italic font-extralight">luxury transport</span>
                 </h2>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   The reputation of Privilege Luxury Travel has been cultivated through years of dedicated service, positioning it as a trusted name among local and international travelers alike. Their commitment to excellence is reflected in their meticulous attention to detail, ensuring that every vehicle is not only pristine but also equipped with top-of-the-line amenities. This level of care is crucial in a market where luxury is not merely expected but is a fundamental aspect of the travel experience.
@@ -371,7 +371,7 @@ export default function BusVanRentalPage() {
                   href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors duration-300"
+                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
                 >
                   Learn More
                   <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -417,15 +417,15 @@ export default function BusVanRentalPage() {
               </div>
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-2">
                 <div className="inline-flex items-center gap-2 mb-5">
-                  <div className="h-px w-5 bg-[#c9a84c]" />
-                  <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                  <div className="h-px w-5 bg-[#AB5461]" />
+                  <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                     The Benefits
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                   Benefits of choosing
                   <br />
-                  <span className="text-[#c9a84c] italic font-extralight">luxury bus and van rentals</span>
+                  <span className="text-[#AB5461] italic font-extralight">luxury bus and van rentals</span>
                 </h2>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   When planning group travel in Dubai, selecting luxury bus and van rentals offers a multitude of benefits that elevate the entire experience. One of the primary advantages is the unparalleled comfort that these vehicles provide. With spacious seating, high-quality materials, and climate control, passengers can relax and enjoy their journey without the constraints often found in standard transportation options.
@@ -447,7 +447,7 @@ export default function BusVanRentalPage() {
                   href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors duration-300"
+                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
                 >
                   Book Your Vehicle
                   <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -461,15 +461,15 @@ export default function BusVanRentalPage() {
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="flex flex-col justify-center px-10 md:px-14 py-14 bg-white lg:order-1">
                 <div className="inline-flex items-center gap-2 mb-5">
-                  <div className="h-px w-5 bg-[#c9a84c]" />
-                  <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                  <div className="h-px w-5 bg-[#AB5461]" />
+                  <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                     Why Dubai
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                   Why Dubai is the perfect
                   <br />
-                  <span className="text-[#c9a84c] italic font-extralight">destination for luxury travel</span>
+                  <span className="text-[#AB5461] italic font-extralight">destination for luxury travel</span>
                 </h2>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   Dubai stands out as a premier luxury travel destination, captivating visitors with its dazzling array of attractions and experiences. As one of the globe's most affluent cities, it offers an extensive range of opulent hotels, each promising state-of-the-art amenities and unmatched service. The Burj Al Arab, a symbol of luxury in itself, alongside the iconic Atlantis, The Palm, showcases Dubai's dedication to extravagance, providing guests with unparalleled comfort and stunning views.
@@ -491,7 +491,7 @@ export default function BusVanRentalPage() {
                   href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#c9a84c] transition-colors duration-300"
+                  className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
                 >
                   Explore Dubai With Us
                   <svg className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -548,7 +548,7 @@ export default function BusVanRentalPage() {
               <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Common questions
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">answered</span>
+                <span className="text-[#AB5461] italic font-extralight">answered</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-10">
                 Can't find your answer? Message us on WhatsApp - we respond instantly, 24 hours a day.
@@ -608,7 +608,7 @@ export default function BusVanRentalPage() {
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Book now and travel
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">in comfort</span>
+              <span className="text-[#AB5461] italic font-extralight">in comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               On your next trip - do you want to talk with us? So don't be late.
@@ -646,7 +646,7 @@ export default function BusVanRentalPage() {
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
-                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#c9a84c] transition-colors">{c.value}</span>
+                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}
             </div>

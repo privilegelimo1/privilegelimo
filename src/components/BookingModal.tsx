@@ -9,7 +9,7 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
 
-const goldGradient = "linear-gradient(135deg, #c9a84c, #e8c97a, #b8943e)";
+const goldGradient = "linear-gradient(135deg, #AB5461, #e8c97a, #b8943e)";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -97,7 +97,7 @@ export default function BookingModal({
   };
 
   // ── Shared tiny input style ──────────────────────────────────────────────
-  const inp = "w-full pl-8 pr-3 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#c9a84c] focus:outline-none text-xs text-[#0a0a0a] placeholder:text-[#c0c0c0] bg-white";
+  const inp = "w-full pl-8 pr-3 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#AB5461] focus:outline-none text-xs text-[#0a0a0a] placeholder:text-[#c0c0c0] bg-white";
   const lbl = "text-[9px] font-semibold text-[#9a9a9a] uppercase tracking-[0.25em] mb-1 block";
 
   return (
@@ -134,7 +134,7 @@ export default function BookingModal({
             {/* ── HEADER ────────────────────────────────────────── */}
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-[#efefef] bg-[#fdf8ec] shrink-0">
               <div>
-                <p className="text-[9px] font-light uppercase tracking-[0.4em] text-[#c9a84c]">
+                <p className="text-[9px] font-light uppercase tracking-[0.4em] text-[#AB5461]">
                   Reserve · Privilege Limo
                 </p>
                 <h2 className="text-sm font-light text-[#0a0a0a] tracking-tight mt-0.5">{carName}</h2>
@@ -171,7 +171,7 @@ export default function BookingModal({
                           onClick={() => setBookingType(bt.value)}
                           className="py-2 px-2 rounded-lg border text-center transition-all duration-150 text-[10px] font-medium leading-tight"
                           style={{
-                            borderColor: bookingType === bt.value ? "#c9a84c" : "#efefef",
+                            borderColor: bookingType === bt.value ? "#AB5461" : "#efefef",
                             background:  bookingType === bt.value ? "#fdf8ec" : "white",
                             color:       bookingType === bt.value ? "#0a0a0a" : "#6a6a6a",
                           }}
@@ -179,7 +179,7 @@ export default function BookingModal({
                           {bt.label}
                           <div
                             className="text-[9px] mt-0.5 font-light"
-                            style={{ color: bookingType === bt.value ? "#c9a84c" : "#c0c0c0" }}
+                            style={{ color: bookingType === bt.value ? "#AB5461" : "#c0c0c0" }}
                           >
                             {bt.value === "weekly" || bt.value === "monthly"
                               ? "Custom"
@@ -195,9 +195,9 @@ export default function BookingModal({
                     <label className={lbl}>{isMultiDay ? "Start Date" : "Journey Date"}</label>
                     <button
                       onClick={() => { setShowCalendar((v) => !v); setShowEndCalendar(false); }}
-                      className="w-full flex items-center gap-2 pl-2.5 pr-3 py-2 rounded-lg border border-[#e8d9a0] text-xs bg-white hover:border-[#c9a84c] transition-colors"
+                      className="w-full flex items-center gap-2 pl-2.5 pr-3 py-2 rounded-lg border border-[#e8d9a0] text-xs bg-white hover:border-[#AB5461] transition-colors"
                     >
-                      <Calendar size={13} className="text-[#c9a84c] shrink-0" />
+                      <Calendar size={13} className="text-[#AB5461] shrink-0" />
                       <span className={selectedDate ? "text-[#0a0a0a]" : "text-[#c0c0c0]"}>
                         {selectedDate ? format(selectedDate, "dd MMM yyyy") : "Select a date"}
                       </span>
@@ -206,7 +206,7 @@ export default function BookingModal({
                       <div className="mt-1.5 rounded-xl border border-[#e8d9a0] overflow-hidden">
                         <style>{`
                           .rdp { margin: 0 !important; }
-                          .rdp-day_selected { background: #c9a84c !important; color: white !important; }
+                          .rdp-day_selected { background: #AB5461 !important; color: white !important; }
                           .rdp-day:hover:not(.rdp-day_selected) { background: #fdf8ec !important; }
                         `}</style>
                         <DayPicker
@@ -225,9 +225,9 @@ export default function BookingModal({
                       <label className={lbl}>End Date</label>
                       <button
                         onClick={() => { setShowEndCalendar((v) => !v); setShowCalendar(false); }}
-                        className="w-full flex items-center gap-2 pl-2.5 pr-3 py-2 rounded-lg border border-[#e8d9a0] text-xs bg-white hover:border-[#c9a84c] transition-colors"
+                        className="w-full flex items-center gap-2 pl-2.5 pr-3 py-2 rounded-lg border border-[#e8d9a0] text-xs bg-white hover:border-[#AB5461] transition-colors"
                       >
-                        <Calendar size={13} className="text-[#c9a84c] shrink-0" />
+                        <Calendar size={13} className="text-[#AB5461] shrink-0" />
                         <span className={endDate ? "text-[#0a0a0a]" : "text-[#c0c0c0]"}>
                           {endDate ? format(endDate, "dd MMM yyyy") : "Select end date"}
                         </span>
@@ -250,7 +250,7 @@ export default function BookingModal({
                     <div>
                       <label className={lbl}>Pickup Time</label>
                       <div className="relative">
-                        <Clock size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c9a84c]" />
+                        <Clock size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461]" />
                         <input type="time" name="time" value={form.time} onChange={handleChange} className={inp} />
                       </div>
                     </div>
@@ -259,7 +259,7 @@ export default function BookingModal({
                   {/* Price pill */}
                   <div className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#fdf8ec] border border-[#e8d9a0]">
                     <span className="text-[9px] text-[#9a9a9a] uppercase tracking-[0.25em] font-light">Est. Price</span>
-                    <span className="text-sm font-medium text-[#c9a84c]">{displayPrice(bookingType)}</span>
+                    <span className="text-sm font-medium text-[#AB5461]">{displayPrice(bookingType)}</span>
                   </div>
                 </>
               )}
@@ -272,14 +272,14 @@ export default function BookingModal({
                     <div>
                       <label className={lbl}>Full Name *</label>
                       <div className="relative">
-                        <User size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c9a84c]" />
+                        <User size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461]" />
                         <input type="text" name="name" placeholder="Your name" value={form.name} onChange={handleChange} className={inp} />
                       </div>
                     </div>
                     <div>
                       <label className={lbl}>Phone *</label>
                       <div className="relative">
-                        <Phone size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c9a84c]" />
+                        <Phone size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461]" />
                         <input type="tel" name="phone" placeholder="+971 50…" value={form.phone} onChange={handleChange} className={inp} />
                       </div>
                     </div>
@@ -290,16 +290,16 @@ export default function BookingModal({
                     <div>
                       <label className={lbl}>Email</label>
                       <div className="relative">
-                        <Mail size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c9a84c]" />
+                        <Mail size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461]" />
                         <input type="email" name="email" placeholder="email@…" value={form.email} onChange={handleChange} className={inp} />
                       </div>
                     </div>
                     <div>
                       <label className={lbl}>Passengers</label>
                       <div className="relative">
-                        <Users size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c9a84c]" />
+                        <Users size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461]" />
                         <select name="passengers" value={form.passengers} onChange={handleChange}
-                          className="w-full pl-7 pr-6 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#c9a84c] focus:outline-none text-xs text-[#0a0a0a] appearance-none bg-white">
+                          className="w-full pl-7 pr-6 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#AB5461] focus:outline-none text-xs text-[#0a0a0a] appearance-none bg-white">
                           {passengerOptions.map((n) => (
                             <option key={n} value={n}>{n} pax</option>
                           ))}
@@ -313,7 +313,7 @@ export default function BookingModal({
                   <div>
                     <label className={lbl}>{needsRoute ? "Pickup Location" : "Base Location"}</label>
                     <div className="relative">
-                      <MapPin size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c9a84c]" />
+                      <MapPin size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461]" />
                       <input type="text" name="pickup"
                         placeholder={needsRoute ? "Hotel, airport or landmark" : "Your base area"}
                         value={form.pickup} onChange={handleChange} className={inp} />
@@ -325,7 +325,7 @@ export default function BookingModal({
                     <div>
                       <label className={lbl}>Drop-off Location</label>
                       <div className="relative">
-                        <MapPin size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c9a84c]" />
+                        <MapPin size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461]" />
                         <input type="text" name="dropoff" placeholder="Destination"
                           value={form.dropoff} onChange={handleChange} className={inp} />
                       </div>
@@ -338,7 +338,7 @@ export default function BookingModal({
                     <textarea name="notes" rows={2}
                       placeholder="Flight number, special requests..."
                       value={form.notes} onChange={handleChange}
-                      className="w-full px-3 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#c9a84c] focus:outline-none text-xs text-[#0a0a0a] placeholder:text-[#c0c0c0] bg-white resize-none"
+                      className="w-full px-3 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#AB5461] focus:outline-none text-xs text-[#0a0a0a] placeholder:text-[#c0c0c0] bg-white resize-none"
                     />
                   </div>
 
@@ -366,7 +366,7 @@ export default function BookingModal({
             <div className="px-5 py-3 border-t border-[#efefef] bg-white flex gap-2 shrink-0">
               {step === 2 && (
                 <button onClick={() => setStep(1)}
-                  className="px-5 py-2.5 rounded-full border border-[#e8d9a0] text-xs font-light text-[#c9a84c] hover:bg-[#fdf8ec] transition-colors">
+                  className="px-5 py-2.5 rounded-full border border-[#e8d9a0] text-xs font-light text-[#AB5461] hover:bg-[#fdf8ec] transition-colors">
                   Back
                 </button>
               )}

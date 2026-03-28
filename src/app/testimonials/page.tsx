@@ -217,7 +217,7 @@ function Stars({ count }: { count: number }) {
   return (
     <div className="flex items-center gap-0.5">
       {Array.from({ length: count }).map((_, i) => (
-        <svg key={i} className="w-3 h-3 text-[#c9a84c]" fill="currentColor" viewBox="0 0 20 20">
+        <svg key={i} className="w-3 h-3 text-[#AB5461]" fill="currentColor" viewBox="0 0 20 20">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
         </svg>
       ))}
@@ -233,7 +233,7 @@ function Avatar({ name }: { name: string }) {
     .join("")
     .toUpperCase();
   const colors = [
-    "bg-[#c9a84c] text-white",
+    "bg-[#AB5461] text-white",
     "bg-[#0a0a0a] text-white",
     "bg-[#e8d9a0] text-[#0a0a0a]",
     "bg-[#f5f5f5] text-[#0a0a0a]",
@@ -269,15 +269,15 @@ export default function TestimonialsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Google Reviews
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
                 What our clients
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">say about us</span>
+                <span className="text-[#AB5461] italic font-extralight">say about us</span>
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-lg mb-10">
                 Real reviews from real clients - from individual travelers and families to VIP delegations and corporate event managers across Dubai and the UAE.
@@ -311,7 +311,7 @@ export default function TestimonialsPage() {
                 { value: "100%", label: "5 Star Reviews" },
                 { value: "3+", label: "Years on Google" },
               ].map((s) => (
-                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#c9a84c] transition-colors duration-300">
+                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#AB5461] transition-colors duration-300">
                   <div className="text-4xl font-extralight text-[#0a0a0a] tracking-tight mb-2">{s.value}</div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">{s.label}</div>
                 </div>
@@ -345,8 +345,8 @@ export default function TestimonialsPage() {
       <section className="pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-8">
-            <div className="h-px w-8 bg-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Featured</span>
+            <div className="h-px w-8 bg-[#AB5461]" />
+            <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Featured</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {reviews.slice(0, 4).map((r) => (
@@ -367,10 +367,10 @@ export default function TestimonialsPage() {
                 </div>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed">{r.text}</p>
                 <div className="mt-4 pt-4 border-t border-[#f5f5f5] flex items-center gap-2">
-                  <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-[9px] tracking-[0.25em] uppercase text-[#c9a84c] font-light">Verified Google Review</span>
+                  <span className="text-[9px] tracking-[0.25em] uppercase text-[#AB5461] font-light">Verified Google Review</span>
                 </div>
               </div>
             ))}
@@ -382,8 +382,8 @@ export default function TestimonialsPage() {
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-8">
-            <div className="h-px w-8 bg-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">All Reviews</span>
+            <div className="h-px w-8 bg-[#AB5461]" />
+            <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">All Reviews</span>
           </div>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
             {reviews.slice(4).map((r) => (
@@ -404,10 +404,10 @@ export default function TestimonialsPage() {
                 </div>
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed">{r.text}</p>
                 <div className="mt-3 pt-3 border-t border-[#f5f5f5] flex items-center gap-2">
-                  <svg className="w-3 h-3 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <svg className="w-3 h-3 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-[8px] tracking-[0.25em] uppercase text-[#c9a84c] font-light">Verified</span>
+                  <span className="text-[8px] tracking-[0.25em] uppercase text-[#AB5461] font-light">Verified</span>
                 </div>
               </div>
             ))}
@@ -425,7 +425,7 @@ export default function TestimonialsPage() {
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Join hundreds of happy
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">clients in Dubai</span>
+              <span className="text-[#AB5461] italic font-extralight">clients in Dubai</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               Book Now and Travel in Comfort - On Your Next Trip.

@@ -140,7 +140,7 @@ export default async function FleetDetailPage({
               ) : (
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#d0d0d0]">Vehicle Image</span>
               )}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/40 to-transparent" />
             </div>
 
             {/* Info */}
@@ -150,7 +150,7 @@ export default async function FleetDetailPage({
                   {vehicle.category}
                 </span>
                 {vehicle.badge && (
-                  <span className="inline-block text-[9px] tracking-[0.35em] uppercase text-[#c9a84c] border border-[#c9a84c]/30 bg-[#c9a84c]/5 px-4 py-1.5 rounded-full">
+                  <span className="inline-block text-[9px] tracking-[0.35em] uppercase text-[#AB5461] border border-[#AB5461]/30 bg-[#AB5461]/5 px-4 py-1.5 rounded-full">
                     {vehicle.badge}
                   </span>
                 )}
@@ -210,7 +210,7 @@ export default async function FleetDetailPage({
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-6 tracking-tight leading-tight">
                 The {vehicle.name}
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">experience</span>
+                <span className="text-[#AB5461] italic font-extralight">experience</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">{vehicle.description}</p>
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">
@@ -226,7 +226,7 @@ export default async function FleetDetailPage({
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-8 tracking-tight leading-tight">
                 Standard
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">inclusions</span>
+                <span className="text-[#AB5461] italic font-extralight">inclusions</span>
               </h2>
               <ul className="flex flex-col gap-3">
                 {[
@@ -240,8 +240,8 @@ export default async function FleetDetailPage({
                   "Complimentary water on board",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-4 p-4 rounded-2xl border border-[#f5f5f5] hover:border-[#0a0a0a] transition-colors duration-300">
-                    <div className="w-5 h-5 rounded-full border border-[#c9a84c] flex items-center justify-center flex-shrink-0">
-                      <svg className="w-2.5 h-2.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-5 h-5 rounded-full border border-[#AB5461] flex items-center justify-center flex-shrink-0">
+                      <svg className="w-2.5 h-2.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -262,7 +262,7 @@ export default async function FleetDetailPage({
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               What sets every journey
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">apart</span>
+              <span className="text-[#AB5461] italic font-extralight">apart</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -271,7 +271,7 @@ export default async function FleetDetailPage({
                 key={s.title}
                 className="p-8 rounded-3xl bg-white border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500"
               >
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light mb-5 block">0{i + 1}</span>
+                <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-5 block">0{i + 1}</span>
                 <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">{s.title}</h3>
                 <p className="text-sm text-[#9a9a9a] leading-relaxed font-light">{s.desc}</p>
               </div>
@@ -288,7 +288,7 @@ export default async function FleetDetailPage({
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Where the {vehicle.name}
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">excels</span>
+              <span className="text-[#AB5461] italic font-extralight">excels</span>
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -303,10 +303,10 @@ export default async function FleetDetailPage({
                 href={u.href}
                 className="group p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 flex flex-col gap-3"
               >
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light">0{i + 1}</span>
-                <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#c9a84c] transition-colors duration-300">{u.label}</h3>
+                <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light">0{i + 1}</span>
+                <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300">{u.label}</h3>
                 <p className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light">{u.sub}</p>
-                <span className="text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#c9a84c] transition-colors mt-auto flex items-center gap-1 pt-2">
+                <span className="text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors mt-auto flex items-center gap-1 pt-2">
                   Learn more
                   <svg className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -327,7 +327,7 @@ export default async function FleetDetailPage({
               <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Dubai's most trusted
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">luxury chauffeur service</span>
+                <span className="text-[#AB5461] italic font-extralight">luxury chauffeur service</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-5">
                 We built Privilege Luxury Travel on a single belief — that luxury ground transportation in Dubai should be genuinely exceptional, not just acceptably convenient.
@@ -371,7 +371,7 @@ export default async function FleetDetailPage({
                 <div key={t.name} className="p-7 rounded-2xl bg-white border border-[#efefef] shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-3 h-3 text-[#c9a84c]" fill="currentColor" viewBox="0 0 20 20">
+                      <svg key={i} className="w-3 h-3 text-[#AB5461]" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
@@ -449,15 +449,15 @@ export default async function FleetDetailPage({
                     ) : (
                       <span className="text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">Image</span>
                     )}
-                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/30 to-transparent" />
                   </div>
                   <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">{v.category}</span>
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-sm font-semibold text-[#0a0a0a]">{v.name}</h3>
-                    <span className="text-sm text-[#c9a84c] font-light">{v.priceLabel}</span>
+                    <span className="text-sm text-[#AB5461] font-light">{v.priceLabel}</span>
                   </div>
                   <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">{v.description.substring(0, 75)}...</p>
-                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors flex items-center gap-2">
+                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-2">
                     View Details
                     <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -512,7 +512,7 @@ export default async function FleetDetailPage({
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
-                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#c9a84c] transition-colors">{c.value}</span>
+                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}
             </div>

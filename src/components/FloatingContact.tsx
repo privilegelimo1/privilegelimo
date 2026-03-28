@@ -81,10 +81,10 @@ export default function ChatWidget() {
               {/* Call */}
               <a
                 href={CALL_LINK}
-                className="flex items-center gap-4 p-4 rounded-xl border border-[#f0f0f0] hover:border-[#c9a84c] hover:bg-[#c9a84c]/5 transition-all duration-200 group"
+                className="flex items-center gap-4 p-4 rounded-xl border border-[#f0f0f0] hover:border-[#AB5461] hover:bg-[#AB5461]/5 transition-all duration-200 group"
               >
                 <div className="w-11 h-11 rounded-full bg-[#0a0a0a] flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
-                  <Phone size={18} className="text-[#c9a84c]" />
+                  <Phone size={18} className="text-[#AB5461]" />
                 </div>
                 <div>
                   <p className="font-bold text-[#0a0a0a] text-sm">Call Us</p>

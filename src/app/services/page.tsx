@@ -198,15 +198,15 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Luxury Transportation UAE
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
                 Our
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">Services</span>
+                <span className="text-[#AB5461] italic font-extralight">Services</span>
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-lg mb-4">
                 From executive airport transfers to luxury group travel across the UAE, Privilege Limo offers a full suite of premium transportation services — all with professional chauffeurs, fixed pricing, and 24/7 availability.
@@ -238,7 +238,7 @@ export default function ServicesPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s) => (
-                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#c9a84c] transition-colors duration-300">
+                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#AB5461] transition-colors duration-300">
                   <div className="text-4xl font-extralight text-[#0a0a0a] tracking-tight mb-2">{s.value}</div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">{s.label}</div>
                 </div>
@@ -253,13 +253,13 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-16">
             <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#c9a84c]" />
-              <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">What We Offer</span>
+              <div className="h-px w-8 bg-[#AB5461]" />
+              <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">What We Offer</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Premium services
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">across the UAE</span>
+              <span className="text-[#AB5461] italic font-extralight">across the UAE</span>
             </h2>
           </div>
 
@@ -302,8 +302,8 @@ export default function ServicesPage() {
                   }`}
                 >
                   <div className="inline-flex items-center gap-2 mb-5">
-                    <div className="h-px w-5 bg-[#c9a84c]" />
-                    <span className="text-[#c9a84c] text-[9px] tracking-[0.45em] uppercase font-light">
+                    <div className="h-px w-5 bg-[#AB5461]" />
+                    <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
                       Service {s.tag}
                     </span>
                   </div>
@@ -323,7 +323,7 @@ export default function ServicesPage() {
                       </span>
                     ))}
                   </div>
-                  <div className="inline-flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors duration-300 font-light">
+                  <div className="inline-flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors duration-300 font-light">
                     Explore Service
                     <svg
                       className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300"
@@ -352,7 +352,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Our complete fleet —
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">choose your vehicle</span>
+              <span className="text-[#AB5461] italic font-extralight">choose your vehicle</span>
             </h2>
             <p className="text-sm text-[#b0b0b0] font-light mt-4">
               All prices are subject to change depending on season
@@ -402,13 +402,13 @@ export default function ServicesPage() {
                   {/* Specs */}
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.passengers} Seats</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.luggage} Bags</span>
@@ -419,7 +419,7 @@ export default function ServicesPage() {
                     href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#c9a84c] group-hover:bg-[#c9a84c] transition-all duration-300"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] group-hover:bg-[#AB5461] transition-all duration-300"
                   >
                     Book Now
                   </a>
@@ -435,13 +435,13 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-16">
             <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#c9a84c]" />
-              <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Why Choose Us</span>
+              <div className="h-px w-8 bg-[#AB5461]" />
+              <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Why Choose Us</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Professional &
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">reliable service</span>
+              <span className="text-[#AB5461] italic font-extralight">reliable service</span>
             </h2>
           </div>
 
@@ -451,7 +451,7 @@ export default function ServicesPage() {
                 key={w.tag}
                 className="rounded-[1.75rem] border border-[#efefef] bg-white p-7 md:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:border-[#e8d9a0] transition-all duration-300 hover:-translate-y-0.5"
               >
-                <span className="text-[9px] tracking-[0.45em] uppercase text-[#c9a84c] mb-3 block font-light">{w.tag}</span>
+                <span className="text-[9px] tracking-[0.45em] uppercase text-[#AB5461] mb-3 block font-light">{w.tag}</span>
                 <h3 className="text-base md:text-lg font-light text-[#0a0a0a] mb-4 tracking-tight leading-snug">{w.title}</h3>
                 <p className="text-[#7a7a7a] text-sm font-light leading-relaxed">{w.desc}</p>
               </div>
@@ -469,7 +469,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Common questions
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">answered</span>
+                <span className="text-[#AB5461] italic font-extralight">answered</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-10">
                 Can't find your answer? Message us on WhatsApp — we respond instantly, 24 hours a day.
@@ -530,7 +530,7 @@ export default function ServicesPage() {
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Ready to book your
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">luxury ride?</span>
+              <span className="text-[#AB5461] italic font-extralight">luxury ride?</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               Contact us on WhatsApp for the fastest response, or call us directly — available 24 hours a day, 7 days a week.
@@ -568,7 +568,7 @@ export default function ServicesPage() {
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
-                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#c9a84c] transition-colors">{c.value}</span>
+                  <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}
             </div>

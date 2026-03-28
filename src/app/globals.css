@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold: #c9a84c;
+  --color-gold: #AB5461;
   --color-gold-light: #e8c97a;
   --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
 }

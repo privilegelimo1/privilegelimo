@@ -121,7 +121,7 @@ function MiniCard({
 }) {
   return (
     <div className="rounded-[1.75rem] border border-[#efefef] bg-white p-7 md:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_6px_28px_rgba(0,0,0,0.07)] hover:border-[#e0e0e0] transition-all duration-400">
-      <span className="text-[9px] tracking-[0.45em] uppercase text-[#c9a84c] mb-2 block font-light">
+      <span className="text-[9px] tracking-[0.45em] uppercase text-[#AB5461] mb-2 block font-light">
         {tag}
       </span>
       <h3 className="text-base md:text-lg font-light text-[#0a0a0a] mb-3 tracking-tight leading-snug">
@@ -167,15 +167,15 @@ export default function LuxuryChauffeurServicePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Discover the Pinnacle of Comfort
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
                 Luxury chauffeur
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">
+                <span className="text-[#AB5461] italic font-extralight">
                   services in Dubai
                 </span>
               </h1>
@@ -223,7 +223,7 @@ export default function LuxuryChauffeurServicePage() {
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Rent a Car with Driver
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">
+              <span className="text-[#AB5461] italic font-extralight">
                 chauffeur driven vehicles
               </span>
             </h2>
@@ -274,13 +274,13 @@ export default function LuxuryChauffeurServicePage() {
                   {/* Specs */}
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.passengers} Seats</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                       </svg>
                       <span className="text-[11px] text-[#5a5a5a] font-light">{car.luggage} Bags</span>
@@ -302,7 +302,7 @@ export default function LuxuryChauffeurServicePage() {
                       href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#c9a84c] transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
                     >
                       Book Now
                     </a>
@@ -317,15 +317,15 @@ export default function LuxuryChauffeurServicePage() {
       {/* ── SECTION LABEL ─────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
         <div className="flex items-center gap-4">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[10px] tracking-[0.5em] uppercase text-[#c9a84c] font-light">
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[10px] tracking-[0.5em] uppercase text-[#AB5461] font-light">
             Experience Luxury Travel with Chauffeur Driven Cars in Dubai, UAE
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Everything about our
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">chauffeur service</span>
+          <span className="text-[#AB5461] italic font-extralight">chauffeur service</span>
         </h2>
       </div>
 
@@ -391,7 +391,7 @@ export default function LuxuryChauffeurServicePage() {
                 href="https://wa.me/971509200818"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#c9a84c] transition-all duration-300"
+                className="mt-3 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
               >
                 Book on WhatsApp
               </a>
@@ -566,7 +566,7 @@ export default function LuxuryChauffeurServicePage() {
                 <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-2">
                   Article
                 </span>
-                <h3 className="text-sm text-[#0a0a0a] font-light group-hover:text-[#c9a84c] leading-relaxed">
+                <h3 className="text-sm text-[#0a0a0a] font-light group-hover:text-[#AB5461] leading-relaxed">
                   {b.title}
                 </h3>
                 <span className="mt-3 inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a]">
@@ -591,7 +591,7 @@ export default function LuxuryChauffeurServicePage() {
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Book Now and Travel
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">in Comfort</span>
+              <span className="text-[#AB5461] italic font-extralight">in Comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               On Your Next Trip - Do You Want To Talk With Us?

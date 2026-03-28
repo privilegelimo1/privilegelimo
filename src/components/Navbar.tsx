@@ -70,7 +70,7 @@ export default function Navbar() {
           <span className="text-lg font-light tracking-[0.25em] uppercase text-[#0a0a0a]">
             Privilege
           </span>
-          <span className="text-lg font-semibold tracking-[0.25em] uppercase text-[#c9a84c]">
+          <span className="text-lg font-semibold tracking-[0.25em] uppercase text-[#AB5461]">
             Limo
           </span>
         </Link>
@@ -86,12 +86,12 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={`text-[11px] tracking-widest uppercase transition-colors duration-300 relative group ${
-                    active ? "text-[#c9a84c]" : "text-[#1a1a1a] hover:text-[#c9a84c]"
+                    active ? "text-[#AB5461]" : "text-[#1a1a1a] hover:text-[#AB5461]"
                   }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-px bg-[#c9a84c] transition-all duration-300 ${
+                    className={`absolute -bottom-1 left-0 h-px bg-[#AB5461] transition-all duration-300 ${
                       active ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
@@ -105,7 +105,7 @@ export default function Navbar() {
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
               className={`flex items-center gap-1.5 text-[11px] tracking-widest uppercase transition-colors duration-300 relative group ${
-                isServiceActive ? "text-[#c9a84c]" : "text-[#1a1a1a] hover:text-[#c9a84c]"
+                isServiceActive ? "text-[#AB5461]" : "text-[#1a1a1a] hover:text-[#AB5461]"
               }`}
             >
               Services
@@ -119,7 +119,7 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
               <span
-                className={`absolute -bottom-1 left-0 h-px bg-[#c9a84c] transition-all duration-300 ${
+                className={`absolute -bottom-1 left-0 h-px bg-[#AB5461] transition-all duration-300 ${
                   isServiceActive ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
@@ -152,7 +152,7 @@ export default function Navbar() {
                     >
                       <div
                         className={`text-[11px] tracking-wide font-medium transition-colors ${
-                          active ? "text-[#c9a84c]" : "text-[#0a0a0a] group-hover:text-[#c9a84c]"
+                          active ? "text-[#AB5461]" : "text-[#0a0a0a] group-hover:text-[#AB5461]"
                         }`}
                       >
                         {s.label}
@@ -173,8 +173,8 @@ export default function Navbar() {
                   onClick={() => setServicesOpen(false)}
                   className={`group inline-flex items-center gap-1.5 text-[10px] tracking-[0.3em] uppercase font-light transition-colors duration-300 ${
                     pathname === "/services"
-                      ? "text-[#c9a84c]"
-                      : "text-[#7a7a7a] hover:text-[#c9a84c]"
+                      ? "text-[#AB5461]"
+                      : "text-[#7a7a7a] hover:text-[#AB5461]"
                   }`}
                 >
                   View All Services
@@ -213,12 +213,12 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={`text-[11px] tracking-widest uppercase transition-colors duration-300 relative group ${
-                    active ? "text-[#c9a84c]" : "text-[#1a1a1a] hover:text-[#c9a84c]"
+                    active ? "text-[#AB5461]" : "text-[#1a1a1a] hover:text-[#AB5461]"
                   }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-px bg-[#c9a84c] transition-all duration-300 ${
+                    className={`absolute -bottom-1 left-0 h-px bg-[#AB5461] transition-all duration-300 ${
                       active ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
@@ -278,7 +278,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={`text-[11px] tracking-widest uppercase transition-colors ${
-                      active ? "text-[#c9a84c]" : "text-[#1a1a1a] hover:text-[#c9a84c]"
+                      active ? "text-[#AB5461]" : "text-[#1a1a1a] hover:text-[#AB5461]"
                     }`}
                     onClick={() => setMenuOpen(false)}
                   >
@@ -292,7 +292,7 @@ export default function Navbar() {
             <li>
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className="w-full flex items-center justify-between text-[11px] tracking-widest uppercase text-[#1a1a1a] hover:text-[#c9a84c] transition-colors"
+                className="w-full flex items-center justify-between text-[11px] tracking-widest uppercase text-[#1a1a1a] hover:text-[#AB5461] transition-colors"
               >
                 Services
                 <svg
@@ -320,7 +320,7 @@ export default function Navbar() {
                         href={s.href}
                         onClick={() => setMenuOpen(false)}
                         className={`flex flex-col gap-0.5 px-3 py-2.5 rounded-xl transition-colors ${
-                          active ? "bg-[#fdf8ec] text-[#c9a84c]" : "hover:bg-[#fafafa] text-[#4a4a4a]"
+                          active ? "bg-[#fdf8ec] text-[#AB5461]" : "hover:bg-[#fafafa] text-[#4a4a4a]"
                         }`}
                       >
                         <div className="text-[11px] tracking-wide font-medium">{s.label}</div>
@@ -335,8 +335,8 @@ export default function Navbar() {
                     onClick={() => setMenuOpen(false)}
                     className={`group flex items-center justify-between px-3 py-2.5 mt-1 rounded-xl border transition-colors duration-200 ${
                       pathname === "/services"
-                        ? "bg-[#fdf8ec] border-[#e8d9a0] text-[#c9a84c]"
-                        : "border-[#efefef] hover:bg-[#fafafa] hover:border-[#e8d9a0] text-[#7a7a7a] hover:text-[#c9a84c]"
+                        ? "bg-[#fdf8ec] border-[#e8d9a0] text-[#AB5461]"
+                        : "border-[#efefef] hover:bg-[#fafafa] hover:border-[#e8d9a0] text-[#7a7a7a] hover:text-[#AB5461]"
                     }`}
                   >
                     <span className="text-[11px] tracking-wide font-medium">View All Services</span>
@@ -362,7 +362,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={`text-[11px] tracking-widest uppercase transition-colors ${
-                      active ? "text-[#c9a84c]" : "text-[#1a1a1a] hover:text-[#c9a84c]"
+                      active ? "text-[#AB5461]" : "text-[#1a1a1a] hover:text-[#AB5461]"
                     }`}
                     onClick={() => setMenuOpen(false)}
                   >

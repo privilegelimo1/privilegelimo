@@ -75,7 +75,7 @@ const services = [
 function MiniCard({ tag, title, children }: { tag: string; title: string; children: React.ReactNode }) {
   return (
     <div className="group rounded-[1.75rem] border border-[#efefef] bg-white p-7 md:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:border-[#e8d9a0] transition-all duration-300 hover:-translate-y-0.5">
-      <span className="text-[9px] tracking-[0.45em] uppercase text-[#c9a84c] mb-3 block font-light">
+      <span className="text-[9px] tracking-[0.45em] uppercase text-[#AB5461] mb-3 block font-light">
         {tag}
       </span>
       <h3 className="text-base md:text-lg font-light text-[#0a0a0a] mb-4 tracking-tight leading-snug">
@@ -106,15 +106,15 @@ export default function WhyUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
             <div>
               <div className="inline-flex items-center gap-3 mb-8">
-                <div className="h-px w-8 bg-[#c9a84c]" />
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">
+                <div className="h-px w-8 bg-[#AB5461]" />
+                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
                   Privilege Luxury Travel LLC
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
                 Redefining
                 <br />
-                <span className="text-[#c9a84c] italic font-extralight">Luxury Chauffeur</span>
+                <span className="text-[#AB5461] italic font-extralight">Luxury Chauffeur</span>
                 <br />
                 Services in Dubai
               </h1>
@@ -148,7 +148,7 @@ export default function WhyUsPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s) => (
-                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#c9a84c] transition-colors duration-300">
+                <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#AB5461] transition-colors duration-300">
                   <div className="text-4xl font-extralight text-[#0a0a0a] tracking-tight mb-2">{s.value}</div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">{s.label}</div>
                 </div>
@@ -161,13 +161,13 @@ export default function WhyUsPage() {
       {/* ── WHO WE ARE ────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Who We Are</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Who We Are</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           About Privilege Luxury Travel
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">LLC</span>
+          <span className="text-[#AB5461] italic font-extralight">LLC</span>
         </h2>
       </div>
 
@@ -196,13 +196,13 @@ export default function WhyUsPage() {
       {/* ── WHAT WE OFFER ─────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">What We Offer</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">What We Offer</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Fields of
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">Expertise</span>
+          <span className="text-[#AB5461] italic font-extralight">Expertise</span>
         </h2>
       </div>
 
@@ -216,10 +216,10 @@ export default function WhyUsPage() {
                 className="group rounded-[1.75rem] border border-[#efefef] bg-white p-7 md:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:border-[#e8d9a0] transition-all duration-300 hover:-translate-y-0.5"
               >
                 <span className="text-2xl mb-4 block">{s.icon}</span>
-                <span className="text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] mb-2 block font-light">{s.sub}</span>
-                <h3 className="text-base md:text-lg font-light text-[#0a0a0a] mb-3 tracking-tight group-hover:text-[#c9a84c] transition-colors">{s.title}</h3>
+                <span className="text-[9px] tracking-[0.4em] uppercase text-[#AB5461] mb-2 block font-light">{s.sub}</span>
+                <h3 className="text-base md:text-lg font-light text-[#0a0a0a] mb-3 tracking-tight group-hover:text-[#AB5461] transition-colors">{s.title}</h3>
                 <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-4">{s.desc}</p>
-                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] group-hover:text-[#c9a84c] transition-colors">
+                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors">
                   Explore
                   <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -234,13 +234,13 @@ export default function WhyUsPage() {
       {/* ── EXPERIENCE & EXPERTISE ────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">EEAT</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">EEAT</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Our Experience
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">& Expertise</span>
+          <span className="text-[#AB5461] italic font-extralight">& Expertise</span>
         </h2>
       </div>
 
@@ -263,13 +263,13 @@ export default function WhyUsPage() {
       {/* ── OUR VALUES ────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Values</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Values</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Our
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">Core Values</span>
+          <span className="text-[#AB5461] italic font-extralight">Core Values</span>
         </h2>
       </div>
 
@@ -298,13 +298,13 @@ export default function WhyUsPage() {
       {/* ── OUR FLEET ─────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Luxury at Its Finest</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Luxury at Its Finest</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Our Fleet
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">High-End Vehicles</span>
+          <span className="text-[#AB5461] italic font-extralight">High-End Vehicles</span>
         </h2>
       </div>
 
@@ -344,13 +344,13 @@ export default function WhyUsPage() {
       {/* ── VISION ────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Vision</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Vision</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Our
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">Vision</span>
+          <span className="text-[#AB5461] italic font-extralight">Vision</span>
         </h2>
       </div>
 
@@ -378,13 +378,13 @@ export default function WhyUsPage() {
       {/* ── MISSION ───────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-[#c9a84c]" />
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Mission</span>
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Mission</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Our
           <br />
-          <span className="text-[#c9a84c] italic font-extralight">Mission</span>
+          <span className="text-[#AB5461] italic font-extralight">Mission</span>
         </h2>
       </div>
 
@@ -438,7 +438,7 @@ export default function WhyUsPage() {
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-2">
               Book Now and Travel
               <br />
-              <span className="text-[#c9a84c] italic font-extralight">in Comfort</span>
+              <span className="text-[#AB5461] italic font-extralight">in Comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-3 max-w-sm mx-auto leading-relaxed">
               Chauffeur Service in Dubai - Unparalleled Service and Convenience
