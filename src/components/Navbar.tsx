@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
 
 const services = [
   {
@@ -66,14 +67,18 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* ── LOGO ──────────────────────────────────────────────── */}
-        <Link href="/" className="flex items-center gap-1 shrink-0">
-          <span className="text-lg font-light tracking-[0.25em] uppercase text-[#0a0a0a]">
-            Privilege
-          </span>
-          <span className="text-lg font-semibold tracking-[0.25em] uppercase text-[#AB5461]">
-            Limo
-          </span>
-        </Link>
+<Link
+  href="/"
+  className="relative flex items-center shrink-0 h-12 w-[170px] sm:h-14 sm:w-[190px]"
+>
+  <Image
+    src="/logo.png"
+    alt="Privilege Limo"
+    fill
+    priority
+    className="object-contain object-left"
+  />
+</Link>
 
         {/* ── DESKTOP NAV ───────────────────────────────────────── */}
         <ul className="hidden md:flex items-center gap-8">
