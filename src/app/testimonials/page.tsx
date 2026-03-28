@@ -306,7 +306,7 @@ export default function TestimonialsPage() {
             {/* Summary stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "5.0", label: "Google Rating" },
+                { value: "4.9 ⭐️", label: "Google Rating" },
                 { value: "28+", label: "Verified Reviews" },
                 { value: "100%", label: "5 Star Reviews" },
                 { value: "3+", label: "Years on Google" },

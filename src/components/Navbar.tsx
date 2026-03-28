@@ -28,6 +28,7 @@ const services = [
 ];
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "Fleet", href: "/fleet" },
   { label: "Why Us", href: "/why-us" },
   { label: "Testimonials", href: "/testimonials" },
@@ -92,8 +93,30 @@ export default function Navbar() {
         {/* ── DESKTOP NAV ───────────────────────────────────────── */}
         <ul className="hidden md:flex items-center gap-8">
 
-          {/* Services Dropdown */}
-          <li ref={dropdownRef} className="relative">
+          {/* Home — first */}
+          {navLinks.slice(0, 1).map((link) => {
+            const active = pathname === link.href;
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`text-[11px] tracking-widest uppercase transition-colors duration-300 relative group ${
+                    active ? "text-[#c9a84c]" : "text-[#1a1a1a] hover:text-[#c9a84c]"
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-px bg-[#c9a84c] transition-all duration-300 ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              </li>
+            );
+          })}
+
+          {/* Services Dropdown — after Home */}
+          <li ref={dropdownRef} className="relative h-3.5">
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
               className={`flex items-center gap-1.5 text-[11px] tracking-widest uppercase transition-colors duration-300 relative group ${
@@ -178,8 +201,8 @@ export default function Navbar() {
             </div>
           </li>
 
-          {/* Other nav links */}
-          {navLinks.map((link) => {
+          {/* Fleet, Why Us, Testimonials, Contact */}
+          {navLinks.slice(1).map((link) => {
             const active = pathname === link.href;
             return (
               <li key={link.href}>
@@ -243,7 +266,25 @@ export default function Navbar() {
         <div className="bg-white/95 backdrop-blur-xl mx-4 mt-2 rounded-2xl p-6 border border-black/5 shadow-2xl">
           <ul className="flex flex-col gap-4">
 
-            {/* Mobile Services accordion */}
+            {/* Home — first */}
+            {navLinks.slice(0, 1).map((link) => {
+              const active = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`text-[11px] tracking-widest uppercase transition-colors ${
+                      active ? "text-[#c9a84c]" : "text-[#1a1a1a] hover:text-[#c9a84c]"
+                    }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+
+            {/* Mobile Services accordion — after Home */}
             <li>
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
@@ -287,8 +328,8 @@ export default function Navbar() {
               </div>
             </li>
 
-            {/* Other links */}
-            {navLinks.map((link) => {
+            {/* Fleet, Why Us, Testimonials, Contact */}
+            {navLinks.slice(1).map((link) => {
               const active = pathname === link.href;
               return (
                 <li key={link.href}>

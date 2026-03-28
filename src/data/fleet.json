@@ -13,27 +13,9 @@
     "description": "The pinnacle of automotive refinement. Preferred by executives and VIP clients who expect nothing but the finest in every detail.",
     "features": ["Massage Seats", "Ambient Lighting", "MBUX System", "Heated Seats", "Privacy Glass"],
     "featureLabel": "Massage Seats · Ambient Lighting · MBUX",
-    "image": "/images/fleet/mercedes-s500.jpg",
+    "image": "/images/fleet/mercedes-s500-1.webp",
     "available": true,
     "badge": "Most Popular"
-  },
-  {
-    "id": "mercedes-s450",
-    "name": "Mercedes S 450",
-    "slug": "mercedes-s450",
-    "category": "Business Class",
-    "price": 550,
-    "currency": "AED",
-    "priceLabel": "AED 550",
-    "priceNote": "Transfer within Dubai",
-    "passengers": 3,
-    "luggage": 3,
-    "description": "Understated elegance with world-class performance. Ideal for corporate transfers and executive arrivals across the UAE.",
-    "features": ["Premium Audio", "Climate Control", "Leather Seats", "Ambient Lighting"],
-    "featureLabel": "Premium Audio · Climate Control · Leather",
-    "image": "/images/fleet/mercedes-s450.jpg",
-    "available": true,
-    "badge": null
   },
   {
     "id": "bmw-7-series",
@@ -49,7 +31,7 @@
     "description": "Sporting luxury at its finest. The BMW 7 Series delivers dynamic performance with exceptional cabin refinement.",
     "features": ["Executive Lounge Seats", "Panoramic Roof", "HUD Display", "Massage Seats"],
     "featureLabel": "Executive Lounge · Panoramic Roof · HUD",
-    "image": "/images/fleet/bmw-7-series.jpg",
+    "image": "/images/fleet/bmw-7-series-1.webp",
     "available": true,
     "badge": null
   },
@@ -67,7 +49,7 @@
     "description": "Spacious, refined, and perfectly suited for groups or families travelling together without compromise on comfort.",
     "features": ["VIP Seating", "Privacy Glass", "Wi-Fi", "Panoramic Roof"],
     "featureLabel": "VIP Seating · Privacy Glass · Wi-Fi",
-    "image": "/images/fleet/mercedes-vip-trend-250.jpg",
+    "image": "/images/fleet/mercedes-vip-trend-1.webp",
     "available": true,
     "badge": null
   },
@@ -85,7 +67,7 @@
     "description": "An elevated group travel experience with premium interiors and generous space for every passenger.",
     "features": ["Rear Entertainment", "Panoramic Roof", "Climate Control"],
     "featureLabel": "Rear Entertainment · Panoramic Roof",
-    "image": "/images/fleet/mercedes-v300-tiffany.jpg",
+    "image": "/images/fleet/mercedes-v300-tiffany-1.webp",
     "available": true,
     "badge": null
   },
@@ -103,7 +85,7 @@
     "description": "Practical luxury for groups on the move. Comfortable, reliable, and perfectly appointed for city travel.",
     "features": ["Climate Control", "Premium Seats", "USB Charging"],
     "featureLabel": "Climate Control · Premium Seats",
-    "image": "/images/fleet/mercedes-vito-tourer.jpg",
+    "image": "/images/fleet/mercedes-vito-tourer-1.webp",
     "available": true,
     "badge": "Best Value"
   },
@@ -121,7 +103,7 @@
     "description": "The ultimate statement in group luxury. Custom VIP interiors, entertainment systems, and generous seating for every occasion.",
     "features": ["Full VIP Interior", "Entertainment System", "Mini Bar", "Privacy Glass", "Wi-Fi"],
     "featureLabel": "Full VIP Interior · Entertainment · Bar",
-    "image": "/images/fleet/mercedes-sprinter-avant-garde.jpg",
+    "image": "/images/fleet/mercedes-sprinter-avant-garde-1.webp",
     "available": true,
     "badge": "Ultra Luxury"
   },
@@ -139,7 +121,7 @@
     "description": "Ultra-luxury van for large groups, corporate delegations, and premium event transportation across the UAE.",
     "features": ["Ultra Luxury Interior", "Wi-Fi", "USB Charging", "AC", "Entertainment"],
     "featureLabel": "Ultra Luxury Interior · Wi-Fi · USB",
-    "image": "/images/fleet/mercedes-sprinter-ultra-luxury.jpg",
+    "image": "/images/fleet/mercedes-sprinter-ultra-luxury-1.webp",
     "available": true,
     "badge": null
   },
@@ -157,7 +139,7 @@
     "description": "Business-class comfort for larger groups. Ideal for corporate delegations, airport group transfers, and conference transport.",
     "features": ["Business Class Seats", "Wi-Fi", "USB Charging", "AC", "Luggage Space"],
     "featureLabel": "Business Class Seats · Wi-Fi · AC",
-    "image": "/images/fleet/mercedes-sprinter-business.jpg",
+    "image": "/images/fleet/mercedes-business-class-sprinter-1.webp",
     "available": true,
     "badge": null
   },
@@ -175,7 +157,7 @@
     "description": "Versatile and spacious, the Mercedes Sprinter is perfect for larger groups requiring reliable, comfortable transfers.",
     "features": ["Reclining Seats", "AC", "USB Charging", "Luggage Space"],
     "featureLabel": "Reclining Seats · AC · USB Charging",
-    "image": "/images/fleet/mercedes-sprinter-standard.jpg",
+    "image": "/images/fleet/mercedes-sprinter-19-1.webp",
     "available": true,
     "badge": null
   },
@@ -193,7 +175,7 @@
     "description": "A commanding presence on every road. The GMC Yukon Limousine is the definitive choice for VIP arrivals and celebrations.",
     "features": ["Stretch Interior", "Party Lighting", "Mini Bar", "Entertainment System"],
     "featureLabel": "Stretch Interior · Party Lighting · Bar",
-    "image": "/images/fleet/gmc-yukon-limousine.jpg",
+    "image": "/images/fleet/gmc-yukon-limousine-1.webp",
     "available": true,
     "badge": "VIP Choice"
   },
@@ -211,7 +193,7 @@
     "description": "Dubai's finest luxury bus for corporate groups, delegations, events, and large-scale transfers across the UAE.",
     "features": ["Reclining Seats", "AC", "Entertainment System", "Luggage Compartment"],
     "featureLabel": "Reclining Seats · AC · Entertainment",
-    "image": "/images/fleet/luxury-bus-50.jpg",
+    "image": "/images/fleet/50-seater-luxury-coach-1.webp",
     "available": true,
     "badge": null
   }

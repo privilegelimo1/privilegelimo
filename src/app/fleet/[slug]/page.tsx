@@ -48,10 +48,10 @@ function WhatsAppIcon({ className = "w-4 h-4" }: { className?: string }) {
 }
 
 const useCases = [
-  { icon: "✈️", label: "Airport Transfers", href: "/services/airport-transfers" },
-  { icon: "💼", label: "Corporate Travel", href: "/services/corporate-travel" },
-  { icon: "💍", label: "Weddings & Events", href: "/services/weddings-events" },
-  { icon: "🏙️", label: "City Tours", href: "/services/rent-a-car-with-driver" },
+  { icon: "", label: "Airport Transfers", href: "/services/airport-transfers" },
+  { icon: "", label: "Corporate Travel", href: "/services/corporate-travel" },
+  { icon: "", label: "Weddings & Events", href: "/services/weddings-events" },
+  { icon: "", label: "City Tours", href: "/services/rent-a-car-with-driver" },
 ];
 
 const standards = [

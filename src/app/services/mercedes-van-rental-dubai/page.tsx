@@ -190,7 +190,6 @@ export default function MercedesVanRentalPage() {
                 </a>
               </div>
             </div>
-
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s) => (
@@ -544,7 +543,6 @@ export default function MercedesVanRentalPage() {
           </div>
         </div>
       </section>
-
       {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
       <section className="py-24 border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">

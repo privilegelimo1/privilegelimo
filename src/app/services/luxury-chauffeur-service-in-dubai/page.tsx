@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import NextImage from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -324,13 +325,14 @@ export default function LuxuryChauffeurServicePage() {
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
               >
                 <div className="relative h-48 overflow-hidden bg-[#f5f5f5]">
-                  <Image
-                    src={car.image}
-                    alt={car.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4">
+  <NextImage
+    src={car.image}
+    alt={car.name}
+    fill
+    className="object-cover group-hover:scale-105 transition-transform duration-700"
+    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+  />
+  <div className="absolute top-4 left-4">
                     <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] font-light shadow-sm">
                       {car.tag}
                     </span>
