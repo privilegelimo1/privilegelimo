@@ -1,10 +1,37 @@
-// src/app/mercedes-sprinter-van-rental/page.tsx
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import fleetData from "@/data/fleet.json";
+
+// ─── TYPE ─────────────────────────────────────────────────────────────────────
+
+type Vehicle = {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  price: number;
+  currency: string;
+  priceLabel: string;
+  priceNote: string;
+  passengers: number;
+  luggage: number;
+  description: string;
+  features: string[];
+  featureLabel: string;
+  image: string;
+  available: boolean;
+  badge: string | null;
+};
+
+// Filter only Sprinter variants
+const fleet = (fleetData as Vehicle[]).filter((v) =>
+  v.id.startsWith("mercedes-sprinter")
+);
+
+// ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
   title: "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE - Privilege Limo",
@@ -25,54 +52,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://privilegelimo.com/mercedes-sprinter-van-rental" },
 };
 
-// ─── FLEET DATA ───────────────────────────────────────────────────────────────
-
-const fleet = [
-  {
-    name: "Mercedes Sprinter Avant Garde VIP",
-    price: "AED. 1100",
-    tag: "VIP Sprinter",
-    seats: 11,
-    baggage: 6,
-    transfer: "Transfer within Dubai",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Avant%20Gard,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-avant-garde.jpg",
-  },
-  {
-    name: "Mercedes Sprinter Ultra Luxury Van",
-    price: "AED. 1000",
-    tag: "Ultra Luxury",
-    seats: 16,
-    baggage: 9,
-    transfer: "Transfer within Dubai",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Ultra%20Van,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-ultra.jpg",
-  },
-  {
-    name: "Mercedes-Benz Sprinter",
-    price: "AED. 1000",
-    tag: "Group Sprinter",
-    seats: 19,
-    baggage: 9,
-    transfer: "Transfer within Dubai",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes-Benz%20Sprinter,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-standard.jpg",
-  },
-  {
-    name: "Mercedes Sprinter Business Class",
-    price: "AED. 1000",
-    tag: "Business Class",
-    seats: 16,
-    baggage: 9,
-    transfer: "Transfer within Dubai",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Business%20Class,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-business.jpg",
-  },
-];
+// ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
 const stats = [
   { value: "19", label: "Max Passengers" },
-  { value: "4", label: "Sprinter Models" },
+  { value: `${fleet.length}`, label: "Sprinter Models" },
   { value: "24/7", label: "Available" },
   { value: "5★", label: "Service Standard" },
 ];
@@ -209,99 +193,112 @@ export default function MercedesSprinterRentalPage() {
       </section>
 
       {/* ── FLEET CARDS ───────────────────────────────────────────── */}
-<div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
-  <div className="inline-flex items-center gap-3">
-    <div className="h-px w-8 bg-[#c9a84c]" />
-    <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Our Fleet</span>
-  </div>
-  <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
-    Premium Luxury
-    <br />
-    <span className="text-[#c9a84c] italic font-extralight">Sprinter in Dubai</span>
-  </h2>
-</div>
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
+        <div className="inline-flex items-center gap-3">
+          <div className="h-px w-8 bg-[#c9a84c]" />
+          <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-light">Our Fleet</span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
+          Premium Luxury
+          <br />
+          <span className="text-[#c9a84c] italic font-extralight">Sprinter in Dubai</span>
+        </h2>
+      </div>
 
-<section className="pb-12">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {fleet.map((car) => (
-        <div
-          key={car.name}
-          className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.09)] hover:border-[#e8d9a0] transition-all duration-500"
-        >
-          {/* Image */}
-          <div className="relative h-60 bg-[#f5f5f5] overflow-hidden">
-            <Image
-              src={car.image}
-              alt={car.name}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+      <section className="pb-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {fleet.map((car) => (
+              <div
+                key={car.id}
+                className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.09)] hover:border-[#e8d9a0] transition-all duration-500"
+              >
+                {/* Image */}
+                <div className="relative h-60 bg-[#f5f5f5] overflow-hidden">
+                  <Image
+                    src={car.image}
+                    alt={car.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-            {/* Tag - top left */}
-            <div className="absolute top-4 left-4">
-              <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] font-medium">
-                {car.tag}
-              </span>
-            </div>
+                  {/* Category + badge - top left */}
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.4em] uppercase text-[#c9a84c] font-medium">
+                      {car.category}
+                    </span>
+                    {car.badge && (
+                      <span className="px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-white font-light">
+                        {car.badge}
+                      </span>
+                    )}
+                  </div>
 
-            {/* Price - bottom left over gradient */}
-            <div className="absolute bottom-4 left-5">
-              <div className="text-[10px] tracking-[0.3em] uppercase text-white/60 font-light mb-0.5">
-                Starting from
-              </div>
-              <div className="text-2xl font-extralight text-white tracking-tight">
-                {car.price}
-              </div>
-            </div>
-          </div>
-
-          {/* Body */}
-          <div className="p-7">
-            <h3 className="text-lg font-light text-[#0a0a0a] mb-6 tracking-tight">{car.name}</h3>
-
-            {/* Specs - clean divider style */}
-            <div className="flex items-center divide-x divide-[#efefef] mb-7">
-              <div className="flex-1 pr-4">
-                <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
-                  Transfer
+                  {/* Price - bottom left over gradient */}
+                  <div className="absolute bottom-4 left-5">
+                    <div className="text-[10px] tracking-[0.3em] uppercase text-white/60 font-light mb-0.5">
+                      Starting from
+                    </div>
+                    <div className="text-2xl font-extralight text-white tracking-tight">
+                      {car.priceLabel}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-sm font-light text-[#0a0a0a]">Within Dubai</div>
-              </div>
-              <div className="flex-1 px-4">
-                <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
-                  Seats
-                </div>
-                <div className="text-sm font-light text-[#0a0a0a]">{car.seats} Passengers</div>
-              </div>
-              <div className="flex-1 pl-4">
-                <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
-                  Baggage
-                </div>
-                <div className="text-sm font-light text-[#0a0a0a]">{car.baggage} Pieces</div>
-              </div>
-            </div>
 
-            {/* Book button */}
-            <a
-              href={`https://wa.me/971509200818?text=${car.waText}`}
-              target="_blank"
-              rel="noreferrer"
-              className="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white group-hover:bg-[#0a0a0a] group-hover:text-white transition-all duration-300"
-            >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              Book Now via WhatsApp
-            </a>
+                {/* Body */}
+                <div className="p-7">
+                  <h3 className="text-lg font-light text-[#0a0a0a] mb-2 tracking-tight">{car.name}</h3>
+                  <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-6">
+                    {car.description}
+                  </p>
+
+                  {/* Feature label */}
+                  <p className="text-[9px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light mb-6 truncate">
+                    {car.featureLabel}
+                  </p>
+
+                  {/* Specs - clean divider style */}
+                  <div className="flex items-center divide-x divide-[#efefef] mb-7">
+                    <div className="flex-1 pr-4">
+                      <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
+                        Transfer
+                      </div>
+                      <div className="text-sm font-light text-[#0a0a0a]">Within Dubai</div>
+                    </div>
+                    <div className="flex-1 px-4">
+                      <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
+                        Seats
+                      </div>
+                      <div className="text-sm font-light text-[#0a0a0a]">{car.passengers} Passengers</div>
+                    </div>
+                    <div className="flex-1 pl-4">
+                      <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
+                        Baggage
+                      </div>
+                      <div className="text-sm font-light text-[#0a0a0a]">{car.luggage} Pieces</div>
+                    </div>
+                  </div>
+
+                  {/* Book button */}
+                  <a
+                    href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white group-hover:bg-[#0a0a0a] group-hover:text-white transition-all duration-300"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Book Now via WhatsApp
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* ── EXPERIENCE SECTION ────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">

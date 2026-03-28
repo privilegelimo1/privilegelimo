@@ -6,6 +6,7 @@ import { getVehicleBySlug, fleet } from "@/data/index";
 import { buildWhatsAppURL, buildQuickEnquiry } from "@/lib/whatsapp";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FleetDetailBooking from "@/components/FleetDetailBooking";
 
 export async function generateStaticParams() {
   return fleet.map((v) => ({ slug: v.slug }));
@@ -47,13 +48,6 @@ function WhatsAppIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
-const useCases = [
-  { icon: "", label: "Airport Transfers", href: "/services/airport-transfers" },
-  { icon: "", label: "Corporate Travel", href: "/services/corporate-travel" },
-  { icon: "", label: "Weddings & Events", href: "/services/weddings-events" },
-  { icon: "", label: "City Tours", href: "/services/rent-a-car-with-driver" },
-];
-
 const standards = [
   {
     title: "Concierge Preparation",
@@ -92,7 +86,7 @@ const faqs = [
   },
   {
     q: "Is this vehicle available 24/7?",
-    a: "Yes. Our entire fleet is available 24 hours a day, 7 days a week - including public holidays and late-night transfers.",
+    a: "Yes. Our entire fleet is available 24 hours a day, 7 days a week — including public holidays and late-night transfers.",
   },
   {
     q: "How do I confirm my booking?",
@@ -128,7 +122,7 @@ export default async function FleetDetailPage({
           <div className="flex items-center gap-3 mb-10">
             <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">Home</Link>
             <span className="text-[#d0d0d0]">/</span>
-            <Link href="/#fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">Fleet</Link>
+            <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">Fleet</Link>
             <span className="text-[#d0d0d0]">/</span>
             <span className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a]">{vehicle.name}</span>
           </div>
@@ -142,17 +136,9 @@ export default async function FleetDetailPage({
                 </span>
               )}
               {vehicle.image ? (
-                <Image
-                  src={vehicle.image}
-                  alt={vehicle.name}
-                  fill
-                  className="object-cover"
-                  priority
-                />
+                <Image src={vehicle.image} alt={vehicle.name} fill className="object-cover" priority />
               ) : (
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d0d0d0]">
-                  Vehicle Image
-                </span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d0d0d0]">Vehicle Image</span>
               )}
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
             </div>
@@ -180,12 +166,8 @@ export default async function FleetDetailPage({
 
               {/* Price box */}
               <div className="flex items-baseline gap-3 p-6 rounded-2xl border border-[#efefef] mb-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
-                <span className="text-3xl font-light text-[#0a0a0a] tracking-tight">
-                  {vehicle.priceLabel}
-                </span>
-                <span className="text-xs text-[#9a9a9a] tracking-wide font-light">
-                  {vehicle.priceNote}
-                </span>
+                <span className="text-3xl font-light text-[#0a0a0a] tracking-tight">{vehicle.priceLabel}</span>
+                <span className="text-xs text-[#9a9a9a] tracking-wide font-light">{vehicle.priceNote}</span>
               </div>
 
               {/* Specs */}
@@ -209,24 +191,11 @@ export default async function FleetDetailPage({
                 ))}
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={waUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
-                >
-                  <WhatsAppIcon />
-                  Book on WhatsApp
-                </a>
-                <a
-                  href="tel:+971509200818"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
-                >
-                  Call Us Now
-                </a>
-              </div>
+              {/* CTAs — client component handles BookingModal */}
+              <FleetDetailBooking
+                vehicle={vehicle}
+                waUrl={waUrl}
+              />
             </div>
           </div>
         </div>
@@ -237,33 +206,23 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                About This Vehicle
-              </span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">About This Vehicle</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-6 tracking-tight leading-tight">
                 The {vehicle.name}
                 <br />
                 <span className="text-[#c9a84c] italic font-extralight">experience</span>
               </h2>
+              <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">{vehicle.description}</p>
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">
-                {vehicle.description}
-              </p>
-              <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">
-                Every journey in the {vehicle.name} is prepared to concierge-level
-                standards - sanitized, inspected, and ready to deliver an exceptional
-                experience from the moment you step in. Your chauffeur will be
-                uniformed, punctual, and professional at all times.
+                Every journey in the {vehicle.name} is prepared to concierge-level standards — sanitized, inspected, and ready to deliver an exceptional experience from the moment you step in. Your chauffeur will be uniformed, punctual, and professional at all times.
               </p>
               <p className="text-[#9a9a9a] text-sm leading-relaxed font-light">
-                Available 24 hours a day across Dubai, Abu Dhabi, Sharjah and all UAE
-                emirates - with fixed pricing confirmed before every journey.
+                Available 24 hours a day across Dubai, Abu Dhabi, Sharjah and all UAE emirates — with fixed pricing confirmed before every journey.
               </p>
             </div>
 
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                Every Booking Includes
-              </span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Every Booking Includes</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-8 tracking-tight leading-tight">
                 Standard
                 <br />
@@ -275,7 +234,7 @@ export default async function FleetDetailPage({
                   "Complimentary waiting time",
                   "Real-time traffic & flight monitoring",
                   "Luggage assistance door to door",
-                  "Fixed price - no hidden fees",
+                  "Fixed price — no hidden fees",
                   "24/7 customer support",
                   "Sanitized & inspected vehicle",
                   "Complimentary water on board",
@@ -299,9 +258,7 @@ export default async function FleetDetailPage({
       <section className="py-24 border-t border-[#efefef] bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-14">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              Our Standards
-            </span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Our Standards</span>
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               What sets every journey
               <br />
@@ -314,9 +271,7 @@ export default async function FleetDetailPage({
                 key={s.title}
                 className="p-8 rounded-3xl bg-white border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500"
               >
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light mb-5 block">
-                  0{i + 1}
-                </span>
+                <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light mb-5 block">0{i + 1}</span>
                 <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">{s.title}</h3>
                 <p className="text-sm text-[#9a9a9a] leading-relaxed font-light">{s.desc}</p>
               </div>
@@ -326,66 +281,56 @@ export default async function FleetDetailPage({
       </section>
 
       {/* ── USE CASES ─────────────────────────────────────────────── */}
-<section className="py-24 border-t border-[#efefef]">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="max-w-xl mb-14">
-      <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-        Perfect For
-      </span>
-      <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-        Where the {vehicle.name}
-        <br />
-        <span className="text-[#c9a84c] italic font-extralight">excels</span>
-      </h2>
-    </div>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {[
-        { label: "Airport Transfers", sub: "DXB · DWC · AUH · SHJ", href: "/services/airport-transfers" },
-        { label: "Corporate Travel", sub: "Executive · Business · VIP", href: "/services/corporate-travel" },
-        { label: "Weddings & Events", sub: "Ceremonies · Galas · Occasions", href: "/services/weddings-events" },
-        { label: "City Tours", sub: "Hourly · Daily · Sightseeing", href: "/services/rent-a-car-with-driver" },
-      ].map((u, i) => (
-        <Link
-          key={u.label}
-          href={u.href}
-          className="group p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 flex flex-col gap-3"
-        >
-          <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light">
-            0{i + 1}
-          </span>
-          <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#c9a84c] transition-colors duration-300">
-            {u.label}
-          </h3>
-          <p className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light">
-            {u.sub}
-          </p>
-          <span className="text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#c9a84c] transition-colors mt-auto flex items-center gap-1 pt-2">
-            Learn more
-            <svg className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </span>
-        </Link>
-      ))}
-    </div>
-  </div>
-</section>
+      <section className="py-24 border-t border-[#efefef]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-xl mb-14">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Perfect For</span>
+            <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
+              Where the {vehicle.name}
+              <br />
+              <span className="text-[#c9a84c] italic font-extralight">excels</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "Airport Transfers", sub: "DXB · DWC · AUH · SHJ", href: "/services/airport-transfers" },
+              { label: "Corporate Travel", sub: "Executive · Business · VIP", href: "/services/corporate-travel" },
+              { label: "Weddings & Events", sub: "Ceremonies · Galas · Occasions", href: "/services/weddings-events" },
+              { label: "City Tours", sub: "Hourly · Daily · Sightseeing", href: "/services/rent-a-car-with-driver" },
+            ].map((u, i) => (
+              <Link
+                key={u.label}
+                href={u.href}
+                className="group p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 flex flex-col gap-3"
+              >
+                <span className="text-[#c9a84c] text-[10px] tracking-[0.4em] font-light">0{i + 1}</span>
+                <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#c9a84c] transition-colors duration-300">{u.label}</h3>
+                <p className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light">{u.sub}</p>
+                <span className="text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#c9a84c] transition-colors mt-auto flex items-center gap-1 pt-2">
+                  Learn more
+                  <svg className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── WHY BOOK WITH US ──────────────────────────────────────── */}
       <section className="py-24 border-t border-[#efefef] bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                Why Privilege Limo
-              </span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Why Privilege Limo</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Dubai's most trusted
                 <br />
                 <span className="text-[#c9a84c] italic font-extralight">luxury chauffeur service</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-5">
-                We built Privilege Luxury Travel on a single belief - that luxury ground transportation in Dubai should be genuinely exceptional, not just acceptably convenient.
+                We built Privilege Luxury Travel on a single belief — that luxury ground transportation in Dubai should be genuinely exceptional, not just acceptably convenient.
               </p>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-10">
                 From the moment you book to the moment you arrive, every detail is handled with the care and precision of a five-star concierge service. Every vehicle in our fleet reflects that standard.
@@ -404,7 +349,7 @@ export default async function FleetDetailPage({
               </div>
             </div>
 
-            {/* Testimonial */}
+            {/* Testimonials */}
             <div className="flex flex-col gap-4">
               {[
                 {
@@ -423,10 +368,7 @@ export default async function FleetDetailPage({
                   role: "Events Director, Dubai",
                 },
               ].map((t) => (
-                <div
-                  key={t.name}
-                  className="p-7 rounded-2xl bg-white border border-[#efefef] shadow-[0_2px_12px_rgba(0,0,0,0.04)]"
-                >
+                <div key={t.name} className="p-7 rounded-2xl bg-white border border-[#efefef] shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-3 h-3 text-[#c9a84c]" fill="currentColor" viewBox="0 0 20 20">
@@ -434,9 +376,7 @@ export default async function FleetDetailPage({
                       </svg>
                     ))}
                   </div>
-                  <p className="text-sm text-[#5a5a5a] font-light leading-relaxed italic mb-4">
-                    "{t.quote}"
-                  </p>
+                  <p className="text-sm text-[#5a5a5a] font-light leading-relaxed italic mb-4">"{t.quote}"</p>
                   <div>
                     <p className="text-xs font-medium text-[#0a0a0a]">{t.name}</p>
                     <p className="text-[9px] tracking-[0.2em] uppercase text-[#9a9a9a] mt-0.5">{t.role}</p>
@@ -482,19 +422,14 @@ export default async function FleetDetailPage({
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-end justify-between mb-12">
               <div>
-                <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                  Explore More
-                </span>
+                <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Explore More</span>
                 <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight">
                   Similar vehicles
                   <br />
                   <span className="text-[#c0c0c0] italic font-extralight">you might prefer</span>
                 </h2>
               </div>
-              <Link
-                href="/#fleet"
-                className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2"
-              >
+              <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2">
                 View Full Fleet
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -521,9 +456,7 @@ export default async function FleetDetailPage({
                     <h3 className="text-sm font-semibold text-[#0a0a0a]">{v.name}</h3>
                     <span className="text-sm text-[#c9a84c] font-light">{v.priceLabel}</span>
                   </div>
-                  <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">
-                    {v.description.substring(0, 75)}...
-                  </p>
+                  <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">{v.description.substring(0, 75)}...</p>
                   <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors flex items-center gap-2">
                     View Details
                     <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -541,9 +474,7 @@ export default async function FleetDetailPage({
       <section className="py-24 bg-white border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center shadow-[0_4px_30px_rgba(0,0,0,0.05)]">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              Ready to Book
-            </span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Ready to Book</span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Reserve your {vehicle.name} today
             </h2>

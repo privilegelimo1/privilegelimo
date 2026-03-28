@@ -29,89 +29,28 @@ export const metadata: Metadata = {
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
-const fleet = [
-  {
-    name: "Mercedes Sprinter Avant Garde VIP",
-    price: "AED. 1100",
-    seats: 11,
-    baggage: 6,
-    tag: "VIP Sprinter",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Avant%20Gard,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-avant-garde.jpg",
-  },
-  {
-    name: "Mercedes Sprinter Ultra Luxury Van",
-    price: "AED. 1000",
-    seats: 16,
-    baggage: 9,
-    tag: "Ultra Luxury",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Ultra%20Van,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-ultra.jpg",
-  },
-  {
-    name: "Mercedes Sprinter Business Class",
-    price: "AED. 1000",
-    seats: 16,
-    baggage: 9,
-    tag: "Business Class",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Business%20Class,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-business.jpg",
-  },
-  {
-    name: "Mercedes VIP Trend 250",
-    price: "AED. 750",
-    seats: 7,
-    baggage: 7,
-    tag: "VIP Van",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20VIP%20Trend%20250,%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-vip-trend.jpg",
-  },
-  {
-    name: "Mercedes V 300 Tiffany",
-    price: "AED. 550",
-    seats: 7,
-    baggage: 5,
-    tag: "Luxury Van",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20V%20300%20Tiffany,%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-v300-tiffany.jpg",
-  },
-  {
-    name: "Mercedes Vito Tourer",
-    price: "AED. 350",
-    seats: 7,
-    baggage: 7,
-    tag: "Premium Van",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Vito%20Tourer,%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-vito.jpg",
-  },
-  {
-    name: "Mercedes-Benz Sprinter",
-    price: "AED. 1000",
-    seats: 19,
-    baggage: 9,
-    tag: "Group Sprinter",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes-Benz%20Sprinter,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-standard.jpg",
-  },
-  {
-    name: "GMC Yukon Limousine",
-    price: "AED. 850",
-    seats: 18,
-    baggage: 5,
-    tag: "SUV Limousine",
-    waText: "Hi,%20I%20want%20to%20book%20a%20GMC%20Yukon%20Limousine,%20Can%20you%20share%20details?",
-    image: "/images/fleet/gmc-yukon.jpg",
-  },
-  {
-    name: "50 Seater Luxury Bus",
-    price: "AED. 800",
-    seats: 50,
-    baggage: 50,
-    tag: "Luxury Coach",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Luxury%20Bus,%20Can%20you%20share%20details?",
-    image: "/images/fleet/luxury-bus.jpg",
-  },
-];
+import fleetData from "@/data/fleet.json";
+
+type Vehicle = {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  price: number;
+  currency: string;
+  priceLabel: string;
+  priceNote: string;
+  passengers: number;
+  luggage: number;
+  description: string;
+  features: string[];
+  featureLabel: string;
+  image: string;
+  available: boolean;
+  badge: string | null;
+};
+
+const fleet = fleetData as Vehicle[];
 
 const seoKeywords = [
   "van rental in dubai",
@@ -130,7 +69,7 @@ const seoKeywords = [
 
 const stats = [
   { value: "50", label: "Max passengers" },
-  { value: "9", label: "Fleet variants" },
+  { value: `${fleet.length}`, label: "Fleet variants" },
   { value: "24/7", label: "Always available" },
   { value: "Fixed", label: "Transparent pricing" },
 ];
@@ -238,7 +177,7 @@ export default function BusVanRentalPage() {
               City Tours by Luxury Coaches in UAE
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Luxury Bus and Van Rental -
+              Luxury Bus and Van Rental —
               <br />
               <span className="text-[#c9a84c] italic font-extralight">choose your vehicle</span>
             </h2>
@@ -250,9 +189,10 @@ export default function BusVanRentalPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {fleet.map((car) => (
               <div
-                key={car.name}
+                key={car.id}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
               >
+                {/* Image */}
                 <div className="relative h-52 overflow-hidden bg-[#f5f5f5]">
                   {car.image ? (
                     <Image
@@ -266,36 +206,55 @@ export default function BusVanRentalPage() {
                       <span className="text-[10px] tracking-[0.3em] uppercase text-[#d0d0d0]">Vehicle Image</span>
                     </div>
                   )}
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4 flex gap-2">
                     <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] font-light shadow-sm">
-                      {car.tag}
+                      {car.category}
                     </span>
+                    {car.badge && (
+                      <span className="px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-white font-light shadow-sm">
+                        {car.badge}
+                      </span>
+                    )}
                   </div>
                 </div>
+
+                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-base font-light text-[#0a0a0a] tracking-tight mb-1 leading-snug">{car.name}</h3>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a] font-light mb-4">Transfer within Dubai</p>
-                  <div className="flex items-center gap-4 mb-5">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a] font-light mb-3">{car.priceNote}</p>
+                  <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-4">
+                    {car.description}
+                  </p>
+
+                  {/* Specs */}
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="flex items-center gap-1.5">
                       <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                       </svg>
-                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.seats} Seats</span>
+                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.passengers} Seats</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                       </svg>
-                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.baggage} Baggage</span>
+                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.luggage} Bags</span>
                     </div>
                   </div>
+
+                  {/* Feature label pill */}
+                  <p className="text-[9px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light mb-5 truncate">
+                    {car.featureLabel}
+                  </p>
+
+                  {/* Price + CTA */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-xl font-light text-[#0a0a0a] tracking-tight">{car.price}</div>
+                      <div className="text-xl font-light text-[#0a0a0a] tracking-tight">{car.priceLabel}</div>
                       <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per transfer</div>
                     </div>
                     <a
-                      href={`http://wa.me/971509200818?text=${car.waText}`}
+                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#c9a84c] transition-all duration-300"
@@ -318,13 +277,12 @@ export default function BusVanRentalPage() {
               Experience the Best of Dubai
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Bus and Van Rentals -{" "}
+              Bus and Van Rentals —{" "}
               <span className="text-[#c9a84c] italic font-extralight">Dubai, UAE</span>
             </h2>
           </div>
 
           <div className="flex flex-col gap-6">
-
             {/* Row 1 - image left, text right */}
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
@@ -475,11 +433,8 @@ export default function BusVanRentalPage() {
                 <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-4">
                   In addition to comfort, luxury rentals ensure convenience for travelers. Large groups need transportation that accommodates everyone while simplifying logistics. Luxury buses and vans are designed to host various group sizes, making it easier to coordinate pick-ups and drop-offs. This level of convenience is particularly beneficial for corporate events, weddings, and city tours, where time efficiency is crucial.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-4">
-                  Personalized service is another significant benefit of choosing VIP rentals. Professional drivers enhance the experience by being knowledgeable about the local area, guiding groups to popular destinations, and providing insights into Dubai's culture and attractions. This allows passengers to sit back and enjoy the scenery without the stress of navigation.
-                </p>
                 <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-8">
-                  The luxury amenities featured in these vehicles further distinguish them from standard rentals. Modern buses and vans often come equipped with advanced entertainment systems, Wi-Fi, and refreshments, ensuring a pleasant atmosphere for passengers. These features contribute positively to the travel experience, allowing groups to socialize and relax throughout their journey. Furthermore, luxury bus and van rentals cater to various special occasions, offering tailored services for corporate gatherings, weddings, and city tours. These vehicles can be customized to fit the theme of an event, providing an elegant touch that complements the overall atmosphere. By choosing luxury options, groups can enhance their travel experience and create lasting memories in the vibrant city of Dubai.
+                  The luxury amenities featured in these vehicles further distinguish them from standard rentals. Modern buses and vans often come equipped with advanced entertainment systems, Wi-Fi, and refreshments, ensuring a pleasant atmosphere for passengers. These features contribute positively to the travel experience, allowing groups to socialize and relax throughout their journey.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-10">
                   {["Spacious Seating", "Climate Control", "Wi-Fi", "Entertainment", "Weddings", "Corporate Events"].map((h) => (
@@ -520,10 +475,10 @@ export default function BusVanRentalPage() {
                   Dubai stands out as a premier luxury travel destination, captivating visitors with its dazzling array of attractions and experiences. As one of the globe's most affluent cities, it offers an extensive range of opulent hotels, each promising state-of-the-art amenities and unmatched service. The Burj Al Arab, a symbol of luxury in itself, alongside the iconic Atlantis, The Palm, showcases Dubai's dedication to extravagance, providing guests with unparalleled comfort and stunning views.
                 </p>
                 <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-4">
-                  In addition to these luxurious accommodations, Dubai is home to some of the world's most revered landmarks. The awe-inspiring Burj Khalifa, towering over the city skyline, offers a breathtaking observation deck that allows visitors to take in panoramic views of the city. The Dubai Mall, an expansive shopping extravaganza, features high-end retailers along with gourmet dining options, making it a shopping haven for those seeking luxury brands. Furthermore, attractions such as the Dubai Fountain, which choreographs water displays to music, enhance the city's allure, adding to the overall enchanting experience.
+                  In addition to these luxurious accommodations, Dubai is home to some of the world's most revered landmarks. The awe-inspiring Burj Khalifa, towering over the city skyline, offers a breathtaking observation deck that allows visitors to take in panoramic views of the city. The Dubai Mall, an expansive shopping extravaganza, features high-end retailers along with gourmet dining options, making it a shopping haven for those seeking luxury brands.
                 </p>
                 <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-8">
-                  High-end shopping experiences abound in Dubai, particularly in the many luxurious retail environments. From unique boutiques to international luxury brands, shopping enthusiasts are sure to find what they desire. The Gold Souk, with its dazzling displays of gold and jewelry, stands out as a must-visit destination. Such experiences are complemented perfectly by the ease of transportation provided by luxury bus and van rentals. These services allow discerning travelers to navigate the city without the stress of finding parking or dealing with traffic, further enhancing the luxury experience. In conclusion, Dubai's blend of luxury accommodations, remarkable landmarks, and high-end shopping truly set it apart as a top destination for luxury travel. The convenience of premium bus and van rentals allows visitors to explore this magnificent city effortlessly, ensuring a memorable journey filled with extravagance and unique experiences.
+                  High-end shopping experiences abound in Dubai, particularly in the many luxurious retail environments. From unique boutiques to international luxury brands, shopping enthusiasts are sure to find what they desire. The Gold Souk, with its dazzling displays of gold and jewelry, stands out as a must-visit destination. Such experiences are complemented perfectly by the ease of transportation provided by luxury bus and van rentals.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-10">
                   {["Burj Khalifa", "Burj Al Arab", "Dubai Mall", "Gold Souk", "Dubai Fountain", "Palm Jumeirah"].map((h) => (
@@ -561,7 +516,6 @@ export default function BusVanRentalPage() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>

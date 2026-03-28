@@ -1,9 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import NextImage from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import fleetData from "@/data/fleet.json";
+
+// ─── TYPE ─────────────────────────────────────────────────────────────────────
+
+type Vehicle = {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  price: number;
+  currency: string;
+  priceLabel: string;
+  priceNote: string;
+  passengers: number;
+  luggage: number;
+  description: string;
+  features: string[];
+  featureLabel: string;
+  image: string;
+  available: boolean;
+  badge: string | null;
+};
+
+const fleet = fleetData as Vehicle[];
+
+// ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
   title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE - Privilege Limo",
@@ -36,118 +61,7 @@ export const metadata: Metadata = {
   },
 };
 
-// ─── FLEET DATA ───────────────────────────────────────────────────────────────
-
-const fleet = [
-  {
-    name: "Mercedes – S 500",
-    price: "AED. 900",
-    seats: 3,
-    baggage: 3,
-    tag: "Flagship Sedan",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20S%20500%20%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-s500.jpg",
-  },
-  {
-    name: "Mercedes – S 450",
-    price: "AED. 550",
-    seats: 3,
-    baggage: 3,
-    tag: "Executive Sedan",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20S%20450%20%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-s450.jpg",
-  },
-  {
-    name: "BMW 7 Series",
-    price: "AED. 500",
-    seats: 3,
-    baggage: 3,
-    tag: "Luxury Sedan",
-    waText: "Hi,%20I%20want%20to%20book%20a%20BMW%207%20Series%20%20Can%20you%20share%20details?",
-    image: "/images/fleet/bmw-7series.jpg",
-  },
-  {
-    name: "Mercedes VIP Trend 250",
-    price: "AED. 750",
-    seats: 7,
-    baggage: 7,
-    tag: "VIP Van",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20VIP%20Trend%20250,%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-vip-trend.jpg",
-  },
-  {
-    name: "Mercedes V 300 Tiffany",
-    price: "AED. 550",
-    seats: 7,
-    baggage: 5,
-    tag: "Luxury Van",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20V%20300%20Tiffany,%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-v300-tiffany.jpg",
-  },
-  {
-    name: "Mercedes Vito Tourer",
-    price: "AED. 350",
-    seats: 7,
-    baggage: 7,
-    tag: "Premium Van",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Vito%20Tourer,%20Can%20you%20share%20details?",
-    image: "/images/fleet/mercedes-vito.jpg",
-  },
-  {
-    name: "Mercedes Sprinter Avant Garde VIP",
-    price: "AED. 1100",
-    seats: 11,
-    baggage: 6,
-    tag: "VIP Sprinter",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Avant%20Gard,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-avant-garde.jpg",
-  },
-  {
-    name: "Mercedes Sprinter Ultra Luxury Van",
-    price: "AED. 1000",
-    seats: 16,
-    baggage: 9,
-    tag: "Ultra Luxury",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Ultra%20Van,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-ultra.jpg",
-  },
-  {
-    name: "Mercedes Sprinter Business Class",
-    price: "AED. 1000",
-    seats: 16,
-    baggage: 9,
-    tag: "Business Class",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes%20Sprinter%20Business%20Class,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-business.jpg",
-  },
-  {
-    name: "Mercedes-Benz Sprinter",
-    price: "AED. 1000",
-    seats: 19,
-    baggage: 9,
-    tag: "Group Sprinter",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Mercedes-Benz%20Sprinter,%20Can%20you%20share%20details?",
-    image: "/images/fleet/sprinter-standard.jpg",
-  },
-  {
-    name: "GMC Yukon Limousine",
-    price: "AED. 850",
-    seats: 18,
-    baggage: 5,
-    tag: "SUV Limousine",
-    waText: "Hi,%20I%20want%20to%20book%20a%20GMC%20Yukon%20Limousine,%20Can%20you%20share%20details?",
-    image: "/images/fleet/gmc-yukon.jpg",
-  },
-  {
-    name: "50 Seater Luxury Bus",
-    price: "AED. 800",
-    seats: 50,
-    baggage: 50,
-    tag: "Luxury Coach",
-    waText: "Hi,%20I%20want%20to%20book%20a%20Luxury%20Bus,%20Can%20you%20share%20details?",
-    image: "/images/fleet/luxury-bus.jpg",
-  },
-];
+// ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
 const seoKeywords = [
   "rent a car with driver",
@@ -173,7 +87,7 @@ const seoKeywords = [
 ];
 
 const stats = [
-  { value: "12+", label: "Vehicles in fleet" },
+  { value: `${fleet.length}+`, label: "Vehicles in fleet" },
   { value: "24/7", label: "Always available" },
   { value: "Fixed", label: "Transparent pricing" },
   { value: "5★", label: "Service standard" },
@@ -321,47 +235,71 @@ export default function LuxuryChauffeurServicePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {fleet.map((car) => (
               <div
-                key={car.name}
+                key={car.id}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
               >
+                {/* Image */}
                 <div className="relative h-48 overflow-hidden bg-[#f5f5f5]">
-  <NextImage
-    src={car.image}
-    alt={car.name}
-    fill
-    className="object-cover group-hover:scale-105 transition-transform duration-700"
-    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-  />
-  <div className="absolute top-4 left-4">
+                  <Image
+                    src={car.image}
+                    alt={car.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute top-4 left-4 flex gap-2">
                     <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] font-light shadow-sm">
-                      {car.tag}
+                      {car.category}
                     </span>
+                    {car.badge && (
+                      <span className="px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-white font-light shadow-sm">
+                        {car.badge}
+                      </span>
+                    )}
                   </div>
                 </div>
+
+                {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-base font-light text-[#0a0a0a] tracking-tight mb-1 leading-snug">{car.name}</h3>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a] font-light mb-4">Transfer within Dubai</p>
-                  <div className="flex items-center gap-4 mb-5">
+                  <h3 className="text-base font-light text-[#0a0a0a] tracking-tight mb-1 leading-snug">
+                    {car.name}
+                  </h3>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a] font-light mb-3">
+                    {car.priceNote}
+                  </p>
+                  <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-4 line-clamp-2">
+                    {car.description}
+                  </p>
+
+                  {/* Specs */}
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="flex items-center gap-1.5">
                       <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                       </svg>
-                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.seats} Seats</span>
+                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.passengers} Seats</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <svg className="w-3.5 h-3.5 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                       </svg>
-                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.baggage} Baggage</span>
+                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.luggage} Bags</span>
                     </div>
                   </div>
+
+                  {/* Feature label */}
+                  <p className="text-[9px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light mb-5 truncate">
+                    {car.featureLabel}
+                  </p>
+
+                  {/* Price + CTA */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-xl font-light text-[#0a0a0a] tracking-tight">{car.price}</div>
+                      <div className="text-xl font-light text-[#0a0a0a] tracking-tight">{car.priceLabel}</div>
                       <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per transfer</div>
                     </div>
                     <a
-                      href={`http://wa.me/971509200818?text=${car.waText}`}
+                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#c9a84c] transition-all duration-300"
@@ -395,7 +333,7 @@ export default function LuxuryChauffeurServicePage() {
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
 
-          {/* Row 1: Intro + Convenience */}
+          {/* Row 1: Intro + Convenience + Safety */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <MiniCard tag="Overview" title="Chauffeur Driven Cars in Dubai, UAE">
               <p>
@@ -460,7 +398,7 @@ export default function LuxuryChauffeurServicePage() {
             </MiniCard>
           </div>
 
-          {/* Row 3: Why Choose - 4 reasons across 2 rows of 2 */}
+          {/* Row 3: Why Choose - 4 reasons */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Why Us - 01" title="Extensive Fleet">
               <p>
@@ -522,7 +460,7 @@ export default function LuxuryChauffeurServicePage() {
             </MiniCard>
           </div>
 
-          {/* Row 5: Why Choose Chauffeur Services + Fleet Heart */}
+          {/* Row 5: Why Choose + Fleet Heart */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Our Services" title="Why Choose Our Chauffeur Services in Dubai?">
               <p>
@@ -564,7 +502,7 @@ export default function LuxuryChauffeurServicePage() {
             </MiniCard>
           </div>
 
-          {/* Row 7: Chauffeur Expertise + Customization */}
+          {/* Row 7: Local Expertise + Customization */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Local Expertise" title="Deep Knowledge of Dubai">
               <p>
@@ -678,7 +616,7 @@ export default function LuxuryChauffeurServicePage() {
               </a>
             </div>
             <p className="text-[#9a9a9a] text-xs font-light">
-              We provide luxury transportation in UAE, ensuring you enjoy a sophisticated with comfort, and style in one of the world's most glamorous destinations.
+              We provide luxury transportation in UAE, ensuring you enjoy a sophisticated experience with comfort, and style in one of the world's most glamorous destinations.
             </p>
           </div>
         </div>
