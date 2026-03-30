@@ -377,6 +377,131 @@ export default function HomePage() {
         </motion.div>
       </div>
 
+      {/* ── FLEET ───────────────────────────────────────────────────── */}
+      <section id="fleet" className="py-36 md:py-44 bg-white border-t border-[#efefef]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
+            <AnimateIn direction="left">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+                Our Fleet
+              </span>
+              <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
+                Vehicles as refined
+                <br />
+                <span className="text-[#c0c0c0] font-extralight italic">
+                  as your standards
+                </span>
+              </h2>
+            </AnimateIn>
+            <AnimateIn direction="right">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] md:text-right">
+                All prices for transfer within Dubai
+                <br />
+                <span className="text-[#b0b0b0]">Subject to seasonal change</span>
+              </p>
+            </AnimateIn>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-16">
+  {fleet.map((car, i) => (
+    <AnimateIn key={car.id} delay={i * 0.06} direction="up">
+      <article className="group bg-white rounded-[28px] border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden h-full flex flex-col">
+
+        {/* Image */}
+        <Link href={`/fleet/${car.slug}`} className="block">
+          <div className="relative h-52 bg-[#fafafa] overflow-hidden">
+            {car.image ? (
+              <NextImage
+                src={car.image}
+                alt={car.name}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">
+                  Vehicle Image
+                </span>
+              </div>
+            )}
+            {car.badge && (
+              <span className="absolute top-4 left-4 text-[9px] tracking-[0.3em] uppercase bg-[#0a0a0a] text-white px-3 py-1.5 rounded-full">
+                {car.badge}
+              </span>
+            )}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/40 to-transparent" />
+          </div>
+        </Link>
+
+        {/* Content */}
+        <div className="p-7 flex flex-col flex-1">
+          <span className="inline-block self-start text-[9px] tracking-[0.35em] uppercase text-[#9a9a9a] border border-[#ebebeb] px-3 py-1 rounded-full mb-5">
+            {car.category}
+          </span>
+          <h3 className="text-base font-semibold text-[#0a0a0a] mb-2 tracking-tight">
+            {car.name}
+          </h3>
+          <p className="text-sm text-[#9a9a9a] leading-relaxed font-light mb-5 flex-1">
+            {car.description}
+          </p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {car.features.slice(0, 3).map((f) => (
+              <span key={f} className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full">
+                {f}
+              </span>
+            ))}
+          </div>
+
+          {/* Footer */}
+          <div className="flex items-center gap-4 pt-5 border-t border-[#f4f4f4]">
+            <div className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+              <span className="text-xs text-[#9a9a9a] font-light">{car.passengers}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+              </svg>
+              <span className="text-xs text-[#9a9a9a] font-light">{car.luggage}</span>
+            </div>
+            <Link
+              href={`/fleet/${car.slug}`}
+              className="ml-auto text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors duration-300 flex items-center gap-1.5"
+            >
+              Details
+              <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </article>
+    </AnimateIn>
+  ))}
+</div>
+          {/* Fleet CTA */}
+          <AnimateIn delay={0.2}>
+            <div className="mt-16 text-center">
+              <p className="text-sm text-[#9a9a9a] font-light mb-6">
+                Need help choosing the right vehicle for your journey?
+              </p>
+              <a
+                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20need%20help%20choosing%20a%20vehicle."
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
+              >
+                <WhatsAppIcon />
+                Chat with Us
+              </a>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
       {/* ── INTRO ───────────────────────────────────────────────────── */}
       <section className="py-36 md:py-44 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -524,131 +649,6 @@ export default function HomePage() {
                   WhatsApp Us
                 </a>
               </div>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ── FLEET ───────────────────────────────────────────────────── */}
-      <section id="fleet" className="py-36 md:py-44 bg-white border-t border-[#efefef]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
-            <AnimateIn direction="left">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                Our Fleet
-              </span>
-              <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
-                Vehicles as refined
-                <br />
-                <span className="text-[#c0c0c0] font-extralight italic">
-                  as your standards
-                </span>
-              </h2>
-            </AnimateIn>
-            <AnimateIn direction="right">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] md:text-right">
-                All prices for transfer within Dubai
-                <br />
-                <span className="text-[#b0b0b0]">Subject to seasonal change</span>
-              </p>
-            </AnimateIn>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-16">
-  {fleet.map((car, i) => (
-    <AnimateIn key={car.id} delay={i * 0.06} direction="up">
-      <article className="group bg-white rounded-[28px] border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden h-full flex flex-col">
-
-        {/* Image */}
-        <Link href={`/fleet/${car.slug}`} className="block">
-          <div className="relative h-52 bg-[#fafafa] overflow-hidden">
-            {car.image ? (
-              <NextImage
-                src={car.image}
-                alt={car.name}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">
-                  Vehicle Image
-                </span>
-              </div>
-            )}
-            {car.badge && (
-              <span className="absolute top-4 left-4 text-[9px] tracking-[0.3em] uppercase bg-[#0a0a0a] text-white px-3 py-1.5 rounded-full">
-                {car.badge}
-              </span>
-            )}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/40 to-transparent" />
-          </div>
-        </Link>
-
-        {/* Content */}
-        <div className="p-7 flex flex-col flex-1">
-          <span className="inline-block self-start text-[9px] tracking-[0.35em] uppercase text-[#9a9a9a] border border-[#ebebeb] px-3 py-1 rounded-full mb-5">
-            {car.category}
-          </span>
-          <h3 className="text-base font-semibold text-[#0a0a0a] mb-2 tracking-tight">
-            {car.name}
-          </h3>
-          <p className="text-sm text-[#9a9a9a] leading-relaxed font-light mb-5 flex-1">
-            {car.description}
-          </p>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {car.features.slice(0, 3).map((f) => (
-              <span key={f} className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full">
-                {f}
-              </span>
-            ))}
-          </div>
-
-          {/* Footer */}
-          <div className="flex items-center gap-4 pt-5 border-t border-[#f4f4f4]">
-            <div className="flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-              </svg>
-              <span className="text-xs text-[#9a9a9a] font-light">{car.passengers}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
-              </svg>
-              <span className="text-xs text-[#9a9a9a] font-light">{car.luggage}</span>
-            </div>
-            <Link
-              href={`/fleet/${car.slug}`}
-              className="ml-auto text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors duration-300 flex items-center gap-1.5"
-            >
-              Details
-              <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </article>
-    </AnimateIn>
-  ))}
-</div>
-          {/* Fleet CTA */}
-          <AnimateIn delay={0.2}>
-            <div className="mt-16 text-center">
-              <p className="text-sm text-[#9a9a9a] font-light mb-6">
-                Need help choosing the right vehicle for your journey?
-              </p>
-              <a
-                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20need%20help%20choosing%20a%20vehicle."
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
-              >
-                <WhatsAppIcon />
-                Chat with Us
-              </a>
             </div>
           </AnimateIn>
         </div>
