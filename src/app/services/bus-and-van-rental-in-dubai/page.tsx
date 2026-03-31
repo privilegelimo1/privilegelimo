@@ -50,7 +50,17 @@ type Vehicle = {
   badge: string | null;
 };
 
-const fleet = fleetData as Vehicle[];
+const VAN_BUS_SLUGS = [
+  "mercedes-v-class",
+  "toyota-hiace-vip",
+  "mercedes-sprinter-business-vip",
+  "luxury-bus-35",
+  "luxury-bus-50",
+];
+
+const fleet = (fleetData as Vehicle[])
+  .filter((v) => VAN_BUS_SLUGS.includes(v.slug))
+  .sort((a, b) => VAN_BUS_SLUGS.indexOf(a.slug) - VAN_BUS_SLUGS.indexOf(b.slug));
 
 const seoKeywords = [
   "van rental in dubai",
@@ -266,6 +276,29 @@ export default function BusVanRentalPage() {
               </div>
             ))}
           </div>
+        {/* ── VIEW ALL FLEET BUTTON ── */}
+          <div className="flex justify-center mt-12">
+            <Link
+              href="/fleet"
+              className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
+            >
+              View All Fleet
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </Link>
+          </div>
+
         </div>
       </section>
 

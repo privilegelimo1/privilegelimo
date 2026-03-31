@@ -26,6 +26,26 @@ const services = [
     href: "/services/mercedes-van-rental-dubai",
     desc: "Stretch limos & luxury rides",
   },
+  {
+    label: "Airport Transfer",
+    href: "/services/airport-transfer",
+    desc: "Airport transport services across UAE",
+  },
+  {
+    label: "Corporate Chauffeur Services",
+    href: "/services/corporate-chauffeur-services",
+    desc: "Luxury corporate chauffeur services across UAE",
+  },
+  {
+    label: "Full Day & Hourly Chauffeur Services",
+    href: "/services/full-day-and-hourly-chauffeur-services",
+    desc: "Hire a car with driver for full day or on hourly basis",
+  },
+  {
+    label: "Luxury Van Rental Services",
+    href: "/services/luxury-van-rental-in-dubai",
+    desc: "Hire a luxury van with driver across UAE",
+  }
 ];
 
 const navLinks = [
@@ -69,13 +89,14 @@ export default function Navbar() {
         {/* ── LOGO ──────────────────────────────────────────────── */}
 <Link
   href="/"
-  className="relative flex items-center shrink-0 h-12 w-[170px] sm:h-14 sm:w-[190px]"
+  className="relative flex h-11 w-[160px] shrink-0 items-center sm:h-12 sm:w-[185px]"
 >
   <Image
     src="/logo.png"
     alt="Privilege Limo"
     fill
     priority
+    sizes="(max-width: 640px) 160px, 185px"
     className="object-contain object-left"
   />
 </Link>
