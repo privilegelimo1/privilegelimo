@@ -45,7 +45,32 @@ const services = [
     label: "Luxury Van Rental Services",
     href: "/services/luxury-van-rental-in-dubai",
     desc: "Hire a luxury van with driver across UAE",
-  }
+  },
+  {
+    label: "VIP Chauffeur Services",
+    href: "/services/vip-chauffeur-service",
+    desc: "Luxurious VIP chauffeur services across UAE",
+  },
+  {
+    label: "Event Transport Dubai",
+    href: "/services/event-transportation",
+    desc: "Luxurious event transporation for Birthdays, Weddings, Corporate Events etc. across UAE",
+  },
+  {
+    label: "Wedding Limousines",
+    href: "/services/wedding-limo-services",
+    desc: "Luxury wedding limo services across UAE ",
+  },
+  {
+    label: "Private Driver For Sightseeing",
+    href: "/services/private-driver-sightseeing-services",
+    desc: "Hire a private driver for sightseeing",
+  },
+  {
+    label: "Monthly Car Rental with Driver",
+    href: "services/monthly-car-rental-with-driver",
+    desc: "Get a luxurious monthly car for rental with driver",
+  },
 ];
 
 const navLinks = [
