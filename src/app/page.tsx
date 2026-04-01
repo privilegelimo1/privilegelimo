@@ -404,32 +404,27 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-16">
   {fleet.map((car, i) => (
-    <AnimateIn key={car.id} delay={i * 0.06} direction="up">
+    <AnimateIn key={car.slug} delay={i * 0.06} direction="up">
       <article className="group bg-white rounded-[28px] border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden h-full flex flex-col">
 
         {/* Image */}
         <Link href={`/fleet/${car.slug}`} className="block">
           <div className="relative h-52 bg-[#fafafa] overflow-hidden">
-            {car.image ? (
-              <NextImage
-                src={car.image}
-                alt={car.name}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">
-                  Vehicle Image
-                </span>
-              </div>
-            )}
-            {car.badge && (
-              <span className="absolute top-4 left-4 text-[9px] tracking-[0.3em] uppercase bg-[#0a0a0a] text-white px-3 py-1.5 rounded-full">
-                {car.badge}
-              </span>
-            )}
+            {car.images?.[0] ? (
+  <NextImage
+    src={car.images[0]}
+    alt={car.name}
+    fill
+    className="object-cover group-hover:scale-105 transition-transform duration-700"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  />
+) : (
+  <div className="w-full h-full flex items-center justify-center">
+    <span className="text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">
+      Vehicle Image
+    </span>
+  </div>
+)}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/40 to-transparent" />
           </div>
         </Link>
@@ -446,8 +441,8 @@ export default function HomePage() {
             {car.description}
           </p>
           <div className="flex flex-wrap gap-2 mb-6">
-            {car.features.slice(0, 3).map((f) => (
-              <span key={f} className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full">
+{car.features?.slice(0, 3).map((f) => (
+                <span key={f} className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full">
                 {f}
               </span>
             ))}
@@ -803,9 +798,9 @@ export default function HomePage() {
                 className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white">
                 <option value="">Preferred Vehicle (optional)</option>
                 {fleet.map((v) => (
-                  <option key={v.id} value={v.name}>
-                    {v.name} - {v.priceLabel}
-                  </option>
+                  <option key={v.slug} value={v.name}>
+  {v.name} - {v.transferPrice}
+</option>
                 ))}
               </select>
 

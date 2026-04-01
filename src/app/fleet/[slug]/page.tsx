@@ -136,9 +136,9 @@ export default async function FleetDetailPage({
                 </span>
               )}
               {vehicle.image ? (
-                <Image src={vehicle.image} alt={vehicle.name} fill className="object-cover" priority />
-              ) : (
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#d0d0d0]">Vehicle Image</span>
+  <Image src={vehicle.image} alt={vehicle.name} fill className="object-cover" priority />
+) : (
+  <span className="text-[10px] tracking-[0.3em] uppercase text-[#d0d0d0]">Vehicle Image</span>
               )}
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/40 to-transparent" />
             </div>
@@ -438,11 +438,11 @@ export default async function FleetDetailPage({
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((v) => (
-                <Link
-                  key={v.id}
-                  href={`/fleet/${v.slug}`}
-                  className="group p-7 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500"
-                >
+  <Link
+    key={v.slug}
+    href={`/fleet/${v.slug}`}
+    className="group p-7 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500"
+  >
                   <div className="h-40 rounded-2xl bg-[#fafafa] mb-6 flex items-center justify-center border border-[#f0f0f0] relative overflow-hidden">
                     {v.image ? (
                       <Image src={v.image} alt={v.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -453,16 +453,32 @@ export default async function FleetDetailPage({
                   </div>
                   <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">{v.category}</span>
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-sm font-semibold text-[#0a0a0a]">{v.name}</h3>
-                    <span className="text-sm text-[#AB5461] font-light">{v.priceLabel}</span>
-                  </div>
-                  <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">{v.description.substring(0, 75)}...</p>
-                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-2">
-                    View Details
-                    <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </span>
+  <h3 className="text-sm font-semibold text-[#0a0a0a]">{v.name}</h3>
+  <span className="text-sm text-[#AB5461] font-light">
+    {v.transferPrice || "Contact"}
+  </span>
+</div>
+
+<p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">
+  {(v.desc || v.description || "").substring(0, 75)}...
+</p>
+
+<span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-2">
+  View Details
+  <svg
+    className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+    />
+  </svg>
+</span>
                 </Link>
               ))}
             </div>

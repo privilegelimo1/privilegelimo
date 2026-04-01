@@ -219,93 +219,118 @@ export default function LuxuryVanRentalPage() {
     <main className="bg-white">
       <Navbar />
 
+{/* ── HERO ──────────────────────────────────────────────────── */}
+<section className="pt-28 sm:pt-32 pb-0 bg-white overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid lg:grid-cols-2 gap-0 lg:items-end">
 
-      {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="pt-40 pb-28 border-b border-[#efefef]">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-3 mb-12">
-            <Link
-              href="/"
-              className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors"
-            >
-              Home
-            </Link>
-            <span className="text-[#d5d5d5]">/</span>
-            <Link
-              href="/services"
-              className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors"
-            >
-              Services
-            </Link>
-            <span className="text-[#d5d5d5]">/</span>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a]">
-              Luxury Van Rental Dubai
-            </span>
-          </div>
+      {/* Left — copy */}
+      <div className="pb-12 lg:pb-16 pr-0 lg:pr-12">
 
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
-            {/* Left — copy */}
-            <div>
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#AB5461]" />
-                <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
-                  Premium Group & Family Transport
-                </span>
-              </div>
-              <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
-                Luxury van rental
-                <br />
-                <span className="text-[#AB5461] italic font-extralight">
-                  in Dubai, UAE
-                </span>
-              </h1>
-              <p className="text-[#7a7a7a] text-sm md:text-base font-light leading-relaxed max-w-xl mb-8">
-                Hire a premium Mercedes V-Class, Sprinter Business Class VIP or luxury
-                coach with a professional chauffeur in Dubai. Ideal for families,
-                corporate delegations, airport group transfers, tours and events —
-                with fixed rates and 24/7 availability.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="https://wa.me/971509200818"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
-                >
-                  <WAIcon />
-                  Book on WhatsApp
-                </a>
-                <a
-                  href="tel:+971509200818"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
-                >
-                  +971 50 920 0818
-                </a>
-              </div>
-            </div>
-
-
-            {/* Right — stats grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="p-8 rounded-3xl border border-[#efefef] text-center"
-                >
-                  <div className="text-4xl font-extralight text-[#0a0a0a] tracking-tight mb-2">
-                    {s.value}
-                  </div>
-                  <div className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 mb-8">
+          <Link
+            href="/"
+            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+          >
+            Home
+          </Link>
+          <span className="text-[#ddd]">/</span>
+          <Link
+            href="/services"
+            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+          >
+            Services
+          </Link>
+          <span className="text-[#ddd]">/</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">
+            Luxury Van Rental Dubai
+          </span>
         </div>
-      </section>
+
+        {/* Label */}
+        <div className="inline-flex items-center gap-3 mb-6">
+          <div className="h-px w-8 bg-[#AB5461]" />
+          <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
+            Premium Group & Family Transport
+          </span>
+        </div>
+
+        <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-extralight text-[#0a0a0a] tracking-tight leading-[1.04]">
+          Luxury van rental
+          <br />
+          <span className="text-[#AB5461] italic font-extralight">
+            in Dubai, UAE
+          </span>
+        </h1>
+
+        <p className="mt-6 text-sm leading-[1.9] text-[#7a7a7a] font-light max-w-lg">
+          Hire a premium Mercedes V-Class, Sprinter Business Class VIP or luxury
+          coach with a professional chauffeur in Dubai. Ideal for families,
+          corporate delegations, airport group transfers, tours and events —
+          with fixed rates and 24/7 availability.
+        </p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="https://wa.me/971509200818"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
+          >
+            <WAIcon />
+            Book on WhatsApp
+          </a>
+          <a
+            href="tel:+971509200818"
+            className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
+          >
+            +971 50 920 0818
+          </a>
+        </div>
+
+        {/* Trust tags */}
+        <div className="mt-8 flex flex-wrap gap-2">
+          {[
+            "Fixed rates",
+            "Professional chauffeurs",
+            "Group transport",
+            "24/7 available",
+          ].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-[#f9f4f5] border border-[#f0e8ea] px-4 py-1.5 text-[10px] tracking-[0.2em] uppercase font-light text-[#AB5461]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Right — hero image, flush to bottom */}
+      <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
+        <Image
+          src="/images/services/luxury-van-rental-dubai-hero.webp"
+          alt="Luxury van rental Dubai"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover object-center"
+        />
+        {/* Floating stat — replaces the stats grid */}
+        <div className="absolute bottom-5 right-5 bg-white rounded-2xl shadow-lg px-5 py-4 min-w-[160px]">
+          <p className="text-2xl font-extralight text-[#AB5461] tracking-tight">
+            24/7
+          </p>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">
+            Available daily
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
       {/* ── VAN FLEET PRICING ─────────────────────────────────────── */}
@@ -688,6 +713,45 @@ export default function LuxuryVanRentalPage() {
 
         </div>
       </section>
+
+      {/* ── CTA BAND ───────────────────────────────────────── */}
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <span className="text-[10px] tracking-[0.45em] uppercase text-white font-light block mb-4">
+                  Flexible Chauffeur Hire
+                </span>
+                <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
+                  Need a driver for a few hours
+                  <br />
+                  <span className="text-white italic font-extralight">or the entire day?</span>
+                </h2>
+                <p className="mt-4 text-sm leading-[1.9] text-white font-light max-w-xl">
+                  Tell us your start time, how many hours you need and your
+                  preferred vehicle. We'll handle the rest.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[180px]">
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                >
+                  Get a Quote
+                </Link>
+                <a
+                  href="tel:+971509200818"
+                  className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                >
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
 
       {/* ── SEO KEYWORDS CLOUD ───────────────────────────────────── */}

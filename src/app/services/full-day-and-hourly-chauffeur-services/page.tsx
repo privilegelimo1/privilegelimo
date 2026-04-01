@@ -23,17 +23,17 @@ export const metadata: Metadata = {
 
 const packages = [
   {
-    label: "2 Hours",
+    label: "5 Hours",
     ideal: "Short meetings, hotel pickup, quick errands",
     note: "Minimum booking",
   },
   {
-    label: "4 Hours",
+    label: "8 Hours",
     ideal: "Half-day business, shopping, city visits",
     note: "Most popular",
   },
   {
-    label: "8 Hours",
+    label: "10 Hours",
     ideal: "Full work day, executive schedule, events",
     note: "Full day hire",
   },
@@ -252,7 +252,7 @@ export default function HourlyChauffeurServicePage() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-2">
-                {["Minimum 2 hours", "Wait & return", "No fixed route", "Flat rate pricing"].map((tag) => (
+                {["Minimum 5 hours", "Wait & return", "No fixed route", "Flat rate pricing"].map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full bg-[#f9f4f5] border border-[#f0e8ea] px-4 py-1.5 text-[10px] tracking-[0.2em] uppercase font-light text-[#AB5461]"
@@ -274,7 +274,7 @@ export default function HourlyChauffeurServicePage() {
                 className="object-cover object-center"
               />
               <div className="absolute bottom-5 right-5 bg-white rounded-2xl shadow-lg px-5 py-4 min-w-[160px]">
-                <p className="text-2xl font-light text-[#AB5461] tracking-tight">2 hrs</p>
+                <p className="text-2xl font-light text-[#AB5461] tracking-tight">5 hrs</p>
                 <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">Minimum booking</p>
               </div>
             </div>
@@ -541,6 +541,45 @@ export default function HourlyChauffeurServicePage() {
           </div>
         </div>
       </section>
+
+      {/* ── CTA BAND ───────────────────────────────────────── */}
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <span className="text-[10px] tracking-[0.45em] uppercase text-white font-light block mb-4">
+                  Flexible Chauffeur Hire
+                </span>
+                <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
+                  Need a driver for a few hours
+                  <br />
+                  <span className="text-white italic font-extralight">or the entire day?</span>
+                </h2>
+                <p className="mt-4 text-sm leading-[1.9] text-white font-light max-w-xl">
+                  Tell us your start time, how many hours you need and your
+                  preferred vehicle. We'll handle the rest.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[180px]">
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                >
+                  Get a Quote
+                </Link>
+                <a
+                  href="tel:+971509200818"
+                  className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                >
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* ── FAQ ────────────────────────────────────────────── */}
       <section className="py-20 border-t border-[#efefef]">

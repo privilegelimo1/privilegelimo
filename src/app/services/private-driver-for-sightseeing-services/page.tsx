@@ -31,66 +31,59 @@ const fleet = fleetData as Vehicle[];
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE - Privilege Limo",
+  title: "Private Driver for Sightseeing Dubai | City Tour with Driver UAE - Privilege Limo",
   description:
-    "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
+    "Explore Dubai in comfort with a private driver for sightseeing. Customised city tours in luxury vehicles — Burj Khalifa, Palm Jumeirah, Old Dubai, Desert and more. Book your private tour driver today.",
   keywords: [
-    "rent a car with driver",
-    "airport transfer dubai",
-    "limousine rental dubai",
-    "mercedes s class rent",
-    "mercedes v class rent with driver",
-    "chauffeur hire in dubai",
-    "mercedes sprinter rent in dubai",
-    "mercedes van chauffeur service",
-    "mercedes benz van rent",
-    "chauffeur service abu dhabi",
-    "luxury bus booking in dubai",
-    "mercedes vito rental dubai",
-    "mercedes v class rental dubai",
-    "mercedes sprinter rental dubai",
-    "chauffeur service dubai",
-    "car hire in dubai with driver",
-    "sprinter van rental dubai",
-    "mercedes sprinter rent dubai",
-    "mercedes van rental dubai",
-    "car hire with driver in dubai",
+    "private driver for sightseeing dubai",
+    "dubai city tour with driver",
+    "private sightseeing tour dubai",
+    "hire a driver for a day dubai",
+    "private driver dubai tour",
+    "luxury city tour dubai",
+    "dubai tour with private chauffeur",
+    "private driver hire dubai",
+    "sightseeing car hire dubai",
+    "dubai day trip with driver",
+    "private guided tour dubai by car",
+    "hire car with driver for sightseeing uae",
+    "burj khalifa tour with driver",
+    "palm jumeirah tour dubai",
+    "old dubai tour with driver",
+    "full day driver hire dubai",
+    "half day sightseeing dubai",
+    "private driver abu dhabi tour",
+    "dubai desert tour with driver",
+    "tourist driver dubai",
   ],
   alternates: {
-    canonical: "https://privilegelimo.com/luxury-chauffeur-service-in-dubai",
+    canonical: "https://privilegelimo.com/services/private-driver-for-sightseeing-dubai",
   },
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
 const seoKeywords = [
-  "rent a car with driver",
-  "airport transfer dubai",
-  "limousine rental dubai",
-  "mercedes s class rent",
-  "mercedes v class rent with driver",
-  "chauffeur hire in dubai",
-  "mercedes sprinter rent in dubai",
-  "mercedes van chauffeur service",
-  "mercedes benz van rent",
-  "chauffeur service abu dhabi",
-  "luxury bus booking in dubai",
-  "mercedes vito rental dubai",
-  "mercedes v class rental dubai",
-  "mercedes sprinter rental dubai",
-  "chauffeur service dubai",
-  "car hire in dubai with driver",
-  "sprinter van rental dubai",
-  "mercedes sprinter rent dubai",
-  "mercedes van rental dubai",
-  "car hire with driver in dubai",
-];
-
-const stats = [
-  { value: `${fleet.length}+`, label: "Vehicles in fleet" },
-  { value: "24/7", label: "Always available" },
-  { value: "Fixed", label: "Transparent pricing" },
-  { value: "5★", label: "Service standard" },
+  "private driver for sightseeing dubai",
+  "dubai city tour with driver",
+  "private sightseeing tour dubai",
+  "hire a driver for a day dubai",
+  "private driver dubai tour",
+  "luxury city tour dubai",
+  "dubai tour with private chauffeur",
+  "private driver hire dubai",
+  "sightseeing car hire dubai",
+  "dubai day trip with driver",
+  "private guided tour dubai by car",
+  "hire car with driver for sightseeing uae",
+  "burj khalifa tour with driver",
+  "palm jumeirah tour dubai",
+  "old dubai tour with driver",
+  "full day driver hire dubai",
+  "half day sightseeing dubai",
+  "private driver abu dhabi tour",
+  "dubai desert tour with driver",
+  "tourist driver dubai",
 ];
 
 const blogLinks = [
@@ -146,117 +139,116 @@ function WAIcon() {
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
-export default function LuxuryChauffeurServicePage() {
+export default function PrivateDriverSightseeingPage() {
   return (
     <main className="bg-white">
       <Navbar />
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
-<section className="pt-28 sm:pt-32 pb-0 bg-white overflow-hidden">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="grid lg:grid-cols-2 gap-0 lg:items-end">
+      <section className="pt-28 sm:pt-32 pb-0 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-0 lg:items-end">
 
-      {/* Left */}
-      <div className="pb-12 lg:pb-16 pr-0 lg:pr-12">
-        <div className="flex items-center gap-2 mb-8">
-          <Link
-            href="/services"
-            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
-          >
-            Services
-          </Link>
-          <span className="text-[#ddd]">/</span>
-          <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">
-            Chauffeur Services Dubai
-          </span>
+            {/* Left */}
+            <div className="pb-12 lg:pb-16 pr-0 lg:pr-12">
+              <div className="flex items-center gap-2 mb-8">
+                <Link
+                  href="/services"
+                  className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+                >
+                  Services
+                </Link>
+                <span className="text-[#ddd]">/</span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">
+                  Private Driver for Sightseeing
+                </span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-light text-[#0a0a0a] tracking-tight leading-[1.1]">
+                Private Driver for
+                <br />
+                <span className="text-[#AB5461] italic font-extralight">
+                  Sightseeing in Dubai
+                </span>
+              </h1>
+
+              <p className="mt-6 text-sm leading-[1.9] text-[#7a7a7a] font-light max-w-lg">
+                Discover Dubai at your own pace with a dedicated private driver — covering iconic landmarks, hidden gems and day trips across the UAE in a premium, air-conditioned vehicle tailored to your group and itinerary.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/971509200818"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
+                >
+                  <WAIcon />
+                  Book on WhatsApp
+                </a>
+                <a
+                  href="tel:+971509200818"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
+                >
+                  +971 50 920 0818
+                </a>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-2">
+                {[
+                  "Custom itineraries",
+                  "Half or full day",
+                  "Premium vehicles",
+                  "Local expertise",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-[#f9f4f5] border border-[#f0e8ea] px-4 py-1.5 text-[10px] tracking-[0.2em] uppercase font-light text-[#AB5461]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — hero image */}
+            <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
+              <Image
+                src="/images/services/sightseeing-driver-hero.webp"
+                alt="Private driver for sightseeing Dubai"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute bottom-5 right-5 bg-white rounded-2xl shadow-lg px-5 py-4 min-w-[160px]">
+                <p className="text-2xl font-light text-[#AB5461] tracking-tight">5★</p>
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">
+                  Rated service
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
+      </section>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-light text-[#0a0a0a] tracking-tight leading-[1.1]">
-          Luxury Chauffeur
-          <br />
-          <span className="text-[#AB5461] italic font-extralight">
-            Services in Dubai
-          </span>
-        </h1>
-
-        <p className="mt-6 text-sm leading-[1.9] text-[#7a7a7a] font-light max-w-lg">
-          Personalised chauffeur-driven transport across Dubai and the UAE —
-          with professional drivers, premium vehicles and a seamless experience
-          tailored to your schedule and comfort.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="https://wa.me/971509200818"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
-          >
-            <WAIcon />
-            Book on WhatsApp
-          </a>
-          <a
-            href="tel:+971509200818"
-            className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
-          >
-            +971 50 920 0818
-          </a>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-2">
-          {[
-            "Personalised service",
-            "Professional chauffeurs",
-            "Premium fleet",
-            "24/7 available",
-          ].map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-[#f9f4f5] border border-[#f0e8ea] px-4 py-1.5 text-[10px] tracking-[0.2em] uppercase font-light text-[#AB5461]"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Right — hero image */}
-      <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
-        <Image
-          src="/images/fleet/audi-a6-1.webp"
-          alt="Luxury chauffeur service Dubai"
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute bottom-5 right-5 bg-white rounded-2xl shadow-lg px-5 py-4 min-w-[160px]">
-          <p className="text-2xl font-light text-[#AB5461] tracking-tight">5★</p>
-          <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">
-            Rated service
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
       {/* ── FLEET PRICING ─────────────────────────────────────────── */}
       <section className="py-28 bg-[#fafafa] border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center mb-16">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              Chauffeur Driven Vehicles in UAE
+              Sightseeing Vehicles in Dubai & UAE
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Rent a Car with Driver
+              Choose Your Sightseeing Vehicle —
               <br />
               <span className="text-[#AB5461] italic font-extralight">
-                chauffeur driven vehicles
+                with a private driver included
               </span>
             </h2>
             <p className="text-sm text-[#b0b0b0] font-light mt-4">
-              All these prices are subject to change depending on season
+              Pricing varies by duration, vehicle and itinerary. Contact us for a tailored quote.
             </p>
           </div>
 
@@ -324,10 +316,10 @@ export default function LuxuryChauffeurServicePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-xl font-light text-[#0a0a0a] tracking-tight">{car.priceLabel}</div>
-                      <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per transfer</div>
+                      <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per tour</div>
                     </div>
                     <a
-                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
+                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I'd like to book a sightseeing tour with a private driver in the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
@@ -347,13 +339,13 @@ export default function LuxuryChauffeurServicePage() {
         <div className="flex items-center gap-4">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[10px] tracking-[0.5em] uppercase text-[#AB5461] font-light">
-            Experience Luxury Travel with Chauffeur Driven Cars in Dubai, UAE
+            Explore Dubai Your Way with a Private Driver
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Everything about our
           <br />
-          <span className="text-[#AB5461] italic font-extralight">chauffeur service</span>
+          <span className="text-[#AB5461] italic font-extralight">sightseeing driver service</span>
         </h2>
       </div>
 
@@ -361,59 +353,56 @@ export default function LuxuryChauffeurServicePage() {
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
 
-          {/* Row 1: Intro + Convenience + Safety */}
+          {/* Row 1: Overview + Freedom + Comfort */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Overview" title="Chauffeur Driven Cars in Dubai, UAE">
+            <MiniCard tag="Overview" title="Private Driver for Sightseeing in Dubai">
               <p>
-                When it comes to traveling in style and comfort, nothing beats the convenience of chauffeur driven cars. Whether you are a tourist exploring the vibrant city of Dubai or a business executive attending important meetings, Privilege Luxury Travel is here to take you to your destination in the most luxurious and hassle-free way possible.
+                Dubai is one of the world's most remarkable cities to explore — but doing it justice requires the right transport. Privilege Limo provides private drivers exclusively for sightseeing tours, allowing you to move between landmarks at your own pace, in absolute comfort, without the limitations of group tours or public transport.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Benefit 01" title="Convenience and Comfort">
+            <MiniCard tag="Benefit 01" title="Explore at Your Own Pace">
               <p>
-                With a chauffeur driven car, you can say goodbye to the stress of navigating unfamiliar roads or dealing with public transportation. Our professional and experienced chauffeurs are well-versed in the city's routes and will ensure that you reach your destination on time, every time.
+                With a private driver at your disposal, the itinerary is entirely yours to decide. Spend as long as you wish at the Burj Khalifa, detour to the Gold Souk on impulse, or extend your visit to the Dubai Frame without worrying about a fixed group schedule.
               </p>
               <p>
-                Sit back, relax, and enjoy the comfort of our luxurious vehicles while we take care of the driving.
+                Your driver waits, adjusts and moves whenever you are ready — no rushing, no compromises.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Benefit 02" title="Safety and Security">
+            <MiniCard tag="Benefit 02" title="Comfortable in Dubai's Climate">
               <p>
-                At our service, your safety is not just a priority, it's an exclusive privilege. Whether you choose to travel with our fleet, you can be confident that your mode of transportation meets the highest safety standards.
-              </p>
-              <p>
-                This ensures your peace of mind throughout your journey.
+                Exploring Dubai on foot or via public transport in the heat can be exhausting, particularly during summer months when temperatures exceed 40°C. A private sightseeing driver keeps you in a fully air-conditioned premium vehicle between every stop, ensuring you arrive at each landmark refreshed and comfortable.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 2: Time + Luxury + Booking */}
+          {/* Row 2: Local Knowledge + Groups + Book */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Benefit 03" title="Time Efficiency">
+            <MiniCard tag="Benefit 03" title="Local Knowledge at Your Service">
               <p>
-                Remember, time is precious, especially when you have a busy schedule. Opting for a chauffeur-driven car can maximize your productivity and make the most of your time.
+                Our drivers know Dubai intimately — the best photo spots, the quickest routes between attractions, the ideal times to visit each landmark and the lesser-known areas that most tourists never discover.
               </p>
               <p>
-                Catch up on emails, make important phone calls, or relax and prepare for your upcoming meetings while our chauffeur takes care of the driving.
-              </p>
-            </MiniCard>
-
-            <MiniCard tag="Benefit 04" title="Luxury and Style">
-              <p>
-                Arrive at your destination in style with our fleet of luxurious vehicles. Whether you prefer a sleek sedan, a spacious SUV, or an elegant limousine, we have the perfect car to suit your preferences.
-              </p>
-              <p>
-                Our fleets feature hybrid and electric vehicles, which are becoming increasingly popular among luxury travellers in Dubai.
+                This local insight transforms a standard sightseeing trip into a genuinely enriching experience of the city.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Book Now" title="Book Your Chauffeur Driven Car Today">
+            <MiniCard tag="Benefit 04" title="Perfect for Families and Groups">
               <p>
-                Ready to experience luxury travel in Dubai, UAE? Book your chauffeur driven car with Privilege Luxury Travel today and enjoy a seamless and memorable journey.
+                Travelling with children, elderly guests or a larger group? Our Mercedes V-Class and Sprinter VIP options accommodate families and groups comfortably, keeping everyone together in one premium vehicle throughout the entire tour.
               </p>
               <p>
-                Whether you are visiting Dubai for leisure or business, our professional chauffeurs and luxurious vehicles will ensure that you travel in style and comfort.
+                No splitting across taxis, no waiting at pick-up points — just seamless group sightseeing from start to finish.
+              </p>
+            </MiniCard>
+
+            <MiniCard tag="Book Now" title="Plan Your Dubai Sightseeing Tour Today">
+              <p>
+                Tell us how many guests, which landmarks you want to visit and whether you prefer a half-day or full-day tour. We will arrange the right vehicle, assign a knowledgeable driver and confirm your itinerary before the tour begins.
+              </p>
+              <p>
+                Message us on WhatsApp to get started — we respond promptly and can often accommodate same-day requests.
               </p>
               <a
                 href="https://wa.me/971509200818"
@@ -426,127 +415,115 @@ export default function LuxuryChauffeurServicePage() {
             </MiniCard>
           </div>
 
-          {/* Row 3: Why Choose - 4 reasons */}
+          {/* Row 3: Popular Tours */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Why Us - 01" title="Extensive Fleet">
+            <MiniCard tag="Popular Tour — 01" title="Modern Dubai: Skyline and Icons">
               <p>
-                We offer a wide range of vehicles to cater to your specific requirements. From sedans and SUVs to limousines and luxury vans, our fleet has something for everyone. All our vehicles are equipped with modern amenities to ensure a comfortable and enjoyable journey.
+                Cover the very best of modern Dubai in one seamless tour — the Burj Khalifa, Dubai Mall, Dubai Fountain, Museum of the Future, Dubai Frame and the iconic Burj Al Arab coastal drive. Your private driver handles all parking and routing so you simply step out, explore and step back in.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Why Us - 02" title="Professional Chauffeurs">
+            <MiniCard tag="Popular Tour — 02" title="Old Dubai: Heritage and Culture">
               <p>
-                Our chauffeurs are not just skilled drivers but also trained professionals who prioritize your safety and comfort. They are well-versed in the city's roads and can provide you with valuable insights and recommendations to enhance your stay in Dubai.
+                Discover the historic heart of the city — the Al Fahidi Historical Neighbourhood, Dubai Creek, the Gold Souk, Spice Souk and Deira. Your driver will take you across to the old side of the creek and wait while you explore at your own speed through the winding lanes of one of the city's most atmospheric districts.
               </p>
             </MiniCard>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Why Us - 03" title="Personalized Service">
+            <MiniCard tag="Popular Tour — 03" title="Palm Jumeirah and Waterfront">
               <p>
-                At Privilege Luxury Travel, we understand that every client is unique. That's why we offer personalized services tailored to your specific needs.
-              </p>
-              <p>
-                Whether you require airport transfers, city tours, or corporate transportation, we can customize our services to meet your requirements.
+                Explore the world-famous Palm Jumeirah, drive the trunk and fronds, stop at Atlantis The Palm and take in the sweeping views of the Dubai Marina skyline from the Palm's western crescent. A stunning half-day route with some of the most photographed scenery in the UAE.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Why Us - 04" title="Competitive Pricing">
+            <MiniCard tag="Popular Tour — 04" title="Day Trip to Abu Dhabi">
               <p>
-                We believe that luxury travel should be accessible to everyone. That's why we offer competitive pricing without compromising on the quality of our services.
+                Make the most of your time in the UAE with a full-day private driver tour to Abu Dhabi — visiting the Sheikh Zayed Grand Mosque, the Corniche, Ferrari World or Louvre Abu Dhabi before returning comfortably to Dubai in the evening.
               </p>
               <p>
-                With Privilege Luxury Travel, you can enjoy the luxury and comfort of chauffeur driven cars at affordable rates.
+                All inter-emirate travel is covered under the one tour booking with no additional charges.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 4: Professional Service */}
+          {/* Row 4: Service Detail */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Professional Service" title="Professional Chauffeur Services in Dubai">
+            <MiniCard tag="Tour Options" title="Half Day and Full Day Packages">
               <p>
-                Striking through the flabbergasting modern city of Dubai or going to business meetings, our chauffeur services provide the top level of comfort. We guarantee Dubai airport transfers with the highest level of convenience.
+                Whether you have a few hours between meetings or a full day to dedicate to exploring, we offer both half-day (4–5 hours) and full-day (8–10 hours) private driver packages. Both options include a dedicated driver and vehicle for the entire duration with no per-stop charges.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Exceptional Options" title="Choose from Exceptional Options">
+            <MiniCard tag="Flexibility" title="Fully Customisable Itineraries">
               <p>
-                Sitting behind the steering wheel of a luxurious sedan, Dubai stretch limo services or other premium vehicles like the Rolls Royce and Bentley will exceed your expectations.
+                You are not bound to a set list of stops. Share your interests — architecture, culture, food, photography, shopping — and we will suggest a route that matches. Alternatively, bring your own wish list and your driver will plan the most efficient way through it.
               </p>
               <p>
-                These become the perfect addition to corporate events and non-business gatherings alike.
+                Itineraries can be adjusted on the day as you go, completely at your discretion.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Reliable Transfers" title="Efficient and Reliable Transfers">
+            <MiniCard tag="Multi-Day" title="Multi-Day Sightseeing Arrangements">
               <p>
-                Reliable and punctual chauffeurs with deep knowledge of Dubai guarantee comfort for cater, leisure, limo and Dubai airport transfer services rentals. Rent a car with a driver and have the journey of your life.
-              </p>
-              <p>
-                No matter if it's a quick trip or a full-day itinerary, our services offer professional chauffeurs who augment your travel plans in the city.
+                Staying in Dubai for several days and want a private driver across multiple days? We can arrange consecutive day bookings or a tailored multi-day package covering different areas of Dubai and the wider UAE — all at a preferential rate compared to individual bookings.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 5: Why Choose + Fleet Heart */}
+          {/* Row 5: Why Choose + Our Fleet */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Our Services" title="Why Choose Our Chauffeur Services in Dubai?">
+            <MiniCard tag="Why Choose Us" title="Why Privilege Limo for Sightseeing Tours?">
               <p>
-                Privilege Luxury Travel offers the best luxury chauffeur services in Dubai that will redefine your experience of premium travel. With us, you never have to worry about comfort or style, as our carefully curated fleet includes luxurious sedans, spacious SUVs, and versatile vans.
+                Unlike generic tour operators, we provide a private, personalised experience with no other passengers and no fixed stops you did not choose. Our vehicles are premium, our drivers are professional and our service is built entirely around your comfort and preferences — from the moment of pickup to the final drop-off.
               </p>
               <p>
-                All our chauffeurs are professionally background-checked, providing you with both security and peace of mind. Thanks to their extensive local knowledge, our drivers deliver seamless, hassle-free travel across Dubai, always maintaining punctuality.
+                Every sightseeing booking is handled with the same care and attention as our executive and corporate services.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Our Fleet" title="Luxury Fleet: The Heart of Our Service">
+            <MiniCard tag="Our Fleet" title="The Right Vehicle for Every Group Size">
               <p>
-                In Dubai, customers renting a chauffeur service will quickly notice that we pay special attention to our luxury fleet, as it serves the dual purpose of captivating and comforting even the most discerning travelers.
-              </p>
-              <p>
-                Our collection primarily focuses on a wide range of elegant and sophisticated SUVs and sedans. Each vehicle is handpicked to conform to strict standards of quality so that they can provide unrivaled travel experiences.
+                Solo travellers and couples are best suited to our luxury sedans — the Mercedes E-Class or S-Class offer a refined and intimate touring experience. Families and small groups travel best in the Mercedes V-Class with its generous cabin space and comfort. For larger groups, our Sprinter VIP provides a full group touring solution in a single vehicle.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 6: Fleet Detail + Chauffeurs */}
+          {/* Row 6: Fleet + Drivers */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Fleet Detail" title="Rolls-Royce, Mercedes-Benz, Tesla & BMW">
+            <MiniCard tag="Fleet Detail" title="Premium Vehicles for a Premium Experience">
               <p>
-                Some of our luxury fleet boasts industry leaders such as Rolls-Royce, Mercedes-Benz, Tesla, and BMW. Apart from having elegant and modern looks, these vehicles are equipped with cutting edge technology tailored to improve the travel experience.
-              </p>
-              <p>
-                Our fleet has advanced climate control systems, quality sound systems, and supple leather seats that provide maximum comfort. Enhanced comfort and space are offered by our Premium Sprinter Vans - perfect for groups, business travel, or families.
+                Every vehicle used for sightseeing tours is maintained to impeccable standards — clean, serviced and presented to the highest level before each booking. Our touring fleet includes sedans, SUVs and vans from Mercedes-Benz, all equipped with climate control, quality audio and generous luggage capacity for your day bags and shopping.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Our Chauffeurs" title="Experienced and Trained Chauffeurs">
+            <MiniCard tag="Our Drivers" title="Professional, Knowledgeable and Discreet">
               <p>
-                The importance of professional and trained chauffeurs is paramount when it comes to chauffeur services. Our chauffeurs embody a distinctive blend of seasoned professionalism, robust training, and acute knowledge of the local environment.
+                Our sightseeing drivers are selected not just for their driving ability but for their knowledge of Dubai and their ability to communicate confidently and warmly with guests from around the world.
               </p>
               <p>
-                All chauffeurs undergo advanced training and are practically assessed, which implies that they are proficient in driving and customer care amply enough to improve travel to unprecedented levels.
+                They are punctual, professionally presented and happy to share insights about the city — while knowing exactly when to give you space and quiet during the journey.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 7: Local Expertise + Customization */}
+          {/* Row 7: Hotel Pickup + Photography */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Local Expertise" title="Deep Knowledge of Dubai">
+            <MiniCard tag="Hotel Pickup" title="Pickup from Your Hotel or Residence">
               <p>
-                Chauffeurs' outstanding knowledge of Dubai is one of the most striking areas of expertise. Their understanding of many ways means that they can navigate the city without getting caught up in heavy traffic.
+                All sightseeing tours begin and end at your preferred location across Dubai — whether that is your hotel lobby, apartment building, cruise terminal or airport. There is no need to arrange your own way to a departure point.
               </p>
               <p>
-                Whether it is a business appointment at one of the city's skyscrapers or just a calm sightseeing session with your family, they are guaranteed to meet you on time. Their knowledge of sights also helps turn more than a simple drive into an enlightening journey.
+                Your driver tracks your readiness and arrives precisely on time so your day begins without a moment of unnecessary waiting.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Customization" title="Customization and Flexibility for All Your Needs">
+            <MiniCard tag="Photography Stops" title="Designed for the Perfect Photographs">
               <p>
-                Extreme customization and flexibility are among the most exclusive traits of chauffeur services in Dubai. Dubai chauffeur services go above and beyond to meet their client's demands. Customers have comfort and satisfaction guaranteed during their journeys, right from the moment they place a booking.
+                Dubai is one of the most photogenic cities on earth, and our drivers know every premium vantage point — from the Dubai Creek skyline at golden hour to the best angle on the Burj Al Arab or the full-frame view of the Dubai Marina at night.
               </p>
               <p>
-                Clients with specific preferences are provided with bespoke itineraries that showcase the best of Dubai - be it a quick visit to the popular Burj Khalifa or a slow drive through the beautiful Palm Jumeirah.
+                Mention photography as a priority when booking and your driver will plan the routing to maximise the light and timing at each location.
               </p>
             </MiniCard>
           </div>
@@ -554,43 +531,44 @@ export default function LuxuryChauffeurServicePage() {
         </div>
       </section>
 
-{/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <span className="text-[10px] tracking-[0.45em] uppercase text-white font-light block mb-4">
-                  Flexible Chauffeur Hire
-                </span>
-                <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
-                  Need a driver for a few hours
-                  <br />
-                  <span className="text-white italic font-extralight">or the entire day?</span>
-                </h2>
-                <p className="mt-4 text-sm leading-[1.9] text-white font-light max-w-xl">
-                  Tell us your start time, how many hours you need and your
-                  preferred vehicle. We'll handle the rest.
-                </p>
+       {/* ── CTA BAND ───────────────────────────────────────── */}
+            <section className="py-10 bg-white">
+              <div className="max-w-7xl mx-auto px-6">
+                <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
+                  <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+                    <div>
+                      <span className="text-[10px] tracking-[0.45em] uppercase text-white font-light block mb-4">
+                        Flexible Chauffeur Hire
+                      </span>
+                      <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
+                        Need a driver for a few hours
+                        <br />
+                        <span className="text-white italic font-extralight">or the entire day?</span>
+                      </h2>
+                      <p className="mt-4 text-sm leading-[1.9] text-white font-light max-w-xl">
+                        Tell us your start time, how many hours you need and your
+                        preferred vehicle. We'll handle the rest.
+                      </p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[180px]">
+                      <Link
+                        href="/contact-us"
+                        className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                      >
+                        Get a Quote
+                      </Link>
+                      <a
+                        href="tel:+971509200818"
+                        className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                      >
+                        Call Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[180px]">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
-                >
-                  Get a Quote
-                </Link>
-                <a
-                  href="tel:+971509200818"
-                  className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
-                >
-                  Call Now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
+      
 
       {/* ── SEO KEYWORDS CLOUD ───────────────────────────────────── */}
       <section className="py-16 border-t border-[#efefef] bg-[#fafafa]">
@@ -652,17 +630,15 @@ export default function LuxuryChauffeurServicePage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              CALL US 24/7
+              BOOK YOUR TOUR TODAY
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
-              Book Now and Travel
+              See Dubai the Right Way —
               <br />
-              <span className="text-[#AB5461] italic font-extralight">in Comfort</span>
+              <span className="text-[#AB5461] italic font-extralight">privately and in comfort</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
-              On Your Next Trip - Do You Want To Talk With Us?
-              <br />
-              So Don't Be Late.
+              Half day, full day or multi-day — tell us what you want to see and we will take care of everything else.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
@@ -682,7 +658,7 @@ export default function LuxuryChauffeurServicePage() {
               </a>
             </div>
             <p className="text-[#9a9a9a] text-xs font-light">
-              We provide luxury transportation in UAE, ensuring you enjoy a sophisticated experience with comfort, and style in one of the world's most glamorous destinations.
+              Private sightseeing tours available across Dubai, Abu Dhabi, Sharjah and the wider UAE — with professional drivers, premium vehicles and fully flexible itineraries.
             </p>
           </div>
         </div>

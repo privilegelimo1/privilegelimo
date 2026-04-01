@@ -31,65 +31,65 @@ const fleet = fleetData as Vehicle[];
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE - Privilege Limo",
+  title: "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE - Privilege Limo",
   description:
-    "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
+    "Monthly car rental with driver in Dubai. Long-term chauffeur hire for executives, families and businesses across the UAE. Luxury sedans, SUVs and vans on monthly contracts.",
   keywords: [
-    "rent a car with driver",
-    "airport transfer dubai",
-    "limousine rental dubai",
-    "mercedes s class rent",
-    "mercedes v class rent with driver",
-    "chauffeur hire in dubai",
-    "mercedes sprinter rent in dubai",
-    "mercedes van chauffeur service",
-    "mercedes benz van rent",
-    "chauffeur service abu dhabi",
-    "luxury bus booking in dubai",
-    "mercedes vito rental dubai",
-    "mercedes v class rental dubai",
-    "mercedes sprinter rental dubai",
-    "chauffeur service dubai",
-    "car hire in dubai with driver",
-    "sprinter van rental dubai",
-    "mercedes sprinter rent dubai",
-    "mercedes van rental dubai",
-    "car hire with driver in dubai",
+    "monthly car rental with driver dubai",
+    "long term chauffeur hire dubai",
+    "monthly chauffeur service dubai",
+    "monthly driver rental dubai",
+    "rent a car with driver monthly dubai",
+    "monthly car hire with driver uae",
+    "executive driver monthly dubai",
+    "personal driver monthly dubai",
+    "long term car hire with driver uae",
+    "monthly limousine service dubai",
+    "corporate driver hire monthly dubai",
+    "monthly driver service uae",
+    "dedicated chauffeur monthly dubai",
+    "monthly vehicle with driver dubai",
+    "car with driver monthly contract dubai",
+    "monthly chauffeur hire uae",
+    "personal chauffeur dubai monthly",
+    "long-term driver rental uae",
+    "monthly rental mercedes with driver",
+    "business driver hire monthly dubai",
   ],
   alternates: {
-    canonical: "https://privilegelimo.com/luxury-chauffeur-service-in-dubai",
+    canonical: "https://privilegelimo.com/services/monthly-car-rental-with-driver",
   },
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
 const seoKeywords = [
-  "rent a car with driver",
-  "airport transfer dubai",
-  "limousine rental dubai",
-  "mercedes s class rent",
-  "mercedes v class rent with driver",
-  "chauffeur hire in dubai",
-  "mercedes sprinter rent in dubai",
-  "mercedes van chauffeur service",
-  "mercedes benz van rent",
-  "chauffeur service abu dhabi",
-  "luxury bus booking in dubai",
-  "mercedes vito rental dubai",
-  "mercedes v class rental dubai",
-  "mercedes sprinter rental dubai",
-  "chauffeur service dubai",
-  "car hire in dubai with driver",
-  "sprinter van rental dubai",
-  "mercedes sprinter rent dubai",
-  "mercedes van rental dubai",
-  "car hire with driver in dubai",
+  "monthly car rental with driver dubai",
+  "long term chauffeur hire dubai",
+  "monthly chauffeur service dubai",
+  "monthly driver rental dubai",
+  "rent a car with driver monthly dubai",
+  "monthly car hire with driver uae",
+  "executive driver monthly dubai",
+  "personal driver monthly dubai",
+  "long term car hire with driver uae",
+  "monthly limousine service dubai",
+  "corporate driver hire monthly dubai",
+  "monthly driver service uae",
+  "dedicated chauffeur monthly dubai",
+  "monthly vehicle with driver dubai",
+  "car with driver monthly contract dubai",
+  "monthly chauffeur hire uae",
+  "personal chauffeur dubai monthly",
+  "long-term driver rental uae",
+  "monthly rental mercedes with driver",
+  "business driver hire monthly dubai",
 ];
 
 const stats = [
-  { value: `${fleet.length}+`, label: "Vehicles in fleet" },
-  { value: "24/7", label: "Always available" },
-  { value: "Fixed", label: "Transparent pricing" },
+  { value: `${fleet.length}+`, label: "Vehicles available" },
+  { value: "30+", label: "Day contracts" },
+  { value: "Fixed", label: "Monthly pricing" },
   { value: "5★", label: "Service standard" },
 ];
 
@@ -146,117 +146,118 @@ function WAIcon() {
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
-export default function LuxuryChauffeurServicePage() {
+export default function MonthlyChauffeurServicePage() {
   return (
     <main className="bg-white">
       <Navbar />
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
-<section className="pt-28 sm:pt-32 pb-0 bg-white overflow-hidden">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="grid lg:grid-cols-2 gap-0 lg:items-end">
+      <section className="pt-28 sm:pt-32 pb-0 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-0 lg:items-end">
 
-      {/* Left */}
-      <div className="pb-12 lg:pb-16 pr-0 lg:pr-12">
-        <div className="flex items-center gap-2 mb-8">
-          <Link
-            href="/services"
-            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
-          >
-            Services
-          </Link>
-          <span className="text-[#ddd]">/</span>
-          <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">
-            Chauffeur Services Dubai
-          </span>
+            {/* Left */}
+            <div className="pb-12 lg:pb-16 pr-0 lg:pr-12">
+              <div className="flex items-center gap-2 mb-8">
+                <Link
+                  href="/services"
+                  className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+                >
+                  Services
+                </Link>
+                <span className="text-[#ddd]">/</span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">
+                  Monthly Car Rental with Driver
+                </span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-light text-[#0a0a0a] tracking-tight leading-[1.1]">
+                Monthly Car Rental
+                <br />
+                <span className="text-[#AB5461] italic font-extralight">
+                  with Driver in Dubai
+                </span>
+              </h1>
+
+              <p className="mt-6 text-sm leading-[1.9] text-[#7a7a7a] font-light max-w-lg">
+                Dedicated monthly chauffeur service for executives, families and
+                businesses across Dubai and the UAE — with a professional driver
+                assigned to your schedule, your vehicle and your needs.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/971509200818"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
+                >
+                  <WAIcon />
+                  Book on WhatsApp
+                </a>
+                <a
+                  href="tel:+971509200818"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
+                >
+                  +971 50 920 0818
+                </a>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-2">
+                {[
+                  "30-day contracts",
+                  "Dedicated driver",
+                  "Flexible hours",
+                  "Premium fleet",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-[#f9f4f5] border border-[#f0e8ea] px-4 py-1.5 text-[10px] tracking-[0.2em] uppercase font-light text-[#AB5461]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — hero image */}
+            <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
+              <Image
+                src="/images/services/monthly-car-rental-hero.webp"
+                alt="Monthly car rental with driver Dubai"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute bottom-5 right-5 bg-white rounded-2xl shadow-lg px-5 py-4 min-w-[160px]">
+                <p className="text-2xl font-light text-[#AB5461] tracking-tight">30+</p>
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">
+                  Day contracts
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
+      </section>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-light text-[#0a0a0a] tracking-tight leading-[1.1]">
-          Luxury Chauffeur
-          <br />
-          <span className="text-[#AB5461] italic font-extralight">
-            Services in Dubai
-          </span>
-        </h1>
-
-        <p className="mt-6 text-sm leading-[1.9] text-[#7a7a7a] font-light max-w-lg">
-          Personalised chauffeur-driven transport across Dubai and the UAE —
-          with professional drivers, premium vehicles and a seamless experience
-          tailored to your schedule and comfort.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="https://wa.me/971509200818"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
-          >
-            <WAIcon />
-            Book on WhatsApp
-          </a>
-          <a
-            href="tel:+971509200818"
-            className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
-          >
-            +971 50 920 0818
-          </a>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-2">
-          {[
-            "Personalised service",
-            "Professional chauffeurs",
-            "Premium fleet",
-            "24/7 available",
-          ].map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-[#f9f4f5] border border-[#f0e8ea] px-4 py-1.5 text-[10px] tracking-[0.2em] uppercase font-light text-[#AB5461]"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Right — hero image */}
-      <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
-        <Image
-          src="/images/fleet/audi-a6-1.webp"
-          alt="Luxury chauffeur service Dubai"
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute bottom-5 right-5 bg-white rounded-2xl shadow-lg px-5 py-4 min-w-[160px]">
-          <p className="text-2xl font-light text-[#AB5461] tracking-tight">5★</p>
-          <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">
-            Rated service
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
       {/* ── FLEET PRICING ─────────────────────────────────────────── */}
       <section className="py-28 bg-[#fafafa] border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center mb-16">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              Chauffeur Driven Vehicles in UAE
+              Monthly Chauffeur Hire in UAE
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Rent a Car with Driver
+              Choose Your Monthly Vehicle —
               <br />
               <span className="text-[#AB5461] italic font-extralight">
-                chauffeur driven vehicles
+                with a dedicated driver
               </span>
             </h2>
             <p className="text-sm text-[#b0b0b0] font-light mt-4">
-              All these prices are subject to change depending on season
+              Monthly pricing is subject to vehicle availability and contract duration
             </p>
           </div>
 
@@ -324,10 +325,10 @@ export default function LuxuryChauffeurServicePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-xl font-light text-[#0a0a0a] tracking-tight">{car.priceLabel}</div>
-                      <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per transfer</div>
+                      <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per month</div>
                     </div>
                     <a
-                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
+                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I'm interested in monthly rental with driver for the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
@@ -347,13 +348,13 @@ export default function LuxuryChauffeurServicePage() {
         <div className="flex items-center gap-4">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[10px] tracking-[0.5em] uppercase text-[#AB5461] font-light">
-            Experience Luxury Travel with Chauffeur Driven Cars in Dubai, UAE
+            Long-Term Chauffeur Hire in Dubai, UAE
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mt-4">
           Everything about our
           <br />
-          <span className="text-[#AB5461] italic font-extralight">chauffeur service</span>
+          <span className="text-[#AB5461] italic font-extralight">monthly rental service</span>
         </h2>
       </div>
 
@@ -361,59 +362,59 @@ export default function LuxuryChauffeurServicePage() {
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
 
-          {/* Row 1: Intro + Convenience + Safety */}
+          {/* Row 1: Overview + Convenience + Flexibility */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Overview" title="Chauffeur Driven Cars in Dubai, UAE">
+            <MiniCard tag="Overview" title="Monthly Car Rental with Driver in Dubai, UAE">
               <p>
-                When it comes to traveling in style and comfort, nothing beats the convenience of chauffeur driven cars. Whether you are a tourist exploring the vibrant city of Dubai or a business executive attending important meetings, Privilege Luxury Travel is here to take you to your destination in the most luxurious and hassle-free way possible.
+                For those who require consistent, high-quality transportation without the hassle of daily bookings, Privilege Limo offers dedicated monthly car rental with driver packages across Dubai and the UAE. Whether you are an expatriate executive, a relocating family or a business with ongoing transport needs, our monthly chauffeur service delivers reliability and comfort every single day.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Benefit 01" title="Convenience and Comfort">
+            <MiniCard tag="Benefit 01" title="One Driver. Your Schedule.">
               <p>
-                With a chauffeur driven car, you can say goodbye to the stress of navigating unfamiliar roads or dealing with public transportation. Our professional and experienced chauffeurs are well-versed in the city's routes and will ensure that you reach your destination on time, every time.
+                A monthly rental means you get the same dedicated professional driver assigned specifically to your contract. No re-briefing, no inconsistency — your chauffeur learns your preferences, regular routes, meeting timings and personal requirements from day one.
               </p>
               <p>
-                Sit back, relax, and enjoy the comfort of our luxurious vehicles while we take care of the driving.
+                This continuity makes daily travel significantly smoother and more productive.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Benefit 02" title="Safety and Security">
+            <MiniCard tag="Benefit 02" title="Flexible Hours and Routes">
               <p>
-                At our service, your safety is not just a priority, it's an exclusive privilege. Whether you choose to travel with our fleet, you can be confident that your mode of transportation meets the highest safety standards.
+                Unlike fixed transfer bookings, our monthly packages are built around your lifestyle. Need your driver available from early morning to late evening? Require multi-stop daily itineraries across Dubai? We structure the contract around your hours, not ours.
               </p>
               <p>
-                This ensures your peace of mind throughout your journey.
+                School runs, business meetings, airport pickups and personal errands — all covered under one agreement.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 2: Time + Luxury + Booking */}
+          {/* Row 2: Cost + Image + Book */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Benefit 03" title="Time Efficiency">
+            <MiniCard tag="Benefit 03" title="Cost-Effective Long-Term Travel">
               <p>
-                Remember, time is precious, especially when you have a busy schedule. Opting for a chauffeur-driven car can maximize your productivity and make the most of your time.
+                Hiring a chauffeur on a monthly basis is significantly more economical than booking individual trips or maintaining a private vehicle with all the associated ownership costs in Dubai.
               </p>
               <p>
-                Catch up on emails, make important phone calls, or relax and prepare for your upcoming meetings while our chauffeur takes care of the driving.
-              </p>
-            </MiniCard>
-
-            <MiniCard tag="Benefit 04" title="Luxury and Style">
-              <p>
-                Arrive at your destination in style with our fleet of luxurious vehicles. Whether you prefer a sleek sedan, a spacious SUV, or an elegant limousine, we have the perfect car to suit your preferences.
-              </p>
-              <p>
-                Our fleets feature hybrid and electric vehicles, which are becoming increasingly popular among luxury travellers in Dubai.
+                One fixed monthly rate covers your driver, the vehicle, insurance and maintenance — giving you full control of your transport budget without unexpected expenses.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Book Now" title="Book Your Chauffeur Driven Car Today">
+            <MiniCard tag="Benefit 04" title="Maintain Your Professional Image">
               <p>
-                Ready to experience luxury travel in Dubai, UAE? Book your chauffeur driven car with Privilege Luxury Travel today and enjoy a seamless and memorable journey.
+                Arriving consistently in a premium, immaculately presented vehicle with a uniformed professional chauffeur speaks volumes about your standards — whether you are visiting clients, attending board meetings, or welcoming business guests from the airport.
               </p>
               <p>
-                Whether you are visiting Dubai for leisure or business, our professional chauffeurs and luxurious vehicles will ensure that you travel in style and comfort.
+                Monthly chauffeur hire ensures that image is maintained without exception.
+              </p>
+            </MiniCard>
+
+            <MiniCard tag="Book Now" title="Start Your Monthly Contract Today">
+              <p>
+                Ready to simplify your daily transport? Our team will match you with the right vehicle and driver based on your schedule, passenger requirements and preferred routes across Dubai and the UAE.
+              </p>
+              <p>
+                Reach out on WhatsApp to discuss your needs and receive a tailored monthly rental proposal.
               </p>
               <a
                 href="https://wa.me/971509200818"
@@ -426,127 +427,121 @@ export default function LuxuryChauffeurServicePage() {
             </MiniCard>
           </div>
 
-          {/* Row 3: Why Choose - 4 reasons */}
+          {/* Row 3: Who is it for */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Why Us - 01" title="Extensive Fleet">
+            <MiniCard tag="Who It's For — 01" title="Executives and Senior Management">
               <p>
-                We offer a wide range of vehicles to cater to your specific requirements. From sedans and SUVs to limousines and luxury vans, our fleet has something for everyone. All our vehicles are equipped with modern amenities to ensure a comfortable and enjoyable journey.
+                For C-level professionals, directors and senior executives based in Dubai, a monthly car rental with driver removes the burden of managing transport logistics entirely. Your driver is briefed, punctual and always ready — so you can focus entirely on your work from the moment you step out the door.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Why Us - 02" title="Professional Chauffeurs">
+            <MiniCard tag="Who It's For — 02" title="Families and Residents">
               <p>
-                Our chauffeurs are not just skilled drivers but also trained professionals who prioritize your safety and comfort. They are well-versed in the city's roads and can provide you with valuable insights and recommendations to enhance your stay in Dubai.
+                Relocating to Dubai or settling in as a long-term resident? A monthly chauffeur gives your family a trusted, familiar driver for school runs, appointments, shopping and leisure travel — without the stress of driving in unfamiliar areas or relying on ride-hailing services.
               </p>
             </MiniCard>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Why Us - 03" title="Personalized Service">
+            <MiniCard tag="Who It's For — 03" title="Businesses and Corporate Teams">
               <p>
-                At Privilege Luxury Travel, we understand that every client is unique. That's why we offer personalized services tailored to your specific needs.
-              </p>
-              <p>
-                Whether you require airport transfers, city tours, or corporate transportation, we can customize our services to meet your requirements.
+                Companies with regular staff movement, visiting delegations or recurring client pickups benefit greatly from a monthly vehicle and driver arrangement. It removes coordination overhead and guarantees a consistent standard of transport across all your business travel requirements.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Why Us - 04" title="Competitive Pricing">
+            <MiniCard tag="Who It's For — 04" title="Visitors on Extended Stays">
               <p>
-                We believe that luxury travel should be accessible to everyone. That's why we offer competitive pricing without compromising on the quality of our services.
-              </p>
-              <p>
-                With Privilege Luxury Travel, you can enjoy the luxury and comfort of chauffeur driven cars at affordable rates.
+                Spending 30 days or more in Dubai for work, a project or a personal trip? A monthly rental with driver gives you fully managed transport for the entire duration — far more convenient and refined than daily bookings or rental cars with self-drive.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 4: Professional Service */}
+          {/* Row 4: The Service */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Professional Service" title="Professional Chauffeur Services in Dubai">
+            <MiniCard tag="The Service" title="What's Included in Monthly Rental">
               <p>
-                Striking through the flabbergasting modern city of Dubai or going to business meetings, our chauffeur services provide the top level of comfort. We guarantee Dubai airport transfers with the highest level of convenience.
+                Each monthly package includes a dedicated professional driver, a premium vehicle from our fleet, daily availability during your agreed hours, fuel, vehicle maintenance and insurance. There are no hidden costs or per-trip charges — everything is covered in your fixed monthly agreement.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Exceptional Options" title="Choose from Exceptional Options">
+            <MiniCard tag="Vehicle Choice" title="Choose the Right Vehicle for Your Needs">
               <p>
-                Sitting behind the steering wheel of a luxurious sedan, Dubai stretch limo services or other premium vehicles like the Rolls Royce and Bentley will exceed your expectations.
+                Select from luxury sedans like the Mercedes S-Class or BMW 7 Series for individual executive travel, the Mercedes V-Class for families and small groups, or a Sprinter VIP van for corporate teams and delegations.
               </p>
               <p>
-                These become the perfect addition to corporate events and non-business gatherings alike.
-              </p>
-            </MiniCard>
-
-            <MiniCard tag="Reliable Transfers" title="Efficient and Reliable Transfers">
-              <p>
-                Reliable and punctual chauffeurs with deep knowledge of Dubai guarantee comfort for cater, leisure, limo and Dubai airport transfer services rentals. Rent a car with a driver and have the journey of your life.
-              </p>
-              <p>
-                No matter if it's a quick trip or a full-day itinerary, our services offer professional chauffeurs who augment your travel plans in the city.
-              </p>
-            </MiniCard>
-          </div>
-
-          {/* Row 5: Why Choose + Fleet Heart */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Our Services" title="Why Choose Our Chauffeur Services in Dubai?">
-              <p>
-                Privilege Luxury Travel offers the best luxury chauffeur services in Dubai that will redefine your experience of premium travel. With us, you never have to worry about comfort or style, as our carefully curated fleet includes luxurious sedans, spacious SUVs, and versatile vans.
-              </p>
-              <p>
-                All our chauffeurs are professionally background-checked, providing you with both security and peace of mind. Thanks to their extensive local knowledge, our drivers deliver seamless, hassle-free travel across Dubai, always maintaining punctuality.
+                Our fleet is maintained to the highest standard with regular servicing and presentation checks.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Our Fleet" title="Luxury Fleet: The Heart of Our Service">
+            <MiniCard tag="Reliability" title="Consistent, Punctual Daily Service">
               <p>
-                In Dubai, customers renting a chauffeur service will quickly notice that we pay special attention to our luxury fleet, as it serves the dual purpose of captivating and comforting even the most discerning travelers.
+                Reliability is the core of any monthly rental arrangement. Your dedicated driver is accountable to your schedule — monitoring your calendar, planning routes in advance and ensuring you are never kept waiting.
               </p>
               <p>
-                Our collection primarily focuses on a wide range of elegant and sophisticated SUVs and sedans. Each vehicle is handpicked to conform to strict standards of quality so that they can provide unrivaled travel experiences.
+                Our operations team provides backup support so your service is never interrupted.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 6: Fleet Detail + Chauffeurs */}
+          {/* Row 5: Why Choose + Our Fleet */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Fleet Detail" title="Rolls-Royce, Mercedes-Benz, Tesla & BMW">
+            <MiniCard tag="Why Choose Us" title="Why Privilege Limo for Monthly Chauffeur Hire?">
               <p>
-                Some of our luxury fleet boasts industry leaders such as Rolls-Royce, Mercedes-Benz, Tesla, and BMW. Apart from having elegant and modern looks, these vehicles are equipped with cutting edge technology tailored to improve the travel experience.
+                Privilege Limo has built a reputation for consistent, high-standard transport across Dubai and the UAE. Our monthly clients stay with us because we deliver exactly what we promise — the same driver, the same vehicle standard and the same level of service every single day throughout the contract period.
               </p>
               <p>
-                Our fleet has advanced climate control systems, quality sound systems, and supple leather seats that provide maximum comfort. Enhanced comfort and space are offered by our Premium Sprinter Vans - perfect for groups, business travel, or families.
+                We handle the logistics, the vehicle and the driver so you never have to think about your daily transport again.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Our Chauffeurs" title="Experienced and Trained Chauffeurs">
+            <MiniCard tag="Our Fleet" title="Premium Vehicles Maintained to the Highest Standard">
               <p>
-                The importance of professional and trained chauffeurs is paramount when it comes to chauffeur services. Our chauffeurs embody a distinctive blend of seasoned professionalism, robust training, and acute knowledge of the local environment.
+                Every vehicle in our monthly rental fleet is presented immaculately, kept to full mechanical standard and replaced on a regular cycle to ensure our clients always travel in modern, well-maintained luxury vehicles.
               </p>
               <p>
-                All chauffeurs undergo advanced training and are practically assessed, which implies that they are proficient in driving and customer care amply enough to improve travel to unprecedented levels.
+                From first-class sedans to business-class vans, our fleet is curated specifically for clients who expect nothing less than the best from long-term chauffeur arrangements.
               </p>
             </MiniCard>
           </div>
 
-          {/* Row 7: Local Expertise + Customization */}
+          {/* Row 6: Contract + Coverage */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MiniCard tag="Local Expertise" title="Deep Knowledge of Dubai">
+            <MiniCard tag="Contract Terms" title="Simple, Transparent Monthly Agreements">
               <p>
-                Chauffeurs' outstanding knowledge of Dubai is one of the most striking areas of expertise. Their understanding of many ways means that they can navigate the city without getting caught up in heavy traffic.
+                Our monthly rental contracts are straightforward and transparent. We agree on the vehicle, driver, working hours and duration upfront — then handle everything else so the arrangement runs smoothly from day one.
               </p>
               <p>
-                Whether it is a business appointment at one of the city's skyscrapers or just a calm sightseeing session with your family, they are guaranteed to meet you on time. Their knowledge of sights also helps turn more than a simple drive into an enlightening journey.
+                Contracts can be extended, adjusted or upgraded as your requirements change, with no complex cancellation terms or hidden renewal clauses.
               </p>
             </MiniCard>
 
-            <MiniCard tag="Customization" title="Customization and Flexibility for All Your Needs">
+            <MiniCard tag="Coverage" title="Dubai, Abu Dhabi and Across the UAE">
               <p>
-                Extreme customization and flexibility are among the most exclusive traits of chauffeur services in Dubai. Dubai chauffeur services go above and beyond to meet their client's demands. Customers have comfort and satisfaction guaranteed during their journeys, right from the moment they place a booking.
+                While most monthly contracts are Dubai-based, we regularly arrange inter-emirate coverage for clients who travel frequently between Dubai, Abu Dhabi, Sharjah and other emirates.
               </p>
               <p>
-                Clients with specific preferences are provided with bespoke itineraries that showcase the best of Dubai - be it a quick visit to the popular Burj Khalifa or a slow drive through the beautiful Palm Jumeirah.
+                Your dedicated monthly driver can handle all intra-UAE movement as part of your agreed service scope — no separate booking required for regular route coverage.
+              </p>
+            </MiniCard>
+          </div>
+
+          {/* Row 7: Customization + Professionalism */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <MiniCard tag="Customization" title="Tailored to Your Exact Schedule and Preferences">
+              <p>
+                No two monthly contracts are alike. Some clients need their driver from 7am to 10pm for a full working day across multiple locations. Others require a focused morning and evening service around a fixed office schedule.
+              </p>
+              <p>
+                We design each monthly rental around your specific pattern of movement, ensuring the service adds genuine value to your daily routine from the very first day.
+              </p>
+            </MiniCard>
+
+            <MiniCard tag="Professionalism" title="Experienced, Trained and Discreet Drivers">
+              <p>
+                All drivers assigned to monthly contracts are specifically selected for long-term client relationships. They are trained in executive protocol, client confidentiality and professional conduct — understanding that consistency and discretion are as important as punctuality and driving skill.
+              </p>
+              <p>
+                For clients handling sensitive business or personal schedules, this professionalism is non-negotiable.
               </p>
             </MiniCard>
           </div>
@@ -554,43 +549,44 @@ export default function LuxuryChauffeurServicePage() {
         </div>
       </section>
 
-{/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <span className="text-[10px] tracking-[0.45em] uppercase text-white font-light block mb-4">
-                  Flexible Chauffeur Hire
-                </span>
-                <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
-                  Need a driver for a few hours
-                  <br />
-                  <span className="text-white italic font-extralight">or the entire day?</span>
-                </h2>
-                <p className="mt-4 text-sm leading-[1.9] text-white font-light max-w-xl">
-                  Tell us your start time, how many hours you need and your
-                  preferred vehicle. We'll handle the rest.
-                </p>
+      {/* ── CTA BAND ───────────────────────────────────────── */}
+            <section className="py-10 bg-white">
+              <div className="max-w-7xl mx-auto px-6">
+                <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
+                  <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+                    <div>
+                      <span className="text-[10px] tracking-[0.45em] uppercase text-white font-light block mb-4">
+                        Flexible Chauffeur Hire
+                      </span>
+                      <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
+                        Need a driver for a few hours
+                        <br />
+                        <span className="text-white italic font-extralight">or the entire day?</span>
+                      </h2>
+                      <p className="mt-4 text-sm leading-[1.9] text-white font-light max-w-xl">
+                        Tell us your start time, how many hours you need and your
+                        preferred vehicle. We'll handle the rest.
+                      </p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[180px]">
+                      <Link
+                        href="/contact-us"
+                        className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                      >
+                        Get a Quote
+                      </Link>
+                      <a
+                        href="tel:+971509200818"
+                        className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
+                      >
+                        Call Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[180px]">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
-                >
-                  Get a Quote
-                </Link>
-                <a
-                  href="tel:+971509200818"
-                  className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
-                >
-                  Call Now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
+      
 
       {/* ── SEO KEYWORDS CLOUD ───────────────────────────────────── */}
       <section className="py-16 border-t border-[#efefef] bg-[#fafafa]">
@@ -652,17 +648,17 @@ export default function LuxuryChauffeurServicePage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              CALL US 24/7
+              GET A MONTHLY QUOTE
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
-              Book Now and Travel
+              Your Dedicated Driver,
               <br />
-              <span className="text-[#AB5461] italic font-extralight">in Comfort</span>
+              <span className="text-[#AB5461] italic font-extralight">every single day</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
-              On Your Next Trip - Do You Want To Talk With Us?
+              Tell us your vehicle preference, daily schedule and contract duration.
               <br />
-              So Don't Be Late.
+              We'll put together a tailored monthly proposal for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
@@ -682,7 +678,7 @@ export default function LuxuryChauffeurServicePage() {
               </a>
             </div>
             <p className="text-[#9a9a9a] text-xs font-light">
-              We provide luxury transportation in UAE, ensuring you enjoy a sophisticated experience with comfort, and style in one of the world's most glamorous destinations.
+              Monthly car rental with driver available across Dubai, Abu Dhabi, Sharjah and the wider UAE — with flexible contract terms and a premium fleet.
             </p>
           </div>
         </div>
