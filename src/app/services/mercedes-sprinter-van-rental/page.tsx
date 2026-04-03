@@ -261,7 +261,7 @@ export default function MercedesSprinterRentalPage() {
                 {/* Image */}
                 <div className="relative h-60 bg-[#f5f5f5] overflow-hidden">
                   <Image
-                    src={car.images?.[0]s?.[0] ?? ""}
+                    src={car.images?.[0] ?? ""}
                     alt={car.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"

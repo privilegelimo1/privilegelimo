@@ -27,5 +27,4 @@ export interface Vehicle {
   seoDescription?: string;
   seoKeywords?: string;
   specs?: { label: string; value: string }[];
-  classSlug?: string;
 }

@@ -252,7 +252,7 @@ export default function MercedesVanRentalPage() {
                 {/* Image */}
                 <div className="relative h-52 overflow-hidden bg-[#f5f5f5]">
                   <Image
-                    src={car.images?.[0]s?.[0] ?? ""}
+                    src={car.images?.[0] ?? ""}
                     alt={car.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"

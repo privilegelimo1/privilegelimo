@@ -436,7 +436,7 @@ export default function VipChauffeurServicePage() {
               >
                 <div className="relative h-[200px] bg-[#f5f5f5] overflow-hidden">
                   <Image
-                    src={car.images?.[0]s?.[0] ?? ""}
+                    src={car.images?.[0] ?? ""}
                     alt={car.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
