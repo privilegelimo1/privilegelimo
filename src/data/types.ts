@@ -15,4 +15,5 @@ export interface Vehicle {
   image: string;
   available: boolean;
   badge: string | null;
+  classSlug?: string;
 }

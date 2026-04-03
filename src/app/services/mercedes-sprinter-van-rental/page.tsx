@@ -1,9 +1,10 @@
+import { fleet as allFleet } from "@/data/index";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import fleetData from "@/data/fleet.json";
+
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
 
@@ -27,8 +28,8 @@ type Vehicle = {
 };
 
 // Filter only Sprinter variants
-const fleet = (fleetData as Vehicle[]).filter((v) =>
-  v.id.startsWith("mercedes-sprinter")
+const sprinterFleet = allFleet.filter((v) =>
+  v.slug.startsWith("mercedes-sprinter")
 );
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: "19", label: "Max Passengers" },
-  { value: `${fleet.length}`, label: "Sprinter Models" },
+  { value: `${sprinterFleet.length}`, label: "Sprinter Models" },
   { value: "24/7", label: "Available" },
   { value: "5★", label: "Service Standard" },
 ];
@@ -252,7 +253,7 @@ export default function MercedesSprinterRentalPage() {
       <section className="pb-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {fleet.map((car) => (
+            {sprinterFleet.map((car) => (
               <div
                 key={car.id}
                 className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.09)] hover:border-[#e8d9a0] transition-all duration-500"

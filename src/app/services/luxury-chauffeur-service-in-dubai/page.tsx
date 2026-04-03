@@ -1,9 +1,27 @@
+import { fleet as allFleet } from "@/data/index";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import fleetData from "@/data/fleet.json";
+import { fleet } from "@/data/index";
+
+// ─── FILTERED DATA ────────────────────────────────────────────────────────────
+
+const CHAUFFEUR_SLUGS = [
+  "mercedes-s500", "bmw-7-series", "mercedes-vip-trend-250", "mercedes-v300-tiffany",
+  "mercedes-vito-tourer", "mercedes-v-class", "gmc-yukon-denali", "cadillac-escalade",
+  "range-rover-sport", "rolls-royce-ghost", "rolls-royce-cullinan",
+  "mercedes-sprinter-avant-garde", "mercedes-sprinter-ultra-luxury",
+  "mercedes-sprinter-business", "mercedes-sprinter-standard", "gmc-yukon-limousine",
+  "chevy-suburban-titanium-limousine", "toyota-granvia", "lexus-es300", "audi-a6",
+  "byd-han", "citroen-space-tourer"
+];
+
+const chauffeurFleet = allFleet.filter((car) =>
+  CHAUFFEUR_SLUGS.includes(car.slug)
+);
+
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
 
@@ -26,7 +44,7 @@ type Vehicle = {
   badge: string | null;
 };
 
-const fleet = fleetData as Vehicle[];
+
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
@@ -61,6 +79,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
 const seoKeywords = [
@@ -87,7 +106,7 @@ const seoKeywords = [
 ];
 
 const stats = [
-  { value: `${fleet.length}+`, label: "Vehicles in fleet" },
+{ value: `${chauffeurFleet.length}+`, label: "Vehicles in fleet" },
   { value: "24/7", label: "Always available" },
   { value: "Fixed", label: "Transparent pricing" },
   { value: "5★", label: "Service standard" },
@@ -261,8 +280,8 @@ export default function LuxuryChauffeurServicePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {fleet.map((car) => (
-              <div
+{chauffeurFleet.map((car) => (
+                <div
                 key={car.id}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
               >

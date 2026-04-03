@@ -1,8 +1,11 @@
+import { fleet as allFleet } from "@/data/index";
+const pageFleet = allFleet;
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { fleet } from "@/data/index";
 
 export const metadata: Metadata = {
   title: "Bus and Van Rental Dubai | Luxury Coach Hire UAE - Privilege Limo",
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
-import fleetData from "@/data/fleet.json";
+
 
 type Vehicle = {
   id: string;
@@ -51,14 +54,16 @@ type Vehicle = {
 };
 
 const VAN_BUS_SLUGS = [
-  "mercedes-v-class",
-  "toyota-hiace-vip",
-  "mercedes-sprinter-business-vip",
-  "luxury-bus-35",
-  "luxury-bus-50",
+  "mercedes-sprinter-11-seater",
+  "mercedes-sprinter-13-seater",
+  "mercedes-sprinter-15-seater",
+  "mercedes-sprinter-19-seater",
+  "gmc-yukon-xl",
+  "toyota-hiace",
+  "luxury-bus-50-seater",
 ];
 
-const fleet = (fleetData as Vehicle[])
+const filteredFleet = fleet
   .filter((v) => VAN_BUS_SLUGS.includes(v.slug))
   .sort((a, b) => VAN_BUS_SLUGS.indexOf(a.slug) - VAN_BUS_SLUGS.indexOf(b.slug));
 
@@ -79,7 +84,7 @@ const seoKeywords = [
 
 const stats = [
   { value: "50", label: "Max passengers" },
-  { value: `${fleet.length}`, label: "Fleet variants" },
+  { value: `${pageFleet.length}`, label: "Fleet variants" },
   { value: "24/7", label: "Always available" },
   { value: "Fixed", label: "Transparent pricing" },
 ];
@@ -245,7 +250,7 @@ export default function BusVanRentalPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {fleet.map((car) => (
+            {pageFleet.map((car) => (
               <div
                 key={car.id}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"

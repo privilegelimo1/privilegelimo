@@ -1,9 +1,10 @@
+import { fleet as allFleet } from "@/data/index";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import fleetData from "@/data/fleet.json";
+
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
 
@@ -27,7 +28,7 @@ type Vehicle = {
 };
 
 // Filter all Mercedes van variants (V-Class, Vito, Sprinter)
-const fleet = (fleetData as Vehicle[]).filter((v) =>
+const mercedesVanFleet = allFleet.filter((v) =>
   [
     "mercedes-vip-trend-250",
     "mercedes-v300-tiffany",
@@ -35,7 +36,7 @@ const fleet = (fleetData as Vehicle[]).filter((v) =>
     "mercedes-sprinter-avant-garde",
     "mercedes-sprinter-ultra-luxury",
     "mercedes-sprinter-business",
-  ].includes(v.id)
+  ].includes(v.slug)
 );
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
@@ -75,7 +76,7 @@ const seoKeywords = [
 ];
 
 const stats = [
-  { value: `${fleet.length}`, label: "Van variants" },
+  { value: `${mercedesVanFleet.length}`, label: "Van variants" },
   { value: "19", label: "Max passengers" },
   { value: "24/7", label: "Always available" },
   { value: "Fixed", label: "Transparent pricing" },
@@ -243,7 +244,7 @@ export default function MercedesVanRentalPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {fleet.map((car) => (
+            {mercedesVanFleet.map((car) => (
               <div
                 key={car.id}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"

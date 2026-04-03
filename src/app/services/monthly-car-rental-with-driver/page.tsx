@@ -1,9 +1,11 @@
+import { fleet as allFleet } from "@/data/index";
+const pageFleet = allFleet;
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import fleetData from "@/data/fleet.json";
+
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
 
@@ -26,7 +28,7 @@ type Vehicle = {
   badge: string | null;
 };
 
-const fleet = fleetData as Vehicle[];
+
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
@@ -87,7 +89,7 @@ const seoKeywords = [
 ];
 
 const stats = [
-  { value: `${fleet.length}+`, label: "Vehicles available" },
+  { value: `${pageFleet.length}+`, label: "Vehicles available" },
   { value: "30+", label: "Day contracts" },
   { value: "Fixed", label: "Monthly pricing" },
   { value: "5★", label: "Service standard" },
@@ -262,7 +264,7 @@ export default function MonthlyChauffeurServicePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {fleet.map((car) => (
+            {pageFleet.map((car) => (
               <div
                 key={car.id}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"

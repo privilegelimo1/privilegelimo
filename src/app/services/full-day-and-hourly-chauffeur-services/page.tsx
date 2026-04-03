@@ -1,3 +1,5 @@
+import { fleet as allFleet } from "@/data/index";
+const pageFleet = allFleet;
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -445,7 +447,7 @@ export default function HourlyChauffeurServicePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {fleet.map((car) => (
+            {pageFleet.map((car) => (
               <div
                 key={car.name}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
@@ -460,7 +462,7 @@ export default function HourlyChauffeurServicePage() {
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] font-light shadow-sm">
-                      {car.type}
+                      {car.category}
                     </span>
                   </div>
                 </div>
@@ -476,12 +478,12 @@ export default function HourlyChauffeurServicePage() {
                     Up to {car.passengers} passenger{car.passengers > 1 ? "s" : ""}
                   </p>
                   <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-6">
-                    {car.desc}
+                    {car.description}
                   </p>
 
                   <div className="flex items-center gap-3">
                     <Link
-                      href={car.href}
+                      href={`/fleet/${car.slug}`}
                       className="flex-1 inline-flex items-center justify-center px-4 py-2.5 rounded-full border border-[#efefef] text-[9px] tracking-[0.25em] uppercase font-medium text-[#0a0a0a] hover:border-[#0a0a0a] transition-colors"
                     >
                       View details

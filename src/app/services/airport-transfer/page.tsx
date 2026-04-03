@@ -1,3 +1,5 @@
+import { fleet as allFleet } from "@/data/index";
+const pageFleet = allFleet;
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -471,7 +473,7 @@ export default function AirportTransferPage() {
     </h2>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {fleet.map((car) => (
+      {pageFleet.map((car) => (
         <div
           key={car.name}
           className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(171,84,97,0.10)] hover:border-[#AB5461]/20 transition-all duration-300"
@@ -487,7 +489,7 @@ export default function AirportTransferPage() {
             />
 
             <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-[#AB5461]">
-              {car.type}
+              {car.category}
             </span>
           </div>
 
@@ -507,12 +509,12 @@ export default function AirportTransferPage() {
             </p>
 
             <p className="text-[13px] leading-[1.85] text-[#777] font-light mb-6">
-              {car.desc}
+              {car.description}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href={car.href}
+                href={`/fleet/${car.slug}`}
                 className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full border border-[#efefef] text-xs font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
               >
                 View details

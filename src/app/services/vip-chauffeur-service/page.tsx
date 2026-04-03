@@ -1,3 +1,5 @@
+import { fleet as allFleet } from "@/data/index";
+const pageFleet = allFleet;
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -427,7 +429,7 @@ export default function VipChauffeurServicePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {fleet.map((car) => (
+            {pageFleet.map((car) => (
               <div
                 key={car.name}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
@@ -441,7 +443,7 @@ export default function VipChauffeurServicePage() {
                     className="object-cover object-center group-hover:scale-[1.04] transition-transform duration-700"
                   />
                   <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1.5 text-[9px] tracking-[0.25em] uppercase font-light text-[#0a0a0a]">
-                    {car.type}
+                    {car.category}
                   </span>
                 </div>
 
@@ -458,12 +460,12 @@ export default function VipChauffeurServicePage() {
                     Up to {car.passengers} passenger{car.passengers > 1 ? "s" : ""}
                   </p>
                   <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-6">
-                    {car.desc}
+                    {car.description}
                   </p>
 
                   <div className="flex items-center gap-3">
                     <Link
-                      href={car.href}
+                      href={`/fleet/${car.slug}`}
                       className="flex-1 inline-flex items-center justify-center rounded-full border border-[#efefef] px-4 py-2.5 text-[9px] tracking-[0.25em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
                     >
                       View details

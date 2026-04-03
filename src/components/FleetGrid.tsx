@@ -182,11 +182,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                             : "All Fleet Classes"}
                         </span>
                         <ChevronDown
-                          className="shrink-0 transition-transform duration-200"
-                          style={{
-                            color: activeClass ? "#AB5461" : "#d0a2aa",
-                            transform: open ? "rotate(180deg)" : "rotate(0deg)",
-                          }}
+                          className={`shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""} ${activeClass ? "text-[#AB5461]" : "text-[#d0a2aa]"}`}
                         />
                       </button>
 

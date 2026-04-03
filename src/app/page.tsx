@@ -410,9 +410,9 @@ export default function HomePage() {
         {/* Image */}
         <Link href={`/fleet/${car.slug}`} className="block">
           <div className="relative h-52 bg-[#fafafa] overflow-hidden">
-            {car.images?.[0] ? (
+            {car.image ? (
   <NextImage
-    src={car.images[0]}
+    src={car.image}
     alt={car.name}
     fill
     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -799,7 +799,7 @@ export default function HomePage() {
                 <option value="">Preferred Vehicle (optional)</option>
                 {fleet.map((v) => (
                   <option key={v.slug} value={v.name}>
-  {v.name} - {v.transferPrice}
+  {v.name} - {v.priceLabel}
 </option>
                 ))}
               </select>

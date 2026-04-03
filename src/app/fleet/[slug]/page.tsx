@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   if (!vehicle) return {};
 
-  const imageUrl = vehicle.images?.[0] || "";
+  const imageUrl = vehicle.image || "";
   const description =
     vehicle.description ||
     `Hire a ${vehicle.name} with professional chauffeur in Dubai. Luxury travel with Privilege Limo.`;
@@ -123,8 +123,6 @@ export default async function FleetDetailPage({
 
   if (!vehicle) notFound();
 
-  const heroImage = vehicle.images?.[0] || null;
-
   const related = fleet
     .filter((v) => v.category === vehicle.category && v.slug !== vehicle.slug)
     .slice(0, 3);
@@ -167,9 +165,9 @@ export default async function FleetDetailPage({
                 </span>
               )}
 
-              {heroImage ? (
+              {vehicle.image ? (
                 <Image
-                  src={heroImage}
+                  src={vehicle.image}
                   alt={vehicle.name}
                   fill
                   className="object-cover"
@@ -609,67 +607,63 @@ export default async function FleetDetailPage({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {related.map((v) => {
-                const cardImage = v.images?.[0] || null;
-
-                return (
-                  <Link
-                    key={v.slug}
-                    href={`/fleet/${v.slug}`}
-                    className="group p-7 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500"
-                  >
-                    <div className="h-40 rounded-2xl bg-[#fafafa] mb-6 flex items-center justify-center border border-[#f0f0f0] relative overflow-hidden">
-                      {cardImage ? (
-                        <Image
-                          src={cardImage}
-                          alt={v.name}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                      ) : (
-                        <span className="text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">
-                          Image
-                        </span>
-                      )}
-                      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/30 to-transparent" />
-                    </div>
-
-                    <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">
-                      {v.category}
-                    </span>
-
-                    <div className="flex items-center justify-between mb-2 gap-4">
-                      <h3 className="text-sm font-semibold text-[#0a0a0a]">
-                        {v.name}
-                      </h3>
-                      <span className="text-sm text-[#AB5461] font-light whitespace-nowrap">
-                        {v.priceLabel || "Contact"}
+              {related.map((v) => (
+                <Link
+                  key={v.slug}
+                  href={`/fleet/${v.slug}`}
+                  className="group p-7 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500"
+                >
+                  <div className="h-40 rounded-2xl bg-[#fafafa] mb-6 flex items-center justify-center border border-[#f0f0f0] relative overflow-hidden">
+                    {v.image ? (
+                      <Image
+                        src={v.image}
+                        alt={v.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    ) : (
+                      <span className="text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">
+                        Image
                       </span>
-                    </div>
+                    )}
+                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/30 to-transparent" />
+                  </div>
 
-                    <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">
-                      {(v.description || "").substring(0, 75)}...
-                    </p>
+                  <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">
+                    {v.category}
+                  </span>
 
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-2">
-                      View Details
-                      <svg
-                        className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                        />
-                      </svg>
+                  <div className="flex items-center justify-between mb-2 gap-4">
+                    <h3 className="text-sm font-semibold text-[#0a0a0a]">
+                      {v.name}
+                    </h3>
+                    <span className="text-sm text-[#AB5461] font-light whitespace-nowrap">
+                      {v.priceLabel || "Contact"}
                     </span>
-                  </Link>
-                );
-              })}
+                  </div>
+
+                  <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">
+                    {(v.description || "").substring(0, 75)}...
+                  </p>
+
+                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-2">
+                    View Details
+                    <svg
+                      className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -696,7 +690,7 @@ export default async function FleetDetailPage({
                 href={waUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#AB5461] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#8e4350] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#AB5461] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#8f4350] transition-all duration-300"
               >
                 <WhatsAppIcon />
                 Book on WhatsApp

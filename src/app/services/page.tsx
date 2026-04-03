@@ -1,9 +1,11 @@
+import { fleet as allFleet } from "@/data/index";
+const pageFleet = allFleet;
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import fleetData from "@/data/fleet.json";
+
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
 
@@ -26,7 +28,7 @@ type Vehicle = {
   badge: string | null;
 };
 
-const fleet = fleetData as Vehicle[];
+
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
@@ -91,9 +93,9 @@ const services = [
 ];
 
 const stats = [
-  { value: `${fleet.length}`, label: "Vehicles available" },
-  { value: "4", label: "Service categories" },
+  { value: "Premium", label: "Vehicles in fleet" },
   { value: "24/7", label: "Always available" },
+  { value: "Fixed", label: "Transparent pricing" },
   { value: "5★", label: "Service standard" },
 ];
 
@@ -360,7 +362,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {fleet.map((car) => (
+            {pageFleet.map((car) => (
               <div
                 key={car.id}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
