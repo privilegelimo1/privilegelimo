@@ -458,7 +458,7 @@ export default function WeddingLimoPage() {
               >
                 <div className="relative h-[220px] bg-[#f8f4f5] overflow-hidden">
                   <Image
-                    src={car.image}
+                    src={car.images?.[0]s?.[0] ?? ""}
                     alt={car.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"

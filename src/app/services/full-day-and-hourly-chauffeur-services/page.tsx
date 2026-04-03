@@ -454,7 +454,7 @@ export default function HourlyChauffeurServicePage() {
               >
                 <div className="relative h-52 overflow-hidden bg-[#f5f5f5]">
                   <Image
-                    src={car.image}
+                    src={car.images?.[0]s?.[0] ?? ""}
                     alt={car.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"

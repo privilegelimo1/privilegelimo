@@ -16,4 +16,16 @@ export interface Vehicle {
   available: boolean;
   badge: string | null;
   classSlug?: string;
+  images?: string[];
+  transferPrice?: string;
+  price5hr?: string;
+  price10hr?: string;
+  desc?: string;
+  longDesc?: string;
+  metaDesc?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string;
+  specs?: { label: string; value: string }[];
+  classSlug?: string;
 }

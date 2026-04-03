@@ -410,9 +410,9 @@ export default function HomePage() {
         {/* Image */}
         <Link href={`/fleet/${car.slug}`} className="block">
           <div className="relative h-52 bg-[#fafafa] overflow-hidden">
-            {car.image ? (
+            {car.images?.[0] ? (
   <NextImage
-    src={car.image}
+    src={car.images?.[0]}
     alt={car.name}
     fill
     className="object-cover group-hover:scale-105 transition-transform duration-700"

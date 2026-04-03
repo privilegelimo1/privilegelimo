@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   if (!vehicle) return {};
 
-  const imageUrl = vehicle.image || "";
+  const imageUrl = vehicle.images?.[0] || "";
   const description =
     vehicle.description ||
     `Hire a ${vehicle.name} with professional chauffeur in Dubai. Luxury travel with Privilege Limo.`;
@@ -165,9 +165,9 @@ export default async function FleetDetailPage({
                 </span>
               )}
 
-              {vehicle.image ? (
+              {vehicle.images?.[0] ? (
                 <Image
-                  src={vehicle.image}
+                  src={vehicle.images?.[0]}
                   alt={vehicle.name}
                   fill
                   className="object-cover"
@@ -614,9 +614,9 @@ export default async function FleetDetailPage({
                   className="group p-7 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500"
                 >
                   <div className="h-40 rounded-2xl bg-[#fafafa] mb-6 flex items-center justify-center border border-[#f0f0f0] relative overflow-hidden">
-                    {v.image ? (
+                    {v.images?.[0] ? (
                       <Image
-                        src={v.image}
+                        src={v.images?.[0]}
                         alt={v.name}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
