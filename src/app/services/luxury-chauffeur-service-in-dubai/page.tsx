@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedServices from "@/components/RelatedServices";
 import { fleet } from "@/data/index";
 
 // ─── FILTERED DATA ────────────────────────────────────────────────────────────
@@ -707,6 +708,7 @@ export default function LuxuryChauffeurServicePage() {
         </div>
       </section>
 
+      <RelatedServices currentHref="/services/luxury-chauffeur-service-in-dubai" />
       <Footer />
     </main>
   );

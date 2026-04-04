@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedServices from "@/components/RelatedServices";
 
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
@@ -666,6 +667,7 @@ export default function PrivateDriverSightseeingPage() {
         </div>
       </section>
 
+      <RelatedServices currentHref="/services/private-driver-for-sightseeing-services" />
       <Footer />
     </main>
   );

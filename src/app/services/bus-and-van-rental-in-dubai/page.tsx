@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedServices from "@/components/RelatedServices";
 import { fleet } from "@/data/index";
 
 export const metadata: Metadata = {
@@ -779,6 +780,7 @@ export default function BusVanRentalPage() {
         </div>
       </section>
 
+      <RelatedServices currentHref="/services/bus-and-van-rental-in-dubai" />
       <Footer />
     </main>
   );

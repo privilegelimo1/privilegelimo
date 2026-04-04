@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedServices from "@/components/RelatedServices";
 
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
@@ -865,6 +866,7 @@ export default function LuxuryVanRentalPage() {
       </section>
 
 
+      <RelatedServices currentHref="/services/luxury-van-rental-in-dubai" />
       <Footer />
     </main>
   );

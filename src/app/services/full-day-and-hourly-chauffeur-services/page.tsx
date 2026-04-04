@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedServices from "@/components/RelatedServices";
 
 export const metadata: Metadata = {
   title: "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire",

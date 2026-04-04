@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedServices from "@/components/RelatedServices";
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
@@ -664,6 +665,7 @@ export default function EventTransportationPage() {
         </div>
       </section>
 
+      <RelatedServices currentHref="/services/event-transportation" />
       <Footer />
     </main>
   );

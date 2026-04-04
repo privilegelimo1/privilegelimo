@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedServices from "@/components/RelatedServices";
 
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
@@ -676,6 +677,7 @@ export default function MercedesVanRentalPage() {
         </div>
       </section>
 
+      <RelatedServices currentHref="/services/mercedes-van-rental-dubai" />
       <Footer />
     </main>
   );
