@@ -5,89 +5,65 @@ import readingTime from "reading-time";
 
 const BLOGS_DIR = path.join(process.cwd(), "content/blogs");
 
-export type BlogMeta = {
-  slug: string;
+export type BlogFrontmatter = {
   title: string;
-  description: string;
+  slug: string;
+  excerpt: string;
   date: string;
   author: string;
   category: string;
   tags: string[];
-  image: string;
-  imageAlt: string;
-  readingTime: string;
-  published: boolean;
-  // SEO
-  seoTitle: string;
-  seoDescription: string;
-  canonicalUrl: string;
-  ogImage: string;
-  noIndex: boolean;
-  focusKeyword: string;
-  keywords: string[];
+  featuredImage: string;
+  featuredImageAlt: string;
+  draft: boolean;
+  seo: {
+    metaTitle: string;
+    metaDescription: string;
+    canonical: string;
+    keywords: string;
+    ogImage: string;
+    index: boolean;
+  };
 };
 
-export type BlogPost = BlogMeta & { content: string };
+export type BlogPost = BlogFrontmatter & {
+  content: string;
+  readingTime: string;
+};
 
-export function getAllBlogs(): BlogMeta[] {
+export function getBlogSlugs() {
   if (!fs.existsSync(BLOGS_DIR)) return [];
-  const files = fs.readdirSync(BLOGS_DIR).filter((f) => f.endsWith(".mdx"));
-  return files
-    .map((file) => {
-      const slug = file.replace(".mdx", "");
-      const raw = fs.readFileSync(path.join(BLOGS_DIR, file), "utf-8");
-      const { data } = matter(raw);
-      const rt = readingTime(raw);
-      return {
-        slug,
-        title: data.title || "",
-        description: data.description || "",
-        date: data.date || "",
-        author: data.author || "Privilege Limo",
-        category: data.category || "General",
-        tags: data.tags || [],
-        image: data.image || "",
-        imageAlt: data.imageAlt || data.title || "",
-        readingTime: rt.text,
-        published: data.published !== false,
-        seoTitle: data.seoTitle || data.title || "",
-        seoDescription: data.seoDescription || data.description || "",
-        canonicalUrl: data.canonicalUrl || `https://privilegelimo.com/blog/${slug}`,
-        ogImage: data.ogImage || data.image || "",
-        noIndex: data.noIndex || false,
-        focusKeyword: data.focusKeyword || "",
-        keywords: data.keywords || [],
-      } as BlogMeta;
-    })
-    .filter((b) => b.published)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return fs.readdirSync(BLOGS_DIR).filter((file) => file.endsWith(".mdx"));
 }
 
 export function getBlogBySlug(slug: string): BlogPost | null {
-  const filePath = path.join(BLOGS_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(raw);
-  const rt = readingTime(raw);
+  const realSlug = slug.replace(/\.mdx$/, "");
+  const fullPath = path.join(BLOGS_DIR, `${realSlug}.mdx`);
+
+  if (!fs.existsSync(fullPath)) return null;
+
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
   return {
-    slug,
-    title: data.title || "",
-    description: data.description || "",
-    date: data.date || "",
-    author: data.author || "Privilege Limo",
-    category: data.category || "General",
-    tags: data.tags || [],
-    image: data.image || "",
-    imageAlt: data.imageAlt || data.title || "",
-    readingTime: rt.text,
-    published: data.published !== false,
-    seoTitle: data.seoTitle || data.title || "",
-    seoDescription: data.seoDescription || data.description || "",
-    canonicalUrl: data.canonicalUrl || `https://privilegelimo.com/blog/${slug}`,
-    ogImage: data.ogImage || data.image || "",
-    noIndex: data.noIndex || false,
-    focusKeyword: data.focusKeyword || "",
-    keywords: data.keywords || [],
+    ...(data as BlogFrontmatter),
     content,
+    readingTime: readingTime(content).text,
   };
+}
+
+export function getAllBlogs(): BlogPost[] {
+  const slugs = getBlogSlugs();
+
+  const posts = slugs
+    .map((slug) => getBlogBySlug(slug))
+    .filter(Boolean) as BlogPost[];
+
+  return posts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
+
+export function getPublishedBlogs(): BlogPost[] {
+  return getAllBlogs().filter((post) => !post.draft);
 }

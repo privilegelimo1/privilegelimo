@@ -1,56 +1,43 @@
-import { getAllPosts } from "@/lib/mdx";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { getPublishedBlogs } from "@/lib/blogs";
 
-export const metadata: Metadata = {
-  title: "Blog | Luxury Travel Insights Dubai",
-  description: "Tips and insights on luxury chauffeur and limo services in Dubai.",
+export const metadata = {
+  title: "Blog",
+  description: "Latest blog posts",
 };
 
 export default function BlogPage() {
-  const posts = getAllPosts();
+  const posts = getPublishedBlogs();
 
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-24">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-light tracking-widest text-[--color-gold] mb-2">
-          Our Blog
-        </h1>
-        <p className="text-white/50 mb-12 text-sm tracking-wider uppercase">
-          Insights on luxury travel in Dubai
-        </p>
+    <main className="blog-page">
+      <section className="container">
+        <div className="blog-header">
+          <p className="eyebrow">Insights</p>
+          <h1>Blog</h1>
+          <p className="subtext">
+            Articles, updates, and useful guides.
+          </p>
+        </div>
 
-        <div className="grid gap-8">
+        <div className="blog-grid">
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="glass-card rounded-2xl p-6 hover:border-[--color-gold]/40 
-                         border border-white/10 transition-all duration-300 group"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-xs text-white/40 tracking-widest uppercase">
-                  {new Date(post.date).toLocaleDateString("en-AE", {
-                    year: "numeric", month: "long", day: "numeric",
-                  })}
-                </span>
-                {post.tags?.map((tag) => (
-                  <span key={tag} className="text-xs text-[--color-gold]/70 
-                                             border border-[--color-gold]/30 
-                                             rounded-full px-2 py-0.5">
-                    {tag}
-                  </span>
-                ))}
+            <article key={post.slug} className="blog-card">
+              <p className="meta">
+                {post.date} · {post.readingTime}
+              </p>
+              <h2>{post.title}</h2>
+              <p>{post.excerpt}</p>
+              <div className="tag-row">
+                <span>{post.category}</span>
               </div>
-              <h2 className="text-xl font-light text-white group-hover:text-[--color-gold] 
-                             transition-colors mb-2">
-                {post.title}
-              </h2>
-              <p className="text-white/50 text-sm leading-relaxed">{post.excerpt}</p>
-            </Link>
+              <Link href={`/blog/${post.slug}`} className="blog-link">
+                Read article
+              </Link>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }

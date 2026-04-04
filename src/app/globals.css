@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "react-day-picker/dist/style.css";
+
 @theme {
   --color-gold: #AB5461;
   --color-gold-light: #e8c97a;
@@ -7,7 +9,6 @@
 }
 
 @plugin "@tailwindcss/typography";
-
 
 @layer components {
   .glass {

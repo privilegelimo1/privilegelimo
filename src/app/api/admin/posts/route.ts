@@ -1,12 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { listFiles, getFile } from "@/lib/github";
+import { listFiles, getFile, putFile } from "@/lib/github";
 import { buildMdx, parseMdxFrontmatter } from "@/lib/mdxUtils";
-import { putFile } from "@/lib/github";
+
+type AdminPost = {
+  slug: string;
+  content?: string;
+  date?: string;
+  title?: string;
+  excerpt?: string;
+  coverImage?: string;
+  published?: boolean;
+  [key: string]: unknown;
+};
 
 async function isAuthenticated() {
   const cookieStore = await cookies();
   return cookieStore.get("admin_session")?.value === "authenticated";
+}
+
+function isPost(value: AdminPost | null): value is AdminPost {
+  return value !== null;
 }
 
 // GET /api/admin/posts — list all posts
@@ -17,23 +31,33 @@ export async function GET() {
 
   try {
     const files = await listFiles("content/blog");
-    const posts = await Promise.all(
+
+    const posts: (AdminPost | null)[] = await Promise.all(
       files
         .filter((f) => f.name.endsWith(".mdx"))
         .map(async (f) => {
           const slug = f.name.replace(/\.mdx$/, "");
           const file = await getFile(f.path);
+
           if (!file) return null;
+
           const parsed = parseMdxFrontmatter(file.content);
-          return { slug, ...parsed, content: undefined };
+
+          return {
+            slug,
+            ...parsed,
+            content: undefined,
+          } as AdminPost;
         })
     );
 
     const sorted = posts
-      .filter(Boolean)
-      .sort((a, b) =>
-        new Date(b!.date as string).getTime() - new Date(a!.date as string).getTime()
-      );
+      .filter(isPost)
+      .sort((a, b) => {
+        const aDate = a.date ? new Date(a.date).getTime() : 0;
+        const bDate = b.date ? new Date(b.date).getTime() : 0;
+        return bDate - aDate;
+      });
 
     return NextResponse.json(sorted);
   } catch (err) {
@@ -58,8 +82,12 @@ export async function POST(req: NextRequest) {
 
     const path = `content/blog/${slug}.mdx`;
     const existing = await getFile(path);
+
     if (existing) {
-      return NextResponse.json({ error: "A post with this slug already exists" }, { status: 409 });
+      return NextResponse.json(
+        { error: "A post with this slug already exists" },
+        { status: 409 }
+      );
     }
 
     const mdx = buildMdx(rest);
