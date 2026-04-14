@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPublishedBlogs } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata = {
   title: "Blog",
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-const posts = getAllPosts();
+  const posts = getAllPosts();
 
   return (
     <main className="blog-page">
