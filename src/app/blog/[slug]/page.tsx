@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug)
   if (!post) return {}
   return {
-    title:       `${post.title} | Creative Wired Blog`,
+    title:       `${post.title} | Privilege Limo Blog`,
     description: post.description,
     openGraph: {
       title:       post.title,
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     author:           { '@type': 'Person', name: post.author },
     publisher:        {
       '@type': 'Organization',
-      name: 'Creative Wired',
+      name: 'Privilege Limo',
       logo: { '@type': 'ImageObject', url: 'https://creativewired.agency/logo.png' },
     },
     datePublished:    post.date,
@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <Navbar currentPage="blog" />
+      <Navbar />
 
       {/* HERO */}
       <section className="pt-28 pb-12 px-5 md:px-12 lg:px-20 bg-white border-b border-neutral-100">

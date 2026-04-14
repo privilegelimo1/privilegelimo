@@ -21,7 +21,7 @@ export async function PUT(
 
   try {
     const body = await req.json();
-    const { title, date, excerpt, tags, content } = body;
+    const { title, date, excerpt, tags, content, author, coverImage } = body;
 
     if (!title || !content) {
       return NextResponse.json(
@@ -37,7 +37,15 @@ export async function PUT(
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
-    const mdx = buildMdx({ title, date, excerpt, tags, content });
+    const mdx = buildMdx({
+      title,
+      date:        date        ?? "",
+      excerpt:     excerpt     ?? "",
+      tags:        tags        ?? "",
+      content,
+      author:      author      ?? "",
+      coverImage:  coverImage  ?? "",
+    });
     await putFile(path, mdx, `blog: update "${title}"`);
 
     return NextResponse.json({ ok: true, slug });
@@ -66,7 +74,7 @@ export async function DELETE(
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
-    await deleteFile(path, `blog: delete "${slug}"`);
+    await deleteFile(path, existing.sha, `blog: delete "${slug}"`);
 
     return NextResponse.json({ ok: true });
   } catch (err: unknown) {

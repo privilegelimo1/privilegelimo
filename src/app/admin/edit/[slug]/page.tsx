@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect, notFound } from "next/navigation";
 import { getFile } from "@/lib/github";
-import { parseMdxFrontmatter } from "@/lib/mdxUtils";
+import { parseFrontmatter } from "@/lib/blog";
 import PostEditor from "@/components/admin/PostEditor";
 
 export const dynamic = "force-dynamic";
@@ -20,16 +20,16 @@ export default async function EditPostPage({
   const file = await getFile(`content/blog/${slug}.mdx`);
   if (!file) notFound();
 
-  const parsed = parseMdxFrontmatter(file.content);
+  const parsed = parseFrontmatter(file.content);
 
   return (
     <PostEditor
       initialData={{
         slug,
-        title: parsed.title ?? "",
-        date: parsed.date ?? "",
+        title:   parsed.title   ?? "",
+        date:    parsed.date    ?? "",
         excerpt: parsed.excerpt ?? "",
-        tags: parsed.tags ?? [],
+        tags:    parsed.tags    ?? [],
         content: parsed.content ?? "",
       }}
       isEditing

@@ -288,7 +288,7 @@ const res = await fetch(
       date,
       excerpt,
       tags: tagsInput.split(",").map((t) => t.trim()).filter(Boolean),
-      author: "Creative Wired",
+      author: "Privilege Limo",
       coverImage: featuredImage,
       content: buildMDX(),
     }),

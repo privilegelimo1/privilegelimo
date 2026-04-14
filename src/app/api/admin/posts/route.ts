@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { listFiles, getFile } from "@/lib/github";
-import { parseMdxFrontmatter } from "@/lib/mdxUtils";
+import { parseFrontmatter } from "@/lib/blog";
 
 async function isAuthenticated() {
   const cookieStore = await cookies();
@@ -23,7 +23,7 @@ export async function GET() {
           const slug = f.name.replace(/\.mdx$/, "");
           const file = await getFile(f.path);
           if (!file) return null;
-          const { title, date, excerpt, tags } = parseMdxFrontmatter(file.content);
+          const { title, date, excerpt, tags } = parseFrontmatter(file.content);
           return { slug, title, date, excerpt, tags };
         })
     );
