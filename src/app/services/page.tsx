@@ -60,7 +60,7 @@ const services = [
     subtitle: "Premium chauffeur driven cars",
     desc: "Experience the pinnacle of luxury travel with our professional chauffeur service. From sleek sedans to spacious SUVs, our uniformed drivers ensure a seamless, stress-free journey across Dubai and the UAE.",
     href: "/services/luxury-chauffeur-service-in-dubai",
-    image: "/images/chauffeur/chauffeur-luxury.jpg",
+    image: "/images/services/chauffeur-luxury.webp",
     highlights: ["Airport Transfers", "Corporate Travel", "City Tours", "Full Day Hire"],
   },
   {
@@ -69,7 +69,7 @@ const services = [
     subtitle: "Meet & greet, all UAE airports",
     desc: "Arrive and depart in style with our premium airport transfer service. We monitor your flight in real time, meet you with a name board, and handle your luggage — covering DXB, DWC, AUH and SHJ.",
     href: "/services/airport-transfer",
-    image: "/images/chauffeur/airport-transfer.jpg",
+    image: "/images/services/airport-transfer.webp",
     highlights: ["Flight Tracking", "Meet & Greet", "All UAE Airports", "24/7 Available"],
   },
   {
@@ -78,7 +78,7 @@ const services = [
     subtitle: "Executive travel for business",
     desc: "First impressions matter. Our corporate chauffeur service provides seamless executive transportation for meetings, conferences, roadshows and VIP client transfers across the UAE.",
     href: "/services/corporate-chauffeur-services",
-    image: "/images/chauffeur/corporate-chauffeur.jpg",
+    image: "/images/services/corporate-chauffeur.webp",
     highlights: ["Executive Sedans", "Roadshows", "Conference Transfers", "Corporate Accounts"],
   },
   {
@@ -87,7 +87,7 @@ const services = [
     subtitle: "Ultra-premium VIP transport",
     desc: "Our VIP chauffeur service is reserved for those who demand the very best. Rolls-Royce, Bentley, Mercedes S-Class and more — with a dedicated concierge-level experience from booking to drop-off.",
     href: "/services/vip-chauffeur-service",
-    image: "/images/chauffeur/vip-chauffeur.jpg",
+    image: "/images/services/vip-chauffeur.webp",
     highlights: ["Rolls-Royce", "Bentley", "Mercedes S-Class", "Dedicated Concierge"],
   },
   {
@@ -96,7 +96,7 @@ const services = [
     subtitle: "Luxury wedding transportation",
     desc: "Make your special day unforgettable with our wedding limousine service. From stretch limos to Rolls-Royce Phantom, we provide elegant, perfectly timed wedding transportation across Dubai and the UAE.",
     href: "/services/wedding-limo-services",
-    image: "/images/chauffeur/wedding-limo.jpg",
+    image: "/images/services/wedding-limo.webp",
     highlights: ["Stretch Limousines", "Rolls-Royce", "Bridal Cars", "Decoration Available"],
   },
   {
@@ -105,7 +105,7 @@ const services = [
     subtitle: "Group & event fleet management",
     desc: "From corporate galas to private parties, our event transportation service handles every logistical detail. We provide coordinated fleet management for groups of all sizes across Dubai and the UAE.",
     href: "/services/event-transportation",
-    image: "/images/chauffeur/event-transport.jpg",
+    image: "/images/services/event-transport.webp",
     highlights: ["Fleet Coordination", "Galas & Conferences", "Group Transfers", "On-Site Manager"],
   },
   {
@@ -114,7 +114,7 @@ const services = [
     subtitle: "Flexible disposal hire",
     desc: "Your chauffeur, your schedule. Book by the hour or for a full day — perfect for business meetings, shopping trips, sightseeing, or simply having a driver at your disposal across Dubai and the UAE.",
     href: "/services/full-day-and-hourly-chauffeur-services",
-    image: "/images/chauffeur/hourly-chauffeur.jpg",
+    image: "/images/services/full-day-chauffeur.webp",
     highlights: ["From 2 Hours", "Full Day Packages", "Multi-Stop Journeys", "Flexible Itinerary"],
   },
   {
@@ -123,7 +123,7 @@ const services = [
     subtitle: "Dubai & UAE tours with driver",
     desc: "Discover Dubai and the UAE in comfort with a dedicated private driver. We tailor every sightseeing tour to your interests — from the Burj Khalifa and Desert Safari to Abu Dhabi day trips.",
     href: "/services/private-driver-for-sightseeing-services",
-    image: "/images/chauffeur/sightseeing-tour.jpg",
+    image: "/images/services/private-driver.webp",
     highlights: ["Dubai City Tours", "Desert Safari Transfers", "Abu Dhabi Day Trips", "Custom Itineraries"],
   },
   {
@@ -132,7 +132,7 @@ const services = [
     subtitle: "Long-term chauffeur packages",
     desc: "Our monthly car rental with driver packages are ideal for executives, families and businesses who need reliable, premium transportation on a long-term basis — with flexible terms and fixed monthly rates.",
     href: "/services/monthly-car-rental-with-driver",
-    image: "/images/chauffeur/monthly-rental.jpg",
+    image: "/images/services/monthly-car-with-driver.webp",
     highlights: ["Monthly Packages", "Fixed Rates", "Dedicated Driver", "Flexible Terms"],
   },
   {
@@ -141,7 +141,7 @@ const services = [
     subtitle: "V-Class, Vito & premium vans",
     desc: "Travel in comfort and style with our premium Mercedes van fleet. Ideal for family trips, corporate groups, and VIP airport transfers — with up to 7 passengers in first-class comfort.",
     href: "/services/mercedes-van-rental-dubai",
-    image: "/images/mercedes-van/v-class-hero.jpg",
+    image: "/images/fleet/mercedes-v-class-1.webp",
     highlights: ["V-Class & Vito", "Up to 7 Passengers", "Airport Runs", "Corporate Groups"],
   },
   {
@@ -150,7 +150,7 @@ const services = [
     subtitle: "Hourly & full-day hire",
     desc: "Our Mercedes Sprinter fleet is perfect for large groups, events, and corporate travel. Choose from Avant Garde VIP, Ultra Luxury, Business Class and standard models — up to 19 passengers.",
     href: "/services/mercedes-sprinter-van-rental",
-    image: "/images/mercedes-van/sprinter-group.jpg",
+    image: "/images/fleet/mercedes-sprinter-ultra-luxury-1.webp",
     highlights: ["Up to 19 Passengers", "VIP Configurations", "Events & Transfers", "Chauffeur Driven"],
   },
   {
@@ -159,7 +159,7 @@ const services = [
     subtitle: "Premium vans across the UAE",
     desc: "Our luxury van rental service covers everything from VIP airport pickups to corporate group travel. Choose from a range of premium vans configured for comfort, style and practicality.",
     href: "/services/luxury-van-rental-in-dubai",
-    image: "/images/mercedes-van/luxury-van.jpg",
+    image: "/images/fleet/mercedes-sprinter-avant-garde-1.webp",
     highlights: ["VIP Configurations", "Group Travel", "Airport Transfers", "Corporate Hire"],
   },
   {
@@ -168,7 +168,7 @@ const services = [
     subtitle: "Dubai, Sharjah & Abu Dhabi",
     desc: "Need to move a large group across the UAE? Our luxury bus and van rental service covers Dubai, Abu Dhabi, Sharjah and beyond — with professional drivers and spacious, well-maintained vehicles.",
     href: "/services/bus-and-van-rental-in-dubai",
-    image: "/images/fleet/luxury-bus.jpg",
+    image: "/images/fleet/mercedes-sprinter-19-1.webp",
     highlights: ["50-Seater Coach", "Intercity Routes", "School & Corporate", "Event Transport"],
   },
 ];
@@ -309,7 +309,7 @@ export default function ServicesPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="https://wa.me/971509200818"
+                  href="https://wa.me/971509852818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -320,10 +320,10 @@ export default function ServicesPage() {
                   Get an Instant Quote
                 </a>
                 <a
-                  href="tel:+971509200818"
+                  href="tel:+971509852818"
                   className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
                 >
-                  +971 50 920 0818
+                  +971 50 985 2818
                 </a>
               </div>
 
@@ -497,7 +497,7 @@ export default function ServicesPage() {
                 Can't find your answer? Message us on WhatsApp — we respond instantly, 24 hours a day.
               </p>
               <a
-                href="https://wa.me/971509200818"
+                href="https://wa.me/971509852818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -559,7 +559,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20service."
+                href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20service."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -570,16 +570,16 @@ export default function ServicesPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509200818"
+                href="tel:+971509852818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 920 0818
+                +971 50 985 2818
               </a>
             </div>
             <div className="mt-10 pt-8 border-t border-[#f0f0f0] grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
-                { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
+                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
+                { label: "WhatsApp", value: "+971 50 985 2818", href: "https://wa.me/971509852818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a

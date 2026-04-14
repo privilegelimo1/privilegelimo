@@ -68,7 +68,7 @@ export default function FleetBookingForm({
       .join("\n");
 
     const encoded = encodeURIComponent(lines);
-    window.open(`https://wa.me/971509200818?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/971509852818?text=${encoded}`, "_blank");
   }
 
   const inputClass =

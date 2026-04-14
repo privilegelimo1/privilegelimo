@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
+import FleetPreview from "@/components/FleetPreview";
 
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
@@ -179,7 +180,7 @@ export default function MercedesSprinterRentalPage() {
         {/* CTAs */}
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://wa.me/971509200818"
+            href="https://wa.me/971509852818"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -190,10 +191,10 @@ export default function MercedesSprinterRentalPage() {
             Book on WhatsApp
           </a>
           <a
-            href="tel:+971509200818"
+            href="tel:+971509852818"
             className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
           >
-            +971 50 920 0818
+            +971 50 985 2818
           </a>
         </div>
 
@@ -251,100 +252,7 @@ export default function MercedesSprinterRentalPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sprinterFleet.map((car) => (
-              <div
-                key={car.id}
-                className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.09)] hover:border-[#e8d9a0] transition-all duration-500"
-              >
-                {/* Image */}
-                <div className="relative h-60 bg-[#f5f5f5] overflow-hidden">
-                  <Image
-                    src={car.images?.[0] ?? ""}
-                    alt={car.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-
-                  {/* Category + badge - top left */}
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.4em] uppercase text-[#AB5461] font-medium">
-                      {car.category}
-                    </span>
-                    {car.badge && (
-                      <span className="px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-white font-light">
-                        {car.badge}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Price - bottom left over gradient */}
-                  <div className="absolute bottom-4 left-5">
-                    <div className="text-[10px] tracking-[0.3em] uppercase text-white/60 font-light mb-0.5">
-                      Starting from
-                    </div>
-                    <div className="text-2xl font-extralight text-white tracking-tight">
-                      {car.priceLabel}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Body */}
-                <div className="p-7">
-                  <h3 className="text-lg font-light text-[#0a0a0a] mb-2 tracking-tight">{car.name}</h3>
-                  <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-6">
-                    {car.description}
-                  </p>
-
-                  {/* Feature label */}
-                  <p className="text-[9px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light mb-6 truncate">
-                    {car.featureLabel}
-                  </p>
-
-                  {/* Specs - clean divider style */}
-                  <div className="flex items-center divide-x divide-[#efefef] mb-7">
-                    <div className="flex-1 pr-4">
-                      <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
-                        Transfer
-                      </div>
-                      <div className="text-sm font-light text-[#0a0a0a]">Within Dubai</div>
-                    </div>
-                    <div className="flex-1 px-4">
-                      <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
-                        Seats
-                      </div>
-                      <div className="text-sm font-light text-[#0a0a0a]">{car.passengers} Passengers</div>
-                    </div>
-                    <div className="flex-1 pl-4">
-                      <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-1">
-                        Baggage
-                      </div>
-                      <div className="text-sm font-light text-[#0a0a0a]">{car.luggage} Pieces</div>
-                    </div>
-                  </div>
-
-                  {/* Book button */}
-                  <a
-                    href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white group-hover:bg-[#0a0a0a] group-hover:text-white transition-all duration-300"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
-                    Book Now via WhatsApp
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <FleetPreview/>
 
       {/* ── EXPERIENCE SECTION ────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
@@ -414,7 +322,7 @@ export default function MercedesSprinterRentalPage() {
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971509200818"
+                  href="tel:+971509852818"
                   className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                 >
                   Call Now
@@ -500,7 +408,7 @@ export default function MercedesSprinterRentalPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509200818"
+                href="https://wa.me/971509852818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -511,10 +419,10 @@ export default function MercedesSprinterRentalPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509200818"
+                href="tel:+971509852818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 920 0818
+                +971 50 985 2818
               </a>
             </div>
           </div>

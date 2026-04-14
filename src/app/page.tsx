@@ -145,7 +145,7 @@ const faqs = [
   },
   {
     q: "How far in advance should I book?",
-    a: "We recommend booking at least 24 hours in advance. However, we accommodate last-minute bookings subject to availability - simply call or WhatsApp us on +971 50 920 0818.",
+    a: "We recommend booking at least 24 hours in advance. However, we accommodate last-minute bookings subject to availability - simply call or WhatsApp us on +971 50 985 2818.",
   },
 ];
 
@@ -270,7 +270,7 @@ function HeroSection() {
   </button>
 
   <a
-    href="https://wa.me/971509200818"
+    href="https://wa.me/971509852818"
     target="_blank"
     rel="noreferrer"
     className="group inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white text-black text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-[1.02]"
@@ -408,7 +408,7 @@ export default function HomePage() {
       <article className="group bg-white rounded-[28px] border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden h-full flex flex-col">
 
         {/* Image */}
-        <Link href={`/fleet/${car.slug}`} className="block">
+        <Link href={`/fleet/${car.classSlug}/${car.slug}`} className="block">
           <div className="relative h-52 bg-[#fafafa] overflow-hidden">
             {car.images?.[0] ? (
   <NextImage
@@ -463,7 +463,7 @@ export default function HomePage() {
               <span className="text-xs text-[#9a9a9a] font-light">{car.luggage}</span>
             </div>
             <Link
-              href={`/fleet/${car.slug}`}
+              href={`/fleet/${car.classSlug}/${car.slug}`}
               className="ml-auto text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors duration-300 flex items-center gap-1.5"
             >
               Details
@@ -484,7 +484,7 @@ export default function HomePage() {
                 Need help choosing the right vehicle for your journey?
               </p>
               <a
-                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20need%20help%20choosing%20a%20vehicle."
+                href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20need%20help%20choosing%20a%20vehicle."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -635,7 +635,7 @@ export default function HomePage() {
                   of your experience is curated with absolute care and professionalism.
                 </p>
                 <a
-                  href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20would%20like%20to%20make%20a%20booking."
+                  href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20would%20like%20to%20make%20a%20booking."
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -821,8 +821,8 @@ export default function HomePage() {
             {/* Direct contact strip */}
             <div className="mt-12 pt-10 border-t border-[#efefef] grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               {[
-                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
-                { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
+                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
+                { label: "WhatsApp", value: "+971 50 985 2818", href: "https://wa.me/971509852818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a key={c.label} href={c.href} target={c.href.startsWith("https") ? "_blank" : undefined} rel="noreferrer"

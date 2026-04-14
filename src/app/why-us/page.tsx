@@ -126,7 +126,7 @@ export default function WhyUsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://wa.me/971509200818"
+                  href="https://wa.me/971509852818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -137,10 +137,10 @@ export default function WhyUsPage() {
                   Book on WhatsApp
                 </a>
                 <a
-                  href="tel:+971509200818"
+                  href="tel:+971509852818"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
                 >
-                  +971 50 920 0818
+                  +971 50 985 2818
                 </a>
               </div>
             </div>
@@ -449,7 +449,7 @@ export default function WhyUsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
-                href="https://wa.me/971509200818"
+                href="https://wa.me/971509852818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"

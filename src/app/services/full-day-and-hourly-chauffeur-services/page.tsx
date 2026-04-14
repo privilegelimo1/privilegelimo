@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
+import FleetPreview from "@/components/FleetPreview";
 
 export const metadata: Metadata = {
   title: "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire",
@@ -269,7 +270,7 @@ export default function HourlyChauffeurServicePage() {
             {/* Right — hero image */}
             <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
               <Image
-                src="/images/fleet/audi-a6-1.webp"
+                src="/images/services/full-day-chauffeur.webp"
                 alt="Hourly chauffeur service Dubai"
                 fill
                 priority
@@ -436,114 +437,12 @@ export default function HourlyChauffeurServicePage() {
                 <span className="text-[#AB5461] italic font-extralight">for the day</span>
               </h2>
             </div>
-            <Link
-              href="/fleet"
-              className="shrink-0 inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-[#0a0a0a] text-[10px] tracking-[0.25em] uppercase font-medium text-[#0a0a0a] hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
-            >
-              View All Fleet
-              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {pageFleet.map((car) => (
-              <div
-                key={car.name}
-                className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
-              >
-                <div className="relative h-52 overflow-hidden bg-[#f5f5f5]">
-                  <Image
-                    src={car.images?.[0] ?? ""}
-                    alt={car.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] font-light shadow-sm">
-                      {car.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-start justify-between gap-3 mb-1">
-                    <h3 className="text-base font-light text-[#0a0a0a] tracking-tight leading-snug">
-                      {car.name}
-                    </h3>
-                    <span className="shrink-0 text-sm font-light text-[#AB5461]">{car.price}</span>
-                  </div>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mb-3">
-                    Up to {car.passengers} passenger{car.passengers > 1 ? "s" : ""}
-                  </p>
-                  <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-6">
-                    {car.description}
-                  </p>
-
-                  <div className="flex items-center gap-3">
-                    <Link
-                      href={`/fleet/${car.slug}`}
-                      className="flex-1 inline-flex items-center justify-center px-4 py-2.5 rounded-full border border-[#efefef] text-[9px] tracking-[0.25em] uppercase font-medium text-[#0a0a0a] hover:border-[#0a0a0a] transition-colors"
-                    >
-                      View details
-                    </Link>
-                    <a
-                      href={`https://wa.me/971509200818?text=${encodeURIComponent(
-                        `Hi, I'd like to book an hourly chauffeur service with the ${car.name}. Can you share availability and pricing?`
-                      )}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-[#0a0a0a] text-[9px] tracking-[0.25em] uppercase font-medium text-white hover:bg-[#AB5461] transition-all duration-300"
-                    >
-                      Book Now
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <span className="text-[10px] tracking-[0.45em] uppercase text-white font-light block mb-4">
-                  Flexible Chauffeur Hire
-                </span>
-                <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
-                  Need a driver for a few hours
-                  <br />
-                  <span className="text-white italic font-extralight">or the entire day?</span>
-                </h2>
-                <p className="mt-4 text-sm leading-[1.9] text-white font-light max-w-xl">
-                  Tell us your start time, how many hours you need and your
-                  preferred vehicle. We'll handle the rest.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[180px]">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
-                >
-                  Get a Quote
-                </Link>
-                <a
-                  href="tel:+971509200818"
-                  className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
-                >
-                  Call Now
-                </a>
-              </div>
             </div>
-          </div>
+<FleetPreview/>
+
         </div>
       </section>
+
 
       {/* ── CTA BAND ───────────────────────────────────────── */}
       <section className="py-10 bg-white">
@@ -572,7 +471,7 @@ export default function HourlyChauffeurServicePage() {
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971509200818"
+                  href="tel:+971509852818"
                   className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                 >
                   Call Now
@@ -666,6 +565,7 @@ export default function HourlyChauffeurServicePage() {
           </div>
         </div>
       </section>
+      <RelatedServices/>
 <Footer/>
     </main>
   );

@@ -7,14 +7,11 @@ export function buildMdx(data: {
   coverImage: string;
   content: string;
 }): string {
-  const tags = data.tags
-    ? data.tags
-        .split(",")
-        .map((t) => t.trim())
-        .filter(Boolean)
-        .map((t) => `"${t}"`)
-        .join(", ")
-    : "";
+  const tags = Array.isArray(data.tags)
+  ? data.tags.map((t) => `"${t.trim()}"`).join(", ")
+  : data.tags
+  ? data.tags.split(",").map((t) => `"${t.trim()}"`).join(", ")
+  : "";
 
   const frontmatter = [
     "---",

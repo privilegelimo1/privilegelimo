@@ -171,7 +171,7 @@ export default function MercedesVanRentalPage() {
         {/* CTAs */}
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://wa.me/971509200818"
+            href="https://wa.me/971509852818"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -182,10 +182,10 @@ export default function MercedesVanRentalPage() {
             Book on WhatsApp
           </a>
           <a
-            href="tel:+971509200818"
+            href="tel:+971509852818"
             className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
           >
-            +971 50 920 0818
+            +971 50 985 2818
           </a>
         </div>
 
@@ -205,7 +205,7 @@ export default function MercedesVanRentalPage() {
       {/* Right — hero image flush to bottom */}
       <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
         <Image
-          src="/images/fleet/audi-a6-1.webp"
+          src="/images/fleet/mercedes-v-class-1.webp"
           alt="Mercedes van rental Dubai"
           fill
           priority
@@ -247,7 +247,7 @@ export default function MercedesVanRentalPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {mercedesVanFleet.map((car) => (
               <div
-                key={car.id}
+                key={car.name}
                 className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
               >
                 {/* Image */}
@@ -306,7 +306,7 @@ export default function MercedesVanRentalPage() {
                       <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per transfer</div>
                     </div>
                     <a
-                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
+                      href={`https://wa.me/971509852818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
@@ -340,7 +340,7 @@ export default function MercedesVanRentalPage() {
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
-                  src="/images/mercedes-van/v-class-hero.jpg"
+                  src="/images/fleet/mercedes-v300-tiffany-1.webp"
                   alt="Mercedes-Benz V-Class luxury van rental Dubai UAE"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -377,7 +377,7 @@ export default function MercedesVanRentalPage() {
                   ))}
                 </div>
                 <a
-                  href="https://wa.me/971509200818"
+                  href="https://wa.me/971509852818"
                   target="_blank"
                   rel="noreferrer"
                   className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
@@ -418,7 +418,7 @@ export default function MercedesVanRentalPage() {
                   ))}
                 </div>
                 <a
-                  href="https://wa.me/971509200818"
+                  href="https://wa.me/971509852818"
                   target="_blank"
                   rel="noreferrer"
                   className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
@@ -431,7 +431,7 @@ export default function MercedesVanRentalPage() {
               </div>
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-2">
                 <Image
-                  src="/images/mercedes-van/sprinter-group.jpg"
+                  src="/images/fleet/mercedes-sprinter-avant-garde-1.webp"
                   alt="Mercedes Sprinter van rental Dubai group travel"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -451,7 +451,7 @@ export default function MercedesVanRentalPage() {
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
-                  src="/images/mercedes-van/dubai-style.jpg"
+                  src="/images/fleet/mercedes-vip-trend-1.webp"
                   alt="Explore Dubai in style Mercedes van rental"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -488,7 +488,7 @@ export default function MercedesVanRentalPage() {
                   ))}
                 </div>
                 <a
-                  href="https://wa.me/971509200818"
+                  href="https://wa.me/971509852818"
                   target="_blank"
                   rel="noreferrer"
                   className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
@@ -551,7 +551,7 @@ export default function MercedesVanRentalPage() {
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971509200818"
+                  href="tel:+971509852818"
                   className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                 >
                   Call Now
@@ -586,7 +586,7 @@ export default function MercedesVanRentalPage() {
           </div>
           <div className="flex justify-center mt-12">
             <a
-              href="https://wa.me/971509200818"
+              href="https://wa.me/971509852818"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -638,7 +638,7 @@ export default function MercedesVanRentalPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20Mercedes%20Van."
+                href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20Mercedes%20Van."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -649,16 +649,16 @@ export default function MercedesVanRentalPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509200818"
+                href="tel:+971509852818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 920 0818
+                +971 50 985 2818
               </a>
             </div>
             <div className="mt-10 pt-8 border-t border-[#f0f0f0] grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
-                { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
+                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
+                { label: "WhatsApp", value: "+971 50 985 2818", href: "https://wa.me/971509852818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a

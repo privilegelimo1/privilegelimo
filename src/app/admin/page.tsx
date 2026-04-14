@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
 
 export default function AdminLogin() {
+  const router = useRouter();
   const [password, setPassword] = useState("");
+  const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -23,32 +25,33 @@ export default function AdminLogin() {
     if (res.ok) {
       router.push("/admin/dashboard");
     } else {
-      setError("Invalid password");
+      setError("Incorrect password. Try again.");
       setLoading(false);
     }
   }
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center px-4">
-      {/* Background grain */}
+      {/* Background glow */}
       <div
-        className="fixed inset-0 opacity-[0.03] pointer-events-none"
+        className="fixed inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(171,84,97,0.08) 0%, transparent 70%)",
         }}
       />
 
       <div className="w-full max-w-sm relative">
         {/* Logo mark */}
-        <div className="text-center mb-10">
+        <div className="flex flex-col items-center mb-10">
           <div
-            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
+            className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
             style={{
               background: "rgba(171,84,97,0.12)",
-              border: "1px solid rgba(171,84,97,0.3)",
+              border: "1px solid rgba(171,84,97,0.25)",
             }}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path
                 d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
                 stroke="#AB5461"
@@ -58,66 +61,105 @@ export default function AdminLogin() {
               />
             </svg>
           </div>
-          <h1 className="text-white text-xl font-light tracking-[0.2em] uppercase">
+          <h1 className="text-white text-base font-light tracking-widest mb-1">
             Privilege Limo
           </h1>
-          <p className="text-white/30 text-xs tracking-widest mt-1 uppercase">
+          <p className="text-white/25 text-xs tracking-wider">
             Content Studio
           </p>
         </div>
 
         {/* Card */}
         <div
+          className="rounded-3xl p-8"
           style={{
             background: "rgba(255,255,255,0.03)",
             border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: "24px",
-            boxShadow: "0 24px 80px rgba(0,0,0,0.5)",
           }}
-          className="p-8"
         >
-          <form onSubmit={handleLogin} className="space-y-5">
+          <h2 className="text-white/60 text-xs tracking-widest uppercase mb-6">
+            Sign In
+          </h2>
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            {/* Password field */}
             <div>
-              <label className="block text-xs tracking-widest uppercase text-white/40 mb-2">
-                Admin Password
+              <label className="block text-white/30 text-xs tracking-wider mb-2">
+                Password
               </label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3
-                           text-white text-sm placeholder-white/20
-                           focus:outline-none focus:border-[#AB5461]/50 focus:bg-white/8
-                           transition-all duration-300"
-                required
-              />
+              <div className="relative">
+                <input
+                  type={showPw ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  required
+                  suppressHydrationWarning
+                  autoComplete="current-password"
+                  className="w-full pr-10 pl-4 py-3 rounded-xl text-white text-sm placeholder-white/15 outline-none transition-all duration-200"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: error
+                      ? "1px solid rgba(255,80,80,0.4)"
+                      : "1px solid rgba(255,255,255,0.08)",
+                  }}
+                  onFocus={(e) => {
+                    if (!error)
+                      e.currentTarget.style.border =
+                        "1px solid rgba(171,84,97,0.4)";
+                  }}
+                  onBlur={(e) => {
+                    if (!error)
+                      e.currentTarget.style.border =
+                        "1px solid rgba(255,255,255,0.08)";
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPw((v) => !v)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors duration-200"
+                  style={{ color: "rgba(255,255,255,0.2)" }}
+                  tabIndex={-1}
+                >
+                  {showPw ? <EyeOff size={15} /> : <Eye size={15} />}
+                </button>
+              </div>
+
+              {/* Error */}
+              {error && (
+                <p className="text-red-400/70 text-xs mt-2 tracking-wide">
+                  {error}
+                </p>
+              )}
             </div>
 
-            {error && (
-              <p className="text-xs text-red-400/80 tracking-wide">{error}</p>
-            )}
-
+            {/* Submit */}
             <button
               type="submit"
-              disabled={loading}
-              className="w-full py-3 rounded-xl text-sm tracking-widest uppercase
-                         font-medium transition-all duration-300 disabled:opacity-50"
+              disabled={loading || !password}
+              suppressHydrationWarning
+              className="w-full py-3 rounded-xl text-xs tracking-widest uppercase font-medium transition-all duration-200 disabled:opacity-40 flex items-center justify-center gap-2"
               style={{
-                background: loading
-                  ? "rgba(171,84,97,0.3)"
-                  : "rgba(171,84,97,0.9)",
+                background: "rgba(171,84,97,0.85)",
+                border: "1px solid rgba(171,84,97,0.4)",
                 color: "white",
-                border: "1px solid rgba(171,84,97,0.5)",
               }}
             >
-              {loading ? "Signing in…" : "Sign In"}
+              {loading ? (
+                <>
+                  <Loader2 size={13} className="animate-spin" />
+                  Signing in…
+                </>
+              ) : (
+                "Sign In"
+              )}
             </button>
           </form>
         </div>
 
-        <p className="text-center text-white/15 text-xs mt-6">
-          Privilege Luxury Travel LLC · Dubai
+        {/* Footer */}
+        <p className="text-center text-white/10 text-[10px] tracking-widest mt-6 uppercase">
+          Privilege Limo · Admin
         </p>
       </div>
     </div>

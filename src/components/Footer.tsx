@@ -67,7 +67,7 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-5">
               {[
-                { label: "Phone", value: "+971 XX XXX XXXX", href: "tel:+97100000000" },
+                { label: "Phone", value: "+971 50 985 2818", href: "tel:+97100000000" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
                 { label: "Location", value: "Dubai, UAE", href: undefined },
                 { label: "Hours", value: "24 / 7 - Always Available", href: undefined },

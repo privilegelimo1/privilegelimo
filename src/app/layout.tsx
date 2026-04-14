@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Privilege Limo",
   },
   description:
-    "Privilege Luxury Travel LLC - Dubai's most trusted chauffeur service. Premium airport transfers, corporate travel, weddings & events across Dubai, Abu Dhabi & Sharjah. Available 24/7. Call +971 50 920 0818.",
+    "Privilege Luxury Travel LLC - Dubai's most trusted chauffeur service. Premium airport transfers, corporate travel, weddings & events across Dubai, Abu Dhabi & Sharjah. Available 24/7. Call +971 50 985 2818.",
   keywords: [
     "luxury chauffeur Dubai",
     "chauffeur service Dubai",
@@ -90,7 +90,7 @@ export default function RootLayout({
               description:
                 "Dubai's most trusted luxury chauffeur service. Premium airport transfers, corporate travel, weddings and VIP events across UAE.",
               url: "https://privilegelimo.com",
-              telephone: ["+971509200818", "+971509852818"],
+              telephone: ["+971509852818", "+971509852818"],
               email: "booking@privilegelimo.com",
               address: {
                 "@type": "PostalAddress",

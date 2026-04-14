@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
+import FleetPreview from "@/components/FleetPreview";
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
@@ -280,7 +281,7 @@ export default function WeddingLimoPage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://wa.me/971509200818"
+            href="https://wa.me/971509852818"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -291,10 +292,10 @@ export default function WeddingLimoPage() {
             Book on WhatsApp
           </a>
           <a
-            href="tel:+971509200818"
+            href="tel:+971509852818"
             className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
           >
-            +971 50 920 0818
+            +971 50 985 2818
           </a>
         </div>
 
@@ -319,7 +320,7 @@ export default function WeddingLimoPage() {
       {/* Right — hero image */}
       <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] rounded-t-[32px] overflow-hidden">
         <Image
-          src="/images/services/wedding-limo-hero.webp"
+          src="/images/services/wedding-limo.webp"
           alt="Wedding limo hire Dubai"
           fill
           priority
@@ -337,6 +338,7 @@ export default function WeddingLimoPage() {
     </div>
   </div>
 </section>
+
 
       {/* ── SERVICES STRIP ────────────────────────────────────────── */}
       <section className="py-20 border-b border-[#efefef]">
@@ -371,6 +373,31 @@ export default function WeddingLimoPage() {
           </div>
         </div>
       </section>
+
+      {/* ── FLEET ─────────────────────────────────────────────────── */}
+      <section className="pb-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <div className="h-px w-8 bg-[#AB5461]" />
+            <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
+              Fleet
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-12">
+            Choose Your Wedding Vehicle
+            <br />
+            <span className="text-[#AB5461] italic font-extralight">
+              For Every Role on the Day
+            </span>
+          </h2>
+
+         <FleetPreview
+  classSlug="stretch-limousine"
+/> 
+</div>
+      </section>
+
 
       {/* ── WHY CHOOSE ────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
@@ -433,98 +460,6 @@ export default function WeddingLimoPage() {
         </div>
       </section>
 
-      {/* ── FLEET ─────────────────────────────────────────────────── */}
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-[#AB5461]" />
-            <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
-              Fleet
-            </span>
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-12">
-            Choose Your Wedding Vehicle
-            <br />
-            <span className="text-[#AB5461] italic font-extralight">
-              For Every Role on the Day
-            </span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pageFleet.map((car) => (
-              <div
-                key={car.name}
-                className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(171,84,97,0.10)] hover:border-[#AB5461]/20 transition-all duration-300"
-              >
-                <div className="relative h-[220px] bg-[#f8f4f5] overflow-hidden">
-                  <Image
-                    src={car.images?.[0] ?? ""}
-                    alt={car.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-[#AB5461]">
-                    {car.category}
-                  </span>
-                </div>
-
-                <div className="p-7">
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className="text-lg font-light text-[#0a0a0a] tracking-tight">
-                      {car.name}
-                    </h3>
-                    <span className="shrink-0 text-sm font-semibold text-[#AB5461]">
-                      {car.price}
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-[#b3b3b3] mb-3 font-light">
-                    Up to {car.passengers} passenger{car.passengers > 1 ? "s" : ""}
-                  </p>
-
-                  <p className="text-[13px] leading-[1.85] text-[#777] font-light mb-6">
-                    {car.description}
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Link
-                      href={`/fleet/${car.slug}`}
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full border border-[#efefef] text-xs font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
-                    >
-                      View details
-                    </Link>
-                    <a
-                      href={`https://wa.me/971509200818?text=${encodeURIComponent(
-                        `Hi, I'd like to book the ${car.name} for my wedding. Can you share availability and pricing?`
-                      )}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-[#AB5461] text-xs font-medium text-white hover:bg-[#964754] transition-colors"
-                    >
-                      Book Now
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-12">
-            <Link
-              href="/fleet"
-              className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
-            >
-              View All Fleet
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
        {/* ── CTA BAND ───────────────────────────────────────── */}
             <section className="py-10 bg-white">
               <div className="max-w-7xl mx-auto px-6">
@@ -552,7 +487,7 @@ export default function WeddingLimoPage() {
                         Get a Quote
                       </Link>
                       <a
-                        href="tel:+971509200818"
+                        href="tel:+971509852818"
                         className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                       >
                         Call Now
@@ -629,7 +564,7 @@ export default function WeddingLimoPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509200818"
+                href="https://wa.me/971509852818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -640,10 +575,10 @@ export default function WeddingLimoPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509200818"
+                href="tel:+971509852818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 920 0818
+                +971 50 985 2818
               </a>
             </div>
           </div>

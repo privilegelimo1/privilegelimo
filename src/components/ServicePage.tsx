@@ -47,7 +47,7 @@ export default function ServicePage({
     .map((s) => fleet.find((v) => v.slug === s))
     .filter((v): v is Vehicle => Boolean(v));
 
-  const waUrl = `https://wa.me/971509200818?text=${encodeURIComponent(
+  const waUrl = `https://wa.me/971509852818?text=${encodeURIComponent(
     `Hello Privilege Limo 👋\n\nI'm interested in: *${title}*\n\nPlease send me more details and pricing.`
   )}`;
 
@@ -101,10 +101,10 @@ export default function ServicePage({
                   Book on WhatsApp
                 </a>
                 <a
-                  href="tel:+971509200818"
+                  href="tel:+971509852818"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
                 >
-                  +971 50 920 0818
+                  +971 50 985 2818
                 </a>
               </div>
             </div>
@@ -331,16 +331,16 @@ export default function ServicePage({
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509200818"
+                href="tel:+971509852818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 920 0818
+                +971 50 985 2818
               </a>
             </div>
             <div className="mt-10 pt-8 border-t border-[#f0f0f0] grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
-                { label: "WhatsApp", value: "+971 50 920 0818", href: waUrl },
+                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
+                { label: "WhatsApp", value: "+971 50 985 2818", href: waUrl },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a

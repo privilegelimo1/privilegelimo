@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import { fleet } from "@/data/index";
+import FleetPreview from "@/components/FleetPreview";
 
 // ─── FILTERED DATA ────────────────────────────────────────────────────────────
 
@@ -207,7 +208,7 @@ export default function LuxuryChauffeurServicePage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://wa.me/971509200818"
+            href="https://wa.me/971509852818"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -216,10 +217,10 @@ export default function LuxuryChauffeurServicePage() {
             Book on WhatsApp
           </a>
           <a
-            href="tel:+971509200818"
+            href="tel:+971509852818"
             className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
           >
-            +971 50 920 0818
+            +971 50 985 2818
           </a>
         </div>
 
@@ -262,7 +263,7 @@ export default function LuxuryChauffeurServicePage() {
   </div>
 </section>
       {/* ── FLEET PRICING ─────────────────────────────────────────── */}
-      <section className="py-28 bg-[#fafafa] border-t border-[#efefef]">
+      <section className="py-28 bg-[#ffffff] border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center mb-16">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
@@ -275,91 +276,9 @@ export default function LuxuryChauffeurServicePage() {
                 chauffeur driven vehicles
               </span>
             </h2>
-            <p className="text-sm text-[#b0b0b0] font-light mt-4">
-              All these prices are subject to change depending on season
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-{chauffeurFleet.map((car) => (
-                <div
-                key={car.id}
-                className="group bg-white rounded-3xl border border-[#efefef] overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
-              >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden bg-[#f5f5f5]">
-                  <Image
-                    src={car.images?.[0] ?? ""}
-                    alt={car.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] font-light shadow-sm">
-                      {car.category}
-                    </span>
-                    {car.badge && (
-                      <span className="px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-sm text-[9px] tracking-[0.25em] uppercase text-white font-light shadow-sm">
-                        {car.badge}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-base font-light text-[#0a0a0a] tracking-tight mb-1 leading-snug">
-                    {car.name}
-                  </h3>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a] font-light mb-3">
-                    {car.priceNote}
-                  </p>
-                  <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-4 line-clamp-2">
-                    {car.description}
-                  </p>
-
-                  {/* Specs */}
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                      </svg>
-                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.passengers} Seats</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
-                      </svg>
-                      <span className="text-[11px] text-[#5a5a5a] font-light">{car.luggage} Bags</span>
-                    </div>
-                  </div>
-
-                  {/* Feature label */}
-                  <p className="text-[9px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light mb-5 truncate">
-                    {car.featureLabel}
-                  </p>
-
-                  {/* Price + CTA */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-xl font-light text-[#0a0a0a] tracking-tight">{car.priceLabel}</div>
-                      <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per transfer</div>
-                    </div>
-                    <a
-                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
-                    >
-                      Book Now
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
+        <FleetPreview/>
       </section>
 
       {/* ── SECTION LABEL ─────────────────────────────────────────── */}
@@ -436,7 +355,7 @@ export default function LuxuryChauffeurServicePage() {
                 Whether you are visiting Dubai for leisure or business, our professional chauffeurs and luxurious vehicles will ensure that you travel in style and comfort.
               </p>
               <a
-                href="https://wa.me/971509200818"
+                href="https://wa.me/971509852818"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
@@ -601,7 +520,7 @@ export default function LuxuryChauffeurServicePage() {
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971509200818"
+                  href="tel:+971509852818"
                   className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                 >
                   Call Now
@@ -686,7 +605,7 @@ export default function LuxuryChauffeurServicePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
-                href="https://wa.me/971509200818"
+                href="https://wa.me/971509852818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -695,10 +614,10 @@ export default function LuxuryChauffeurServicePage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509200818"
+                href="tel:+971509852818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 920 0818
+                +971 50 985 2818
               </a>
             </div>
             <p className="text-[#9a9a9a] text-xs font-light">
