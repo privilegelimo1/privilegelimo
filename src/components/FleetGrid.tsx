@@ -102,7 +102,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
 
   return (
     <>
-      <section className="py-28">
+      <section className="py-28 bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/10">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -118,8 +118,8 @@ export default function FleetGrid({ fleet, categories }: Props) {
           </div>
 
           {/* Stats + filter bar */}
-          <div className="mb-16 rounded-[32px] border border-[#f1e4e7] bg-gradient-to-br from-[#fff8f9] via-[#fffdfd] to-[#faf7f7] overflow-visible">
-            <div className="py-8 px-4 sm:px-6 lg:px-8 border-b border-[#f3e4e7]">
+          <div className="mb-16 rounded-[32px] border border-[#AB5461]/50 bg-gradient-to-br from-[#fff8f9] via-[#fffdfd] to-[#faf7f7] overflow-visible">
+            <div className="py-8 px-4 sm:px-6 lg:px-8 ">
               <div className="max-w-7xl mx-auto">
                 {/* Stats row */}
                 <div className="flex flex-wrap justify-center gap-8 text-center mb-8">
@@ -280,7 +280,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                     return (
                       <div
                         key={v.slug}
-                        className="group rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_16px_48px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden bg-white"
+                        className="group rounded-3xl border border-[#AB5461]/40 hover:border-[#AB5461] hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] transition-all duration-500 overflow-hidden bg-white"
                       >
                         <Link href={`/fleet/${v.slug}`} className="block">
                           <div className="relative h-52 bg-[#fafafa] overflow-hidden">

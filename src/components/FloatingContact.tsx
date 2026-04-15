@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { Phone, X } from "lucide-react";
 
-const WA_LINK = "https://wa.me/971509852818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20make%20an%20enquiry.";
-const CALL_LINK = "tel:+971509852818";
+const WA_LINK = "https://wa.me/971509200818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20make%20an%20enquiry.";
+const CALL_LINK = "tel:+971509200818";
 
 export default function ChatWidget() {
   const [showLabel, setShowLabel] = useState(false);
@@ -88,7 +88,7 @@ export default function ChatWidget() {
                 </div>
                 <div>
                   <p className="font-bold text-[#0a0a0a] text-sm">Call Us</p>
-                  <p className="text-[#9a9a9a] text-xs font-light">+971 50 985 2818</p>
+                  <p className="text-[#9a9a9a] text-xs font-light">+971 50 920 0818</p>
                 </div>
               </a>
 

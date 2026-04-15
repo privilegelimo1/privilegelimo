@@ -85,7 +85,7 @@ export default function FleetPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -94,10 +94,10 @@ export default function FleetPage() {
                   Book on WhatsApp
                 </a>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
                 >
-                  +971 50 985 2818
+                  +971 50 920 0818
                 </a>
               </div>
 
@@ -117,7 +117,7 @@ export default function FleetPage() {
             {/* Right — hero image flush to bottom */}
             <div className="relative h-[340px] sm:h-[420px] lg:h-[520px] rounded-t-[32px] overflow-hidden">
               <Image
-                src="/images/fleet/mercedes-s500/mercedes-s500-1.webp"
+                src="/images/fleet/rolls-royce-cullinan-1.webp"
                 alt="Luxury chauffeur fleet Dubai — Privilege Limo"
                 fill
                 priority
@@ -151,7 +151,7 @@ export default function FleetPage() {
       <FleetGrid fleet={fleet} categories={fleetCategories} />
 
       {/* ── STANDARDS STRIP ───────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#efefef] bg-[#fafafa]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/10 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -171,9 +171,9 @@ export default function FleetPage() {
       </section>
 
       {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
-      <section className="py-24 border-t border-[#efefef]">
+      <section className="py-24 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center shadow-[0_4px_30px_rgba(0,0,0,0.05)]">
+          <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461]/40 text-center shadow-[0_4px_30px_rgba(0,0,0,0.10)]">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
               Not Sure Which Vehicle?
             </span>
@@ -188,7 +188,7 @@ export default function FleetPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20help%20choosing%20the%20right%20vehicle%20for%20my%20journey."
+                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20help%20choosing%20the%20right%20vehicle%20for%20my%20journey."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -197,10 +197,10 @@ export default function FleetPage() {
                 Chat on WhatsApp
               </a>
               <a
-                href="tel:+971509852818"
-                className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
+                href="tel:+971509200818"
+                className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#AB5461] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 985 2818
+                +971 50 920 0818
               </a>
             </div>
           </div>

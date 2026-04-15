@@ -33,7 +33,7 @@ export default function FleetDetailBooking({
           Reserve This Vehicle
         </button>
         <a
-          href="tel:+971509852818"
+          href="tel:+971509200818"
           className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
         >
           Call Us Now

@@ -180,7 +180,7 @@ export default function MercedesSprinterRentalPage() {
         {/* CTAs */}
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://wa.me/971509852818"
+            href="https://wa.me/971509200818"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -191,10 +191,10 @@ export default function MercedesSprinterRentalPage() {
             Book on WhatsApp
           </a>
           <a
-            href="tel:+971509852818"
+            href="tel:+971509200818"
             className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
           >
-            +971 50 985 2818
+            +971 50 920 0818
           </a>
         </div>
 
@@ -240,7 +240,8 @@ export default function MercedesSprinterRentalPage() {
 </section>
 
       {/* ── FLEET CARDS ───────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
+            <section className="pb-12 bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/6">
+<div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Our Fleet</span>
@@ -267,7 +268,6 @@ export default function MercedesSprinterRentalPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Welcome" title="Premier Luxury Travel in Dubai">
@@ -296,7 +296,7 @@ export default function MercedesSprinterRentalPage() {
       </section>
 
       {/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/7">
         <div className="max-w-7xl mx-auto px-6">
           <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -322,7 +322,7 @@ export default function MercedesSprinterRentalPage() {
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                 >
                   Call Now
@@ -335,7 +335,8 @@ export default function MercedesSprinterRentalPage() {
 
 
       {/* ── WHY CHOOSE US ─────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+           <section className="pb-20 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/6">
+ <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Why Choose Us</span>
@@ -347,7 +348,6 @@ export default function MercedesSprinterRentalPage() {
         </h2>
       </div>
 
-      <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {whyCards.map((c) => (
@@ -360,7 +360,7 @@ export default function MercedesSprinterRentalPage() {
       </section>
 
       {/* ── RELATED POSTS ─────────────────────────────────────────── */}
-      <section className="py-16 border-t border-[#efefef]">
+      <section className="py-16 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -391,7 +391,7 @@ export default function MercedesSprinterRentalPage() {
       </section>
 
       {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
-      <section className="py-24 border-t border-[#efefef]">
+      <section className="py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
@@ -408,7 +408,7 @@ export default function MercedesSprinterRentalPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509852818"
+                href="https://wa.me/971509200818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -419,17 +419,18 @@ export default function MercedesSprinterRentalPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509852818"
+                href="tel:+971509200818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 985 2818
+                +971 50 920 0818
               </a>
             </div>
           </div>
-        </div>
+        </div>      
+        <RelatedServices currentHref="/services/mercedes-sprinter-van-rental" />
+
       </section>
 
-      <RelatedServices currentHref="/services/mercedes-sprinter-van-rental" />
       <Footer />
     </main>
   );

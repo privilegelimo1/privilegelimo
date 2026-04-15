@@ -145,7 +145,7 @@ const faqs = [
   },
   {
     q: "How far in advance should I book?",
-    a: "We recommend booking at least 24 hours in advance. However, we accommodate last-minute bookings subject to availability - simply call or WhatsApp us on +971 50 985 2818.",
+    a: "We recommend booking at least 24 hours in advance. However, we accommodate last-minute bookings subject to availability - simply call or WhatsApp us on +971 50 920 0818.",
   },
 ];
 
@@ -165,7 +165,7 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
     <AnimateIn delay={index * 0.07}>
       <div
         className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-white ${
-          open ? "border-[#0a0a0a]" : "border-[#ebebeb] hover:border-[#c0c0c0]"
+          open ? "border-[#AB5461]" : "border-[#AB5461]/80 hover:border-[#AB5461]"
         }`}
       >
         <button
@@ -270,11 +270,10 @@ function HeroSection() {
   </button>
 
   <a
-    href="https://wa.me/971509852818"
+    href="https://wa.me/971509200818"
     target="_blank"
     rel="noreferrer"
-    className="group inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white text-black text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-[1.02]"
-  >
+className="group inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white border border-[#AB5461] text-black text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#25D366] hover:text-white transition-all duration-300 hover:scale-[1.02]"  >
     <svg
       className="w-4 h-4 text-[#25D366] group-hover:text-white transition-colors"
       fill="currentColor"
@@ -358,14 +357,14 @@ export default function HomePage() {
       <HeroSection />
 
       {/* ── MARQUEE ─────────────────────────────────────────────────── */}
-      <div className="bg-white border-y border-[#ebebeb] py-5 overflow-hidden">
+      <div className="bg-white border-y border-[#AB5461] py-5 overflow-hidden">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap w-max"
         >
           {[...Array(6)].map((_, i) => (
-            <span key={i} className="flex items-center gap-12 px-6 text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0]">
+            <span key={i} className="flex items-center gap-12 px-6 text-[10px] tracking-[0.4em] uppercase text-[#AB5461] font-bold">
               <span>Airport Transfers</span><span className="text-[#AB5461]">·</span>
               <span>Corporate Travel</span><span className="text-[#AB5461]">·</span>
               <span>Weddings &amp; Events</span><span className="text-[#AB5461]">·</span>
@@ -378,7 +377,7 @@ export default function HomePage() {
       </div>
 
       {/* ── FLEET ───────────────────────────────────────────────────── */}
-      <section id="fleet" className="py-36 md:py-44 bg-white border-t border-[#efefef]">
+      <section id="fleet" className="py-36 md:py-44 bg-gradient-to-b from-[#AB5461]/5 to-[#AB5461]/10 border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
             <AnimateIn direction="left">
@@ -388,7 +387,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
                 Vehicles as refined
                 <br />
-                <span className="text-[#c0c0c0] font-extralight italic">
+                <span className="text-[#AB5461] font-extralight italic">
                   as your standards
                 </span>
               </h2>
@@ -404,8 +403,8 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-16">
   {fleet.map((car, i) => (
-    <AnimateIn key={car.slug} delay={i * 0.06} direction="up">
-      <article className="group bg-white rounded-[28px] border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden h-full flex flex-col">
+    <AnimateIn key={car.slug} delay={i * 0.03} direction="up">
+      <article className="group bg-white rounded-[28px] border border-[#AB5461]/40 hover:border-[#AB5461] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
 
         {/* Image */}
         <Link href={`/fleet/${car.classSlug}/${car.slug}`} className="block">
@@ -431,7 +430,7 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="p-7 flex flex-col flex-1">
-          <span className="inline-block self-start text-[9px] tracking-[0.35em] uppercase text-[#9a9a9a] border border-[#ebebeb] px-3 py-1 rounded-full mb-5">
+          <span className="inline-block self-start text-[9px] tracking-[0.35em] uppercase text-[#FFFFF] border border-[#AB5461] px-3 py-1 rounded-full mb-5">
             {car.category}
           </span>
           <h3 className="text-base font-semibold text-[#0a0a0a] mb-2 tracking-tight">
@@ -484,7 +483,7 @@ export default function HomePage() {
                 Need help choosing the right vehicle for your journey?
               </p>
               <a
-                href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20need%20help%20choosing%20a%20vehicle."
+                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20need%20help%20choosing%20a%20vehicle."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -498,7 +497,7 @@ export default function HomePage() {
       </section>
 
       {/* ── INTRO ───────────────────────────────────────────────────── */}
-      <section className="py-36 md:py-44 bg-white">
+      <section className="py-36 md:py-44 bg-gradient-to-b from-[#AB5461]/2 to-[#AB5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <AnimateIn direction="left">
@@ -556,7 +555,7 @@ export default function HomePage() {
         </div>
       </section>
 {/* ── SERVICES ────────────────────────────────────────────────── */}
-<section id="services" className="py-36 md:py-44 bg-white border-t border-[#efefef]">
+<section id="services" className="py-36 md:py-44 bg-gradient-to-b from-[#AB5461]/5 to-[#AB5461]/10 border-t border-[#efefef]">
   <div className="max-w-7xl mx-auto px-6">
     <AnimateIn>
       <div className="mb-16">
@@ -566,7 +565,7 @@ export default function HomePage() {
         <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
           Luxury chauffeur services
           <br />
-          <span className="text-[#c0c0c0] font-extralight italic">
+          <span className="text-[#AB5461] font-extralight italic">
             tailored for you
           </span>
         </h2>
@@ -576,7 +575,7 @@ export default function HomePage() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {servicesList.map((s, i) => (
         <AnimateIn key={s.id} delay={i * 0.08} direction="up">
-          <div className="group p-9 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.06)] transition-all duration-500 h-full bg-white flex flex-col">
+          <div className="group p-9 rounded-3xl border border-[#AB5461]/40 hover:border-[#AB5461] hover:shadow-[0_12px_48px_rgba(0,0,0,0.06)] transition-all duration-500 h-full bg-white flex flex-col">
             <div className="h-px w-8 bg-[#AB5461] mb-2 group-hover:w-16 transition-all duration-500" />
             <span className="text-[9px] tracking-[0.4em] uppercase text-[#AB5461] font-light block mb-6">
               {s.subtitle}
@@ -635,7 +634,7 @@ export default function HomePage() {
                   of your experience is curated with absolute care and professionalism.
                 </p>
                 <a
-                  href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20would%20like%20to%20make%20a%20booking."
+                  href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%20%F0%9F%91%8B%20I%20would%20like%20to%20make%20a%20booking."
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -650,7 +649,7 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY US ──────────────────────────────────────────────────── */}
-      <section id="why-us" className="py-36 md:py-44 bg-white border-t border-[#efefef]">
+      <section id="why-us" className="py-36 md:py-44 bg-gradient-to-b from-[#AB5461]/2 to-[#AB5461]/5 border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="max-w-xl mb-20">
@@ -660,7 +659,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
                 The standard others
                 <br />
-                <span className="text-[#c0c0c0] font-extralight italic">
+                <span className="text-[#AB5461] font-extralight italic">
                   aspire to match
                 </span>
               </h2>
@@ -669,7 +668,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {reasons.map((r, i) => (
               <AnimateIn key={r.number} delay={i * 0.08} direction="up">
-                <div className="p-9 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.05)] transition-all duration-500 bg-white h-full">
+                <div className="p-9 rounded-3xl border border-[#AB5461]/30 hover:border-[#AB5461]/80 hover:shadow-[0_12px_48px_rgba(0,0,0,0.05)] transition-all duration-500 bg-white h-full">
                   <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-6 block">
                     {r.number}
                   </span>
@@ -697,14 +696,14 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
                 Hear what our
                 <br />
-                <span className="text-[#c0c0c0] font-extralight italic">clients say</span>
+                <span className="text-[#AB5461] font-extralight italic">clients say</span>
               </h2>
             </div>
           </AnimateIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {testimonials.map((t, i) => (
               <AnimateIn key={t.name} delay={i * 0.08} direction="up">
-                <blockquote className="p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_48px_rgba(0,0,0,0.05)] transition-all duration-500 h-full flex flex-col bg-white">
+                <blockquote className="p-8 rounded-3xl border-2 border-[#AB5461] hover:border-[#AB5461]/30 hover:shadow-[0_12px_48px_rgba(0,0,0,0.10)] transition-all duration-500 h-full flex flex-col bg-white">
                   <div className="flex gap-0.5 mb-5">
                     {[...Array(5)].map((_, j) => (
                       <svg key={j} className="w-3 h-3 fill-[#AB5461]" viewBox="0 0 20 20">
@@ -735,7 +734,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
                 Everything you need
                 <br />
-                <span className="text-[#c0c0c0] font-extralight italic">to know</span>
+                <span className="text-[#AB5461] font-extralight italic">to know</span>
               </h2>
             </div>
           </AnimateIn>
@@ -748,7 +747,7 @@ export default function HomePage() {
       </section>
 
       {/* ── BOOKING ─────────────────────────────────────────────────── */}
-      <section id="booking" className="py-36 md:py-44 bg-white border-t border-[#efefef]">
+      <section id="booking" className="py-36 md:py-44 bg-gradient-to-b from-[#AB5461]/5 to-[#AB5461]/10 border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-16">
@@ -769,21 +768,21 @@ export default function HomePage() {
             <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <input type="text" name="name" placeholder="Full Name" required value={formData.name} onChange={handleChange}
-                  className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white" />
+                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="tel" name="phone" placeholder="Phone Number" required value={formData.phone} onChange={handleChange}
-                  className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white" />
+                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="email" name="email" placeholder="Email Address (optional)" value={formData.email} onChange={handleChange}
-                  className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white" />
+                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="datetime-local" name="date" required value={formData.date} onChange={handleChange}
-                  className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white" />
+                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="text" name="pickup" placeholder="Pickup Location" required value={formData.pickup} onChange={handleChange}
-                  className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white" />
+                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="text" name="dropoff" placeholder="Drop-off Location" value={formData.dropoff} onChange={handleChange}
-                  className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white" />
+                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
               </div>
 
               <select name="service" required value={formData.service} onChange={handleChange}
-                className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white">
+                className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white">
                 <option value="">Select Service</option>
                 <option value="Airport Transfer">Airport Transfer</option>
                 <option value="Corporate Travel">Corporate Travel</option>
@@ -795,7 +794,7 @@ export default function HomePage() {
               </select>
 
               <select name="vehicle" value={formData.vehicle} onChange={handleChange}
-                className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full bg-white">
+                className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white">
                 <option value="">Preferred Vehicle (optional)</option>
                 {fleet.map((v) => (
                   <option key={v.slug} value={v.name}>
@@ -805,12 +804,12 @@ export default function HomePage() {
               </select>
 
               <textarea name="notes" placeholder="Special requests or notes (optional)" rows={4} value={formData.notes} onChange={handleChange}
-                className="border border-[#e8e8e8] rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#0a0a0a] transition-colors duration-300 w-full resize-none bg-white" />
+                className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full resize-none bg-white" />
 
               <div className="pt-4 text-center">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-3 px-14 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  className="inline-flex items-center gap-3 px-14 py-4 rounded-full bg-[#25D366] border-2 border-[#AB5461]/50 text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <WhatsAppIcon />
                   Send via WhatsApp
@@ -821,12 +820,12 @@ export default function HomePage() {
             {/* Direct contact strip */}
             <div className="mt-12 pt-10 border-t border-[#efefef] grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               {[
-                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
-                { label: "WhatsApp", value: "+971 50 985 2818", href: "https://wa.me/971509852818" },
+                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
+                { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a key={c.label} href={c.href} target={c.href.startsWith("https") ? "_blank" : undefined} rel="noreferrer"
-                  className="group p-6 rounded-2xl border border-[#efefef] hover:border-[#0a0a0a] transition-all duration-300">
+                  className="group p-6 rounded-2xl border border-[#AB5461] hover:border-[#AB5461]/50 transition-all duration-300">
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-2">{c.label}</span>
                   <span className="text-sm text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors duration-300">{c.value}</span>
                 </a>

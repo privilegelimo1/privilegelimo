@@ -60,7 +60,7 @@ const services = [
     subtitle: "Premium chauffeur driven cars",
     desc: "Experience the pinnacle of luxury travel with our professional chauffeur service. From sleek sedans to spacious SUVs, our uniformed drivers ensure a seamless, stress-free journey across Dubai and the UAE.",
     href: "/services/luxury-chauffeur-service-in-dubai",
-    image: "/images/services/chauffeur-luxury.webp",
+    image: "/images/fleet/rolls-royce-ghost-1.webp",
     highlights: ["Airport Transfers", "Corporate Travel", "City Tours", "Full Day Hire"],
   },
   {
@@ -309,7 +309,7 @@ export default function ServicesPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -320,10 +320,10 @@ export default function ServicesPage() {
                   Get an Instant Quote
                 </a>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
                 >
-                  +971 50 985 2818
+                  +971 50 920 0818
                 </a>
               </div>
 
@@ -359,7 +359,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── SERVICE CARDS ─────────────────────────────────────────── */}
-      <section className="py-28">
+      <section className="py-28 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-16">
             <div className="inline-flex items-center gap-3 mb-6">
@@ -483,7 +483,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────── */}
-      <section className="py-28 border-t border-[#efefef] bg-[#fafafa]">
+      <section className="py-28 border-t border-[#efefef] bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div className="lg:sticky lg:top-32 lg:self-start">
@@ -497,7 +497,7 @@ export default function ServicesPage() {
                 Can't find your answer? Message us on WhatsApp — we respond instantly, 24 hours a day.
               </p>
               <a
-                href="https://wa.me/971509852818"
+                href="https://wa.me/971509200818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -559,7 +559,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20service."
+                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20service."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -570,16 +570,16 @@ export default function ServicesPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509852818"
+                href="tel:+971509200818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 985 2818
+                +971 50 920 0818
               </a>
             </div>
             <div className="mt-10 pt-8 border-t border-[#f0f0f0] grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
-                { label: "WhatsApp", value: "+971 50 985 2818", href: "https://wa.me/971509852818" },
+                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
+                { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a

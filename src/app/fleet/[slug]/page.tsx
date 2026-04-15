@@ -162,7 +162,7 @@ export default async function FleetClassPage({
       </section>
 
       {/* ── VEHICLES GRID ─────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/7">
         <div className="max-w-7xl mx-auto px-6">
 
           {vehicles.length === 0 ? (
@@ -244,7 +244,7 @@ export default async function FleetClassPage({
                         View & Book
                       </Link>
                       <a
-                        href={`https://wa.me/971509852818?text=${encodeURIComponent(
+                        href={`https://wa.me/971509200818?text=${encodeURIComponent(
                           `Hi, I'd like to book the ${car.name}. Can you share availability and pricing?`
                         )}`}
                         target="_blank"
@@ -263,8 +263,8 @@ export default async function FleetClassPage({
       </section>
 
       {/* ── BOTTOM CTA ────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#efefef] bg-[#fafafa]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/3">
+        <div className="max-w-3xl mx-auto px-6 rounded-3xl md:p-16 border border-[#AB4561]/50 text-center">
           <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
             Need Help Choosing?
           </span>
@@ -278,7 +278,7 @@ export default async function FleetClassPage({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/971509852818"
+              href="https://wa.me/971509200818"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2.5 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all shadow-[0_4px_20px_rgba(37,211,102,0.3)]"
@@ -289,10 +289,10 @@ export default async function FleetClassPage({
               WhatsApp Us
             </a>
             <a
-              href="tel:+971509852818"
+              href="tel:+971509200818"
               className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#AB5461] text-[#AB5461] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#AB5461] hover:text-white transition-all"
             >
-              +971 50 985 2818
+              +971 50 920 0818
             </a>
           </div>
         </div>

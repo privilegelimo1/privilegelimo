@@ -59,7 +59,7 @@ export default function FleetPreview({
   }, [classSlug]);
 
   return (
-    <section className="py-24 border-t border-[#efefef] bg-white">
+    <section className="py-1">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Cards */}
@@ -108,7 +108,7 @@ export default function FleetPreview({
                         View & Book
                       </Link>
                       <a
-                        href={`https://wa.me/971509852818?text=${encodeURIComponent(
+                        href={`https://wa.me/971509200818?text=${encodeURIComponent(
                           `Hi, I'd like to book the ${car.name}. Can you share availability and pricing?`
                         )}`}
                         target="_blank"

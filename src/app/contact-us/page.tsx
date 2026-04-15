@@ -43,20 +43,14 @@ const contactDetails = [
   },
   {
     tag: "Phone",
-    value: "+971 50 985 2818",
-    href: "tel:+971509852818",
-    external: false,
-  },
-  {
-    tag: "Phone",
-    value: "+971 50 985 2818",
-    href: "tel:+971509852818",
+    value: "+971 50 920 0818",
+    href: "tel:+971509200818",
     external: false,
   },
   {
     tag: "WhatsApp",
-    value: "+971 50 985 2818",
-    href: "https://wa.me/971509852818",
+    value: "+971 50 920 0818",
+    href: "https://wa.me/971509200818",
     external: true,
   },
 ];
@@ -126,7 +120,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -135,10 +129,10 @@ export default function ContactPage() {
                   WhatsApp Us
                 </a>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
                 >
-                  +971 50 985 2818
+                  +971 50 920 0818
                 </a>
               </div>
             </div>
@@ -209,7 +203,7 @@ export default function ContactPage() {
                         type="tel"
                         name="phone"
                         required
-                        placeholder="+971 50 985 2818"
+                        placeholder="+971 50 920 0818"
                         className="w-full px-4 py-3 rounded-2xl border border-[#efefef] bg-[#fafafa] text-sm font-light text-[#0a0a0a] placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] focus:bg-white transition-all duration-200"
                       />
                     </div>
@@ -324,7 +318,7 @@ export default function ContactPage() {
                       Send Booking Request
                     </button>
                     <a
-                      href="https://wa.me/971509852818"
+                      href="https://wa.me/971509200818"
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -364,8 +358,8 @@ export default function ContactPage() {
 
               <MiniCard tag="Phone" title="Call Us 24/7">
                 <div className="flex flex-col gap-2">
-                  <a href="tel:+971509852818" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors">+971 50 985 2818</a>
-                  <a href="tel:+971509852818" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors">+971 50 985 2818</a>
+                  <a href="tel:+971509200818" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors">+971 50 920 0818</a>
+                  <a href="tel:+971509200818" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors">+971 50 920 0818</a>
                 </div>
               </MiniCard>
 
@@ -390,7 +384,7 @@ export default function ContactPage() {
                   Skip the form — message us directly for the fastest confirmation.
                 </p>
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"

@@ -160,7 +160,7 @@ export default function Navbar() {
         {/* ── LOGO ──────────────────────────────────────────────── */}
         <Link href="/" className="relative flex h-11 w-[160px] shrink-0 items-center sm:h-12 sm:w-[185px]">
           <Image
-            src="/logo.png" alt="Privilege Limo" fill priority
+            src="/logo.webp" alt="Privilege Limo" fill priority
             sizes="(max-width: 640px) 160px, 185px"
             className="object-contain object-left"
           />
@@ -228,7 +228,7 @@ export default function Navbar() {
                 >
                   View All Services <ArrowRight />
                 </Link>
-                <a href="https://wa.me/971509852818" target="_blank" rel="noreferrer"
+                <a href="https://wa.me/971509200818" target="_blank" rel="noreferrer"
                   onClick={() => setServicesOpen(false)}
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#25D366] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#20bd5a] transition-colors"
                 >
@@ -282,7 +282,7 @@ export default function Navbar() {
                 >
                   View Full Fleet <ArrowRight />
                 </Link>
-                <a href="https://wa.me/971509852818" target="_blank" rel="noreferrer"
+                <a href="https://wa.me/971509200818" target="_blank" rel="noreferrer"
                   onClick={() => setFleetOpen(false)}
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#AB5461] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#964754] transition-colors"
                 >
@@ -314,7 +314,7 @@ export default function Navbar() {
 
         {/* ── CTA BUTTONS ───────────────────────────────────────── */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="https://wa.me/971509852818" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/971509200818" target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase px-5 py-2.5 rounded-full bg-[#25D366] text-white hover:bg-[#20bd5a] transition-all duration-300"
           >
             <WAIcon className="w-3.5 h-3.5" /> WhatsApp
@@ -448,7 +448,7 @@ export default function Navbar() {
 
             {/* Mobile CTAs */}
             <li className="pt-3 border-t border-[#f0f0f0] flex flex-col gap-3">
-              <a href="https://wa.me/971509852818" target="_blank" rel="noreferrer"
+              <a href="https://wa.me/971509200818" target="_blank" rel="noreferrer"
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center justify-center gap-2 text-[11px] tracking-[0.25em] uppercase px-7 py-3 rounded-full bg-[#25D366] text-white"
               >

@@ -308,7 +308,7 @@ export default function HourlyChauffeurServicePage() {
       </section>
 
       {/* ── INTRO ──────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/4">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
 
@@ -342,7 +342,7 @@ export default function HourlyChauffeurServicePage() {
               {useCases.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl bg-[#fafafa] border border-[#efefef] px-4 py-4"
+                  className="rounded-2xl bg-[#fafafa] border border-[#AB5461]/30 px-4 py-4"
                 >
                   <p className="text-xs font-light text-[#0a0a0a] tracking-wide">{item.title}</p>
                   <p className="mt-1 text-[11px] text-[#aaa] leading-relaxed font-light">{item.text}</p>
@@ -354,7 +354,7 @@ export default function HourlyChauffeurServicePage() {
       </section>
 
       {/* ── BENEFITS ───────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-[#fafafa] border-t border-[#efefef]">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
@@ -374,7 +374,7 @@ export default function HourlyChauffeurServicePage() {
             {benefits.map((item, i) => (
               <div
                 key={item.title}
-                className="bg-white rounded-3xl p-6 border border-[#efefef]"
+                className="bg-white rounded-3xl p-6 border border-[#AB5461]/30"
               >
                 <p className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light mb-4">
                   0{i + 1}
@@ -388,7 +388,7 @@ export default function HourlyChauffeurServicePage() {
       </section>
 
       {/* ── HOW IT WORKS ───────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -421,7 +421,7 @@ export default function HourlyChauffeurServicePage() {
       </section>
 
       {/* ── FLEET ──────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-[#fafafa] border-t border-[#efefef]">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/7">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
             <div>
@@ -445,7 +445,7 @@ export default function HourlyChauffeurServicePage() {
 
 
       {/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -471,7 +471,7 @@ export default function HourlyChauffeurServicePage() {
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                 >
                   Call Now
@@ -484,7 +484,7 @@ export default function HourlyChauffeurServicePage() {
 
 
       {/* ── FAQ ────────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -504,7 +504,7 @@ export default function HourlyChauffeurServicePage() {
             {faqs.map((faq) => (
               <details
                 key={faq.q}
-                className="group bg-white border border-[#efefef] rounded-2xl overflow-hidden open:border-[#AB5461]/25 transition-colors"
+                className="group bg-white border border-[#AB5461]/30 rounded-2xl overflow-hidden open:border-[#AB5461]/25 transition-colors"
               >
                 <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none select-none [&::-webkit-details-marker]:hidden">
                   <span className="text-[14px] font-medium text-[#0a0a0a] leading-snug">
@@ -535,7 +535,7 @@ export default function HourlyChauffeurServicePage() {
       </section>
 
       {/* ── FINAL CTA ──────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-[#fafafa] border-t border-[#efefef]">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/3">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] font-light block mb-5">
             Book Your Chauffeur
@@ -564,8 +564,9 @@ export default function HourlyChauffeurServicePage() {
             </Link>
           </div>
         </div>
+        <RelatedServices currentHref="/services/full-day-and-hourly-chauffeur-services" />
+
       </section>
-<RelatedServices currentHref="/services/full-day-and-hourly-chauffeur-services" />
 <Footer/>
     </main>
   );

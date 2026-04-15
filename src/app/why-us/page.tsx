@@ -126,7 +126,7 @@ export default function WhyUsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -137,10 +137,10 @@ export default function WhyUsPage() {
                   Book on WhatsApp
                 </a>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
                 >
-                  +971 50 985 2818
+                  +971 50 920 0818
                 </a>
               </div>
             </div>
@@ -159,8 +159,9 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── WHO WE ARE ────────────────────────────────────────────── */}
+      <section className="pb-12 bg-gradient-to-b from-[#AB5461]/2 to-[#ab5461]/4">
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
-        <div className="inline-flex items-center gap-3">
+        <div className="inline-flex items-center gap-3 ">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Who We Are</span>
         </div>
@@ -171,7 +172,7 @@ export default function WhyUsPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
+      
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
 
           {/* Row 1 */}
@@ -194,7 +195,8 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── WHAT WE OFFER ─────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+      <section className="pb-12 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/6">
+        <div className="max-w-7xl mx-auto px-6 pt-12 pb-6 ">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">What We Offer</span>
@@ -206,7 +208,7 @@ export default function WhyUsPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
+      
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s) => (
@@ -232,7 +234,8 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── EXPERIENCE & EXPERTISE ────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+      <section className="pb-12 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/8">
+      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6 ">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">EEAT</span>
@@ -244,7 +247,7 @@ export default function WhyUsPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
+      
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Experience" title="25 Years of Premium Travel Services">
@@ -261,7 +264,8 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── OUR VALUES ────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+      <section className="pb-12 bg-gradient-to-b from-[#AB5461]/8 to-[#ab5461]/9">
+      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6 ">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Values</span>
@@ -273,7 +277,7 @@ export default function WhyUsPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
+      
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <MiniCard tag="Value 01" title="Excellence in Service">
@@ -296,7 +300,8 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── OUR FLEET ─────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+            <section className="pb-12 bg-gradient-to-b from-[#AB5461]/9 to-[#ab5461]/8">
+<div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Luxury at Its Finest</span>
@@ -308,7 +313,6 @@ export default function WhyUsPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Fleet Overview" title="A Carefully Selected Range">
@@ -342,7 +346,8 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── VISION ────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+            <section className="pb-12 bg-gradient-to-b from-[#AB5461]/8 to-[#ab5461]/6">
+<div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Vision</span>
@@ -354,7 +359,6 @@ export default function WhyUsPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <MiniCard tag="Our Vision" title="Most Trusted Luxury Chauffeur in Dubai">
@@ -376,7 +380,8 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── MISSION ───────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
+           <section className="pb-12 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/4">
+ <div className="max-w-7xl mx-auto px-6 pt-12 pb-6">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8 bg-[#AB5461]" />
           <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">Mission</span>
@@ -388,7 +393,6 @@ export default function WhyUsPage() {
         </h2>
       </div>
 
-      <section className="pb-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Mission Statement" title="Superior-Quality Chauffeur Services">
@@ -429,9 +433,9 @@ export default function WhyUsPage() {
       </section>
 
       {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
-      <section className="py-24 border-t border-[#efefef]">
+      <section className="py-24 border-t border-[#efefef] bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
+          <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461]/50 text-center">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
               CALL US 24/7
             </span>
@@ -449,7 +453,7 @@ export default function WhyUsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
-                href="https://wa.me/971509852818"
+                href="https://wa.me/971509200818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"

@@ -31,7 +31,7 @@ export async function generateMetadata({
     `Hire a ${vehicle.name} with professional chauffeur in Dubai. Luxury travel with Privilege Limo.`;
   return {
     title: `${vehicle.name} Chauffeur Service Dubai | Privilege Limo`,
-    description: `${description} From ${vehicle.priceLabel}. Book now - +971 50 985 2818.`,
+    description: `${description} From ${vehicle.priceLabel}. Book now - +971 50 920 0818.`,
     keywords: [
       `${vehicle.name} hire Dubai`,
       `${vehicle.name} chauffeur Dubai`,
@@ -296,10 +296,10 @@ export default async function FleetDetailPage({
                   Book on WhatsApp
                 </a>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
                 >
-                  +971 50 985 2818
+                  +971 50 920 0818
                 </a>
               </div>
 
@@ -708,16 +708,16 @@ export default async function FleetDetailPage({
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509852818"
+                href="tel:+971509200818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#AB5461] text-[#AB5461] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#AB5461] hover:text-white transition-all duration-300"
               >
-                +971 50 985 2818
+                +971 50 920 0818
               </a>
             </div>
             <div className="mt-10 pt-8 border-t border-[#f0f0f0] grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
-                { label: "WhatsApp", value: "+971 50 985 2818", href: "https://wa.me/971509852818" },
+                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
+                { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a

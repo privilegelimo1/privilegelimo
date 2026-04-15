@@ -93,7 +93,7 @@ export default function BookingButton({
       notes                 ? `*Notes:* ${notes}`      : "",
     ].filter(Boolean).join("\n");
 
-    window.open(`https://wa.me/971509852818?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/971509200818?text=${encodeURIComponent(msg)}`, "_blank");
     setTimeout(() => setSent(true), 2500);
   }
 

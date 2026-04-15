@@ -171,7 +171,7 @@ export default function MercedesVanRentalPage() {
         {/* CTAs */}
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://wa.me/971509852818"
+            href="https://wa.me/971509200818"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -182,10 +182,10 @@ export default function MercedesVanRentalPage() {
             Book on WhatsApp
           </a>
           <a
-            href="tel:+971509852818"
+            href="tel:+971509200818"
             className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
           >
-            +971 50 985 2818
+            +971 50 920 0818
           </a>
         </div>
 
@@ -228,7 +228,7 @@ export default function MercedesVanRentalPage() {
 </section>
 
       {/* ── FLEET PRICING ─────────────────────────────────────────── */}
-      <section className="py-28 bg-[#fafafa] border-t border-[#efefef]">
+      <section className="py-28 bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center mb-16">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
@@ -306,7 +306,7 @@ export default function MercedesVanRentalPage() {
                       <div className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light mt-0.5">per transfer</div>
                     </div>
                     <a
-                      href={`https://wa.me/971509852818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
+                      href={`https://wa.me/971509200818?text=${encodeURIComponent(`Hi, I want to book the ${car.name}. Can you share pricing and availability?`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0a0a0a] text-white text-[9px] tracking-[0.25em] uppercase font-medium hover:bg-[#AB5461] transition-all duration-300"
@@ -322,7 +322,7 @@ export default function MercedesVanRentalPage() {
       </section>
 
       {/* ── ALTERNATING CONTENT ───────────────────────────────────── */}
-      <section className="py-10">
+      <section className="py-10 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/7">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center pt-20 pb-16">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
@@ -377,7 +377,7 @@ export default function MercedesVanRentalPage() {
                   ))}
                 </div>
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
@@ -418,7 +418,7 @@ export default function MercedesVanRentalPage() {
                   ))}
                 </div>
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
@@ -488,7 +488,7 @@ export default function MercedesVanRentalPage() {
                   ))}
                 </div>
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="group/btn inline-flex items-center gap-3 self-start text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors duration-300"
@@ -505,27 +505,10 @@ export default function MercedesVanRentalPage() {
         </div>
       </section>
 
-      {/* ── SEO KEYWORDS ──────────────────────────────────────────── */}
-      <section className="py-16 border-t border-[#efefef] bg-[#fafafa]">
-        <div className="max-w-7xl mx-auto px-6">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-6 block">
-            Our Services
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {seoKeywords.map((kw) => (
-              <span
-                key={kw}
-                className="px-4 py-2 rounded-full border border-[#efefef] bg-white text-[10px] tracking-[0.15em] text-[#7a7a7a] font-light shadow-[0_2px_8px_rgba(0,0,0,0.03)] capitalize"
-              >
-                {kw}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -551,7 +534,7 @@ export default function MercedesVanRentalPage() {
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                 >
                   Call Now
@@ -564,7 +547,7 @@ export default function MercedesVanRentalPage() {
 
 
       {/* ── FAQ ───────────────────────────────────────────────────── */}
-      <section className="py-28 border-t border-[#efefef]">
+      <section className="py-28 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center mb-16">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
@@ -586,7 +569,7 @@ export default function MercedesVanRentalPage() {
           </div>
           <div className="flex justify-center mt-12">
             <a
-              href="https://wa.me/971509852818"
+              href="https://wa.me/971509200818"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -601,7 +584,7 @@ export default function MercedesVanRentalPage() {
       </section>
 
       {/* ── COVERAGE STRIP ────────────────────────────────────────── */}
-      <section className="py-16 border-t border-[#efefef] bg-[#fafafa]">
+      <section className="py-16 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/4">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
@@ -622,9 +605,9 @@ export default function MercedesVanRentalPage() {
       </section>
 
       {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
-      <section className="py-24 border-t border-[#efefef]">
+      <section className="py-24 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
+          <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461]/50 text-center">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
               CALL US 24/7
             </span>
@@ -638,7 +621,7 @@ export default function MercedesVanRentalPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509852818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20Mercedes%20Van."
+                href="https://wa.me/971509200818?text=Hello%20Privilege%20Limo%0A%0AI%27d%20like%20to%20book%20a%20Mercedes%20Van."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -649,16 +632,16 @@ export default function MercedesVanRentalPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509852818"
-                className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
+                href="tel:+971509200818"
+                className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#AB5461] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 985 2818
+                +971 50 920 0818
               </a>
             </div>
-            <div className="mt-10 pt-8 border-t border-[#f0f0f0] grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="mt-10 pt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { label: "Call Us", value: "+971 50 985 2818", href: "tel:+971509852818" },
-                { label: "WhatsApp", value: "+971 50 985 2818", href: "https://wa.me/971509852818" },
+                { label: "Call Us", value: "+971 50 920 0818", href: "tel:+971509200818" },
+                { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a
@@ -666,7 +649,7 @@ export default function MercedesVanRentalPage() {
                   href={c.href}
                   target={c.href.startsWith("https") ? "_blank" : undefined}
                   rel="noreferrer"
-                  className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
+                  className="group p-5 rounded-2xl border border-[#AB5461]/40 hover:border-[#AB5461]/80 transition-all duration-300"
                 >
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
                   <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
@@ -675,9 +658,28 @@ export default function MercedesVanRentalPage() {
             </div>
           </div>
         </div>
-      </section>
+            <RelatedServices currentHref="/services/mercedes-van-rental-dubai" />
+            
+            {/* ── SEO KEYWORDS ──────────────────────────────────────────── */}
+</section>
 
-      <RelatedServices currentHref="/services/mercedes-van-rental-dubai" />
+      <section className="py-16 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/3">
+        <div className="max-w-7xl mx-auto px-6">
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-6 block">
+            Our Services
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {seoKeywords.map((kw) => (
+              <span
+                key={kw}
+                className="px-4 py-2 rounded-full border border-[#efefef] bg-white text-[10px] tracking-[0.15em] text-[#7a7a7a] font-light shadow-[0_2px_8px_rgba(0,0,0,0.03)] capitalize"
+              >
+                {kw}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
       <Footer />
     </main>
   );

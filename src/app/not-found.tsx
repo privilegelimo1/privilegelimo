@@ -73,7 +73,7 @@ export default function NotFound() {
               Back to Homepage
             </Link>
             <a
-              href="https://wa.me/971509852818"
+              href="https://wa.me/971509200818"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -82,10 +82,10 @@ export default function NotFound() {
               Contact Us
             </a>
             <a
-              href="tel:+971509852818"
+              href="tel:+971509200818"
               className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
             >
-              +971 50 985 2818
+              +971 50 920 0818
             </a>
           </div>
 

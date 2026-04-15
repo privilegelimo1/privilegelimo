@@ -92,7 +92,7 @@ export default function RelatedServices({
   );
 
   return (
-    <section className="py-24 border-t border-[#efefef] bg-[#fafafa]">
+    <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
@@ -107,25 +107,6 @@ export default function RelatedServices({
               </span>
             </h2>
           </div>
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#AB5461] transition-colors whitespace-nowrap"
-          >
-            View All Services
-            <svg
-              className="w-3 h-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -133,7 +114,7 @@ export default function RelatedServices({
             <Link
               key={s.href}
               href={s.href}
-              className="group p-7 rounded-3xl border border-[#efefef] bg-white hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500 flex flex-col gap-3"
+              className="group p-7 rounded-3xl border border-[#AB5461]/40 bg-white hover:border-[#AB5461] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500 flex flex-col gap-3"
             >
               <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light">
                 {s.tag}

@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "971509852818"; // no + or spaces
+const WHATSAPP_NUMBER = "971509200818"; // no + or spaces
 
 export function buildWhatsAppURL(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

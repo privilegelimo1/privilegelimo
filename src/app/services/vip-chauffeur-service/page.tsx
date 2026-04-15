@@ -190,7 +190,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── USE CASES STRIP ────────────────────────────────── */}
-      <section className="bg-[#fafafa] border-t border-[#efefef] py-14">
+      <section className="bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/4 py-14">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
             {useCases.map((item) => (
@@ -209,7 +209,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── INTRO ──────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             <div>
@@ -264,7 +264,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── PILLARS ────────────────────────────────────────── */}
-      <section className="py-20 bg-[#fafafa] border-t border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
@@ -304,7 +304,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── HOW IT WORKS ──────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/7">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -343,7 +343,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── FLEET ──────────────────────────────────────────── */}
-      <section className="py-20 bg-[#ffffff] border-t border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
             <div>
@@ -367,7 +367,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14 flex flex-col lg:flex-row lg:items-center gap-8">
             <div className="flex-1 min-w-0">
@@ -395,7 +395,7 @@ export default function VipChauffeurServicePage() {
                 Request VIP Service
               </Link>
               <a
-                href="tel:+971509852818"
+                href="tel:+971509200818"
                 className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-white hover:bg-white/10 transition-colors whitespace-nowrap"
               >
                 Call Now
@@ -406,7 +406,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/4">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -457,7 +457,7 @@ export default function VipChauffeurServicePage() {
       </section>
 
       {/* ── FINAL CTA ──────────────────────────────────────── */}
-      <section className="py-20 bg-white border-t border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/3">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <span className="text-[10px] tracking-[0.5em] uppercase text-[#AB5461] font-light block mb-5">
             Book VIP Transport

@@ -284,7 +284,7 @@ export default function TestimonialsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://wa.me/971509852818"
+                  href="https://wa.me/971509200818"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
@@ -295,10 +295,10 @@ export default function TestimonialsPage() {
                   Book on WhatsApp
                 </a>
                 <a
-                  href="tel:+971509852818"
+                  href="tel:+971509200818"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
                 >
-                  +971 50 985 2818
+                  +971 50 920 0818
                 </a>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function TestimonialsPage() {
       </div>
 
       {/* ── FEATURED REVIEWS (top 4 large) ───────────────────────── */}
-      <section className="pb-8">
+      <section className= "pb-8 bg-gradient-to-b from-[#AB5461]/2 to-[#ab5461]/5 pb-8 " >
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -379,7 +379,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* ── ALL REVIEWS GRID (3 col) ──────────────────────────────── */}
-      <section className="pb-20">
+      <section className="pb-20 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/8 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -416,9 +416,9 @@ export default function TestimonialsPage() {
       </section>
 
       {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
-      <section className="py-24 border-t border-[#efefef]">
+      <section className="py-24 bg-gradient-to-b from-[#AB5461]/8 to-[#ab5461]/3 pb-8">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
+          <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461] text-center">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
               CALL US 24/7
             </span>
@@ -434,7 +434,7 @@ export default function TestimonialsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
-                href="https://wa.me/971509852818"
+                href="https://wa.me/971509200818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -445,10 +445,10 @@ export default function TestimonialsPage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509852818"
+                href="tel:+971509200818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 985 2818
+                +971 50 920 0818
               </a>
             </div>
             <p className="text-[#9a9a9a] text-xs font-light">

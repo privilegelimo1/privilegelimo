@@ -276,7 +276,7 @@ export default function CorporateChauffeurServicePage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://wa.me/971509852818"
+            href="https://wa.me/971509200818"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
@@ -287,10 +287,10 @@ export default function CorporateChauffeurServicePage() {
             Book on WhatsApp
           </a>
           <a
-            href="tel:+971509852818"
+            href="tel:+971509200818"
             className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-[#0a0a0a] hover:border-[#AB5461] hover:text-[#AB5461] transition-colors"
           >
-            +971 50 985 2818
+            +971 50 920 0818
           </a>
         </div>
 
@@ -334,7 +334,7 @@ export default function CorporateChauffeurServicePage() {
 </section>
 
       {/* ── USE CASES ───────────────────────────────────────────── */}
-      <section className="py-20 border-b border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/4">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -368,6 +368,7 @@ export default function CorporateChauffeurServicePage() {
       </section>
 
       {/* ── WHY CHOOSE ──────────────────────────────────────────── */}
+      <section className="pb-20 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/5">
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-6">
         <div className="inline-flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-[#AB5461]" />
@@ -382,7 +383,7 @@ export default function CorporateChauffeurServicePage() {
         </h2>
       </div>
 
-      <section className="pb-20">
+      
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {benefits.map((b) => (
@@ -395,7 +396,7 @@ export default function CorporateChauffeurServicePage() {
       </section>
 
       {/* ── HOW IT WORKS ────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -413,7 +414,7 @@ export default function CorporateChauffeurServicePage() {
             {steps.map((step) => (
               <div
                 key={step.n}
-                className="rounded-[1.75rem] border border-[#efefef] bg-white p-7 md:p-8 hover:border-[#e8d9a0] hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-300"
+                className="rounded-[1.75rem] border border-[#AB5461]/50 bg-white p-7 md:p-8 hover:border-[#AB5461] hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] transition-all duration-300"
               >
                 <div className="text-4xl font-extralight text-[#AB5461] tracking-tight mb-4">
                   {step.n}
@@ -429,7 +430,7 @@ export default function CorporateChauffeurServicePage() {
       </section>
 
       {/* ── FLEET ───────────────────────────────────────────────── */}
-      <section className="pb-20">
+      <section className="pb-20 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/7">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -450,7 +451,7 @@ export default function CorporateChauffeurServicePage() {
         </div>
       </section>
       {/* ── CTA BAND ───────────────────────────────────────── */}
-            <section className="py-10 bg-white">
+            <section className="py-10 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/6">
               <div className="max-w-7xl mx-auto px-6">
                 <div className="rounded-[28px] bg-[#AB5461] px-8 py-10 sm:px-14 sm:py-14">
                   <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -476,7 +477,7 @@ export default function CorporateChauffeurServicePage() {
                         Get a Quote
                       </Link>
                       <a
-                        href="tel:+971509852818"
+                        href="tel:+971509200818"
                         className="inline-flex items-center justify-center rounded-full bg-white border border-white/20 px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase font-medium text-[#AB5461]"
                       >
                         Call Now
@@ -489,7 +490,7 @@ export default function CorporateChauffeurServicePage() {
       
 
       {/* ── FAQ ─────────────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#efefef]">
+      <section className="py-20 bg-gradient-to-b from-[#AB5461]/6 to-[#ab5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[#AB5461]" />
@@ -509,7 +510,7 @@ export default function CorporateChauffeurServicePage() {
             {faqs.map((faq) => (
               <details
                 key={faq.q}
-                className="group bg-white border border-[#efefef] rounded-2xl overflow-hidden open:border-[#AB5461]/25 transition-colors"
+                className="group bg-white border border-[#AB5461]/50 rounded-2xl overflow-hidden open:border-[#AB5461]/25 transition-colors"
               >
                 <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none select-none [&::-webkit-details-marker]:hidden">
                   <span className="text-[14px] font-medium text-[#0a0a0a] leading-snug">
@@ -538,7 +539,7 @@ export default function CorporateChauffeurServicePage() {
       </section>
 
       {/* ── BOTTOM CTA ──────────────────────────────────────────── */}
-      <section className="py-24 border-t border-[#efefef]">
+      <section className="py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
             <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
@@ -556,7 +557,7 @@ export default function CorporateChauffeurServicePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/971509852818"
+                href="https://wa.me/971509200818"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300"
@@ -567,17 +568,18 @@ export default function CorporateChauffeurServicePage() {
                 Book on WhatsApp
               </a>
               <a
-                href="tel:+971509852818"
+                href="tel:+971509200818"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#0a0a0a] text-[#0a0a0a] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
               >
-                +971 50 985 2818
+                +971 50 920 0818
               </a>
             </div>
           </div>
         </div>
+        <RelatedServices currentHref="/services/corporate-chauffeur-services" />
       </section>
 
-      <RelatedServices currentHref="/services/corporate-chauffeur-services" />
+      
       <Footer />
     </main>
   );
