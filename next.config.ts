@@ -74,7 +74,7 @@ const nextConfig: NextConfig = {
 
       // Static pages
       {
-        source: "/contact-us",
+        source: "/contact",
         destination: "/contact-us",
         permanent: false, // same slug — remove this entry, no redirect needed
       },
