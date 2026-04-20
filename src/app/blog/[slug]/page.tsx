@@ -6,6 +6,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { getAllPosts, getPostBySlug } from '@/lib/blog'
+import TableOfContents from '@/components/TableOfContents'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -199,6 +200,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </article>
 
             <aside className="md:col-span-4 space-y-5">
+              {/* Table of Contents */}
+  <TableOfContents />
+
            <div className="rounded-2xl bg-neutral-900 p-6 sticky top-24">
   <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2">Book a Ride</p>
   <p className="text-white text-sm font-semibold leading-snug mb-4">
