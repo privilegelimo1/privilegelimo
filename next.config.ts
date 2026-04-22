@@ -21,14 +21,6 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // ── www → non-www (301 permanent) ─────────────────────────────────────
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.privilegelimo.com" }],
-        destination: "https://privilegelimo.com/:path*", // ← was pointing back to www, fixed
-        permanent: true,
-      },
-
       // ── Chauffeur / general service pages ─────────────────────────────────
       {
         source: "/reliable-chauffeur-services-in-dubai",
