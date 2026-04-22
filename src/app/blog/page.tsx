@@ -98,7 +98,7 @@ export default function BlogPage() {
                     {featured.title}
                   </h2>
                   <p className="text-sm text-[#7a7a7a] font-light leading-relaxed mb-8 line-clamp-3">
-                    {featured.excerpt}
+                    {featured.description}
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] text-[#b0b0b0] font-light tracking-wide">
@@ -178,7 +178,7 @@ export default function BlogPage() {
                       </h2>
 
                       <p className="text-[13px] text-[#9a9a9a] font-light leading-relaxed mb-6 line-clamp-2">
-                        {post.excerpt}
+                        {post.description}
                       </p>
 
                       <div className="flex items-center justify-between pt-5 border-t border-[#f4f4f4]">
