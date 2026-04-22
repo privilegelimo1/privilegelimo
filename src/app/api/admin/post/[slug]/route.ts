@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { getFile, putFile, deleteFile } from "@/lib/github";
 import { buildMdx } from "@/lib/mdxUtils";
+import { clearPostCache } from "@/lib/blog";
 
 async function isAuthenticated() {
   const cookieStore = await cookies();
@@ -21,7 +22,17 @@ export async function PUT(
 
   try {
     const body = await req.json();
-    const { title, date, excerpt, tags, content, author, coverImage } = body;
+    const {
+      title,
+      date,
+      excerpt,
+      tags,
+      content,
+      author,
+      coverImage,
+      metaTitle,
+      metaDescription,
+    } = body;
 
     if (!title || !content) {
       return NextResponse.json(
@@ -30,8 +41,8 @@ export async function PUT(
       );
     }
 
-    const path = `content/blog/${slug}.mdx`;
-    const existing = await getFile(path);
+    const filePath = `content/blog/${slug}.mdx`;
+    const existing = await getFile(filePath);
 
     if (!existing) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
@@ -39,14 +50,18 @@ export async function PUT(
 
     const mdx = buildMdx({
       title,
-      date:        date        ?? "",
-      excerpt:     excerpt     ?? "",
-      tags:        tags        ?? "",
+      date:            date            ?? "",
+      excerpt:         excerpt         ?? "",
+      tags:            tags            ?? [],
       content,
-      author:      author      ?? "",
-      coverImage:  coverImage  ?? "",
+      author:          author          ?? "",
+      coverImage:      coverImage      ?? "",
+      metaTitle:       metaTitle       ?? "",
+      metaDescription: metaDescription ?? "",
     });
-    await putFile(path, mdx, `blog: update "${title}"`);
+
+    await putFile(filePath, mdx, `blog: update "${title}"`);
+    clearPostCache();
 
     return NextResponse.json({ ok: true, slug });
   } catch (err: unknown) {
@@ -67,14 +82,15 @@ export async function DELETE(
   const { slug } = await params;
 
   try {
-    const path = `content/blog/${slug}.mdx`;
-    const existing = await getFile(path);
+    const filePath = `content/blog/${slug}.mdx`;
+    const existing = await getFile(filePath);
 
     if (!existing) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
-    await deleteFile(path, existing.sha, `blog: delete "${slug}"`);
+    await deleteFile(filePath, existing.sha, `blog: delete "${slug}"`);
+    clearPostCache();
 
     return NextResponse.json({ ok: true });
   } catch (err: unknown) {

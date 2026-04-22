@@ -1,58 +1,33 @@
-export function buildMdx(data: {
+export function buildMdx(fields: {
   title: string;
   date: string;
-  excerpt: string;
-  tags: string;
-  author: string;
-  coverImage: string;
+  excerpt?: string;
+  tags?: string | string[];
   content: string;
+  author?: string;
+  coverImage?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }): string {
-  const tags = Array.isArray(data.tags)
-  ? data.tags.map((t) => `"${t.trim()}"`).join(", ")
-  : data.tags
-  ? data.tags.split(",").map((t) => `"${t.trim()}"`).join(", ")
-  : "";
+  const tags = Array.isArray(fields.tags)
+    ? fields.tags
+    : (fields.tags ?? "").split(",").map((t) => t.trim()).filter(Boolean);
 
-  const frontmatter = [
+  const lines = [
     "---",
-    `title: "${data.title.replace(/"/g, '\\"')}"`,
-    `date: "${data.date}"`,
-    data.excerpt ? `excerpt: "${data.excerpt.replace(/"/g, '\\"')}"` : "",
-    tags ? `tags: [${tags}]` : "",
-    data.author ? `author: "${data.author}"` : "",
-    data.coverImage ? `coverImage: "${data.coverImage}"` : "",
+    `title: "${fields.title.replace(/"/g, "'")}"`,
+    `date: "${fields.date}"`,
+    fields.author          ? `author: "${fields.author}"` : null,
+    fields.excerpt         ? `excerpt: "${fields.excerpt.replace(/"/g, "'")}"` : null,
+    tags.length            ? `tags: [${tags.map((t) => `"${t}"`).join(", ")}]` : null,
+    fields.coverImage      ? `coverImage: "${fields.coverImage}"` : null,
+    fields.metaTitle       ? `metaTitle: "${fields.metaTitle.replace(/"/g, "'")}"` : null,
+    fields.metaDescription ? `metaDescription: "${fields.metaDescription.replace(/"/g, "'")}"` : null,
     "---",
-  ]
-    .filter(Boolean)
-    .join("\n");
+    "",
+    fields.content.trim(),
+    "",
+  ].filter((l): l is string => l !== null);
 
-  return `${frontmatter}\n\n${data.content}`;
-}
-
-export function parseMdxFrontmatter(raw: string) {
-  const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
-  if (!match) return { content: raw };
-
-  const frontmatterStr = match[1];
-  const content = match[2].trim();
-  const meta: Record<string, string | string[]> = {};
-
-  frontmatterStr.split("\n").forEach((line) => {
-    const colon = line.indexOf(":");
-    if (colon === -1) return;
-    const key = line.slice(0, colon).trim();
-    const val = line.slice(colon + 1).trim();
-
-    if (val.startsWith("[")) {
-      // Parse array like ["a", "b"]
-      meta[key] = val
-        .slice(1, -1)
-        .split(",")
-        .map((s) => s.trim().replace(/^"|"$/g, ""));
-    } else {
-      meta[key] = val.replace(/^"|"$/g, "");
-    }
-  });
-
-  return { ...meta, content };
+  return lines.join("\n");
 }

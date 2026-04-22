@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { listFiles, getFile } from "@/lib/github";
-import { parseFrontmatter } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog";
 
 async function isAuthenticated() {
   const cookieStore = await cookies();
@@ -14,21 +13,18 @@ export async function GET() {
   }
 
   try {
-    const files = await listFiles("content/blog");
+    const posts = getAllPosts().map(({ slug, title, date, description, tags, image, category, featured }) => ({
+      slug,
+      title,
+      date,
+      excerpt: description,
+      tags,
+      image,
+      category,
+      featured,
+    }));
 
-    const posts = await Promise.all(
-      files
-        .filter((f) => f.name.endsWith(".mdx"))
-        .map(async (f) => {
-          const slug = f.name.replace(/\.mdx$/, "");
-          const file = await getFile(f.path);
-          if (!file) return null;
-          const { title, date, excerpt, tags } = parseFrontmatter(file.content);
-          return { slug, title, date, excerpt, tags };
-        })
-    );
-
-    return NextResponse.json(posts.filter(Boolean));
+    return NextResponse.json(posts);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Failed to list posts";
     return NextResponse.json({ error: message }, { status: 500 });

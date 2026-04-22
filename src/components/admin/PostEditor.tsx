@@ -81,29 +81,15 @@ function ToolbarBtn({
   );
 }
 
-async function compressToWebP(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    const url = URL.createObjectURL(file);
-    img.onload = () => {
-      let { width, height } = img;
-      const MAX = 1200;
-      if (width > MAX) { height = Math.round((height * MAX) / width); width = MAX; }
-      const canvas = document.createElement("canvas");
-      canvas.width = width; canvas.height = height;
-      const ctx = canvas.getContext("2d")!;
-      ctx.drawImage(img, 0, 0, width, height);
-      const tryQuality = (q: number) => {
-        const dataUrl = canvas.toDataURL("image/webp", q);
-        const bytes = Math.round((dataUrl.length * 3) / 4);
-        if (bytes > 100000 && q > 0.4) tryQuality(Math.round((q - 0.15) * 100) / 100);
-        else { URL.revokeObjectURL(url); resolve(dataUrl); }
-      };
-      tryQuality(0.85);
-    };
-    img.onerror = reject;
-    img.src = url;
-  });
+async function uploadImage(file: File): Promise<string> {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res  = await fetch("/api/blog/upload-image", { method: "POST", body: formData });
+  const json = await res.json();
+
+  if (!res.ok) throw new Error(json.error ?? "Upload failed");
+  return json.url as string; // e.g. "/images/blog/my-photo-1714123456.webp"
 }
 
 export default function PostEditor({ initialData, isEditing = false }: Props) {
@@ -141,7 +127,7 @@ export default function PostEditor({ initialData, isEditing = false }: Props) {
       StarterKit,
       Underline,
       TextAlign.configure({ types: ["heading", "paragraph"] }),
-      TiptapImage.configure({ inline: false, allowBase64: true }),
+      TiptapImage.configure({ inline: false, allowBase64: false }),
       TiptapLink.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: "Start writing your post…" }),
     ],
@@ -176,32 +162,40 @@ export default function PostEditor({ initialData, isEditing = false }: Props) {
     }
   }
 
-  const handleInlineImage = useCallback(
-    async (e: React.ChangeEvent<HTMLInputElement>) => {
-      const file = e.target.files?.[0];
-      if (!file || !editor) return;
-      setUploadingImg(true);
-      try {
-        const dataUrl = await compressToWebP(file);
-        editor.chain().focus().setImage({ src: dataUrl }).run();
-      } catch { alert("Image compression failed."); }
-      setUploadingImg(false);
-      e.target.value = "";
-    },
-    [editor]
-  );
-
-  async function handleFeaturedImage(e: React.ChangeEvent<HTMLInputElement>) {
+  // ── Inline image (inside editor body) ─────────────────────────────────────
+const handleInlineImage = useCallback(
+  async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file) return;
+    if (!file || !editor) return;
     setUploadingImg(true);
     try {
-      const dataUrl = await compressToWebP(file);
-      setFeaturedImage(dataUrl);
-    } catch { alert("Image compression failed."); }
+      const url = await uploadImage(file);
+      editor.chain().focus().setImage({ src: url }).run();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Image upload failed.");
+    } finally {
+      setUploadingImg(false);
+      e.target.value = "";
+    }
+  },
+  [editor]
+);
+
+// ── Featured / cover image ─────────────────────────────────────────────────
+async function handleFeaturedImage(e: React.ChangeEvent<HTMLInputElement>) {
+  const file = e.target.files?.[0];
+  if (!file) return;
+  setUploadingImg(true);
+  try {
+    const url = await uploadImage(file);
+    setFeaturedImage(url);
+  } catch (err) {
+    alert(err instanceof Error ? err.message : "Image upload failed.");
+  } finally {
     setUploadingImg(false);
     e.target.value = "";
   }
+}
 
   function addFaq() { setFaqs((f) => [...f, { question: "", answer: "" }]); }
   function removeFaq(i: number) { setFaqs((f) => f.filter((_, idx) => idx !== i)); }
@@ -259,7 +253,7 @@ export default function PostEditor({ initialData, isEditing = false }: Props) {
       `date: "${date}"`,
       excerpt ? `excerpt: "${excerpt.replace(/"/g, "'")}"` : "",
       tags.length ? `tags: [${tags.map((t) => `"${t}"`).join(", ")}]` : "",
-      featuredImage ? `image: "${featuredImage}"` : "",
+      featuredImage ? `coverImage: "${featuredImage}"` : "",
       metaTitle ? `metaTitle: "${metaTitle.replace(/"/g, "'")}"` : "",
       metaDescription ? `metaDescription: "${metaDescription.replace(/"/g, "'")}"` : "",
       "---",
@@ -290,7 +284,9 @@ const res = await fetch(
       tags: tagsInput.split(",").map((t) => t.trim()).filter(Boolean),
       author: "Privilege Limo",
       coverImage: featuredImage,
-      content: buildMDX(),
+      metaTitle,
+      metaDescription,
+      content: editor?.getHTML() ?? "",
     }),
   }
 );

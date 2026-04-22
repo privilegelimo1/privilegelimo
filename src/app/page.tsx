@@ -233,7 +233,7 @@ function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: -100 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="inline-flex items-center gap-4 mb-10"
         >
           <div className="h-px w-10 bg-[#AB5461]" />
@@ -247,7 +247,7 @@ function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: -100 }}
-          transition={{ duration: 1.1, delay: 0.7, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, delay: 0.7, ease: [0.23, 1, 0.32, 1] }}
           className="text-white text-6xl md:text-8xl lg:text-[110px] font-extralight leading-[1.0] tracking-[-0.03em] mb-10 drop-shadow-lg"
         >
           Travel the
@@ -259,7 +259,7 @@ function HeroSection() {
 <motion.div
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 1.1 }}
+  transition={{ duration: 0.8, delay: 0.5 }}
   className="flex flex-col sm:flex-row items-center gap-4"
 >
   <button
@@ -403,7 +403,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-16">
   {fleet.map((car, i) => (
-    <AnimateIn key={car.slug} delay={i * 0.03} direction="up">
+    <AnimateIn key={car.slug} delay={i * 0.01} direction="up">
       <article className="group bg-white rounded-[28px] border border-[#AB5461]/40 hover:border-[#AB5461] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
 
         {/* Image */}
