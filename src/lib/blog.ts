@@ -14,6 +14,7 @@ export interface Post {
   date:        string;
   author:      string;
   image:       string;
+  coverImage:  string;
   category:    string;
   tags:        string[];
   readingTime: string;
@@ -49,18 +50,19 @@ function readFileMeta(filename: string): PostMeta {
   contentCache.set(slug, content);
 
   return {
-    slug,
-    title:       fm.title                          ?? "Untitled",
-    description: fm.excerpt ?? fm.description      ?? "",
-    date:        fm.date                           ?? new Date().toISOString().split("T")[0],
-    author:      fm.author                         ?? "Privilege Limo",
-    image:       fm.coverImage ?? fm.image         ?? "",
-    category:    fm.category                       ?? fm.tags?.[0] ?? "General",
-    tags:        Array.isArray(fm.tags) ? fm.tags  : [],
-    readingTime: readingTime(content).text,
-    featured:    fm.featured                       ?? false,
-    draft:       fm.draft                          ?? false,
-  };
+  slug,
+  title:       fm.title                          ?? "Untitled",
+  description: fm.excerpt ?? fm.description      ?? "",
+  date:        fm.date                           ?? new Date().toISOString().split("T")[0],
+  author:      fm.author                         ?? "Privilege Limo",
+  image:       fm.coverImage ?? fm.image         ?? "",
+  coverImage:  fm.coverImage                     ?? "",   // ← add this line
+  category:    fm.category                       ?? fm.tags?.[0] ?? "General",
+  tags:        Array.isArray(fm.tags) ? fm.tags  : [],
+  readingTime: readingTime(content).text,
+  featured:    fm.featured                       ?? false,
+  draft:       fm.draft                          ?? false,
+};
 }
 
 // ── Public API ─────────────────────────────────────────────────────────────
@@ -102,19 +104,20 @@ export function getPostBySlug(slug: string): Post | null {
     const raw = fs.readFileSync(file, "utf-8");
     const { data: fm, content } = matter(raw);
     return {
-      slug,
-      title:       fm.title                          ?? "Untitled",
-      description: fm.excerpt ?? fm.description      ?? "",
-      date:        fm.date                           ?? new Date().toISOString().split("T")[0],
-      author:      fm.author                         ?? "Privilege Limo",
-      image:       fm.coverImage ?? fm.image         ?? "",
-      category:    fm.category                       ?? fm.tags?.[0] ?? "General",
-      tags:        Array.isArray(fm.tags) ? fm.tags  : [],
-      readingTime: readingTime(content).text,
-      featured:    fm.featured                       ?? false,
-      draft:       fm.draft                          ?? false,
-      content,
-    };
+  slug,
+  title:       fm.title                          ?? "Untitled",
+  description: fm.excerpt ?? fm.description      ?? "",
+  date:        fm.date                           ?? new Date().toISOString().split("T")[0],
+  author:      fm.author                         ?? "Privilege Limo",
+  image:       fm.coverImage ?? fm.image         ?? "",
+  coverImage:  fm.coverImage                     ?? "",   // ← add this
+  category:    fm.category                       ?? fm.tags?.[0] ?? "General",
+  tags:        Array.isArray(fm.tags) ? fm.tags  : [],
+  readingTime: readingTime(content).text,
+  featured:    fm.featured                       ?? false,
+  draft:       fm.draft                          ?? false,
+  content,
+};
   }
 
   // Pull content from cache — already parsed during getAllPosts()
