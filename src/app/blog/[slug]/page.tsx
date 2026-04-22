@@ -163,7 +163,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      {/* FEATURED IMAGE */}
+           {/* FEATURED IMAGE */}
       {post.image && (
         <div className="px-5 md:px-12 lg:px-20 py-10 bg-white">
           <div className="max-w-6xl mx-auto">
@@ -173,6 +173,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       )}
+
+      {/* MOBILE TOC — below featured image, hidden on desktop */}
+      <div className="md:hidden px-5 pb-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <TableOfContents />
+        </div>
+      </div>
 
       {/* CONTENT + SIDEBAR */}
       <section className="py-14 px-5 md:px-12 lg:px-20 bg-white">
@@ -200,8 +207,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </article>
 
             <aside className="md:col-span-4 space-y-5">
-              {/* Table of Contents */}
-  <TableOfContents />
+  {/* Desktop-only TOC — mobile version is above the article */}
+  <div className="hidden md:block">
+    <TableOfContents />
+  </div>
 
            <div className="rounded-2xl bg-neutral-900 p-6 sticky top-24">
   <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2">Book a Ride</p>
