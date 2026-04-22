@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "bus rental dubai",
     "group transport dubai",
   ],
-  alternates: { canonical: "https://privilegelimo.com/services/mercedes-sprinter-van-rental" },
+  alternates: { canonical: "/services/bus-and-van-rental-in-dubai" },
 };
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────

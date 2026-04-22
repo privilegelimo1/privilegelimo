@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "mercedes vito van hire",
     "mercedes luxury van rental",
   ],
-  alternates: { canonical: "https://privilegelimo.com/services/mercedes-van-rental-dubai" },
+  alternates: { canonical: "https://www.privilegelimo.com/services/mercedes-van-rental-dubai" },
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

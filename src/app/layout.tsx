@@ -3,9 +3,10 @@ import "./globals.css";
 import FloatingContact from "@/components/FloatingContact";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.privilegelimo.com"), // ← ADD THIS — fixes all relative canonical/OG URLs
   title: {
-    default: "Privilege Limo | Luxury Chauffeur Service in Dubai",
     template: "%s | Privilege Limo",
+    default: "Privilege Limo | Luxury Chauffeur Service in Dubai",
   },
   description:
     "Privilege Luxury Travel LLC - Dubai's most trusted chauffeur service. Premium airport transfers, corporate travel, weddings & events across Dubai, Abu Dhabi & Sharjah. Available 24/7. Call +971 50 920 0818.",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     title: "Privilege Limo | Luxury Chauffeur Service in Dubai",
     description:
       "25 years of premium chauffeur services in Dubai. Airport transfers, corporate travel, weddings & VIP events. Available 24/7.",
-    url: "https://privilegelimo.com",
+    url: "https://www.privilegelimo.com",
     siteName: "Privilege Luxury Travel LLC",
     locale: "en_AE",
     type: "website",
@@ -60,9 +61,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://privilegelimo.com",
-  },
+  // ← REMOVED hardcoded canonical here — each page sets its own
 };
 
 export default function RootLayout({
@@ -89,7 +88,7 @@ export default function RootLayout({
               alternateName: "Privilege Limo",
               description:
                 "Dubai's most trusted luxury chauffeur service. Premium airport transfers, corporate travel, weddings and VIP events across UAE.",
-              url: "https://privilegelimo.com",
+              url: "https://www.privilegelimo.com",
               telephone: ["+971509200818", "+971509200818"],
               email: "booking@privilegelimo.com",
               address: {
@@ -140,7 +139,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children} <FloatingContact /> </body>
+      <body>{children} <FloatingContact /></body>
     </html>
   );
 }

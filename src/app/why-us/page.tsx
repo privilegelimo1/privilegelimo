@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Why Choose Privilege Luxury Travel | Premium Chauffeur Service Dubai",
   description:
     "Discover why Privilege Luxury Travel LLC is Dubai's trusted choice for luxury chauffeur services, airport transfers, business transportation, and premium car rentals.",
-  alternates: { canonical: "https://privilegelimo.com/why-us" },
+  alternates: { canonical: "https://www.privilegelimo.com/why-us" },
 };
 
 const stats = [

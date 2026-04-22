@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     "business driver hire monthly dubai",
   ],
   alternates: {
-    canonical: "https://privilegelimo.com/services/monthly-car-rental-with-driver",
+    canonical: "https://www.privilegelimo.com/services/monthly-car-rental-with-driver",
   },
 };
 
@@ -100,15 +100,15 @@ const stats = [
 const blogLinks = [
   {
     title: "Reliable Chauffeur Services in Dubai",
-    href: "https://privilegelimo.com/reliable-chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/reliable-chauffeur-services-in-dubai/",
   },
   {
     title: "Chauffeur Services in Dubai",
-    href: "https://privilegelimo.com/chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/chauffeur-services-in-dubai/",
   },
   {
     title: "Transfers from Dubai to Abu Dhabi",
-    href: "https://privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
+    href: "https://www.privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
   },
 ];
 

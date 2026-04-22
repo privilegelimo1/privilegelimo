@@ -41,12 +41,12 @@ export async function generateMetadata({
       "luxury chauffeur Dubai",
     ],
     alternates: {
-      canonical: `https://privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
+      canonical: `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
     },
     openGraph: {
       title: `${vehicle.name} | Privilege Limo Dubai`,
       description,
-      url: `https://privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
+      url: `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
       images: imageUrl
         ? [{ url: imageUrl, width: 1200, height: 630, alt: vehicle.name }]
         : [],

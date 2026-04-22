@@ -76,9 +76,7 @@ export const metadata: Metadata = {
     "mercedes van rental dubai",
     "car hire with driver in dubai",
   ],
-  alternates: {
-    canonical: "https://privilegelimo.com/luxury-chauffeur-service-in-dubai",
-  },
+  alternates: { canonical: "/services/luxury-chauffeur-service-in-dubai" },
 };
 
 
@@ -117,15 +115,15 @@ const stats = [
 const blogLinks = [
   {
     title: "Reliable Chauffeur Services in Dubai",
-    href: "https://privilegelimo.com/reliable-chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/reliable-chauffeur-services-in-dubai/",
   },
   {
     title: "Chauffeur Services in Dubai",
-    href: "https://privilegelimo.com/chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/chauffeur-services-in-dubai/",
   },
   {
     title: "Transfers from Dubai to Abu Dhabi",
-    href: "https://privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
+    href: "https://www.privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
   },
 ];
 

@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     "group transfer dubai",
     "mercedes benz van rent",
   ],
-  alternates: { canonical: "https://privilegelimo.com/mercedes-sprinter-van-rental" },
+  alternates: { canonical: "https://www.privilegelimo.com/mercedes-sprinter-van-rental" },
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
@@ -101,12 +101,12 @@ const relatedLinks = [
   {
     title: "Rent a Car with Driver in Dubai",
     desc: "The Allure of Luxury Travel in Dubai - Rent a Car with Driver in Dubai. Dubai stands as a testament to...",
-    href: "https://privilegelimo.com/rent-a-car-with-driver-in-dubai/",
+    href: "https://www.privilegelimo.com/rent-a-car-with-driver-in-dubai/",
   },
   {
     title: "Mercedes Sprinter Chauffeur Service",
     desc: "Luxury Sprinter Van in Dubai - Mercedes-Benz Sprinter Van Rent. Experience the Height of Comfort and Style...",
-    href: "https://privilegelimo.com/mercedes-sprinter-chauffeur-service/",
+    href: "https://www.privilegelimo.com/mercedes-sprinter-chauffeur-service/",
   },
 ];
 

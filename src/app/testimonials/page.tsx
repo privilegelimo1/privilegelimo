@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Client Reviews & Testimonials | Privilege Luxury Travel Dubai",
   description:
     "Read real Google reviews from our clients. 5-star chauffeur service, luxury van rentals, airport transfers and more - trusted by hundreds across Dubai and UAE.",
-  alternates: { canonical: "https://privilegelimo.com/testimonials" },
+  alternates: { canonical: "https://www.privilegelimo.com/testimonials" },
 };
 
 // ─── DATA - only reviews with actual text ────────────────────────────────────

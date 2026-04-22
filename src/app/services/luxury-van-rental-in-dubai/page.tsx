@@ -36,9 +36,7 @@ export const metadata: Metadata = {
     "family van hire dubai",
     "event transport dubai",
   ],
-  alternates: {
-    canonical: "https://privilegelimo.com/services/luxury-van-rental-dubai",
-  },
+  alternates: { canonical: "/services/luxury-van-rental-in-dubai" },
 };
 
 
@@ -163,15 +161,15 @@ const vans: VanVehicle[] = [
 const blogLinks = [
   {
     title: "Luxury Van Rental with Driver in Dubai",
-    href: "https://privilegelimo.com/luxury-van-rental-dubai/",
+    href: "https://www.privilegelimo.com/luxury-van-rental-dubai/",
   },
   {
     title: "Mercedes Sprinter Hire for Corporate Events",
-    href: "https://privilegelimo.com/mercedes-sprinter-corporate-hire/",
+    href: "https://www.privilegelimo.com/mercedes-sprinter-corporate-hire/",
   },
   {
     title: "Group Airport Transfers in Dubai",
-    href: "https://privilegelimo.com/group-airport-transfer-dubai/",
+    href: "https://www.privilegelimo.com/group-airport-transfer-dubai/",
   },
 ];
 

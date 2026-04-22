@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
+  alternates: { canonical: "/blog" },
   title: "Blog | Privilege Limo",
   description:
     "Insights, guides, and updates from Dubai's premier luxury chauffeur service.",

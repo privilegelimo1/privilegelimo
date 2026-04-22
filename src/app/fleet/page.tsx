@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "luxury van hire Dubai",
     "VIP car Dubai",
   ],
-  alternates: { canonical: "https://privilegelimo.com/fleet" },
+  alternates: { canonical: "https://www.privilegelimo.com/fleet" },
 };
 
 const WA_SVG = (

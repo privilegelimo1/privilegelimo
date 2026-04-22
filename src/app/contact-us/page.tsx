@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contact Us | Book Luxury Chauffeur Service Dubai — Privilege Limo",
   description:
     "Get in touch with Privilege Luxury Travel LLC. Book a luxury chauffeur, van, sprinter or bus in Dubai. Available 24/7 via WhatsApp, phone or email.",
-  alternates: { canonical: "https://privilegelimo.com/contact-us" },
+  alternates: { canonical: "https://www.privilegelimo.com/contact-us" },
 };
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────

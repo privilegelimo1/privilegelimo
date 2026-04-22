@@ -60,9 +60,7 @@ export const metadata: Metadata = {
     "dubai desert tour with driver",
     "tourist driver dubai",
   ],
-  alternates: {
-    canonical: "https://privilegelimo.com/services/private-driver-for-sightseeing-dubai",
-  },
+  alternates: { canonical: "/services/private-driver-for-sightseeing-services" },
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
@@ -93,15 +91,15 @@ const seoKeywords = [
 const blogLinks = [
   {
     title: "Reliable Chauffeur Services in Dubai",
-    href: "https://privilegelimo.com/reliable-chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/reliable-chauffeur-services-in-dubai/",
   },
   {
     title: "Chauffeur Services in Dubai",
-    href: "https://privilegelimo.com/chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/chauffeur-services-in-dubai/",
   },
   {
     title: "Transfers from Dubai to Abu Dhabi",
-    href: "https://privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
+    href: "https://www.privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
   },
 ];
 

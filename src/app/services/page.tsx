@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     "corporate chauffeur dubai",
     "vip transfer dubai",
   ],
-  alternates: { canonical: "https://privilegelimo.com/services" },
+  alternates: { canonical: "https://www.privilegelimo.com/services" },
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

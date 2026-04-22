@@ -88,12 +88,12 @@ export async function generateMetadata({
     title: `${info.label} Chauffeur Dubai | Privilege Limo`,
     description: info.description,
     alternates: {
-      canonical: `https://privilegelimo.com/fleet/${slug}`,
+      canonical: `https://www.privilegelimo.com/fleet/${slug}`,
     },
     openGraph: {
       title: `${info.label} Chauffeur Dubai | Privilege Limo`,
       description: info.description,
-      url: `https://privilegelimo.com/fleet/${slug}`,
+      url: `https://www.privilegelimo.com/fleet/${slug}`,
       images: [{ url: info.heroImage, width: 1200, height: 630, alt: info.label }],
     },
   };
