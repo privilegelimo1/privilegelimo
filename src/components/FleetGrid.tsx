@@ -282,7 +282,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                         key={v.slug}
                         className="group rounded-3xl border border-[#AB5461]/40 hover:border-[#AB5461] hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] transition-all duration-500 overflow-hidden bg-white"
                       >
-                        <Link href={`/fleet/${v.slug}`} className="block">
+<Link href={`/fleet/${v.classSlug}/${v.slug}`} className="block">
                           <div className="relative h-52 bg-[#fafafa] overflow-hidden">
                             {imageSrc ? (
                               <Image
@@ -310,7 +310,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                         </Link>
 
                         <div className="p-7">
-                          <Link href={`/fleet/${v.slug}`} className="block">
+<Link href={`/fleet/${v.classSlug}/${v.slug}`} className="block">
                             <div className="flex items-start justify-between mb-3">
                               <div>
                                 <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-1.5">
@@ -378,9 +378,9 @@ export default function FleetGrid({ fleet, categories }: Props) {
 
                           <div className="flex items-center justify-between mb-4">
                             <Link
-                              href={`/fleet/${v.slug}`}
-                              className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors flex items-center gap-2"
-                            >
+  href={`/fleet/${v.classSlug}/${v.slug}`}
+  className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] hover:text-[#AB5461] transition-colors flex items-center gap-2"
+>
                               View Details
                               <svg
                                 className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
