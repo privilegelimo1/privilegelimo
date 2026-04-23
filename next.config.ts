@@ -97,7 +97,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/mercedes-sprinter-chauffeur-service/",
+        source: "/services/mercedes-sprinter-van-rental ",
         destination: "/services/mercedes-sprinter-van-rental",
         permanent: true,
       },
@@ -119,7 +119,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/luxury-van-rental-dubai/",
+        source: "/services/luxury-chauffeur-service-in-dubai",
         destination: "/services/luxury-van-rental-in-dubai",
         permanent: true,
       },

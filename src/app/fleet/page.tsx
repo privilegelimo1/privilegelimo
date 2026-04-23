@@ -7,7 +7,7 @@ import FleetGrid from "@/components/FleetGrid";
 import { fleet, fleetCategories } from "@/data";
 
 export const metadata: Metadata = {
-  title: "Our Fleet | Luxury Chauffeur Vehicles Dubai - Privilege Limo",
+  title: "Our Fleet | Luxury Chauffeur Vehicles Dubai",
   description:
     "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai - Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
   keywords: [

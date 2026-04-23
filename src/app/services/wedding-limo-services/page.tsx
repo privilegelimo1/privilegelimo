@@ -11,7 +11,7 @@ import FleetPreview from "@/components/FleetPreview";
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Wedding Limo Dubai | Luxury Bridal Car & Chauffeur Service | Privilege Limo",
+  title: "Wedding Limo Dubai | Luxury Bridal Car & Chauffeur Service",
   description:
     "Premium wedding limousine and chauffeur service in Dubai. Luxury bridal cars, groom transport, guest shuttles and wedding fleet hire with professional drivers.",
   keywords: [
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "wedding fleet rental Dubai",
   ],
   alternates: {
-    canonical: "https://www.privilegelimo.com/services/wedding-limo",
+    canonical: "https://www.privilegelimo.com/services/wedding-limo-services",
   },
   openGraph: {
     title: "Wedding Limo Dubai | Luxury Bridal Car & Chauffeur Service",
     description:
       "Luxury wedding limousine and chauffeur service in Dubai — bridal cars, groom transport, guest shuttles and full wedding fleet hire.",
-    url: "https://www.privilegelimo.com/services/wedding-limo",
+    url: "https://www.privilegelimo.com/services/wedding-limo-services",
     siteName: "Privilege Limo",
     type: "website",
   },

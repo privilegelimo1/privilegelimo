@@ -51,7 +51,7 @@ type Vehicle = {
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE - Privilege Limo",
+  title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
   description:
     "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
   keywords: [
@@ -115,15 +115,15 @@ const stats = [
 const blogLinks = [
   {
     title: "Reliable Chauffeur Services in Dubai",
-    href: "https://www.privilegelimo.com/reliable-chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
   },
   {
     title: "Chauffeur Services in Dubai",
-    href: "https://www.privilegelimo.com/chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai",
   },
   {
     title: "Transfers from Dubai to Abu Dhabi",
-    href: "https://www.privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
+    href: "https://www.privilegelimo.com/services/airport-transfer",
   },
 ];
 

@@ -35,7 +35,7 @@ type Vehicle = {
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE - Privilege Limo",
+  title: "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
   description:
     "Monthly car rental with driver in Dubai. Long-term chauffeur hire for executives, families and businesses across the UAE. Luxury sedans, SUVs and vans on monthly contracts.",
   keywords: [
@@ -100,15 +100,15 @@ const stats = [
 const blogLinks = [
   {
     title: "Reliable Chauffeur Services in Dubai",
-    href: "https://www.privilegelimo.com/reliable-chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
   },
   {
     title: "Chauffeur Services in Dubai",
-    href: "https://www.privilegelimo.com/chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai",
   },
   {
     title: "Transfers from Dubai to Abu Dhabi",
-    href: "https://www.privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
+    href: "https://www.privilegelimo.com/services/airport-transfer",
   },
 ];
 

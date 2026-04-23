@@ -5,9 +5,9 @@ import FloatingContact from "@/components/FloatingContact";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.privilegelimo.com"), // ← ADD THIS — fixes all relative canonical/OG URLs
   title: {
-    template: "%s | Privilege Limo",
-    default: "Privilege Limo | Luxury Chauffeur Service in Dubai",
-  },
+  default: "Privilege Limo | Luxury Chauffeur Services in Dubai",
+  template: "%s | Privilege Limo",
+},
   description:
     "Privilege Luxury Travel LLC - Dubai's most trusted chauffeur service. Premium airport transfers, corporate travel, weddings & events across Dubai, Abu Dhabi & Sharjah. Available 24/7. Call +971 50 920 0818.",
   keywords: [

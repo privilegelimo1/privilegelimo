@@ -35,7 +35,7 @@ type Vehicle = {
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Private Driver for Sightseeing Dubai | City Tour with Driver UAE - Privilege Limo",
+  title: "Private Driver for Sightseeing Dubai | City Tour with Driver UAE",
   description:
     "Explore Dubai in comfort with a private driver for sightseeing. Customised city tours in luxury vehicles — Burj Khalifa, Palm Jumeirah, Old Dubai, Desert and more. Book your private tour driver today.",
   keywords: [
@@ -91,15 +91,15 @@ const seoKeywords = [
 const blogLinks = [
   {
     title: "Reliable Chauffeur Services in Dubai",
-    href: "https://www.privilegelimo.com/reliable-chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
   },
   {
     title: "Chauffeur Services in Dubai",
-    href: "https://www.privilegelimo.com/chauffeur-services-in-dubai/",
+    href: "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai",
   },
   {
     title: "Transfers from Dubai to Abu Dhabi",
-    href: "https://www.privilegelimo.com/transfers-from-dubai-to-abu-dhabi/",
+    href: "https://www.privilegelimo.com/services/airport-transfer",
   },
 ];
 

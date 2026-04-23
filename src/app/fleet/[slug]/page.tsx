@@ -85,13 +85,13 @@ export async function generateMetadata({
   const info = classInfo[slug];
   if (!info) return {};
   return {
-    title: `${info.label} Chauffeur Dubai | Privilege Limo`,
+    title: `${info.label} Chauffeur Dubai`,
     description: info.description,
     alternates: {
       canonical: `https://www.privilegelimo.com/fleet/${slug}`,
     },
     openGraph: {
-      title: `${info.label} Chauffeur Dubai | Privilege Limo`,
+      title: `${info.label} Chauffeur Dubai`,
       description: info.description,
       url: `https://www.privilegelimo.com/fleet/${slug}`,
       images: [{ url: info.heroImage, width: 1200, height: 630, alt: info.label }],

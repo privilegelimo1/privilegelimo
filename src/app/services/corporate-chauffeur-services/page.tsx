@@ -11,7 +11,7 @@ import FleetPreview from "@/components/FleetPreview"
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Corporate Chauffeur Service Dubai | Executive Business Transport | Privilege Limo",
+  title: "Corporate Chauffeur Service Dubai | Executive Business Transport",
   description:
     "Premium corporate chauffeur service in Dubai for executives, client meetings, roadshows, airport transfers and business events. Professional drivers and a luxury fleet available 24/7.",
   keywords: [
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "corporate limousine Dubai",
   ],
   alternates: {
-    canonical: "https://www.privilegelimo.com/services/corporate-chauffeur-service",
+    canonical: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
   },
   openGraph: {
     title: "Corporate Chauffeur Service Dubai | Executive Business Transport",
     description:
       "Luxury corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows and VIP guest movement.",
-    url: "https://www.privilegelimo.com/services/corporate-chauffeur-service",
+    url: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
     siteName: "Privilege Limo",
     type: "website",
   },

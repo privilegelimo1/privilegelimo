@@ -11,7 +11,7 @@ import FleetPreview from "@/components/FleetPreview";
 
 
 export const metadata: Metadata = {
-  title: "Luxury Van Rental Dubai | Mercedes V-Class & Sprinter with Driver - Privilege Limo",
+  title: "Luxury Van Rental Dubai | Mercedes V-Class & Sprinter with Driver",
   description:
     "Rent a luxury van with driver in Dubai. Premium Mercedes V-Class, Sprinter Business Class VIP and luxury coach hire for groups, families, corporate delegations and events.",
   keywords: [
@@ -161,15 +161,15 @@ const vans: VanVehicle[] = [
 const blogLinks = [
   {
     title: "Luxury Van Rental with Driver in Dubai",
-    href: "https://www.privilegelimo.com/luxury-van-rental-dubai/",
+    href: "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai",
   },
   {
     title: "Mercedes Sprinter Hire for Corporate Events",
-    href: "https://www.privilegelimo.com/mercedes-sprinter-corporate-hire/",
+    href: "https://www.privilegelimo.com/services/mercedes-sprinter-van-rental",
   },
   {
     title: "Group Airport Transfers in Dubai",
-    href: "https://www.privilegelimo.com/group-airport-transfer-dubai/",
+    href: "https://www.privilegelimo.com/services/airport-transfer",
   },
 ];
 

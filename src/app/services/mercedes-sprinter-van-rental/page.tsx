@@ -37,7 +37,7 @@ const sprinterFleet = allFleet.filter((v) =>
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE - Privilege Limo",
+  title: "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE",
   description:
     "Book a Mercedes Sprinter van rental in Dubai & UAE. Choose from Avant Garde VIP, Ultra Luxury, Business Class & standard Sprinter. Up to 19 seats. Professional chauffeurs. Fixed rates.",
   keywords: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     "group transfer dubai",
     "mercedes benz van rent",
   ],
-  alternates: { canonical: "https://www.privilegelimo.com/mercedes-sprinter-van-rental" },
+  alternates: { canonical: "https://www.privilegelimo.com/services/mercedes-sprinter-van-rental " },
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
@@ -101,12 +101,12 @@ const relatedLinks = [
   {
     title: "Rent a Car with Driver in Dubai",
     desc: "The Allure of Luxury Travel in Dubai - Rent a Car with Driver in Dubai. Dubai stands as a testament to...",
-    href: "https://www.privilegelimo.com/rent-a-car-with-driver-in-dubai/",
+    href: "https://www.privilegelimo.com/services/monthly-car-rental-with-driver ",
   },
   {
     title: "Mercedes Sprinter Chauffeur Service",
     desc: "Luxury Sprinter Van in Dubai - Mercedes-Benz Sprinter Van Rent. Experience the Height of Comfort and Style...",
-    href: "https://www.privilegelimo.com/mercedes-sprinter-chauffeur-service/",
+    href: "https://www.privilegelimo.com/services/mercedes-sprinter-van-rental ",
   },
 ];
 

@@ -30,7 +30,7 @@ export async function generateMetadata({
     vehicle.description ||
     `Hire a ${vehicle.name} with professional chauffeur in Dubai. Luxury travel with Privilege Limo.`;
   return {
-    title: `${vehicle.name} Chauffeur Service Dubai | Privilege Limo`,
+    title: `${vehicle.name} Chauffeur Service Dubai`,
     description: `${description} From ${vehicle.priceLabel}. Book now - +971 50 920 0818.`,
     keywords: [
       `${vehicle.name} hire Dubai`,
@@ -44,7 +44,7 @@ export async function generateMetadata({
       canonical: `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
     },
     openGraph: {
-      title: `${vehicle.name} | Privilege Limo Dubai`,
+      title: `${vehicle.name} Dubai`,
       description,
       url: `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
       images: imageUrl

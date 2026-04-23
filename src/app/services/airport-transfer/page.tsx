@@ -11,7 +11,7 @@ import FleetPreview from "@/components/FleetPreview";
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Airport Transfer Dubai | DXB & DWC Chauffeur Service | Privilege Limo",
+  title: "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
   description:
     "Book premium airport transfer in Dubai for DXB, DWC, Abu Dhabi and Sharjah. Luxury chauffeur service with flight tracking, meet & greet, fixed rates and 24/7 availability.",
   keywords: [

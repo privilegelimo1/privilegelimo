@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     "Book an hourly or full day chauffeur service in Dubai. Flexible as-directed hire with luxury sedans, SUVs and vans for business, shopping, sightseeing and personal travel.",
   alternates: {
-    canonical: "https://www.privilegelimo.com/services/hourly-chauffeur-service",
+    canonical: "https://www.privilegelimo.com/services/full-day-and-hourly-chauffeur-services ",
   },
   openGraph: {
     title: "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire",
     description:
       "Flexible hourly and full day chauffeur hire in Dubai with premium vehicles and professional drivers. Ideal for business, events, shopping and city travel.",
-    url: "https://www.privilegelimo.com/services/hourly-chauffeur-service",
+    url: "https://www.privilegelimo.com/services/full-day-and-hourly-chauffeur-services ",
     siteName: "Privilege Limo",
     type: "website",
   },

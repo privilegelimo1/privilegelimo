@@ -33,7 +33,7 @@ type Vehicle = {
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Our Services | Luxury Chauffeur & Van Rental Dubai - Privilege Limo",
+  title: "Our Services | Luxury Chauffeur & Van Rental Dubai",
   description:
     "Explore all Privilege Limo services in Dubai & UAE. Luxury chauffeur service, Mercedes Sprinter van rental, Mercedes V-Class, Vito, bus hire and more. Fixed rates, 24/7 availability.",
   keywords: [
