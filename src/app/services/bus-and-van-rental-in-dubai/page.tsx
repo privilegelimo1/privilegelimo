@@ -242,7 +242,7 @@ export default function BusVanRentalPage() {
               Experience the Best of Dubai
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
-              Bus and Van Rentals —{" "}
+              Bus and Van Rentals{" "}
               <span className="text-[#AB5461] italic font-extralight">Dubai, UAE</span>
             </h2>
           </div>
@@ -252,7 +252,7 @@ export default function BusVanRentalPage() {
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
-                  src="/images/bus-van/bus-intro.webp"
+                  src="/images/fleet/mercedes-sprinter-19-1.webp"
                   alt="Luxury bus and van rental Dubai UAE Privilege Luxury Travel"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -346,7 +346,7 @@ export default function BusVanRentalPage() {
               </div>
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-2">
                 <Image
-                  src="/images/bus-van/bus-trusted.webp"
+                  src="/images/fleet/mercedes-sprinter-ultra-luxury-1.webp"
                   alt="Trusted luxury transport Dubai Privilege Luxury Travel"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -366,7 +366,7 @@ export default function BusVanRentalPage() {
             <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_50px_rgba(0,0,0,0.10)] transition-all duration-700 bg-white">
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-1">
                 <Image
-                  src="/images/bus-van/bus-benefits.webp"
+                  src="/images/fleet/mercedes-sprinter-avant-garde-1.webp"
                   alt="Benefits of luxury bus and van rental Dubai"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -466,7 +466,7 @@ export default function BusVanRentalPage() {
               </div>
               <div className="relative min-h-[340px] lg:min-h-[520px] overflow-hidden lg:order-2">
                 <Image
-                  src="/images/bus-van/dubai-luxury.webp"
+                  src="/images/services/luxury-van-rental.webp"
                   alt="Why Dubai is perfect for luxury travel"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
