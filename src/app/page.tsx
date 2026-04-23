@@ -214,7 +214,7 @@ function HeroSection() {
       {/* Full bleed image */}
       <div className="absolute inset-0 z-0">
         <NextImage
-          src="/images/hero.png"
+          src="/images/hero1.png"
           alt="Luxury chauffeur Dubai"
           fill
           priority
@@ -304,7 +304,7 @@ className="group inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white
           transition={{ delay: 1.8 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[#AB5461] text-[9px] tracking-[0.4em] uppercase font-light">Scroll</span>
+          <span className="text-[#AB5461] text-[9px] tracking-[0.4em] uppercase font-black">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
