@@ -214,14 +214,14 @@ function HeroSection() {
       {/* Full bleed image */}
       <div className="absolute inset-0 z-0">
         <NextImage
-          src="/images/hero-bg.webp"
+          src="/images/hero.png"
           alt="Luxury chauffeur Dubai"
           fill
           priority
           className="object-cover object-top"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-white" />
+        <div className="absolute inset-0" />
       </div>
 
       <motion.div
