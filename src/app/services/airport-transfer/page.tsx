@@ -28,13 +28,32 @@ export const metadata: Metadata = {
     canonical: "https://www.privilegelimo.com/services/airport-transfer",
   },
   openGraph: {
-    title: "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
-    description:
-      "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
-    url: "https://www.privilegelimo.com/services/airport-transfer",
-    siteName: "Privilege Limo",
-    type: "website",
-  },
+  title:       "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
+  description: "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
+  url:         "https://www.privilegelimo.com/services/airport-transfer",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Airport Transfer Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
+  description: "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

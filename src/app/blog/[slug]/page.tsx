@@ -19,10 +19,46 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title:       `${post.title} Blog`,
     description: post.description,
     openGraph: {
-      title:       post.title,
-      description: post.description,
-      images:      post.image ? [post.image] : [],
-    },
+  title:       post.title,
+  description: post.description,
+  url:         `https://www.privilegelimo.com/blog/${post.slug}`,
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "article",
+  images: post.image
+    ? [
+        {
+          url:    post.image.startsWith("http")
+                    ? post.image
+                    : `https://www.privilegelimo.com${post.image}`,
+          width:  1200,
+          height: 630,
+          alt:    post.title,
+          type:   "image/jpeg",
+        },
+      ]
+    : [
+        {
+          url:    "https://www.privilegelimo.com/og-image.jpg",
+          width:  1200,
+          height: 630,
+          alt:    "Privilege Limo | Luxury Chauffeur Service in Dubai",
+          type:   "image/jpeg",
+        },
+      ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       post.title,
+  description: post.description,
+  site:        "@privilegeuae",
+  images: post.image
+    ? [post.image.startsWith("http") ? post.image : `https://www.privilegelimo.com${post.image}`]
+    : ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
   }
 }
 

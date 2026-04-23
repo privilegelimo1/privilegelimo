@@ -43,14 +43,47 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
     },
-    openGraph: {
-      title: `${vehicle.name} Dubai`,
-      description,
-      url: `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
-      images: imageUrl
-        ? [{ url: imageUrl, width: 1200, height: 630, alt: vehicle.name }]
-        : [],
-    },
+   openGraph: {
+  title:       `${vehicle.name} Chauffeur Dubai`,
+  description,
+  url:         `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: imageUrl
+    ? [
+        {
+          url:    imageUrl.startsWith("http")
+                    ? imageUrl
+                    : `https://www.privilegelimo.com${imageUrl}`,
+          width:  1200,
+          height: 630,
+          alt:    `${vehicle.name} Chauffeur Dubai`,
+          type:   "image/jpeg",
+        },
+      ]
+    : [
+        {
+          url:    "https://www.privilegelimo.com/og-image.jpg",
+          width:  1200,
+          height: 630,
+          alt:    "Privilege Limo | Luxury Chauffeur Service in Dubai",
+          type:   "image/jpeg",
+        },
+      ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       `${vehicle.name} Chauffeur Dubai`,
+  description,
+  site:        "@privilegeuae",
+  images: imageUrl
+    ? [imageUrl.startsWith("http") ? imageUrl : `https://www.privilegelimo.com${imageUrl}`]
+    : ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
   };
 }
 

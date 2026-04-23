@@ -42,6 +42,15 @@ export const metadata: Metadata = {
     siteName: "Privilege Luxury Travel LLC",
     locale: "en_AE",
     type: "website",
+    images: [
+      {
+        url: "https://www.privilegelimo.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Privilege Limo | Luxury Chauffeur Service in Dubai",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -49,17 +58,11 @@ export const metadata: Metadata = {
     description:
       "Premium chauffeur & limousine services across Dubai & UAE. Book now.",
     site: "@privilegeuae",
+    images: ["https://www.privilegelimo.com/og-image.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+  // og:logo — not in the Next.js Metadata API natively, added via `other`
+  other: {
+    "og:logo": "https://www.privilegelimo.com/logo.webp",
   },
   // ← REMOVED hardcoded canonical here — each page sets its own
 };

@@ -119,11 +119,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/services/luxury-chauffeur-service-in-dubai",
-        destination: "/services/luxury-van-rental-in-dubai",
-        permanent: true,
-      },
-      {
         source: "/services/luxury-van-rental-dubai",
         destination: "/services/luxury-van-rental-in-dubai",
         permanent: true,
