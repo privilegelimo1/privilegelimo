@@ -28,13 +28,32 @@ export const metadata: Metadata = {
     canonical: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
   },
   openGraph: {
-    title: "Corporate Chauffeur Service Dubai | Executive Business Transport",
-    description:
-      "Luxury corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows and VIP guest movement.",
-    url: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
-    siteName: "Privilege Limo",
-    type: "website",
-  },
+  title:       "Corporate Chauffeur Service Dubai | Executive Business Transport UAE",
+  description: "Premium corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows, and VIP guest movement. Discreet, punctual, and professional — trusted by leading businesses across the UAE.",
+  url:         "https://www.privilegelimo.com/services/corporate-chauffeur-services",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Corporate Chauffeur Service Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Corporate Chauffeur Service Dubai | Executive Business Transport UAE",
+  description: "Premium corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows, and VIP guest movement. Discreet, punctual, and professional — trusted by leading businesses across the UAE.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

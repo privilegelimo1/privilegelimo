@@ -28,13 +28,32 @@ export const metadata: Metadata = {
     canonical: "https://www.privilegelimo.com/services/wedding-limo-services",
   },
   openGraph: {
-    title: "Wedding Limo Dubai | Luxury Bridal Car & Chauffeur Service",
-    description:
-      "Luxury wedding limousine and chauffeur service in Dubai — bridal cars, groom transport, guest shuttles and full wedding fleet hire.",
-    url: "https://www.privilegelimo.com/services/wedding-limo-services",
-    siteName: "Privilege Limo",
-    type: "website",
-  },
+  title:       "Wedding Limo Dubai | Luxury Bridal Car & Chauffeur Service UAE",
+  description: "Make your special day unforgettable with Privilege Limo's luxury wedding chauffeur service in Dubai — bridal cars, groom transport, guest shuttles, and full wedding fleet hire. Elegant, reliable, and tailored to your day.",
+  url:         "https://www.privilegelimo.com/services/wedding-limo-services",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Wedding Limo Dubai | Luxury Bridal Car Service Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Wedding Limo Dubai | Luxury Bridal Car & Chauffeur Service UAE",
+  description: "Make your special day unforgettable with Privilege Limo's luxury wedding chauffeur service in Dubai — bridal cars, groom transport, guest shuttles, and full wedding fleet hire. Elegant, reliable, and tailored to your day.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

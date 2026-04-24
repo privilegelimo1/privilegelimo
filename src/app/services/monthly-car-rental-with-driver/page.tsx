@@ -63,6 +63,33 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.privilegelimo.com/services/monthly-car-rental-with-driver",
   },
+  openGraph: {
+  title:       "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
+  description: "Dedicated monthly car rental with driver packages across Dubai and the UAE. Same driver, same vehicle, same standard — every day. Ideal for executives, expats and corporate clients.",
+  url:         "https://www.privilegelimo.com/services/monthly-car-rental-with-driver",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Monthly Car Rental with Driver Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
+  description: "Dedicated monthly car rental with driver packages across Dubai and the UAE. Same driver, same vehicle, same standard — every day. Ideal for executives, expats and corporate clients.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

@@ -53,6 +53,33 @@ export const metadata: Metadata = {
     "mercedes benz van rent",
   ],
   alternates: { canonical: "https://www.privilegelimo.com/services/mercedes-sprinter-van-rental " },
+  openGraph: {
+  title:       "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE",
+  description: "Rent a Mercedes Sprinter van with professional chauffeur in Dubai. Up to 19 passengers, airport transfers, corporate events & group travel. Fixed rates, 24/7 available.",
+  url:         "https://www.privilegelimo.com/services/mercedes-sprinter-van-rental",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Mercedes Sprinter Van Rental Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE",
+  description: "Rent a Mercedes Sprinter van with professional chauffeur in Dubai. Up to 19 passengers, airport transfers, corporate events & group travel. Fixed rates, 24/7 available.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
@@ -147,7 +174,7 @@ export default function MercedesSprinterRentalPage() {
           </Link>
           <span className="text-[#ddd]">/</span>
           <Link
-            href="/luxury-chauffeur-service-in-dubai"
+            href="/services/luxury-chauffeur-service-in-dubai"
             className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
           >
             Our Fleet

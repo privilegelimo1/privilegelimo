@@ -61,6 +61,33 @@ export const metadata: Metadata = {
     "tourist driver dubai",
   ],
   alternates: { canonical: "/services/private-driver-for-sightseeing-services" },
+  openGraph: {
+  title:       "Private Driver for Sightseeing Dubai | Personal Chauffeur City Tours UAE",
+  description: "Explore Dubai in style with a private driver. Visit the Burj Khalifa, Palm Jumeirah, Dubai Frame, and more at your own pace — fully flexible sightseeing tours with a professional chauffeur. Book 24/7.",
+  url:         "https://www.privilegelimo.com/services/private-driver-for-sightseeing-services",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Private Driver for Sightseeing Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Private Driver for Sightseeing Dubai | Personal Chauffeur City Tours UAE",
+  description: "Explore Dubai in style with a private driver. Visit the Burj Khalifa, Palm Jumeirah, Dubai Frame, and more at your own pace — fully flexible sightseeing tours with a professional chauffeur. Book 24/7.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

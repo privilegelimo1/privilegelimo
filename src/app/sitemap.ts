@@ -45,6 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/services/vip-chauffeur-service`,                         lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/services/event-transportation`,                          lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/services/private-driver-for-sightseeing-services`,       lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/services/wedding-limo-services`,                         lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/services/full-day-and-hourly-chauffeur-services`,                         lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+
 
     // ── Fleet category pages ──────────────────────────────────────────────
     { url: `${BASE_URL}/fleet/business-class`,                      lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },

@@ -15,13 +15,32 @@ export const metadata: Metadata = {
     canonical: "https://www.privilegelimo.com/services/vip-chauffeur-service",
   },
   openGraph: {
-    title: "VIP Chauffeur Service Dubai | Luxury Private Chauffeur",
-    description:
-      "Exclusive VIP chauffeur service in Dubai with discreet professional drivers, luxury vehicles and personalised itinerary management.",
-    url: "https://www.privilegelimo.com/services/vip-chauffeur-service",
-    siteName: "Privilege Limo",
-    type: "website",
-  },
+  title:       "VIP Chauffeur Service Dubai | Exclusive Luxury Private Driver UAE",
+  description: "Experience the pinnacle of luxury with Privilege Limo's VIP chauffeur service in Dubai — discreet professional drivers, premium vehicles, and fully personalised itinerary management. Available 24/7 for elite clients across the UAE.",
+  url:         "https://www.privilegelimo.com/services/vip-chauffeur-service",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "VIP Chauffeur Service Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "VIP Chauffeur Service Dubai | Exclusive Luxury Private Driver UAE",
+  description: "Experience the pinnacle of luxury with Privilege Limo's VIP chauffeur service in Dubai — discreet professional drivers, premium vehicles, and fully personalised itinerary management. Available 24/7 for elite clients across the UAE.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 const pillars = [

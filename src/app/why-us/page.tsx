@@ -8,6 +8,33 @@ export const metadata: Metadata = {
   description:
     "Discover why Privilege Luxury Travel LLC is Dubai's trusted choice for luxury chauffeur services, airport transfers, business transportation, and premium car rentals.",
   alternates: { canonical: "https://www.privilegelimo.com/why-us" },
+  openGraph: {
+  title:       "Why Choose Us | Privilege Luxury Travel LLC Dubai",
+  description: "Discover what sets Privilege Limo apart — professional chauffeurs, luxury fleet, punctual service, 24/7 availability, and years of trust across Dubai and the UAE. Your comfort is our standard.",
+  url:         "https://www.privilegelimo.com/why-us",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Why Choose Privilege Limo Dubai | Luxury Chauffeur Service",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Why Choose Us | Privilege Luxury Travel LLC Dubai",
+  description: "Discover what sets Privilege Limo apart — professional chauffeurs, luxury fleet, punctual service, 24/7 availability, and years of trust across Dubai and the UAE. Your comfort is our standard.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 const stats = [

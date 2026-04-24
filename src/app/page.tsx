@@ -214,7 +214,7 @@ function HeroSection() {
       {/* Full bleed image */}
       <div className="absolute inset-0 z-0">
         <NextImage
-          src="/images/hero1.png"
+          src="/images/hero1.webp"
           alt="Luxury chauffeur Dubai"
           fill
           priority

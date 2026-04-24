@@ -5,10 +5,36 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  alternates: { canonical: "/blog" },
-  title: "Blog",
-  description:
-    "Insights, guides, and updates from Dubai's premier luxury chauffeur service.",
+  alternates: {
+  canonical: "https://www.privilegelimo.com/blog",
+},
+openGraph: {
+  title:       "Blog | Luxury Chauffeur Insights & Dubai Travel Guides",
+  description: "Explore expert guides, travel tips, and updates from Privilege Limo — Dubai's premier luxury chauffeur service. From airport transfer advice to Dubai sightseeing guides, stay informed and travel smarter.",
+  url:         "https://www.privilegelimo.com/blog",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Privilege Limo Blog | Luxury Chauffeur & Dubai Travel Guides",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Blog | Luxury Chauffeur Insights & Dubai Travel Guides",
+  description: "Explore expert guides, travel tips, and updates from Privilege Limo — Dubai's premier luxury chauffeur service. From airport transfer advice to Dubai sightseeing guides, stay informed and travel smarter.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 export default function BlogPage() {

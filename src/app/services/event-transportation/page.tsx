@@ -28,13 +28,32 @@ export const metadata: Metadata = {
     canonical: "https://www.privilegelimo.com/services/event-transportation",
   },
   openGraph: {
-    title: "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur",
-    description:
-      "Luxury event transportation in Dubai for conferences, weddings, exhibitions and private functions. VIP chauffeurs, luxury buses and executive fleets.",
-    url: "https://www.privilegelimo.com/services/event-transportation",
-    siteName: "Privilege Limo",
-    type: "website",
-  },
+  title:       "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur UAE",
+  description: "Seamless luxury event transportation in Dubai for conferences, weddings, exhibitions, and private functions. Professional VIP chauffeurs, luxury coaches, and executive fleets — fully coordinated for your event. Book 24/7.",
+  url:         "https://www.privilegelimo.com/services/event-transportation",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Event Transportation Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur UAE",
+  description: "Seamless luxury event transportation in Dubai for conferences, weddings, exhibitions, and private functions. Professional VIP chauffeurs, luxury coaches, and executive fleets — fully coordinated for your event. Book 24/7.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

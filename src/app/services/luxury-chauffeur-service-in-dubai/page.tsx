@@ -77,6 +77,44 @@ export const metadata: Metadata = {
     "car hire with driver in dubai",
   ],
   alternates: { canonical: "/services/luxury-chauffeur-service-in-dubai" },
+  openGraph: {
+    title:       "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
+    description: "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
+    url:         "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai",
+    siteName:    "Privilege Luxury Travel LLC",
+    locale:      "en_AE",
+    type:        "website",
+    images: [
+      {
+        url:    "https://www.privilegelimo.com/og-image.jpg",
+        width:  1200,
+        height: 630,
+        alt:    "Luxury Chauffeur Service in Dubai | Privilege Limo",
+        type:   "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card:        "summary_large_image",
+    title:       "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
+    description: "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
+    site:        "@privilegeuae",
+    images:      ["https://www.privilegelimo.com/og-image.jpg"],
+  },
+  other: {
+    "og:logo": "https://www.privilegelimo.com/logo.webp",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 

@@ -59,6 +59,33 @@ export const metadata: Metadata = {
     "mercedes luxury van rental",
   ],
   alternates: { canonical: "https://www.privilegelimo.com/services/mercedes-van-rental-dubai" },
+  openGraph: {
+  title:       "Mercedes Van Rental Dubai | Luxury Van Hire with Driver UAE",
+  description: "Rent a Mercedes V-Class or Sprinter van in Dubai with a professional chauffeur. Spacious, luxury vans perfect for airport transfers, corporate groups, events & city tours. Book 24/7.",
+  url:         "https://www.privilegelimo.com/services/mercedes-van-rental-dubai",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Mercedes Van Rental Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Mercedes Van Rental Dubai | Luxury Van Hire with Driver UAE",
+  description: "Rent a Mercedes V-Class or Sprinter van in Dubai with a professional chauffeur. Spacious, luxury vans perfect for airport transfers, corporate groups, events & city tours. Book 24/7.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────

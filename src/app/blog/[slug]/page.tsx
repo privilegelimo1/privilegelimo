@@ -254,7 +254,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     Need a premium chauffeur in Dubai or the UAE?
   </p>
   <Link
-    href="/booking"
+    href="/contact-us"
     className="inline-flex items-center gap-2 bg-white text-neutral-900 text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-neutral-100 transition-colors"
   >
     Book Now
