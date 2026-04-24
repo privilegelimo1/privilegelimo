@@ -1,0 +1,31 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "privilegelimo.com"
+        }
+      ],
+      "destination": "https://www.privilegelimo.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.privilegelimo.com"
+        },
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ],
+      "destination": "https://www.privilegelimo.com/:path*",
+      "permanent": true
+    }
+  ]
+}
