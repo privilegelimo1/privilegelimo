@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Why Choose Privilege Luxury Travel | Premium Chauffeur Service Dubai",
+  title: "Why Choose Privilege Limo | Dubai Chauffeur Service",
   description:
-    "Discover why Privilege Luxury Travel LLC is Dubai's trusted choice for luxury chauffeur services, airport transfers, business transportation, and premium car rentals.",
+    "Privilege Luxury Travel LLC is Dubai's trusted choice for luxury chauffeur services, airport transfers, business transportation, and premium car rentals.",
   alternates: { canonical: "https://www.privilegelimo.com/why-us" },
   openGraph: {
   title:       "Why Choose Us | Privilege Luxury Travel LLC Dubai",

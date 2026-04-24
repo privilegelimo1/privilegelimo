@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Read real Google reviews from our clients. 5-star chauffeur service, luxury van rentals, airport transfers and more - trusted by hundreds across Dubai and UAE.",
   alternates: { canonical: "https://www.privilegelimo.com/testimonials" },
   openGraph: {
-  title:       "Client Testimonials | Privilege Luxury Travel LLC Dubai",
+  title:       "Client Reviews Dubai | Privilege Limo Testimonials",
   description: "Read what our clients say about Privilege Limo. Trusted by executives, tourists, and corporate clients across Dubai and the UAE for premium chauffeur services. Real reviews, real experiences.",
   url:         "https://www.privilegelimo.com/testimonials",
   siteName:    "Privilege Luxury Travel LLC",

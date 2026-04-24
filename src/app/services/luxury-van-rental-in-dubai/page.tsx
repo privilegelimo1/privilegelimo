@@ -11,9 +11,9 @@ import FleetPreview from "@/components/FleetPreview";
 
 
 export const metadata: Metadata = {
-  title: "Luxury Van Rental Dubai | Mercedes V-Class & Sprinter with Driver",
+  title: "Luxury Van Rental Dubai | V-Class & Sprinter Driver in UAE",
   description:
-    "Rent a luxury van with driver in Dubai. Premium Mercedes V-Class, Sprinter Business Class VIP and luxury coach hire for groups, families, corporate delegations and events.",
+    "Rent a luxury van with driver in Dubai. Premium Mercedes V-Class, Sprinter Business Class VIP and luxury coach hire for groups, families, corporate events.",
   keywords: [
     "luxury van rental dubai",
     "mercedes v class rental dubai",
@@ -36,7 +36,36 @@ export const metadata: Metadata = {
     "family van hire dubai",
     "event transport dubai",
   ],
-  alternates: { canonical: "/services/luxury-van-rental-in-dubai" },
+  alternates: {
+  canonical: "https://www.privilegelimo.com/services/luxury-van-rental-in-dubai",
+},
+openGraph: {
+  title:       "Luxury Van Rental Dubai | V-Class & Sprinter Driver in UAE",
+  description: "Experience luxury van rental in Dubai with a professional chauffeur. Choose from Mercedes V-Class, Sprinter & more — ideal for airport transfers, corporate travel, weddings & group tours across the UAE.",
+  url:         "https://www.privilegelimo.com/services/luxury-van-rental-in-dubai",
+  siteName:    "Privilege Luxury Travel LLC",
+  locale:      "en_AE",
+  type:        "website",
+  images: [
+    {
+      url:    "https://www.privilegelimo.com/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Luxury Van Rental in Dubai | Privilege Limo",
+      type:   "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card:        "summary_large_image",
+  title:       "Luxury Van Rental Dubai | V-Class & Sprinter Driver in UAE",
+  description: "Experience luxury van rental in Dubai with a professional chauffeur. Choose from Mercedes V-Class, Sprinter & more — ideal for airport transfers, corporate travel, weddings & group tours across the UAE.",
+  site:        "@privilegeuae",
+  images:      ["https://www.privilegelimo.com/og-image.jpg"],
+},
+other: {
+  "og:logo": "https://www.privilegelimo.com/logo.webp",
+},
 };
 
 

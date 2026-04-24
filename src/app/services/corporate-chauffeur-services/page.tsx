@@ -11,9 +11,9 @@ import FleetPreview from "@/components/FleetPreview"
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Corporate Chauffeur Service Dubai | Executive Business Transport",
+  title: "Corporate Chauffeur Dubai | Executive Transport Service",
   description:
-    "Premium corporate chauffeur service in Dubai for executives, client meetings, roadshows, airport transfers and business events. Professional drivers and a luxury fleet available 24/7.",
+    "Premium corporate chauffeur service in Dubai for executives, client meetings, roadshows, airport transfers and business events. Professional drivers Available",
   keywords: [
     "corporate chauffeur service Dubai",
     "executive chauffeur Dubai",

@@ -43,9 +43,9 @@ const mercedesVanFleet = allFleet.filter((v) =>
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Mercedes Van Rental Dubai | Luxury Mercedes Benz Van Hire UAE",
+  title: "Mercedes Van Rental Dubai | Luxury Van Hire Chauffeur in UAE",
   description:
-    "Explore our full range of luxury Mercedes van rentals in Dubai, UAE. Mercedes V-Class, Vito, Sprinter - with professional chauffeur service for airport transfers, corporate travel, and city tours.",
+    "Luxury Mercedes van rentals in UAE. Mercedes V-Class, Vito, Sprinter. Professional chauffeur service for airport transfers, corporate travel, and city tours.",
   keywords: [
     "mercedes van rental dubai",
     "mercedes viano rental dubai",

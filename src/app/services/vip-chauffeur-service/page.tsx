@@ -8,9 +8,9 @@ import Footer from "@/components/Footer"
 import FleetPreview from "@/components/FleetPreview";
 
 export const metadata: Metadata = {
-  title: "VIP Chauffeur Service Dubai | Luxury Private Chauffeur",
+  title: "VIP Chauffeur Service Dubai | Private Luxury Car with Driver",
   description:
-    "Premium VIP chauffeur service in Dubai for high-profile individuals, private clients, celebrity travel, yacht arrivals and exclusive events. Discreet, professional, world-class.",
+    "Premium chauffeur service in Dubai for VIP individuals, private clients, celebrity travel, yacht arrivals and exclusive events. Professional chauffeur service.",
   alternates: {
     canonical: "https://www.privilegelimo.com/services/vip-chauffeur-service",
   },

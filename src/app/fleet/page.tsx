@@ -9,7 +9,7 @@ import { fleet, fleetCategories } from "@/data";
 export const metadata: Metadata = {
   title: "Our Fleet | Luxury Chauffeur Vehicles Dubai",
   description:
-    "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai - Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
+    "Browse our full fleet of luxury chauffeur vehicles in Dubai - Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur.",
   keywords: [
     "luxury car hire Dubai",
     "chauffeur fleet Dubai",

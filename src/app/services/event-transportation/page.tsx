@@ -11,9 +11,9 @@ import FleetPreview from "@/components/FleetPreview";
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur",
+  title: "Event Transportation Dubai | VIP Chauffeur Service Dubai",
   description:
-    "Premium event transportation in Dubai for conferences, exhibitions, weddings, private parties and corporate events. Luxury buses, VIP vans, sedans and chauffeur service.",
+    "Premium event transportation in Dubai for conferences, exhibitions, weddings, private and corporate events. Luxury buses, VIP vans, sedans & chauffeur service.",
   keywords: [
     "event transportation Dubai",
     "event chauffeur service Dubai",

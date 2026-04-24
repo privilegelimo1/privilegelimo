@@ -9,9 +9,9 @@ import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview";
 
 export const metadata: Metadata = {
-  title: "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire",
+  title: "Hourly Chauffeur Dubai | Full Day Driver Hire Service Dubai",
   description:
-    "Book an hourly or full day chauffeur service in Dubai. Flexible as-directed hire with luxury sedans, SUVs and vans for business, shopping, sightseeing and personal travel.",
+    "Book an hourly or full day chauffeur service in Dubai. Flexible as-directed hire with luxury sedans, SUVs and vans for business, sightseeing & personal travel.",
   alternates: {
     canonical: "https://www.privilegelimo.com/services/full-day-and-hourly-chauffeur-services ",
   },

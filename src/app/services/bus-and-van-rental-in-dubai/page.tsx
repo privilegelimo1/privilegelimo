@@ -12,7 +12,7 @@ import FleetPreview from "@/components/FleetPreview";
 export const metadata: Metadata = {
   title: "Bus and Van Rental Dubai | Luxury Coach Hire UAE",
   description:
-    "Privilege Luxury Travel LLC provides affordable luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire. Book 24/7.",
+    "Privilege Luxury Travel LLC provides affordable luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire.",
   keywords: [
     "van rental in dubai",
     "luxury van rental in dubai",

@@ -37,9 +37,9 @@ const sprinterFleet = allFleet.filter((v) =>
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Mercedes Sprinter Van Rental Dubai | Luxury Sprinter Hire UAE",
+  title: "Mercedes Sprinter Rental Dubai | Luxury Van Rental in UAE",
   description:
-    "Book a Mercedes Sprinter van rental in Dubai & UAE. Choose from Avant Garde VIP, Ultra Luxury, Business Class & standard Sprinter. Up to 19 seats. Professional chauffeurs. Fixed rates.",
+    "Book a Mercedes Sprinter van rental in Dubai & UAE. Choose from Avant Garde VIP, Ultra Luxury, Business Class & standard Sprinter. Professional chauffeurs.",
   keywords: [
     "mercedes sprinter rental dubai",
     "mercedes sprinter rent in dubai",

@@ -11,7 +11,7 @@ import FleetPreview from "@/components/FleetPreview";
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Wedding Limo Dubai | Luxury Bridal Car & Chauffeur Service",
+  title: "Wedding Limo Dubai | Bridal Car & Chauffeur Service Dubai",
   description:
     "Premium wedding limousine and chauffeur service in Dubai. Luxury bridal cars, groom transport, guest shuttles and wedding fleet hire with professional drivers.",
   keywords: [

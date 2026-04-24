@@ -35,9 +35,9 @@ type Vehicle = {
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
+  title: "Monthly Car Rental Dubai | Luxury Chauffeur Service UAE",
   description:
-    "Monthly car rental with driver in Dubai. Long-term chauffeur hire for executives, families and businesses across the UAE. Luxury sedans, SUVs and vans on monthly contracts.",
+    "Monthly car rental with driver in Dubai. Long-term chauffeur for executives, families and businesses across UAE. Luxury sedans, SUVs and vans on monthly basis.",
   keywords: [
     "monthly car rental with driver dubai",
     "long term chauffeur hire dubai",

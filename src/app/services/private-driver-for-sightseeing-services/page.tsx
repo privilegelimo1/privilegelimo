@@ -35,9 +35,9 @@ type Vehicle = {
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Private Driver for Sightseeing Dubai | City Tour with Driver UAE",
+  title: "Private Driver with Car Dubai -Sightseeing Chauffeur Service",
   description:
-    "Explore Dubai in comfort with a private driver for sightseeing. Customised city tours in luxury vehicles — Burj Khalifa, Palm Jumeirah, Old Dubai, Desert and more. Book your private tour driver today.",
+    "Explore Dubai in comfort with private driver for sightseeing. Customised city tours in luxury vehicles - Burj Khalifa, Palm Jumeirah, Old Dubai, Desert & more.",
   keywords: [
     "private driver for sightseeing dubai",
     "dubai city tour with driver",

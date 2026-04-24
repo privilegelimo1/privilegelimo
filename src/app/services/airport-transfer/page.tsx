@@ -13,7 +13,7 @@ import FleetPreview from "@/components/FleetPreview";
 export const metadata: Metadata = {
   title: "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
   description:
-    "Book premium airport transfer in Dubai for DXB, DWC, Abu Dhabi and Sharjah. Luxury chauffeur service with flight tracking, meet & greet, fixed rates and 24/7 availability.",
+    "Book premium airport transfer in Dubai for DXB, DWC, Abu Dhabi and Sharjah. Luxury chauffeur service with flight tracking, meet & greet, and 24/7 availability.",
   keywords: [
     "airport transfer Dubai",
     "DXB airport transfer",
