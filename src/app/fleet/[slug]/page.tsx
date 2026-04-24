@@ -11,7 +11,7 @@ const classInfo: Record<string, { label: string; description: string; heroImage:
   "business-class": {
     label: "Business Class",
     description:
-      "Executive sedans and MPVs offering premium comfort and style. Perfect for corporate transfers, business meetings, and airport pickups across Dubai, Abu Dhabi, and Sharjah.",
+      "Executive sedans & MPVs offering premium comfort & style Perfect for corporate transfers, business meetings & airport pickups across Dubai, Abu Dhabi & Sharjah",
     heroImage: "/images/fleet/audi-a6-1.webp",
   },
   "first-class": {
@@ -47,7 +47,7 @@ const classInfo: Record<string, { label: string; description: string; heroImage:
   "rolls-royce": {
     label: "Rolls-Royce",
     description:
-      "The ultimate expression of automotive prestige across the UAE. Rolls-Royce Ghost and Cullinan with a professional chauffeur for occasions that demand perfection.",
+      "The ultimate expression of automotive prestige across UAE. Rolls-Royce Ghost and Cullinan with a professional chauffeur for occasions that demand perfection.",
     heroImage: "/images/fleet/rolls-royce-cullinan-1.webp",
   },
   "stretch-limousine": {

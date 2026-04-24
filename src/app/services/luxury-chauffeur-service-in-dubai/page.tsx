@@ -79,7 +79,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/luxury-chauffeur-service-in-dubai" },
   openGraph: {
     title:       "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
-    description: "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
+    description: "Discover Premium chauffeur services in Dubai. Luxury Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
     url:         "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai",
     siteName:    "Privilege Luxury Travel LLC",
     locale:      "en_AE",

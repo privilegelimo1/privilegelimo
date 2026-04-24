@@ -3,13 +3,10 @@ import "./globals.css";
 import FloatingContact from "@/components/FloatingContact";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.privilegelimo.com"), // ← ADD THIS — fixes all relative canonical/OG URLs
-  title: {
-  default: "Privilege Limo | Luxury Chauffeur Services in Dubai",
-  template: "%s | Privilege Limo",
-},
+  metadataBase: new URL("https://www.privilegelimo.com"),
+  title: "Privilege Limo | Luxury Chauffeur Services in Dubai",
   description:
-    "Privilege Luxury Travel LLC - Dubai's most trusted chauffeur service. Premium airport transfers, corporate travel, weddings & events across Dubai, Abu Dhabi & Sharjah. Available 24/7. Call +971 50 920 0818.",
+    "Dubai's most trusted luxury chauffeur services. Premium airport transfers, corporate travel, weddings, VIP transfer & events across Dubai, Abu Dhabi & Sharjah.",
   keywords: [
     "luxury chauffeur Dubai",
     "chauffeur service Dubai",
@@ -60,11 +57,9 @@ export const metadata: Metadata = {
     site: "@privilegeuae",
     images: ["https://www.privilegelimo.com/og-image.jpg"],
   },
-  // og:logo — not in the Next.js Metadata API natively, added via `other`
   other: {
     "og:logo": "https://www.privilegelimo.com/logo.webp",
   },
-  // ← REMOVED hardcoded canonical here — each page sets its own
 };
 
 export default function RootLayout({
@@ -107,7 +102,15 @@ export default function RootLayout({
               },
               openingHoursSpecification: {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday",
+                ],
                 opens: "00:00",
                 closes: "23:59",
               },
@@ -130,19 +133,60 @@ export default function RootLayout({
                 "@type": "OfferCatalog",
                 name: "Luxury Chauffeur Services Dubai",
                 itemListElement: [
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Airport Transfer Dubai", description: "Luxury airport transfers from DXB, DWC, Abu Dhabi & Sharjah airports" } },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corporate Chauffeur Service Dubai" } },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wedding Car Hire Dubai" } },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mercedes Sprinter Rental Dubai" } },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Luxury Bus Rental Dubai" } },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rent a Car with Driver Dubai" } },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Airport Transfer Dubai",
+                      description:
+                        "Luxury airport transfers from DXB, DWC, Abu Dhabi & Sharjah airports",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Corporate Chauffeur Service Dubai",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Wedding Car Hire Dubai",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Mercedes Sprinter Rental Dubai",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Luxury Bus Rental Dubai",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Rent a Car with Driver Dubai",
+                    },
+                  },
                 ],
               },
             }),
           }}
         />
       </head>
-      <body>{children} <FloatingContact /></body>
+      <body>
+        {children}
+        <FloatingContact />
+      </body>
     </html>
   );
 }

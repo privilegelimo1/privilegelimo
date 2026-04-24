@@ -31,7 +31,7 @@ export async function generateMetadata({
     `Hire a ${vehicle.name} with professional chauffeur in Dubai. Luxury travel with Privilege Limo.`;
   return {
     title: `${vehicle.name} Chauffeur Service Dubai`,
-    description: `${description} From ${vehicle.priceLabel}. Book now - +971 50 920 0818.`,
+    description: `${description} From ${vehicle.priceLabel}.`,
     keywords: [
       `${vehicle.name} hire Dubai`,
       `${vehicle.name} chauffeur Dubai`,
