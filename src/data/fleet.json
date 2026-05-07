@@ -168,118 +168,6 @@
     "badge": null
   },
   {
-    "slug": "citroen-space-tourer",
-    "classSlug": "business-class",
-    "name": "Citroën Space Tourer 7 Pax",
-    "category": "Executive MPV / 7 Seater",
-    "passengers": 7,
-    "luggage": 5,
-    "transferPrice": "AED 350",
-    "price5hr": "AED 900 / 5 Hr",
-    "price10hr": "AED 1,200 / 10 Hr",
-    "images": [
-      "/images/fleet/citroen-space-tourer-1.webp",
-      "/images/fleet/citroen-space-tourer-2.webp",
-      "/images/fleet/citroen-space-tourer-3.webp",
-      "/images/fleet/citroen-space-tourer-4.webp"
-    ],
-    "metaDesc": "Book a Citroën Space Tourer 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Spacious executive MPV with professional driver. From AED 350.",
-    "seoKeywords": "Citroen Space Tourer Dubai, 7 seater chauffeur Dubai, group transfer Dubai MPV",
-    "seoTitle": "Citroën Space Tourer 7 Seater Chauffeur Dubai | Executive MPV — Privilege Limo",
-    "seoDescription": "Book a Citroën Space Tourer 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Modular cabin, panoramic roof, USB charging. From AED 350.",
-    "desc": "The Citroën Space Tourer offers flexible, comfortable seating for up to 7 passengers - ideal for family or group airport transfers.",
-    "longDesc": "Travelling with a group doesn't mean sacrificing comfort. The Citroën Space Tourer's modular cabin and generous luggage space make it the go-to choice for family airport transfers, corporate group bookings, and multi-stop journeys across Dubai, Abu Dhabi, and Sharjah.",
-    "features": [
-      "Modular 7-seat layout",
-      "Panoramic roof",
-      "USB charging points",
-      "Hands-free sliding doors"
-    ],
-    "specs": [
-      {
-        "label": "Passengers",
-        "value": "Up to 7"
-      },
-      {
-        "label": "Luggage",
-        "value": "5 bags"
-      },
-      {
-        "label": "Class",
-        "value": "Business Class"
-      },
-      {
-        "label": "Fuel Type",
-        "value": "Diesel"
-      },
-      {
-        "label": "Transmission",
-        "value": "Automatic"
-      },
-      {
-        "label": "A/C",
-        "value": "Dual Zone"
-      }
-    ],
-    "available": true,
-    "badge": null
-  },
-  {
-    "slug": "toyota-granvia",
-    "classSlug": "business-class",
-    "name": "Toyota Granvia Van 7 Pax",
-    "category": "Premium MPV / 7 Seater",
-    "passengers": 7,
-    "luggage": 6,
-    "transferPrice": "AED 400",
-    "price5hr": "AED 950 / 5 Hr",
-    "price10hr": "AED 1,400 / 10 Hr",
-    "images": [
-      "/images/fleet/toyota-granvia-1.webp",
-      "/images/fleet/toyota-granvia-3.webp"
-    ],
-    "metaDesc": "Book a Toyota Granvia 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Premium MPV with captain chairs and professional driver. From AED 400.",
-    "seoKeywords": "Toyota Granvia chauffeur Dubai, 7 seater van Dubai, premium MPV hire Dubai",
-    "seoTitle": "Toyota Granvia 7 Seater Chauffeur Dubai | Premium MPV — Privilege Limo",
-    "seoDescription": "Book a Toyota Granvia 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Captain chairs, power sliding doors, rear climate. From AED 400.",
-    "desc": "The Toyota Granvia is a premium 7-seater MPV with captain chairs, delivering outstanding comfort for families and groups across Dubai.",
-    "longDesc": "The Toyota Granvia redefines what a people carrier can be. With individual captain chairs, generous legroom and a smooth ride, it's the perfect solution for family trips, group airport transfers and corporate shuttles across Dubai, Abu Dhabi, and Sharjah.",
-    "features": [
-      "Captain chair seating",
-      "Power sliding doors",
-      "Rear climate control",
-      "Roof ventilation"
-    ],
-    "specs": [
-      {
-        "label": "Passengers",
-        "value": "Up to 7"
-      },
-      {
-        "label": "Luggage",
-        "value": "6 bags"
-      },
-      {
-        "label": "Class",
-        "value": "Business Class"
-      },
-      {
-        "label": "Fuel Type",
-        "value": "Diesel"
-      },
-      {
-        "label": "Transmission",
-        "value": "Automatic"
-      },
-      {
-        "label": "A/C",
-        "value": "Multi-Zone"
-      }
-    ],
-    "available": true,
-    "badge": null
-  },
-  {
     "slug": "mercedes-s500",
     "classSlug": "first-class",
     "name": "Mercedes S 500",
@@ -403,6 +291,180 @@
     "badge": null
   },
   {
+    "slug": "mercedes-vip-trend-250",
+    "classSlug": "business-van",
+    "name": "Mercedes VIP Trend 250",
+    "category": "Executive VIP MPV",
+    "passengers": 7,
+    "luggage": 7,
+    "transferPrice": "AED 750",
+    "price5hr": "AED 1,300 / 5 Hr",
+    "price10hr": "AED 2,000 / 10 Hr",
+    "images": [
+      "/images/fleet/mercedes-vip-trend-1.webp",
+      "/images/fleet/mercedes-vip-trend-2.webp",
+      "/images/fleet/mercedes-vip-trend-3.webp",
+      "/images/fleet/mercedes-vip-trend-4.webp",
+      "/images/fleet/mercedes-vip-trend-5.webp"
+    ],
+    "metaDesc": "Book a Mercedes VIP Trend 250 chauffeur in Dubai, Abu Dhabi & Sharjah. Executive VIP MPV with 42-inch rear display. From AED 750.",
+    "seoKeywords": "Mercedes VIP Trend Dubai, VIP van hire Dubai, executive MPV Dubai chauffeur",
+    "seoTitle": "Mercedes VIP Trend 250 Chauffeur Dubai | Executive VIP MPV — Privilege Limo",
+    "seoDescription": "Book a Mercedes VIP Trend 250 in Dubai, Abu Dhabi & Sharjah. 42-inch rear display, Nappa leather, mini-bar. From AED 750.",
+    "desc": "The Mercedes VIP Trend 250 is the ultimate executive MPV - every detail crafted for comfort, privacy and prestige.",
+    "longDesc": "With Nappa leather seating, a 42-inch rear display and a built-in mini-bar, the Mercedes VIP Trend 250 transforms every journey into a boardroom-on-wheels experience. Ideal for C-suite executives, high-profile delegations and VIP clients across Dubai, Abu Dhabi, and Sharjah.",
+    "features": [
+      "Nappa leather seating",
+      "4-zone climate",
+      "Mini-bar",
+      "42-inch rear display",
+      "VIP Seating",
+      "Privacy Glass",
+      "Wi-Fi",
+      "Panoramic Roof"
+    ],
+    "specs": [
+      {
+        "label": "Passengers",
+        "value": "Up to 7"
+      },
+      {
+        "label": "Luggage",
+        "value": "7 bags"
+      },
+      {
+        "label": "Class",
+        "value": "Business Van"
+      },
+      {
+        "label": "Fuel Type",
+        "value": "Diesel"
+      },
+      {
+        "label": "Transmission",
+        "value": "Automatic"
+      },
+      {
+        "label": "A/C",
+        "value": "4-Zone VIP"
+      }
+    ],
+    "available": true,
+    "badge": null
+  },
+  {
+    "slug": "citroen-space-tourer",
+    "classSlug": "business-class",
+    "name": "Citroën Space Tourer 7 Pax",
+    "category": "Executive MPV / 7 Seater",
+    "passengers": 7,
+    "luggage": 5,
+    "transferPrice": "AED 350",
+    "price5hr": "AED 900 / 5 Hr",
+    "price10hr": "AED 1,200 / 10 Hr",
+    "images": [
+      "/images/fleet/citroen-space-tourer-1.webp",
+      "/images/fleet/citroen-space-tourer-2.webp",
+      "/images/fleet/citroen-space-tourer-3.webp",
+      "/images/fleet/citroen-space-tourer-4.webp"
+    ],
+    "metaDesc": "Book a Citroën Space Tourer 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Spacious executive MPV with professional driver. From AED 350.",
+    "seoKeywords": "Citroen Space Tourer Dubai, 7 seater chauffeur Dubai, group transfer Dubai MPV",
+    "seoTitle": "Citroën Space Tourer 7 Seater Chauffeur Dubai | Executive MPV — Privilege Limo",
+    "seoDescription": "Book a Citroën Space Tourer 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Modular cabin, panoramic roof, USB charging. From AED 350.",
+    "desc": "The Citroën Space Tourer offers flexible, comfortable seating for up to 7 passengers - ideal for family or group airport transfers.",
+    "longDesc": "Travelling with a group doesn't mean sacrificing comfort. The Citroën Space Tourer's modular cabin and generous luggage space make it the go-to choice for family airport transfers, corporate group bookings, and multi-stop journeys across Dubai, Abu Dhabi, and Sharjah.",
+    "features": [
+      "Modular 7-seat layout",
+      "Panoramic roof",
+      "USB charging points",
+      "Hands-free sliding doors"
+    ],
+    "specs": [
+      {
+        "label": "Passengers",
+        "value": "Up to 7"
+      },
+      {
+        "label": "Luggage",
+        "value": "5 bags"
+      },
+      {
+        "label": "Class",
+        "value": "Business Class"
+      },
+      {
+        "label": "Fuel Type",
+        "value": "Diesel"
+      },
+      {
+        "label": "Transmission",
+        "value": "Automatic"
+      },
+      {
+        "label": "A/C",
+        "value": "Dual Zone"
+      }
+    ],
+    "available": true,
+    "badge": null
+  },
+  {
+    "slug": "toyota-granvia",
+    "classSlug": "business-class",
+    "name": "Toyota Granvia Van 7 Pax",
+    "category": "Premium MPV / 7 Seater",
+    "passengers": 7,
+    "luggage": 6,
+    "transferPrice": "AED 400",
+    "price5hr": "AED 950 / 5 Hr",
+    "price10hr": "AED 1,400 / 10 Hr",
+    "images": [
+      "/images/fleet/toyota-granvia-1.webp",
+      "/images/fleet/toyota-granvia-3.webp"
+    ],
+    "metaDesc": "Book a Toyota Granvia 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Premium MPV with captain chairs and professional driver. From AED 400.",
+    "seoKeywords": "Toyota Granvia chauffeur Dubai, 7 seater van Dubai, premium MPV hire Dubai",
+    "seoTitle": "Toyota Granvia 7 Seater Chauffeur Dubai | Premium MPV — Privilege Limo",
+    "seoDescription": "Book a Toyota Granvia 7-seater chauffeur in Dubai, Abu Dhabi & Sharjah. Captain chairs, power sliding doors, rear climate. From AED 400.",
+    "desc": "The Toyota Granvia is a premium 7-seater MPV with captain chairs, delivering outstanding comfort for families and groups across Dubai.",
+    "longDesc": "The Toyota Granvia redefines what a people carrier can be. With individual captain chairs, generous legroom and a smooth ride, it's the perfect solution for family trips, group airport transfers and corporate shuttles across Dubai, Abu Dhabi, and Sharjah.",
+    "features": [
+      "Captain chair seating",
+      "Power sliding doors",
+      "Rear climate control",
+      "Roof ventilation"
+    ],
+    "specs": [
+      {
+        "label": "Passengers",
+        "value": "Up to 7"
+      },
+      {
+        "label": "Luggage",
+        "value": "6 bags"
+      },
+      {
+        "label": "Class",
+        "value": "Business Class"
+      },
+      {
+        "label": "Fuel Type",
+        "value": "Diesel"
+      },
+      {
+        "label": "Transmission",
+        "value": "Automatic"
+      },
+      {
+        "label": "A/C",
+        "value": "Multi-Zone"
+      }
+    ],
+    "available": true,
+    "badge": null
+  },
+  {
     "slug": "mercedes-vito-tourer",
     "classSlug": "business-van",
     "name": "Mercedes Vito Tourer",
@@ -516,68 +578,6 @@
       {
         "label": "A/C",
         "value": "Multi-Zone"
-      }
-    ],
-    "available": true,
-    "badge": null
-  },
-  {
-    "slug": "mercedes-vip-trend-250",
-    "classSlug": "business-van",
-    "name": "Mercedes VIP Trend 250",
-    "category": "Executive VIP MPV",
-    "passengers": 7,
-    "luggage": 7,
-    "transferPrice": "AED 750",
-    "price5hr": "AED 1,300 / 5 Hr",
-    "price10hr": "AED 2,000 / 10 Hr",
-    "images": [
-      "/images/fleet/mercedes-vip-trend-1.webp",
-      "/images/fleet/mercedes-vip-trend-2.webp",
-      "/images/fleet/mercedes-vip-trend-3.webp",
-      "/images/fleet/mercedes-vip-trend-4.webp",
-      "/images/fleet/mercedes-vip-trend-5.webp"
-    ],
-    "metaDesc": "Book a Mercedes VIP Trend 250 chauffeur in Dubai, Abu Dhabi & Sharjah. Executive VIP MPV with 42-inch rear display. From AED 750.",
-    "seoKeywords": "Mercedes VIP Trend Dubai, VIP van hire Dubai, executive MPV Dubai chauffeur",
-    "seoTitle": "Mercedes VIP Trend 250 Chauffeur Dubai | Executive VIP MPV — Privilege Limo",
-    "seoDescription": "Book a Mercedes VIP Trend 250 in Dubai, Abu Dhabi & Sharjah. 42-inch rear display, Nappa leather, mini-bar. From AED 750.",
-    "desc": "The Mercedes VIP Trend 250 is the ultimate executive MPV - every detail crafted for comfort, privacy and prestige.",
-    "longDesc": "With Nappa leather seating, a 42-inch rear display and a built-in mini-bar, the Mercedes VIP Trend 250 transforms every journey into a boardroom-on-wheels experience. Ideal for C-suite executives, high-profile delegations and VIP clients across Dubai, Abu Dhabi, and Sharjah.",
-    "features": [
-      "Nappa leather seating",
-      "4-zone climate",
-      "Mini-bar",
-      "42-inch rear display",
-      "VIP Seating",
-      "Privacy Glass",
-      "Wi-Fi",
-      "Panoramic Roof"
-    ],
-    "specs": [
-      {
-        "label": "Passengers",
-        "value": "Up to 7"
-      },
-      {
-        "label": "Luggage",
-        "value": "7 bags"
-      },
-      {
-        "label": "Class",
-        "value": "Business Van"
-      },
-      {
-        "label": "Fuel Type",
-        "value": "Diesel"
-      },
-      {
-        "label": "Transmission",
-        "value": "Automatic"
-      },
-      {
-        "label": "A/C",
-        "value": "4-Zone VIP"
       }
     ],
     "available": true,
