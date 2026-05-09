@@ -1,23 +1,41 @@
-import { NextRequest, NextResponse } from "next/server";
+import { createServerClient } from "@supabase/ssr";
+import { NextResponse, type NextRequest } from "next/server";
 
-export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
+export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
 
-  // Only protect /admin/* routes (not the login page itself or auth API)
-  const isAdminRoute = pathname.startsWith("/admin");
-  const isLoginPage = pathname === "/admin" || pathname === "/admin/";
-  const isAuthApi = pathname === "/api/admin/auth";
-
-  if (isAdminRoute && !isLoginPage && !isAuthApi) {
-    const session = req.cookies.get("admin_session");
-    if (session?.value !== "authenticated") {
-      return NextResponse.redirect(new URL("/admin", req.url));
-    }
+  // Only protect /admin routes (not /admin/login)
+  if (!pathname.startsWith("/admin") || pathname.startsWith("/admin/login")) {
+    return NextResponse.next();
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() { return request.cookies.getAll(); },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            request.cookies.set(name, value);
+            response.cookies.set(name, value, options);
+          });
+        },
+      },
+    }
+  );
+
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) {
+    return NextResponse.redirect(new URL("/admin/login", request.url));
+  }
+
+  return response;
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: ["/admin/:path*"],
 };

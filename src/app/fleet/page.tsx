@@ -4,7 +4,9 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FleetGrid from "@/components/FleetGrid";
-import { fleet, fleetCategories } from "@/data";
+import { createClient } from "@/lib/supabase/server";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Our Fleet | Luxury Chauffeur Vehicles Dubai",
@@ -21,32 +23,32 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.privilegelimo.com/fleet" },
   openGraph: {
-  title:       "Our Fleet | Luxury Chauffeur Vehicles Dubai",
-  description: "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai — Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
-  url:         "https://www.privilegelimo.com/fleet",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Luxury Chauffeur Fleet Dubai | Privilege Limo",
-      type:   "image/jpeg",
-    },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Our Fleet | Luxury Chauffeur Vehicles Dubai",
-  description: "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai — Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
+    title:       "Our Fleet | Luxury Chauffeur Vehicles Dubai",
+    description: "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai — Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
+    url:         "https://www.privilegelimo.com/fleet",
+    siteName:    "Privilege Luxury Travel LLC",
+    locale:      "en_AE",
+    type:        "website",
+    images: [
+      {
+        url:    "https://www.privilegelimo.com/og-image.jpg",
+        width:  1200,
+        height: 630,
+        alt:    "Luxury Chauffeur Fleet Dubai | Privilege Limo",
+        type:   "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card:        "summary_large_image",
+    title:       "Our Fleet | Luxury Chauffeur Vehicles Dubai",
+    description: "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai — Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
+    site:        "@privilegeuae",
+    images:      ["https://www.privilegelimo.com/og-image.jpg"],
+  },
+  other: {
+    "og:logo": "https://www.privilegelimo.com/logo.webp",
+  },
 };
 
 const WA_SVG = (
@@ -55,14 +57,60 @@ const WA_SVG = (
   </svg>
 );
 
-const stats = [
-  { value: `${fleet.length}+`, label: "Vehicles" },
-  { value: `${fleetCategories.length}`, label: "Classes" },
-  { value: "24/7", label: "Available" },
-  { value: "5★", label: "Standard" },
-];
+type Vehicle = {
+  id: string
+  name: string
+  slug: string
+  class_slug: string
+  category: string 
+  category_id: string
+  tagline?: string
+  passengers: number
+  luggage: number
+  images: string[]
+  features?: string[]
+  is_featured?: boolean
+  sort_order: number
+}
 
-export default function FleetPage() {
+type Category = {
+  id: string
+  name: string
+  slug: string
+  display_name: string
+  sort_order: number
+}
+
+export default async function FleetPage() {
+  const supabase = await createClient()
+
+  const [
+    { data: categoriesRaw, error: catError },
+    { data: vehiclesRaw,   error: vehError },
+  ] = await Promise.all([
+    supabase.from("vehicle_categories").select("*").order("sort_order"),
+    supabase.from("vehicles").select("*").eq("is_active", true).order("sort_order"),
+  ])
+
+  // ── DEBUG LOGS (check your terminal) ──────────────────────────
+  console.log("🚗 [FleetPage] vehicles raw count :", vehiclesRaw?.length  ?? 0)
+  console.log("🏷️  [FleetPage] categories raw count:", categoriesRaw?.length ?? 0)
+  if (vehError) console.error("❌ [FleetPage] vehicles error :", vehError)
+  if (catError) console.error("❌ [FleetPage] categories error:", catError)
+  if (vehiclesRaw?.length)   console.log("✅ [FleetPage] first vehicle  :", JSON.stringify(vehiclesRaw[0],   null, 2))
+  if (categoriesRaw?.length) console.log("✅ [FleetPage] first category :", JSON.stringify(categoriesRaw[0], null, 2))
+  // ──────────────────────────────────────────────────────────────
+
+  const categories = (categoriesRaw as Category[]) ?? []
+  const vehicles   = (vehiclesRaw   as Vehicle[])  ?? []
+
+  const stats = [
+    { value: `${vehicles.length}+`,  label: "Vehicles"  },
+    { value: `${categories.length}`, label: "Classes"   },
+    { value: "24/7",                 label: "Available" },
+    { value: "5★",                   label: "Standard"  },
+  ]
+
   return (
     <main className="bg-white">
       <Navbar />
@@ -77,16 +125,11 @@ export default function FleetPage() {
 
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 mb-8">
-                <Link
-                  href="/"
-                  className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
-                >
+                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
                   Home
                 </Link>
                 <span className="text-[#ddd]">/</span>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">
-                  Fleet
-                </span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">Fleet</span>
               </div>
 
               {/* Label */}
@@ -117,8 +160,7 @@ export default function FleetPage() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-medium text-white hover:bg-[#20bd5a] transition-colors"
                 >
-                  {WA_SVG}
-                  Book on WhatsApp
+                  {WA_SVG} Book on WhatsApp
                 </a>
                 <a
                   href="tel:+971509200818"
@@ -141,7 +183,7 @@ export default function FleetPage() {
               </div>
             </div>
 
-            {/* Right — hero image flush to bottom */}
+            {/* Right — hero image */}
             <div className="relative h-[340px] sm:h-[420px] lg:h-[520px] rounded-t-[32px] overflow-hidden">
               <Image
                 src="/images/fleet/rolls-royce-cullinan-1.webp"
@@ -151,20 +193,11 @@ export default function FleetPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
               />
-
-              {/* Stats overlay row */}
               <div className="absolute bottom-5 left-5 right-5 flex gap-3">
                 {stats.map((s) => (
-                  <div
-                    key={s.label}
-                    className="flex-1 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-3 text-center"
-                  >
-                    <p className="text-xl font-extralight text-[#AB5461] tracking-tight leading-none">
-                      {s.value}
-                    </p>
-                    <p className="text-[9px] tracking-[0.25em] uppercase text-[#999] mt-1 font-light leading-tight">
-                      {s.label}
-                    </p>
+                  <div key={s.label} className="flex-1 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-3 text-center">
+                    <p className="text-xl font-extralight text-[#AB5461] tracking-tight leading-none">{s.value}</p>
+                    <p className="text-[9px] tracking-[0.25em] uppercase text-[#999] mt-1 font-light leading-tight">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -175,7 +208,7 @@ export default function FleetPage() {
       </section>
 
       {/* ── FLEET GRID ────────────────────────────────────────────── */}
-      <FleetGrid fleet={fleet} categories={fleetCategories} />
+      <FleetGrid fleet={vehicles} categories={categories} />
 
       {/* ── STANDARDS STRIP ───────────────────────────────────────── */}
       <section className="py-20 bg-gradient-to-b from-[#AB5461]/10 to-[#ab5461]/6">
@@ -183,9 +216,9 @@ export default function FleetPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { num: "01", title: "25-Point Inspection", desc: "Every vehicle checked before every journey." },
-              { num: "02", title: "Deep Cleaned", desc: "Sanitized to concierge standards, every time." },
+              { num: "02", title: "Deep Cleaned",        desc: "Sanitized to concierge standards, every time." },
               { num: "03", title: "Uniformed Chauffeur", desc: "Professional, licensed, English-speaking." },
-              { num: "04", title: "Fixed Pricing", desc: "Confirmed upfront — no hidden charges ever." },
+              { num: "04", title: "Fixed Pricing",       desc: "Confirmed upfront — no hidden charges ever." },
             ].map((s) => (
               <div key={s.num} className="p-7 rounded-3xl bg-white border border-[#efefef]">
                 <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-4 block">{s.num}</span>
@@ -220,8 +253,7 @@ export default function FleetPage() {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-[1.02]"
               >
-                {WA_SVG}
-                Chat on WhatsApp
+                {WA_SVG} Chat on WhatsApp
               </a>
               <a
                 href="tel:+971509200818"
@@ -233,7 +265,6 @@ export default function FleetPage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </main>
   );

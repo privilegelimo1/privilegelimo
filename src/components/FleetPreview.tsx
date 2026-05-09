@@ -3,14 +3,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import fleet from "@/data/fleet.json";
+import { createClient } from "@/lib/supabase/client";
 
-type FleetItem = (typeof fleet)[number];
+type Vehicle = {
+  id: string;
+  slug: string;
+  class_slug: string;
+  name: string;
+  category_id: string;
+  passengers: number;
+  luggage: number;
+  images?: string[];
+  short_desc?: string;
+  description?: string;
+  features?: string[];
+  is_featured?: boolean;
+  transfer_price?: string;
+};
+
+type Category = {
+  id: string;
+  slug: string;
+  display_name: string;
+};
 
 type Props = {
+  categoryId?: string;
   classSlug?: string;
-  heading?: string;
-  subheading?: string;
 };
 
 function WhatsAppIcon() {
@@ -25,7 +44,6 @@ function getRandomThree<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5).slice(0, 3);
 }
 
-// Skeleton card shown during SSR and before client hydrates
 function SkeletonCard() {
   return (
     <div className="rounded-[2rem] border border-[#efefef] bg-white overflow-hidden">
@@ -44,32 +62,63 @@ function SkeletonCard() {
   );
 }
 
-export default function FleetPreview({
-  classSlug,
-}: Props) {
-  const [vehicles, setVehicles] = useState<FleetItem[]>([]);
-  const [mounted, setMounted] = useState(false);
+export default function FleetPreview({ categoryId, classSlug }: Props) {
+  const supabase = createClient();
+
+  type VehicleWithCategory = Vehicle & { categorySlug: string; categoryName: string };
+
+  const [vehicles, setVehicles] = useState<VehicleWithCategory[]>([]);
+  const [mounted,  setMounted]  = useState(false);
 
   useEffect(() => {
-    const pool = classSlug
-      ? fleet.filter((v) => v.classSlug === classSlug)
-      : fleet;
-    setVehicles(getRandomThree(pool));
-    setMounted(true);
-  }, [classSlug]);
+    async function load() {
+      // ── Simple fetches — no filters on optional columns ──────────
+      const [
+        { data: catsData,     error: catErr },
+        { data: vehiclesData, error: vehErr },
+      ] = await Promise.all([
+        supabase.from("vehicle_categories").select("id, slug, display_name"),
+        supabase.from("vehicles").select("*"),   // no is_active / sort_order filter yet
+      ]);
+
+      // Debug — check browser console
+      console.log("🏷️ categories:", catsData?.length, catErr?.message)
+      console.log("🚗 vehicles:",   vehiclesData?.length, vehErr?.message)
+      if (vehiclesData?.[0]) console.log("first vehicle:", vehiclesData[0])
+
+      const cats        = (catsData     as Category[]) ?? [];
+      const allVehicles = (vehiclesData as Vehicle[])  ?? [];
+
+      const catMap = Object.fromEntries(cats.map((c) => [c.id, c]));
+
+      const pool = classSlug
+  ? allVehicles.filter((v) => v.class_slug === classSlug)
+  : categoryId
+    ? allVehicles.filter((v) => v.category_id === categoryId)
+    : allVehicles;
+
+      const enriched: VehicleWithCategory[] = pool.map((v) => ({
+        ...v,
+        categorySlug: catMap[v.category_id]?.slug         ?? "",
+        categoryName: catMap[v.category_id]?.display_name ?? "",
+      }));
+
+      setVehicles(getRandomThree(enriched));
+      setMounted(true);
+    }
+
+    load();
+  }, [categoryId]);
 
   return (
     <section className="py-1">
       <div className="max-w-7xl mx-auto px-6">
-
-        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {!mounted
-            ? // SSR + pre-hydration: render skeletons (no random data, no mismatch)
-              [0, 1, 2].map((i) => <SkeletonCard key={i} />)
+            ? [0, 1, 2].map((i) => <SkeletonCard key={i} />)
             : vehicles.map((car) => (
                 <div
-                  key={car.slug}
+                  key={car.id}
                   className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(171,84,97,0.10)] hover:border-[#AB5461]/20 transition-all duration-300"
                 >
                   <div className="relative h-[220px] bg-[#f8f4f5] overflow-hidden">
@@ -81,28 +130,32 @@ export default function FleetPreview({
                       className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                     />
                     <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-[#AB5461]">
-                      {car.category}
+                      {car.categoryName}
                     </span>
-                    {car.badge && (
+                    {car.is_featured && (
                       <span className="absolute top-4 right-4 rounded-full bg-[#AB5461] px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white">
-                        {car.badge}
+                        Featured
                       </span>
                     )}
                   </div>
+
                   <div className="p-7">
                     <div className="flex items-start justify-between gap-3 mb-1">
                       <h3 className="text-lg font-light text-[#0a0a0a] tracking-tight">{car.name}</h3>
-                      <span className="shrink-0 text-sm font-semibold text-[#AB5461]">{car.transferPrice}</span>
+                      <span className="shrink-0 text-sm font-semibold text-[#AB5461]">
+                        {car.transfer_price ?? "Contact"}
+                      </span>
                     </div>
                     <p className="text-xs text-[#b3b3b3] mb-4 font-light">
                       Up to {car.passengers} passenger{car.passengers > 1 ? "s" : ""} · {car.luggage} bags
                     </p>
                     <p className="text-[13px] leading-[1.85] text-[#777] font-light mb-6 line-clamp-2">
-                      {car.desc}
+                      {car.description}
                     </p>
+
                     <div className="flex gap-3">
                       <Link
-                        href={`/fleet/${car.classSlug}/${car.slug}`}
+                        href={`/fleet/${car.categorySlug}/${car.slug}`}
                         className="flex-1 inline-flex items-center justify-center px-5 py-3.5 rounded-full bg-[#AB5461] text-xs font-medium text-white hover:bg-[#964754] transition-colors"
                       >
                         View & Book
@@ -123,7 +176,6 @@ export default function FleetPreview({
               ))}
         </div>
 
-        {/* Bottom CTA — all screen sizes */}
         <div className="mt-12 flex justify-center">
           <Link
             href="/fleet"
@@ -135,7 +187,6 @@ export default function FleetPreview({
             </svg>
           </Link>
         </div>
-
       </div>
     </section>
   );
