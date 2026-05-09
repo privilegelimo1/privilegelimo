@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { Plus, Trash2, GripVertical } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
+import ImageUploader from "@/components/admin/ImageUploader";
 
 type Category = { slug: string; display_name: string };
-
 type Spec = { label: string; value: string };
 
 type Vehicle = {
@@ -21,7 +21,7 @@ type Vehicle = {
   price_5hr: string;
   price_10hr: string;
   images: string[];
-short_desc: string;
+  short_desc: string;
   long_desc: string;
   features: string[];
   specs: Spec[];
@@ -57,75 +57,81 @@ export default function VehicleForm({
   const supabase = createClient();
   const isEdit   = !!vehicle?.id;
 
-  const [form,    setForm]    = useState<Vehicle>(vehicle ?? empty());
-  const [saving,  setSaving]  = useState(false);
-  const [deleting,setDeleting]= useState(false);
-  const [msg,     setMsg]     = useState("");
-  const [tab,     setTab]     = useState<"basic" | "content" | "seo">("basic");
+  const [form,     setForm]     = useState<Vehicle>(vehicle ?? empty());
+  const [saving,   setSaving]   = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [msg,      setMsg]      = useState("");
+  const [tab,      setTab]      = useState<"basic" | "content" | "seo">("basic");
 
-  // Auto-generate slug from name
+  // ── Name → auto slug ───────────────────────────────────────────────────────
   function handleNameChange(name: string) {
     setForm((p) => ({
       ...p,
       name,
-      slug: isEdit ? p.slug : name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
+      slug: isEdit
+        ? p.slug
+        : name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
     }));
   }
 
-  // Images
+  // ── Images ─────────────────────────────────────────────────────────────────
   function addImage() {
     setForm((p) => ({ ...p, images: [...p.images, ""] }));
   }
-  function updateImage(i: number, val: string) {
-    const imgs = [...form.images];
-    imgs[i] = val;
-    setForm((p) => ({ ...p, images: imgs }));
+  function updateImage(i: number, url: string) {
+    setForm((p) => {
+      const imgs = [...p.images];
+      imgs[i] = url;
+      return { ...p, images: imgs };
+    });
   }
   function removeImage(i: number) {
     setForm((p) => ({ ...p, images: p.images.filter((_, idx) => idx !== i) }));
   }
 
-  // Features
+  // ── Features ───────────────────────────────────────────────────────────────
   function addFeature() {
     setForm((p) => ({ ...p, features: [...p.features, ""] }));
   }
   function updateFeature(i: number, val: string) {
-    const arr = [...form.features];
-    arr[i] = val;
-    setForm((p) => ({ ...p, features: arr }));
+    setForm((p) => {
+      const arr = [...p.features];
+      arr[i] = val;
+      return { ...p, features: arr };
+    });
   }
   function removeFeature(i: number) {
     setForm((p) => ({ ...p, features: p.features.filter((_, idx) => idx !== i) }));
   }
 
-  // Specs
+  // ── Specs ──────────────────────────────────────────────────────────────────
   function addSpec() {
     setForm((p) => ({ ...p, specs: [...p.specs, { label: "", value: "" }] }));
   }
   function updateSpec(i: number, key: "label" | "value", val: string) {
-    const arr = [...form.specs];
-    arr[i] = { ...arr[i], [key]: val };
-    setForm((p) => ({ ...p, specs: arr }));
+    setForm((p) => {
+      const arr = [...p.specs];
+      arr[i] = { ...arr[i], [key]: val };
+      return { ...p, specs: arr };
+    });
   }
   function removeSpec(i: number) {
     setForm((p) => ({ ...p, specs: p.specs.filter((_, idx) => idx !== i) }));
   }
 
+  // ── Save / Delete ──────────────────────────────────────────────────────────
   async function save() {
     setSaving(true);
     setMsg("");
-
     const payload = {
       ...form,
-      images:   form.images.filter(Boolean),
-      features: form.features.filter(Boolean),
+      images:     form.images.filter(Boolean),
+      features:   form.features.filter(Boolean),
       updated_at: new Date().toISOString(),
     };
-
     const { error } = isEdit
       ? await supabase.from("vehicles").update(payload).eq("id", vehicle!.id!)
       : await supabase.from("vehicles").insert(payload);
-
     setSaving(false);
     if (error) { setMsg("Error: " + error.message); return; }
     setMsg("Saved ✓");
@@ -139,7 +145,8 @@ export default function VehicleForm({
     router.push("/admin/fleet");
   }
 
-  const input = (
+  // ── Reusable field helpers ─────────────────────────────────────────────────
+  const inputField = (
     key: keyof Vehicle,
     label: string,
     opts?: { type?: string; placeholder?: string }
@@ -163,7 +170,7 @@ export default function VehicleForm({
     </div>
   );
 
-  const textarea = (key: keyof Vehicle, label: string, rows = 3) => (
+  const textareaField = (key: keyof Vehicle, label: string, rows = 3) => (
     <div>
       <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
         {label}
@@ -185,7 +192,8 @@ export default function VehicleForm({
 
   return (
     <div className="bg-white rounded-2xl border border-[#efefef] shadow-[0_2px_8px_rgba(0,0,0,0.03)] overflow-hidden">
-      {/* Tabs */}
+
+      {/* ── Tabs ── */}
       <div className="flex border-b border-[#f0f0f0] px-6 pt-4 gap-1">
         {TABS.map((t) => (
           <button
@@ -207,6 +215,7 @@ export default function VehicleForm({
         {/* ── BASIC INFO ── */}
         {tab === "basic" && (
           <>
+            {/* Name + Slug */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
@@ -216,36 +225,38 @@ export default function VehicleForm({
                   type="text"
                   value={form.name}
                   onChange={(e) => handleNameChange(e.target.value)}
-                  className="w-full border border-[#e5e5e5] rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#AB5461] transition-colors"
                   placeholder="Mercedes V-Class"
+                  className="w-full border border-[#e5e5e5] rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#AB5461] transition-colors"
                 />
               </div>
-              {input("slug", "Slug", { placeholder: "mercedes-v-class" })}
+              {inputField("slug", "Slug", { placeholder: "mercedes-v-class" })}
             </div>
 
+            {/* Category */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
-                  Category
+                  Fleet Class
                 </label>
                 <select
                   value={form.class_slug}
                   onChange={(e) => setForm((p) => ({ ...p, class_slug: e.target.value }))}
                   className="w-full border border-[#e5e5e5] rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#AB5461] transition-colors bg-white"
                 >
-                  <option value="">Select category…</option>
+                  <option value="">Select class…</option>
                   {categories.map((c) => (
                     <option key={c.slug} value={c.slug}>{c.display_name}</option>
                   ))}
                 </select>
               </div>
-              {input("category", "Category Label", { placeholder: "Luxury MPV" })}
+              {inputField("category", "Category Label", { placeholder: "Luxury MPV" })}
             </div>
 
+            {/* Numbers */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {input("passengers",     "Passengers",     { type: "number" })}
-              {input("luggage",        "Luggage",        { type: "number" })}
-              {input("sort_order",     "Sort Order",     { type: "number" })}
+              {inputField("passengers", "Passengers", { type: "number" })}
+              {inputField("luggage",    "Luggage",    { type: "number" })}
+              {inputField("sort_order", "Sort Order", { type: "number" })}
               <div>
                 <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
                   Badge
@@ -260,10 +271,11 @@ export default function VehicleForm({
               </div>
             </div>
 
+            {/* Prices */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {input("transfer_price", "Transfer Price", { placeholder: "AED 400" })}
-              {input("price_5hr",      "5 Hr Price",     { placeholder: "AED 1,000 / 5 Hr" })}
-              {input("price_10hr",     "10 Hr Price",    { placeholder: "AED 1,400 / 10 Hr" })}
+              {inputField("transfer_price", "Transfer Price", { placeholder: "AED 400" })}
+              {inputField("price_5hr",      "5 Hr Price",     { placeholder: "AED 1,000 / 5 Hr" })}
+              {inputField("price_10hr",     "10 Hr Price",    { placeholder: "AED 1,400 / 10 Hr" })}
             </div>
 
             {/* Available toggle */}
@@ -294,30 +306,41 @@ export default function VehicleForm({
                   onClick={addImage}
                   className="text-[10px] tracking-[0.2em] uppercase font-medium text-[#AB5461] hover:text-[#923847] flex items-center gap-1 transition-colors"
                 >
-                  <Plus size={11} /> Add
+                  <Plus size={11} /> Add Image
                 </button>
               </div>
-              <div className="space-y-2">
-                {form.images.map((img, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <GripVertical size={14} className="text-[#d0d0d0] shrink-0" />
-                    <input
-                      type="text"
-                      value={img}
-                      onChange={(e) => updateImage(i, e.target.value)}
-                      placeholder="/images/fleet/mercedes-v-class-1.webp"
-                      className="flex-1 border border-[#e5e5e5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#AB5461] transition-colors font-mono text-xs"
-                    />
-                    <button
-                      onClick={() => removeImage(i)}
-                      className="text-[#d0d0d0] hover:text-red-500 transition-colors"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                ))}
-                {form.images.length === 0 && (
-                  <p className="text-xs text-[#b0b0b0] font-light py-2">No images added yet</p>
+
+              <div className="space-y-4">
+                {form.images.length === 0 ? (
+                  <button
+                    onClick={addImage}
+                    className="w-full flex flex-col items-center justify-center gap-2 border-2 border-dashed border-[#f0dadd] rounded-2xl py-8 text-[#c0b0b3] hover:border-[#AB5461]/40 hover:text-[#AB5461] transition-all"
+                  >
+                    <Plus size={18} />
+                    <span className="text-xs font-light tracking-wider">Add first image</span>
+                  </button>
+                ) : (
+                  form.images.map((img, i) => (
+                    <div key={i} className="relative">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-[10px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light">
+                          Image {i + 1}{i === 0 ? " · Cover" : ""}
+                        </span>
+                        <button
+                          onClick={() => removeImage(i)}
+                          className="text-[#d0d0d0] hover:text-red-400 transition-colors"
+                        >
+                          <Trash2 size={13} />
+                        </button>
+                      </div>
+                      <ImageUploader
+                        value={img}
+                        onChange={(url) => updateImage(i, url)}
+                        bucket="fleet-images"
+                        folder="vehicles"
+                      />
+                    </div>
+                  ))
                 )}
               </div>
             </div>
@@ -360,6 +383,9 @@ export default function VehicleForm({
                     </button>
                   </div>
                 ))}
+                {form.specs.length === 0 && (
+                  <p className="text-xs text-[#b0b0b0] font-light py-2">No specs added yet</p>
+                )}
               </div>
             </div>
           </>
@@ -368,8 +394,8 @@ export default function VehicleForm({
         {/* ── CONTENT ── */}
         {tab === "content" && (
           <>
-{textarea("short_desc", "Short Description", 2)}
-            {textarea("long_desc", "Long Description",  5)}
+            {textareaField("short_desc", "Short Description", 2)}
+            {textareaField("long_desc",  "Long Description",  5)}
 
             {/* Features */}
             <div>
@@ -413,12 +439,12 @@ export default function VehicleForm({
         {/* ── SEO ── */}
         {tab === "seo" && (
           <>
-            {input("seo_title",       "SEO Title")}
-            {textarea("seo_description", "SEO Description", 3)}
-            {input("seo_keywords",    "SEO Keywords")}
+            {inputField("seo_title",       "SEO Title")}
+            {textareaField("seo_description", "SEO Description", 3)}
+            {inputField("seo_keywords",    "SEO Keywords")}
             <hr className="border-[#f0f0f0]" />
-            {input("meta_title",      "Meta Title (fallback)")}
-            {textarea("meta_desc",    "Meta Description (fallback)", 2)}
+            {inputField("meta_title",      "Meta Title (fallback)")}
+            {textareaField("meta_desc",    "Meta Description (fallback)", 2)}
             <div className="flex gap-6 text-xs">
               <span className={(form.seo_title || form.meta_title).length > 60 ? "text-red-500" : "text-[#b0b0b0]"}>
                 Title: {(form.seo_title || form.meta_title).length}/60
@@ -438,7 +464,7 @@ export default function VehicleForm({
         )}
       </div>
 
-      {/* Footer */}
+      {/* ── Footer ── */}
       <div className="px-6 py-4 border-t border-[#f0f0f0] flex items-center justify-between bg-[#fafafa]">
         <div>
           {isEdit && (

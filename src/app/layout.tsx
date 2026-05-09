@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import FloatingContact from "@/components/FloatingContact";
+import { headers } from "next/headers";
+import FloatingContactWrapper from "@/components/FloatingContactWrapper";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.privilegelimo.com"),
@@ -52,8 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Privilege Limo | Luxury Chauffeur Service in Dubai",
-    description:
-      "Premium chauffeur & limousine services across Dubai & UAE. Book now.",
+    description: "Premium chauffeur & limousine services across Dubai & UAE. Book now.",
     site: "@privilegeuae",
     images: ["https://www.privilegelimo.com/og-image.jpg"],
   },
@@ -62,11 +62,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? headersList.get("x-invoke-path") ?? "";
+  const isAdmin = pathname.startsWith("/admin");
+
   return (
     <html lang="en">
       <head>
@@ -103,13 +107,8 @@ export default function RootLayout({
               openingHoursSpecification: {
                 "@type": "OpeningHoursSpecification",
                 dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday",
+                  "Monday", "Tuesday", "Wednesday", "Thursday",
+                  "Friday", "Saturday", "Sunday",
                 ],
                 opens: "00:00",
                 closes: "23:59",
@@ -144,38 +143,23 @@ export default function RootLayout({
                   },
                   {
                     "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Corporate Chauffeur Service Dubai",
-                    },
+                    itemOffered: { "@type": "Service", name: "Corporate Chauffeur Service Dubai" },
                   },
                   {
                     "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Wedding Car Hire Dubai",
-                    },
+                    itemOffered: { "@type": "Service", name: "Wedding Car Hire Dubai" },
                   },
                   {
                     "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Mercedes Sprinter Rental Dubai",
-                    },
+                    itemOffered: { "@type": "Service", name: "Mercedes Sprinter Rental Dubai" },
                   },
                   {
                     "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Luxury Bus Rental Dubai",
-                    },
+                    itemOffered: { "@type": "Service", name: "Luxury Bus Rental Dubai" },
                   },
                   {
                     "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Rent a Car with Driver Dubai",
-                    },
+                    itemOffered: { "@type": "Service", name: "Rent a Car with Driver Dubai" },
                   },
                 ],
               },
@@ -185,7 +169,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        <FloatingContact />
+        <FloatingContactWrapper />
       </body>
     </html>
   );

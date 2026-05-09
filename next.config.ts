@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.0.17"],
   pageExtensions: ["ts", "tsx", "mdx"],
 
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "eddebnemojtnlsilrqdy.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
+  },
+
   async headers() {
     return [
       {
@@ -18,6 +28,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
 
   async redirects() {
     return [

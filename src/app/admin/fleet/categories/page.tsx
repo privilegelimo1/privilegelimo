@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { createClient } from "@/lib/supabase/client"
-import { Plus, Pencil, Trash2, Loader2, AlertCircle, Check, X, Tag, GripVertical } from "lucide-react"
+import { Plus, Pencil, Trash2, Loader2, AlertCircle, Check, X, Tag, GripVertical, Image } from "lucide-react"
+import ImageUploader from "@/components/admin/ImageUploader"
 
 export const dynamic = "force-dynamic"
 
@@ -10,8 +11,8 @@ const roseGold = "linear-gradient(135deg, #b76e79, #e8a4a0, #c9956c)"
 const inputClass = "w-full bg-white border border-rose-100 rounded-xl px-4 py-2.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-100 transition-all text-sm shadow-sm"
 const labelClass = "block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1.5"
 
-type Category = { id: string; name: string; slug: string; display_name: string; sort_order: number }
-type FormData  = { name: string; slug: string; display_name: string; sort_order: number }
+type Category = { id: string; name: string; slug: string; display_name: string; sort_order: number; hero_image: string | null }
+type FormData  = { name: string; slug: string; display_name: string; sort_order: number; hero_image: string }
 
 function toSlug(v: string) {
   return v.toLowerCase().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-").trim()
@@ -24,7 +25,7 @@ export default function FleetCategoriesPage() {
   const [saving,     setSaving]     = useState(false)
   const [error,      setError]      = useState("")
   const [editing,    setEditing]    = useState<string | null>(null)
-  const [form,       setForm]       = useState<FormData>({ name: "", slug: "", display_name: "", sort_order: 99 })
+  const [form,       setForm]       = useState<FormData>({ name: "", slug: "", display_name: "", sort_order: 99, hero_image: "" })
   const [confirmDel, setConfirmDel] = useState<string | null>(null)
   const [deleting,   setDeleting]   = useState<string | null>(null)
 
@@ -42,23 +43,18 @@ export default function FleetCategoriesPage() {
 
   const handleChange = (key: keyof FormData, val: string | number) => {
     if (key === "name" && typeof val === "string") {
-      setForm((p) => ({
-        ...p,
-        name:         val,
-        slug:         toSlug(val),
-        display_name: val, // auto-fill display name
-      }))
+      setForm((p) => ({ ...p, name: val, slug: toSlug(val), display_name: val }))
     } else {
       setForm((p) => ({ ...p, [key]: val }))
     }
   }
 
   const openNew  = () => {
-    setForm({ name: "", slug: "", display_name: "", sort_order: cats.length + 1 })
+    setForm({ name: "", slug: "", display_name: "", sort_order: cats.length + 1, hero_image: "" })
     setEditing("new")
   }
   const openEdit = (c: Category) => {
-    setForm({ name: c.name, slug: c.slug, display_name: c.display_name, sort_order: c.sort_order })
+    setForm({ name: c.name, slug: c.slug, display_name: c.display_name, sort_order: c.sort_order, hero_image: c.hero_image ?? "" })
     setEditing(c.id)
   }
   const cancel = () => { setEditing(null); setError("") }
@@ -68,10 +64,11 @@ export default function FleetCategoriesPage() {
     setSaving(true); setError("")
 
     const payload = {
-      name:         form.slug,          // name = slug (your schema uses slug as name)
+      name:         form.slug,
       slug:         form.slug,
       display_name: form.display_name || form.name,
       sort_order:   form.sort_order,
+      hero_image:   form.hero_image.trim() || null,
     }
 
     if (editing === "new") {
@@ -149,14 +146,22 @@ export default function FleetCategoriesPage() {
             >
               <div className="flex items-center gap-3">
                 <GripVertical size={16} className="text-zinc-300" />
-                <div className="w-7 h-7 rounded-lg bg-rose-50 flex items-center justify-center">
-                  <Tag size={13} style={{ color: "#b76e79" }} />
-                </div>
+                {/* Hero image thumbnail or fallback icon */}
+                {cat.hero_image ? (
+                  <div className="w-10 h-7 rounded-lg overflow-hidden border border-rose-100 shrink-0">
+                    <img src={cat.hero_image} alt="" className="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <div className="w-7 h-7 rounded-lg bg-rose-50 flex items-center justify-center shrink-0">
+                    <Tag size={13} style={{ color: "#b76e79" }} />
+                  </div>
+                )}
                 <div>
                   <p className="text-sm font-semibold text-zinc-900">{cat.display_name}</p>
                   <p className="text-xs text-zinc-400">
                     <code className="bg-zinc-100 px-1.5 py-0.5 rounded-md">{cat.slug}</code>
                     <span className="ml-2">· order: {cat.sort_order}</span>
+                   
                   </p>
                 </div>
               </div>
@@ -212,7 +217,7 @@ function InlineForm({ form, onChange, onSave, onCancel, saving, title }: {
   return (
     <div className="bg-white rounded-2xl border-2 border-rose-200 shadow-sm p-5">
       <p className="text-sm font-bold text-zinc-700 mb-4">{title}</p>
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-3">
         <div>
           <label className={labelClass}>Name *</label>
           <input
@@ -253,6 +258,21 @@ function InlineForm({ form, onChange, onSave, onCancel, saving, title }: {
           />
         </div>
       </div>
+      
+{/* Hero Image */}
+<div className="mb-4">
+  <label className={labelClass}>Hero Image</label>
+  <ImageUploader
+    value={form.hero_image}
+    onChange={(url) => onChange("hero_image", url)}
+    bucket="vehicle-images"
+    folder="categories"
+  />
+  <p className="text-[10px] text-zinc-400 mt-1.5">
+    Displayed as the hero background on the /fleet/[slug] page.
+  </p>
+</div>
+
       <div className="flex gap-2">
         <button
           onClick={onSave}

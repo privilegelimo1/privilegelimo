@@ -3,12 +3,17 @@ import { createClient } from "@/lib/supabase/server";
 import VehicleForm from "@/components/admin/VehicleForm";
 import { notFound } from "next/navigation";
 
-export default async function EditVehiclePage({ params }: { params: { slug: string } }) {
+export default async function EditVehiclePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   await requireAuth();
+  const { slug } = await params;
   const supabase = await createClient();
 
   const [{ data: vehicle }, { data: categories }] = await Promise.all([
-    supabase.from("vehicles").select("*").eq("slug", params.slug).single(),
+    supabase.from("vehicles").select("*").eq("slug", slug).single(),
     supabase.from("vehicle_categories").select("slug, display_name").order("sort_order"),
   ]);
 

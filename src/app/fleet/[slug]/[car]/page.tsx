@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { getVehicleBySlug, fleet } from "@/data/index";
+import { createBrowserClient } from "@supabase/ssr";
+import { createClient } from "@/lib/supabase/server";
 import { buildWhatsAppURL, buildQuickEnquiry } from "@/lib/whatsapp";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,11 +11,18 @@ import FleetBookingForm from "@/components/FleetBookingForm";
 
 // ─── generateStaticParams ──────────────────────────────────────
 export async function generateStaticParams() {
-  return fleet.map((v) => ({
-    slug: v.classSlug,  // e.g. "business-class"
-    car: v.slug,        // e.g. "mercedes-s500"
-  }));
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+  const { data } = await supabase
+    .from("vehicles")
+    .select("slug, class_slug")
+    .eq("is_active", true);
+  return (data ?? []).map((v) => ({ slug: v.class_slug, car: v.slug }));
 }
+
+export const dynamicParams = true;
 
 // ─── generateMetadata ──────────────────────────────────────────
 export async function generateMetadata({
@@ -23,67 +31,62 @@ export async function generateMetadata({
   params: Promise<{ slug: string; car: string }>;
 }): Promise<Metadata> {
   const { car } = await params;
-  const vehicle = getVehicleBySlug(car);
+  const supabase = await createClient();
+  const { data: vehicle } = await supabase
+    .from("vehicles")
+    .select("name, description, images, transfer_price, class_slug, slug")
+    .eq("slug", car)
+    .single();
   if (!vehicle) return {};
-  const imageUrl = vehicle.images?.[0] || "";
+
+  const imageUrl = vehicle.images?.[0] ?? "";
   const description =
     vehicle.description ||
     `Hire a ${vehicle.name} with professional chauffeur in Dubai. Luxury travel with Privilege Limo.`;
+  const ogImage = imageUrl
+    ? imageUrl.startsWith("http")
+      ? imageUrl
+      : `https://www.privilegelimo.com${imageUrl}`
+    : "https://www.privilegelimo.com/og-image.jpg";
+
   return {
     title: `${vehicle.name} Chauffeur Service Dubai`,
-    description: `${description} From ${vehicle.priceLabel}.`,
+    description: `${description} From ${vehicle.transfer_price ?? "AED 350"}.`,
     keywords: [
       `${vehicle.name} hire Dubai`,
       `${vehicle.name} chauffeur Dubai`,
-      `${vehicle.category} Dubai`,
       "luxury car hire Dubai",
       "chauffeur service Dubai",
       "luxury chauffeur Dubai",
     ],
     alternates: {
-      canonical: `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
+      canonical: `https://www.privilegelimo.com/fleet/${vehicle.class_slug}/${vehicle.slug}`,
     },
-   openGraph: {
-  title:       `${vehicle.name} Chauffeur Dubai`,
-  description,
-  url:         `https://www.privilegelimo.com/fleet/${vehicle.classSlug}/${vehicle.slug}`,
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: imageUrl
-    ? [
+    openGraph: {
+      title: `${vehicle.name} Chauffeur Dubai`,
+      description,
+      url: `https://www.privilegelimo.com/fleet/${vehicle.class_slug}/${vehicle.slug}`,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
         {
-          url:    imageUrl.startsWith("http")
-                    ? imageUrl
-                    : `https://www.privilegelimo.com${imageUrl}`,
-          width:  1200,
+          url: ogImage,
+          width: 1200,
           height: 630,
-          alt:    `${vehicle.name} Chauffeur Dubai`,
-          type:   "image/jpeg",
-        },
-      ]
-    : [
-        {
-          url:    "https://www.privilegelimo.com/og-image.jpg",
-          width:  1200,
-          height: 630,
-          alt:    "Privilege Limo | Luxury Chauffeur Service in Dubai",
-          type:   "image/jpeg",
+          alt: `${vehicle.name} Chauffeur Dubai`,
+          type: "image/jpeg",
         },
       ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       `${vehicle.name} Chauffeur Dubai`,
-  description,
-  site:        "@privilegeuae",
-  images: imageUrl
-    ? [imageUrl.startsWith("http") ? imageUrl : `https://www.privilegelimo.com${imageUrl}`]
-    : ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${vehicle.name} Chauffeur Dubai`,
+      description,
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: { "og:logo": "https://www.privilegelimo.com/logo.webp" },
   };
 }
 
@@ -98,49 +101,19 @@ function WhatsAppIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 // ─── Static data ───────────────────────────────────────────────
 const standards = [
-  {
-    title: "Concierge Preparation",
-    desc: "Every vehicle is deep cleaned, sanitized, and inspected against a 25-point checklist before each journey.",
-  },
-  {
-    title: "Professional Chauffeur",
-    desc: "Your uniformed chauffeur holds a full UAE licence, speaks English, and is trained in executive etiquette.",
-  },
-  {
-    title: "Fixed Pricing",
-    desc: "Your fare is confirmed before you travel. No surge pricing, no meters, no surprises on arrival.",
-  },
-  {
-    title: "On-Time Guarantee",
-    desc: "We monitor live traffic and adjust routing in real time so you always arrive exactly when you need to.",
-  },
+  { title: "Concierge Preparation", desc: "Every vehicle is deep cleaned, sanitized, and inspected against a 25-point checklist before each journey." },
+  { title: "Professional Chauffeur", desc: "Your uniformed chauffeur holds a full UAE licence, speaks English, and is trained in executive etiquette." },
+  { title: "Fixed Pricing", desc: "Your fare is confirmed before you travel. No surge pricing, no meters, no surprises on arrival." },
+  { title: "On-Time Guarantee", desc: "We monitor live traffic and adjust routing in real time so you always arrive exactly when you need to." },
 ];
 
 const faqs = [
-  {
-    q: "Is the price fixed or metered?",
-    a: "All our pricing is fixed and confirmed upfront before your journey begins. There are no meters, no surge charges, and no hidden fees.",
-  },
-  {
-    q: "Can I request this vehicle for an airport transfer?",
-    a: "Yes. This vehicle is available for all airport transfers across DXB, DWC, Abu Dhabi, and Sharjah airports with full meet-and-greet service.",
-  },
-  {
-    q: "What is included in the booking?",
-    a: "Every booking includes a professional chauffeur, complimentary waiting time, luggage assistance, water on board, and 24/7 support.",
-  },
-  {
-    q: "Can I book by the hour?",
-    a: "Yes. Hourly disposal bookings start from 2 hours. Your chauffeur and vehicle are entirely at your disposal for the duration.",
-  },
-  {
-    q: "Is this vehicle available 24/7?",
-    a: "Yes. Our entire fleet is available 24 hours a day, 7 days a week — including public holidays and late-night transfers.",
-  },
-  {
-    q: "How do I confirm my booking?",
-    a: "Simply message us on WhatsApp or call. We confirm your booking, price, and chauffeur details instantly.",
-  },
+  { q: "Is the price fixed or metered?", a: "All our pricing is fixed and confirmed upfront before your journey begins. There are no meters, no surge charges, and no hidden fees." },
+  { q: "Can I request this vehicle for an airport transfer?", a: "Yes. This vehicle is available for all airport transfers across DXB, DWC, Abu Dhabi, and Sharjah airports with full meet-and-greet service." },
+  { q: "What is included in the booking?", a: "Every booking includes a professional chauffeur, complimentary waiting time, luggage assistance, water on board, and 24/7 support." },
+  { q: "Can I book by the hour?", a: "Yes. Hourly disposal bookings start from 2 hours. Your chauffeur and vehicle are entirely at your disposal for the duration." },
+  { q: "Is this vehicle available 24/7?", a: "Yes. Our entire fleet is available 24 hours a day, 7 days a week — including public holidays and late-night transfers." },
+  { q: "How do I confirm my booking?", a: "Simply message us on WhatsApp or call. We confirm your booking, price, and chauffeur details instantly." },
 ];
 
 // ─── Page ──────────────────────────────────────────────────────
@@ -150,15 +123,26 @@ export default async function FleetDetailPage({
   params: Promise<{ slug: string; car: string }>;
 }) {
   const { slug, car } = await params;
-  const vehicle = getVehicleBySlug(car);
+  const supabase = await createClient();
+
+  const [{ data: vehicle }, { data: relatedRaw }] = await Promise.all([
+    supabase.from("vehicles").select("*").eq("slug", car).single(),
+    supabase
+      .from("vehicles")
+      .select("*")
+      .eq("class_slug", slug)
+      .neq("slug", car)
+      .eq("is_active", true)
+      .limit(3),
+  ]);
+
   if (!vehicle) notFound();
 
-  const related = fleet
-    .filter((v) => v.category === vehicle.category && v.slug !== vehicle.slug)
-    .slice(0, 3);
+  const related = relatedRaw ?? [];
+  const features: string[] = Array.isArray(vehicle.features) ? vehicle.features : [];
 
   const waUrl = buildWhatsAppURL(
-    buildQuickEnquiry(`${vehicle.name} - ${vehicle.priceLabel}`)
+    buildQuickEnquiry(`${vehicle.name} - ${vehicle.transfer_price ?? ""}`)
   );
 
   return (
@@ -170,7 +154,7 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-0 lg:items-end">
 
-            {/* Right — hero image: first on mobile, second on desktop */}
+            {/* Right — hero image */}
             <div className="relative h-[280px] sm:h-[380px] lg:h-[560px] rounded-[32px] lg:rounded-t-[32px] lg:rounded-b-none overflow-hidden order-1 lg:order-2">
               {vehicle.images?.[0] ? (
                 <Image
@@ -186,59 +170,47 @@ export default async function FleetDetailPage({
                   <svg className="w-12 h-12 text-[#ddd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                   </svg>
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#c8c8c8]">
-                    {vehicle.name}
-                  </span>
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#c8c8c8]">{vehicle.name}</span>
                 </div>
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-              {vehicle.badge && (
+              {vehicle.is_featured && (
                 <span className="absolute top-5 left-5 text-[9px] tracking-[0.3em] uppercase bg-[#0a0a0a] text-white px-3 py-1.5 rounded-full">
-                  {vehicle.badge}
+                  Featured
                 </span>
               )}
-              {vehicle.priceLabel && (
+              {vehicle.transfer_price && (
                 <div className="absolute bottom-5 right-5 bg-white rounded-2xl shadow-lg px-5 py-4 min-w-[148px]">
-                  <p className="text-xl font-light text-[#AB5461] tracking-tight">{vehicle.priceLabel}</p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">
-                    {vehicle.priceNote ?? "starting from"}
-                  </p>
+                  <p className="text-xl font-light text-[#AB5461] tracking-tight">{vehicle.transfer_price}</p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#aaa] mt-0.5 font-light">starting from</p>
                 </div>
               )}
             </div>
 
-            {/* Left — info: second on mobile, first on desktop */}
+            {/* Left — info */}
             <div className="pb-12 lg:pb-16 pr-0 lg:pr-14 order-2 lg:order-1">
 
-              {/* Breadcrumb — now includes class slug */}
+              {/* Breadcrumb */}
               <div className="flex items-center gap-2 mb-8">
-                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
-                  Home
-                </Link>
+                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">Home</Link>
                 <span className="text-[#ddd]">/</span>
-                <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
-                  Fleet
-                </Link>
+                <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">Fleet</Link>
                 <span className="text-[#ddd]">/</span>
                 <Link href={`/fleet/${slug}`} className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
                   {slug.replace(/-/g, " ")}
                 </Link>
                 <span className="text-[#ddd]">/</span>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">
-                  {vehicle.name}
-                </span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] font-light">{vehicle.name}</span>
               </div>
 
               {/* Badges */}
               <div className="flex items-center gap-2 mb-6">
-                {vehicle.category && (
-                  <span className="text-[9px] tracking-[0.35em] uppercase text-[#9a9a9a] border border-[#ebebeb] px-4 py-1.5 rounded-full">
-                    {vehicle.category}
-                  </span>
-                )}
-                {vehicle.badge && (
+                <span className="text-[9px] tracking-[0.35em] uppercase text-[#9a9a9a] border border-[#ebebeb] px-4 py-1.5 rounded-full">
+                  {slug.replace(/-/g, " ")}
+                </span>
+                {vehicle.is_featured && (
                   <span className="text-[9px] tracking-[0.35em] uppercase text-[#AB5461] border border-[#AB5461]/30 bg-[#AB5461]/5 px-4 py-1.5 rounded-full">
-                    {vehicle.badge}
+                    Featured
                   </span>
                 )}
               </div>
@@ -247,9 +219,7 @@ export default async function FleetDetailPage({
               <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-light text-[#0a0a0a] tracking-tight leading-[1.08] mb-5">
                 {vehicle.name}
                 <br />
-                <span className="text-[#AB5461] italic font-extralight">
-                  Chauffeur Dubai
-                </span>
+                <span className="text-[#AB5461] italic font-extralight">Chauffeur Dubai</span>
               </h1>
 
               {/* Description */}
@@ -260,13 +230,10 @@ export default async function FleetDetailPage({
               )}
 
               {/* Feature pills */}
-              {vehicle.features?.length > 0 && (
+              {features.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-5 mb-7">
-                  {vehicle.features.slice(0, 5).map((f) => (
-                    <span
-                      key={f}
-                      className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full border border-[#f0f0f0]"
-                    >
+                  {features.slice(0, 5).map((f) => (
+                    <span key={f} className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full border border-[#f0f0f0]">
                       {f}
                     </span>
                   ))}
@@ -275,20 +242,14 @@ export default async function FleetDetailPage({
 
               {/* Price + pax */}
               <div className="flex items-stretch gap-3 mb-7">
-                {vehicle.priceLabel ? (
+                {vehicle.transfer_price ? (
                   <div className="flex-1 flex items-baseline gap-2 px-5 py-4 rounded-2xl border border-[#efefef] bg-[#fafafa]">
-                    <span className="text-2xl font-light text-[#0a0a0a] tracking-tight">
-                      {vehicle.priceLabel}
-                    </span>
-                    <span className="text-[10px] text-[#b0b0b0] tracking-wide font-light">
-                      {vehicle.priceNote ?? "starting from"}
-                    </span>
+                    <span className="text-2xl font-light text-[#0a0a0a] tracking-tight">{vehicle.transfer_price}</span>
+                    <span className="text-[10px] text-[#b0b0b0] tracking-wide font-light">starting from</span>
                   </div>
                 ) : (
                   <div className="flex-1 flex items-center px-5 py-4 rounded-2xl border border-[#efefef] bg-[#fafafa]">
-                    <span className="text-sm text-[#9a9a9a] font-light tracking-wide">
-                      Contact us for pricing
-                    </span>
+                    <span className="text-sm text-[#9a9a9a] font-light tracking-wide">Contact us for pricing</span>
                   </div>
                 )}
                 {vehicle.passengers && (
@@ -335,7 +296,6 @@ export default async function FleetDetailPage({
                   +971 50 920 0818
                 </a>
               </div>
-
             </div>
           </div>
         </div>
@@ -346,15 +306,11 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="lg:sticky lg:top-32">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                Quick Booking
-              </span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Quick Booking</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-5">
                 Reserve your
                 <br />
-                <span className="text-[#AB5461] italic font-extralight">
-                  {vehicle.name}
-                </span>
+                <span className="text-[#AB5461] italic font-extralight">{vehicle.name}</span>
               </h2>
               <p className="text-sm text-[#7a7a7a] font-light leading-relaxed max-w-sm mb-8">
                 Fill in your trip details below and we&apos;ll open WhatsApp with everything pre-filled — confirm your booking instantly.
@@ -367,9 +323,7 @@ export default async function FleetDetailPage({
                   { icon: "✓", label: "Available 24/7 across all UAE" },
                 ].map((p) => (
                   <div key={p.label} className="flex items-center gap-3">
-                    <span className="w-5 h-5 rounded-full border border-[#AB5461] flex items-center justify-center text-[#AB5461] text-[10px] flex-shrink-0">
-                      {p.icon}
-                    </span>
+                    <span className="w-5 h-5 rounded-full border border-[#AB5461] flex items-center justify-center text-[#AB5461] text-[10px] flex-shrink-0">{p.icon}</span>
                     <span className="text-sm text-[#5a5a5a] font-light">{p.label}</span>
                   </div>
                 ))}
@@ -377,7 +331,7 @@ export default async function FleetDetailPage({
             </div>
             <FleetBookingForm
               vehicleName={vehicle.name}
-              priceLabel={vehicle.priceLabel}
+              priceLabel={vehicle.transfer_price ?? ""}
               maxPassengers={vehicle.passengers}
             />
           </div>
@@ -389,41 +343,29 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                About This Vehicle
-              </span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">About This Vehicle</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-6 tracking-tight leading-tight">
                 The {vehicle.name}
                 <br />
                 <span className="text-[#AB5461] italic font-extralight">experience</span>
               </h2>
+              <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">{vehicle.description}</p>
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">
-                {vehicle.description}
-              </p>
-              <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">
-                Every journey in the {vehicle.name} is prepared to concierge-level
-                standards — sanitized, inspected, and ready to deliver an exceptional
-                experience from the moment you step in.
+                Every journey in the {vehicle.name} is prepared to concierge-level standards — sanitized, inspected, and ready to deliver an exceptional experience from the moment you step in.
               </p>
               <p className="text-[#9a9a9a] text-sm leading-relaxed font-light">
-                Available 24 hours a day across Dubai, Abu Dhabi, Sharjah and all UAE
-                emirates — with fixed pricing confirmed before every journey.
+                Available 24 hours a day across Dubai, Abu Dhabi, Sharjah and all UAE emirates — with fixed pricing confirmed before every journey.
               </p>
-              <div className="mt-8 flex flex-wrap gap-2">
-                {vehicle.features.map((f) => (
-                  <span
-                    key={f}
-                    className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full border border-[#f0f0f0]"
-                  >
-                    {f}
-                  </span>
-                ))}
-              </div>
+              {features.length > 0 && (
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {features.map((f) => (
+                    <span key={f} className="text-[9px] tracking-[0.2em] uppercase text-[#7a7a7a] bg-[#f7f7f7] px-3 py-1.5 rounded-full border border-[#f0f0f0]">{f}</span>
+                  ))}
+                </div>
+              )}
             </div>
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                Every Booking Includes
-              </span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Every Booking Includes</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-8 tracking-tight leading-tight">
                 Standard
                 <br />
@@ -440,10 +382,7 @@ export default async function FleetDetailPage({
                   "Sanitized & inspected vehicle",
                   "Complimentary water on board",
                 ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-4 p-4 rounded-2xl border border-[#f5f5f5] hover:border-[#AB5461]/30 transition-colors duration-300"
-                  >
+                  <li key={item} className="flex items-center gap-4 p-4 rounded-2xl border border-[#f5f5f5] hover:border-[#AB5461]/30 transition-colors duration-300">
                     <div className="w-5 h-5 rounded-full border border-[#AB5461] flex items-center justify-center flex-shrink-0">
                       <svg className="w-2.5 h-2.5 text-[#AB5461]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -462,9 +401,7 @@ export default async function FleetDetailPage({
       <section className="py-24 border-t border-[#efefef] bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-14">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              Our Standards
-            </span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Our Standards</span>
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               What sets every journey
               <br />
@@ -473,16 +410,9 @@ export default async function FleetDetailPage({
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {standards.map((s, i) => (
-              <div
-                key={s.title}
-                className="p-8 rounded-3xl bg-white border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500"
-              >
-                <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-5 block">
-                  0{i + 1}
-                </span>
-                <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">
-                  {s.title}
-                </h3>
+              <div key={s.title} className="p-8 rounded-3xl bg-white border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
+                <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-5 block">0{i + 1}</span>
+                <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">{s.title}</h3>
                 <p className="text-sm text-[#9a9a9a] leading-relaxed font-light">{s.desc}</p>
               </div>
             ))}
@@ -494,9 +424,7 @@ export default async function FleetDetailPage({
       <section className="py-24 border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-14">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              Perfect For
-            </span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Perfect For</span>
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Where the {vehicle.name}
               <br />
@@ -510,17 +438,9 @@ export default async function FleetDetailPage({
               { label: "Weddings & Events", sub: "Ceremonies · Galas · Occasions", href: "/services/wedding-limo-services" },
               { label: "City Tours", sub: "Hourly · Daily · Sightseeing", href: "/services/private-driver-for-sightseeing-services" },
             ].map((u, i) => (
-              <Link
-                key={u.label}
-                href={u.href}
-                className="group p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 flex flex-col gap-3"
-              >
-                <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light">
-                  0{i + 1}
-                </span>
-                <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300">
-                  {u.label}
-                </h3>
+              <Link key={u.label} href={u.href} className="group p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 flex flex-col gap-3">
+                <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light">0{i + 1}</span>
+                <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300">{u.label}</h3>
                 <p className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light">{u.sub}</p>
                 <span className="text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors mt-auto flex items-center gap-1 pt-2">
                   Learn more
@@ -539,31 +459,20 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                Why Privilege Limo
-              </span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Why Privilege Limo</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Dubai&apos;s most trusted
                 <br />
-                <span className="text-[#AB5461] italic font-extralight">
-                  luxury chauffeur service
-                </span>
+                <span className="text-[#AB5461] italic font-extralight">luxury chauffeur service</span>
               </h2>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-5">
-                We built Privilege Luxury Travel on a single belief — that luxury
-                ground transportation in Dubai should be genuinely exceptional, not
-                just acceptably convenient.
+                We built Privilege Luxury Travel on a single belief — that luxury ground transportation in Dubai should be genuinely exceptional, not just acceptably convenient.
               </p>
               <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-10">
-                From the moment you book to the moment you arrive, every detail is
-                handled with the care and precision of a five-star concierge service.
+                From the moment you book to the moment you arrive, every detail is handled with the care and precision of a five-star concierge service.
               </p>
               <div className="grid grid-cols-3 gap-4">
-                {[
-                  { value: "10+", label: "Years" },
-                  { value: "50+", label: "Vehicles" },
-                  { value: "24/7", label: "Available" },
-                ].map((s) => (
+                {[{ value: "10+", label: "Years" }, { value: "50+", label: "Vehicles" }, { value: "24/7", label: "Available" }].map((s) => (
                   <div key={s.label} className="text-center p-5 rounded-2xl bg-white border border-[#efefef]">
                     <div className="text-2xl font-light text-[#AB5461] mb-1">{s.value}</div>
                     <div className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a]">{s.label}</div>
@@ -573,21 +482,9 @@ export default async function FleetDetailPage({
             </div>
             <div className="flex flex-col gap-4">
               {[
-                {
-                  quote: "Absolutely flawless from start to finish. The car was immaculate, the chauffeur was professional, and we arrived exactly on time.",
-                  name: "James R.",
-                  role: "CEO, London",
-                },
-                {
-                  quote: "The best chauffeur experience I have had in Dubai. Incredibly smooth, the vehicle was stunning, and the service was five-star throughout.",
-                  name: "Fatima A.",
-                  role: "Dubai Resident",
-                },
-                {
-                  quote: "We used Privilege Limo for our entire conference fleet. Every single vehicle arrived on time and every delegate was impressed.",
-                  name: "Marcus T.",
-                  role: "Events Director, Dubai",
-                },
+                { quote: "Absolutely flawless from start to finish. The car was immaculate, the chauffeur was professional, and we arrived exactly on time.", name: "James R.", role: "CEO, London" },
+                { quote: "The best chauffeur experience I have had in Dubai. Incredibly smooth, the vehicle was stunning, and the service was five-star throughout.", name: "Fatima A.", role: "Dubai Resident" },
+                { quote: "We used Privilege Limo for our entire conference fleet. Every single vehicle arrived on time and every delegate was impressed.", name: "Marcus T.", role: "Events Director, Dubai" },
               ].map((t) => (
                 <div key={t.name} className="p-7 rounded-2xl bg-white border border-[#efefef] shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
                   <div className="flex gap-1 mb-4">
@@ -597,9 +494,7 @@ export default async function FleetDetailPage({
                       </svg>
                     ))}
                   </div>
-                  <p className="text-sm text-[#5a5a5a] font-light leading-relaxed italic mb-4">
-                    &quot;{t.quote}&quot;
-                  </p>
+                  <p className="text-sm text-[#5a5a5a] font-light leading-relaxed italic mb-4">&quot;{t.quote}&quot;</p>
                   <div>
                     <p className="text-xs font-medium text-[#0a0a0a]">{t.name}</p>
                     <p className="text-[9px] tracking-[0.2em] uppercase text-[#9a9a9a] mt-0.5">{t.role}</p>
@@ -619,17 +514,12 @@ export default async function FleetDetailPage({
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight">
               Common questions about
               <br />
-              <span className="text-[#AB5461] italic font-extralight">
-                the {vehicle.name}
-              </span>
+              <span className="text-[#AB5461] italic font-extralight">the {vehicle.name}</span>
             </h2>
           </div>
           <div className="flex flex-col gap-3">
             {faqs.map((faq, i) => (
-              <details
-                key={i}
-                className="group rounded-2xl border border-[#ebebeb] overflow-hidden open:border-[#0a0a0a] transition-all duration-300 bg-white"
-              >
+              <details key={i} className="group rounded-2xl border border-[#ebebeb] overflow-hidden open:border-[#0a0a0a] transition-all duration-300 bg-white">
                 <summary className="flex items-center justify-between px-8 py-6 cursor-pointer list-none">
                   <span className="text-sm font-medium text-[#0a0a0a] tracking-tight pr-6">{faq.q}</span>
                   <span className="text-[#9a9a9a] text-xl flex-shrink-0 group-open:rotate-45 transition-transform duration-300 leading-none">+</span>
@@ -647,19 +537,14 @@ export default async function FleetDetailPage({
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-end justify-between mb-12">
               <div>
-                <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-                  Explore More
-                </span>
+                <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Explore More</span>
                 <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight">
                   Similar vehicles
                   <br />
                   <span className="text-[#AB5461] italic font-extralight">you might prefer</span>
                 </h2>
               </div>
-              <Link
-                href="/fleet"
-                className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2"
-              >
+              <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2">
                 View Full Fleet
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -668,34 +553,19 @@ export default async function FleetDetailPage({
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((v) => (
-                <Link
-                  key={v.slug}
-                  href={`/fleet/${v.classSlug}/${v.slug}`}  
-                  className="group bg-white rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500 overflow-hidden"
-                >
+                <Link key={v.slug} href={`/fleet/${v.class_slug}/${v.slug}`} className="group bg-white rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-500 overflow-hidden">
                   <div className="h-44 relative overflow-hidden bg-[#f5f5f5]">
                     {v.images?.[0] ? (
-                      <Image
-                        src={v.images[0]}
-                        alt={v.name}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
+                      <Image src={v.images[0]} alt={v.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     ) : (
-                      <span className="absolute inset-0 flex items-center justify-center text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">
-                        Image
-                      </span>
+                      <span className="absolute inset-0 flex items-center justify-center text-[10px] tracking-[0.3em] uppercase text-[#d5d5d5]">Image</span>
                     )}
                   </div>
                   <div className="p-6">
-                    <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">
-                      {v.category}
-                    </span>
+                    <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">{v.class_slug.replace(/-/g, " ")}</span>
                     <div className="flex items-center justify-between mb-2 gap-4">
                       <h3 className="text-sm font-semibold text-[#0a0a0a]">{v.name}</h3>
-                      <span className="text-sm text-[#AB5461] font-light whitespace-nowrap">
-                        {v.priceLabel || "Contact"}
-                      </span>
+                      <span className="text-sm text-[#AB5461] font-light whitespace-nowrap">{v.transfer_price || "Contact"}</span>
                     </div>
                     <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">
                       {(v.description || "").substring(0, 75)}...
@@ -718,32 +588,21 @@ export default async function FleetDetailPage({
       <section className="py-24 bg-white border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center shadow-[0_4px_30px_rgba(0,0,0,0.05)]">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-              Ready to Book
-            </span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Ready to Book</span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Reserve your {vehicle.name}
               <br />
               <span className="text-[#AB5461] italic font-extralight">today</span>
             </h2>
             <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
-              Available 24/7 across Dubai and the UAE. Fixed pricing, instant
-              WhatsApp confirmation, and a chauffeur who exceeds every expectation.
+              Available 24/7 across Dubai and the UAE. Fixed pricing, instant WhatsApp confirmation, and a chauffeur who exceeds every expectation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 shadow-[0_4px_20px_rgba(37,211,102,0.3)]"
-              >
+              <a href={waUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#25D366] text-white text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#20bd5a] transition-all duration-300 shadow-[0_4px_20px_rgba(37,211,102,0.3)]">
                 <WhatsAppIcon />
                 Book on WhatsApp
               </a>
-              <a
-                href="tel:+971509200818"
-                className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#AB5461] text-[#AB5461] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#AB5461] hover:text-white transition-all duration-300"
-              >
+              <a href="tel:+971509200818" className="inline-flex items-center justify-center px-10 py-4 rounded-full border border-[#AB5461] text-[#AB5461] text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#AB5461] hover:text-white transition-all duration-300">
                 +971 50 920 0818
               </a>
             </div>
@@ -753,13 +612,7 @@ export default async function FleetDetailPage({
                 { label: "WhatsApp", value: "+971 50 920 0818", href: "https://wa.me/971509200818" },
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  target={c.href.startsWith("https") ? "_blank" : undefined}
-                  rel="noreferrer"
-                  className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#AB5461] transition-all duration-300"
-                >
+                <a key={c.label} href={c.href} target={c.href.startsWith("https") ? "_blank" : undefined} rel="noreferrer" className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#AB5461] transition-all duration-300">
                   <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
                   <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>

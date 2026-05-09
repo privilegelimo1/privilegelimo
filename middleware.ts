@@ -4,12 +4,16 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Forward pathname for root layout FloatingContact exclusion
+  const response = NextResponse.next({
+    request: { headers: request.headers },
+  });
+  response.headers.set("x-pathname", pathname);
+
   // Only protect /admin routes (not /admin/login)
   if (!pathname.startsWith("/admin") || pathname.startsWith("/admin/login")) {
-    return NextResponse.next();
+    return response;
   }
-
-  const response = NextResponse.next();
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -37,5 +41,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };

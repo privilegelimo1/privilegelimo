@@ -2,78 +2,25 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getVehiclesByClassSlug } from "@/data/index";
+import { createBrowserClient } from "@supabase/ssr";
+import { createClient } from "@/lib/supabase/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// ─── Class Info ────────────────────────────────────────────────
-const classInfo: Record<string, { label: string; description: string; heroImage: string }> = {
-  "business-class": {
-    label: "Business Class",
-    description:
-      "Executive sedans & MPVs offering premium comfort & style Perfect for corporate transfers, business meetings & airport pickups across Dubai, Abu Dhabi & Sharjah",
-    heroImage: "/images/fleet/audi-a6-1.webp",
-  },
-  "first-class": {
-    label: "First Class",
-    description:
-      "The absolute pinnacle of chauffeur-driven luxury in the UAE. Mercedes S 500 and BMW 7 Series — reserved for clients who accept nothing but the finest.",
-    heroImage: "/images/fleet/mercedes-s500-1.webp",
-  },
-  "business-van": {
-    label: "Business Van",
-    description:
-      "Spacious luxury MPVs for groups, families, and travellers with extra luggage. Comfort and class for up to 7 passengers across Dubai, Abu Dhabi, and Sharjah.",
-    heroImage: "/images/fleet/mercedes-v300-tiffany-1.webp",
-  },
-  "mercedes-sprinter-luxury-van": {
-    label: "Mercedes Sprinter Luxury Van",
-    description:
-      "Premium Mercedes Sprinter vans for large groups. The benchmark for group airport transfers and corporate events across Dubai, Abu Dhabi, and Sharjah.",
-    heroImage: "/images/fleet/mercedes-sprinter-19-1.webp",
-  },
-  "mercedes-sprinter-luxury-vip": {
-    label: "Mercedes Sprinter Luxury VIP",
-    description:
-      "Bespoke VIP Sprinter interiors handcrafted for the most discerning clients — starlight ceilings, champagne fridges, and first-class cabin finishes.",
-    heroImage: "/images/fleet/mercedes-sprinter-avant-garde-1.webp",
-  },
-  "luxury-suv": {
-    label: "Luxury SUV",
-    description:
-      "Bold, spacious, and commanding. GMC Yukon Denali, Cadillac Escalade, and Range Rover for families and executive groups who need presence and practicality.",
-    heroImage: "/images/fleet/cadillac-escalade-1.webp",
-  },
-  "rolls-royce": {
-    label: "Rolls-Royce",
-    description:
-      "The ultimate expression of automotive prestige across UAE. Rolls-Royce Ghost and Cullinan with a professional chauffeur for occasions that demand perfection.",
-    heroImage: "/images/fleet/rolls-royce-cullinan-1.webp",
-  },
-  "stretch-limousine": {
-    label: "Stretch Limousine",
-    description:
-      "Make the grandest of entrances. Our stretch limousines are the ultimate statement for weddings, VIP events, and celebrations across the UAE.",
-    heroImage: "/images/fleet/gmc-yukon-limousine-1.webp",
-  },
-  "standard-bus": {
-    label: "Standard Bus",
-    description:
-      "Reliable group transport for every occasion — Toyota Coaster 21 Seater and Hiace 11 Seater for corporate events, airport transfers, and tours.",
-    heroImage: "/images/fleet/toyota-hiace-11-1.webp",
-  },
-  "luxury-coach-bus": {
-    label: "Luxury Coach Bus",
-    description:
-      "Premium luxury coaches for large group travel. 35 Seater and 50 Seater with underfloor luggage, onboard Wi-Fi, and reclining seats.",
-    heroImage: "/images/fleet/50-seater-luxury-coach-1.webp",
-  },
-};
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 // ─── Static Params ─────────────────────────────────────────────
 export async function generateStaticParams() {
-  return Object.keys(classInfo).map((slug) => ({ slug }));
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+  const { data } = await supabase.from("vehicle_categories").select("slug");
+  return (data ?? []).map((c) => ({ slug: c.slug }));
 }
+
+export const dynamicParams = true;
 
 // ─── Metadata ──────────────────────────────────────────────────
 export async function generateMetadata({
@@ -82,55 +29,41 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const info = classInfo[slug];
-  if (!info) return {};
+  const supabase = await createClient();
+  const { data: category } = await supabase
+    .from("vehicle_categories")
+    .select("slug, display_name, description, hero_image")
+    .eq("slug", slug)
+    .single();
+  if (!category) return {};
+
+  const heroImage = category.hero_image
+    ? category.hero_image.startsWith("http")
+      ? category.hero_image
+      : `https://www.privilegelimo.com${category.hero_image}`
+    : "https://www.privilegelimo.com/og-image.jpg";
+
   return {
-    title: `${info.label} Chauffeur Dubai`,
-    description: info.description,
-    alternates: {
-      canonical: `https://www.privilegelimo.com/fleet/${slug}`,
-    },
+    title: `${category.display_name} Chauffeur Dubai`,
+    description: category.description ?? "",
+    alternates: { canonical: `https://www.privilegelimo.com/fleet/${slug}` },
     openGraph: {
-  title:       `${info.label} Chauffeur Dubai`,
-  description: info.description,
-  url:         `https://www.privilegelimo.com/fleet/${slug}`,
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: info.heroImage
-    ? [
-        {
-          url:    info.heroImage.startsWith("http")
-                    ? info.heroImage
-                    : `https://www.privilegelimo.com${info.heroImage}`,
-          width:  1200,
-          height: 630,
-          alt:    `${info.label} Chauffeur Dubai`,
-          type:   "image/jpeg",
-        },
-      ]
-    : [
-        {
-          url:    "https://www.privilegelimo.com/og-image.jpg",
-          width:  1200,
-          height: 630,
-          alt:    "Privilege Limo | Luxury Chauffeur Service in Dubai",
-          type:   "image/jpeg",
-        },
-      ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       `${info.label} Chauffeur Dubai`,
-  description: info.description,
-  site:        "@privilegeuae",
-  images: info.heroImage
-    ? [info.heroImage.startsWith("http") ? info.heroImage : `https://www.privilegelimo.com${info.heroImage}`]
-    : ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
+      title: `${category.display_name} Chauffeur Dubai`,
+      description: category.description ?? "",
+      url: `https://www.privilegelimo.com/fleet/${slug}`,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [{ url: heroImage, width: 1200, height: 630, alt: `${category.display_name} Chauffeur Dubai`, type: "image/jpeg" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${category.display_name} Chauffeur Dubai`,
+      description: category.description ?? "",
+      site: "@privilegeuae",
+      images: [heroImage],
+    },
+    other: { "og:logo": "https://www.privilegelimo.com/logo.webp" },
   };
 }
 
@@ -141,10 +74,28 @@ export default async function FleetClassPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const info = classInfo[slug];
-  if (!info) notFound();
+  const supabase = await createClient();
 
-  const vehicles = getVehiclesByClassSlug(slug);
+  const [{ data: category, error }, { data: vehicles }] = await Promise.all([
+    supabase
+      .from("vehicle_categories")
+      .select("slug, display_name, description, hero_image")
+      .eq("slug", slug)
+      .single(),
+    supabase
+      .from("vehicles")
+      .select("*")
+      .eq("class_slug", slug)
+      .eq("is_active", true)
+      .order("sort_order"),
+  ]);
+
+  console.log("[fleet/slug] slug:", slug, "| category:", category, "| error:", error);
+
+  if (!category) notFound();
+
+  const heroImage = category.hero_image ?? "/images/fleet/default.webp";
+  const cars = vehicles ?? [];
 
   return (
     <main className="bg-white">
@@ -153,59 +104,47 @@ export default async function FleetClassPage({
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="relative h-[340px] sm:h-[480px] flex items-end overflow-hidden pt-20">
         <Image
-          src={info.heroImage}
-          alt={`${info.label} chauffeur Dubai`}
+          src={heroImage}
+          alt={`${category.display_name} chauffeur Dubai`}
           fill
           priority
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
-
-          {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-5">
-            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-white/50 hover:text-white transition-colors">
-              Home
-            </Link>
+            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-white/50 hover:text-white transition-colors">Home</Link>
             <span className="text-white/30">/</span>
-            <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-white/50 hover:text-white transition-colors">
-              Fleet
-            </Link>
+            <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-white/50 hover:text-white transition-colors">Fleet</Link>
             <span className="text-white/30">/</span>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-white/80">
-              {info.label}
-            </span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-white/80">{category.display_name}</span>
           </div>
-
           <div className="inline-flex items-center gap-3 mb-3">
             <div className="h-px w-8 bg-[#AB5461]" />
             <span className="text-[#e8a4a0] text-[10px] tracking-[0.5em] uppercase font-light">
-              {vehicles.length} vehicle{vehicles.length !== 1 ? "s" : ""}
+              {cars.length} vehicle{cars.length !== 1 ? "s" : ""}
             </span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-light text-white tracking-tight leading-tight max-w-2xl">
-            {info.label}
+            {category.display_name}
             <br />
-            <span className="text-[#e8a4a0] italic font-extralight">
-              Chauffeur Dubai
-            </span>
+            <span className="text-[#e8a4a0] italic font-extralight">Chauffeur Dubai</span>
           </h1>
-          <p className="text-white/60 mt-3 max-w-xl text-sm font-light leading-relaxed">
-            {info.description}
-          </p>
+          {category.description && (
+            <p className="text-white/60 mt-3 max-w-xl text-sm font-light leading-relaxed">
+              {category.description}
+            </p>
+          )}
         </div>
       </section>
 
       {/* ── VEHICLES GRID ─────────────────────────────────────── */}
       <section className="py-20 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/7">
         <div className="max-w-7xl mx-auto px-6">
-
-          {vehicles.length === 0 ? (
+          {cars.length === 0 ? (
             <div className="flex flex-col items-center text-center py-24">
               <p className="text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0] mb-3">No vehicles</p>
-              <p className="text-sm text-[#9a9a9a] font-light mb-6">
-                No vehicles are currently listed in this class.
-              </p>
+              <p className="text-sm text-[#9a9a9a] font-light mb-6">No vehicles are currently listed in this class.</p>
               <Link
                 href="/fleet"
                 className="text-[11px] tracking-[0.3em] uppercase text-[#AB5461] border border-[#AB5461]/30 px-6 py-3 rounded-full hover:bg-[#AB5461] hover:text-white transition-all"
@@ -215,60 +154,60 @@ export default async function FleetClassPage({
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {vehicles.map((car) => (
+              {cars.map((car) => (
                 <div
                   key={car.slug}
                   className="group rounded-[2rem] border border-[#efefef] bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(171,84,97,0.10)] hover:border-[#AB5461]/20 transition-all duration-300"
                 >
-                  {/* Image */}
                   <div className="relative h-[220px] bg-[#f8f4f5] overflow-hidden">
-                    <Image
-                      src={car.images?.[0] ?? ""}
-                      alt={`${car.name} chauffeur Dubai`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                    />
+                    {car.images?.[0] && (
+                      <Image
+                        src={car.images[0]}
+                        alt={`${car.name} chauffeur Dubai`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                      />
+                    )}
                     <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-[#AB5461]">
-                      {car.category}
+                      {category.display_name}
                     </span>
-                    {car.badge && (
+                    {car.is_featured && (
                       <span className="absolute top-4 right-4 rounded-full bg-[#AB5461] px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white">
-                        {car.badge}
+                        Featured
                       </span>
                     )}
                   </div>
 
-                  {/* Body */}
                   <div className="p-7">
                     <div className="flex items-start justify-between gap-3 mb-1">
-                      <h2 className="text-lg font-light text-[#0a0a0a] tracking-tight">
-                        {car.name}
-                      </h2>
-                      <span className="shrink-0 text-sm font-semibold text-[#AB5461]">
-                        {car.transferPrice}
-                      </span>
+                      <h2 className="text-lg font-light text-[#0a0a0a] tracking-tight">{car.name}</h2>
+                      <span className="shrink-0 text-sm font-semibold text-[#AB5461]">{car.transfer_price}</span>
                     </div>
-
                     <p className="text-xs text-[#b3b3b3] mb-3 font-light">
                       Up to {car.passengers} passenger{car.passengers > 1 ? "s" : ""} · {car.luggage} bags
                     </p>
 
-                    {/* Pricing rows */}
-                    <div className="rounded-2xl bg-[#fafafa] border border-[#f0f0f0] px-4 py-3 mb-5 space-y-1.5">
-                      <div className="flex justify-between items-center">
-                        <span className="text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0]">5 Hour</span>
-                        <span className="text-xs font-medium text-[#5a5a5a]">{car.price5hr}</span>
+                    {(car.price_5hr || car.price_10hr) && (
+                      <div className="rounded-2xl bg-[#fafafa] border border-[#f0f0f0] px-4 py-3 mb-5 space-y-1.5">
+                        {car.price_5hr && (
+                          <div className="flex justify-between items-center">
+                            <span className="text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0]">5 Hour</span>
+                            <span className="text-xs font-medium text-[#5a5a5a]">{car.price_5hr}</span>
+                          </div>
+                        )}
+                        {car.price_5hr && car.price_10hr && <div className="h-px bg-[#efefef]" />}
+                        {car.price_10hr && (
+                          <div className="flex justify-between items-center">
+                            <span className="text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0]">10 Hour</span>
+                            <span className="text-xs font-medium text-[#5a5a5a]">{car.price_10hr}</span>
+                          </div>
+                        )}
                       </div>
-                      <div className="h-px bg-[#efefef]" />
-                      <div className="flex justify-between items-center">
-                        <span className="text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0]">10 Hour</span>
-                        <span className="text-xs font-medium text-[#5a5a5a]">{car.price10hr}</span>
-                      </div>
-                    </div>
+                    )}
 
                     <p className="text-[13px] leading-[1.85] text-[#777] font-light mb-6 line-clamp-2">
-                      {car.desc}
+                      {car.description}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-3">
@@ -300,9 +239,7 @@ export default async function FleetClassPage({
       {/* ── BOTTOM CTA ────────────────────────────────────────── */}
       <section className="py-20 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/3">
         <div className="max-w-3xl mx-auto px-6 rounded-3xl md:p-16 border border-[#AB4561]/50 text-center">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
-            Need Help Choosing?
-          </span>
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Need Help Choosing?</span>
           <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight mb-4">
             Our team is available
             <br />

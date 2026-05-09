@@ -5,19 +5,45 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { Plus } from "lucide-react";
 
+type Vehicle = {
+  id: string;
+  slug: string;
+  name: string;
+  class_slug: string;
+  category: string;
+  passengers: number;
+  transfer_price: string;
+  available: boolean;
+  badge: string | null;
+  images: string[];
+};
+
+type Category = {
+  slug: string;
+  display_name: string;
+};
+
 export default function AdminFleetPage() {
   const supabase = createClient();
-  const [vehicles, setVehicles] = useState<any[]>([]);
-  const [seeding, setSeeding]   = useState(false);
-  const [msg, setMsg]           = useState("");
+  const [vehicles,   setVehicles]   = useState<Vehicle[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [seeding,    setSeeding]    = useState(false);
+  const [msg,        setMsg]        = useState("");
 
   async function load() {
-    const { data } = await supabase
-      .from("vehicles")
-      .select("id, slug, name, class_slug, category, passengers, transfer_price, available, badge, images")
-      .order("class_slug")
-      .order("sort_order");
-    setVehicles(data ?? []);
+    const [{ data: cars }, { data: cats }] = await Promise.all([
+      supabase
+        .from("vehicles")
+        .select("id, slug, name, class_slug, category, passengers, transfer_price, available, badge, images")
+        .order("class_slug")
+        .order("sort_order"),
+      supabase
+        .from("vehicle_categories")
+        .select("slug, display_name")
+        .order("sort_order"),
+    ]);
+    setVehicles(cars ?? []);
+    setCategories(cats ?? []);
   }
 
   useEffect(() => { load(); }, []);
@@ -33,21 +59,21 @@ export default function AdminFleetPage() {
     load();
   }
 
-  const grouped = vehicles.reduce<Record<string, any[]>>((acc, v) => {
+  // Build label map from live categories
+  const classLabels = Object.fromEntries(
+    categories.map((c) => [c.slug, c.display_name])
+  );
+
+  // Group vehicles by class_slug
+  const grouped = vehicles.reduce<Record<string, Vehicle[]>>((acc, v) => {
     if (!acc[v.class_slug]) acc[v.class_slug] = [];
     acc[v.class_slug].push(v);
     return acc;
   }, {});
 
-  const classLabels: Record<string, string> = {
-    "business-class": "Business Class",
-    "first-class":    "First Class",
-    "business-van":   "Business Van",
-    "suv":            "SUV",
-  };
-
   return (
     <div className="px-6 py-8 max-w-6xl">
+
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
@@ -68,8 +94,7 @@ export default function AdminFleetPage() {
             href="/admin/fleet/new"
             className="inline-flex items-center gap-2 bg-[#AB5461] hover:bg-[#923847] text-white text-[11px] tracking-[0.2em] uppercase font-medium px-5 py-2.5 rounded-full transition-colors"
           >
-            <Plus size={13} />
-            Add Vehicle
+            <Plus size={13} /> Add Vehicle
           </Link>
         </div>
       </div>
@@ -93,6 +118,7 @@ export default function AdminFleetPage() {
             </div>
 
             <div className="bg-white rounded-2xl border border-[#efefef] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+              {/* Table header */}
               <div className="grid grid-cols-12 px-5 py-3 border-b border-[#f5f5f5] bg-[#fafafa]">
                 <div className="col-span-5 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">Vehicle</div>
                 <div className="col-span-2 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">Pax</div>
@@ -108,30 +134,40 @@ export default function AdminFleetPage() {
                     i !== items.length - 1 ? "border-b border-[#f5f5f5]" : ""
                   }`}
                 >
+                  {/* Vehicle info */}
                   <div className="col-span-5 flex items-center gap-3 min-w-0">
                     <div className="w-12 h-10 rounded-lg overflow-hidden bg-[#f5f5f5] shrink-0">
                       {v.images?.[0] ? (
-                        <img src={v.images[0]} alt={v.name} className="w-full h-full object-cover" />
+                        <img
+                          src={v.images[0]}
+                          alt={v.name}
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-[#d0d0d0] text-xs">
+                        <div className="w-full h-full flex items-center justify-center text-[#d0d0d0] text-[10px]">
                           No img
                         </div>
                       )}
                     </div>
                     <div className="min-w-0">
                       <p className="font-medium text-[#0a0a0a] text-sm truncate">{v.name}</p>
-                      <p className="text-[11px] text-[#b0b0b0] truncate mt-0.5">/fleet/{v.class_slug}/{v.slug}</p>
+                      <p className="text-[11px] text-[#b0b0b0] truncate mt-0.5">
+                        /fleet/{v.class_slug}/{v.slug}
+                      </p>
                     </div>
                   </div>
 
+                  {/* Passengers */}
                   <div className="col-span-2">
                     <span className="text-sm text-[#7a7a7a] font-light">{v.passengers} pax</span>
                   </div>
 
+                  {/* Price */}
                   <div className="col-span-2">
                     <span className="text-sm text-[#0a0a0a] font-light">{v.transfer_price}</span>
                   </div>
 
+                  {/* Status + badge */}
                   <div className="col-span-2 flex items-center gap-2 flex-wrap">
                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-medium border ${
                       v.available
@@ -148,9 +184,10 @@ export default function AdminFleetPage() {
                     )}
                   </div>
 
+                  {/* Edit link — fixed to /admin/fleet/[slug]/edit */}
                   <div className="col-span-1 flex justify-end">
                     <Link
-                      href={`/admin/fleet/${v.slug}`}
+                      href={`/admin/fleet/${v.slug}/edit`}
                       className="text-xs font-medium text-[#AB5461] hover:text-[#923847] transition-colors"
                     >
                       Edit
@@ -162,6 +199,7 @@ export default function AdminFleetPage() {
           </div>
         ))}
 
+        {/* Empty state */}
         {vehicles.length === 0 && (
           <div className="bg-white rounded-2xl border border-[#efefef] py-20 text-center">
             <p className="text-[#9a9a9a] font-light mb-1">No vehicles yet</p>
