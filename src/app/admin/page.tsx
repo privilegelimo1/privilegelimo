@@ -84,28 +84,6 @@ export default async function AdminPage() {
           ))}
         </div>
       </div>
-
-      {/* CTA Banner */}
-      <div
-        className="rounded-2xl px-8 py-7 text-white"
-        style={{ background: roseGold }}
-      >
-        <p className="text-[10px] tracking-[0.4em] uppercase font-light opacity-80 mb-2">
-          Getting Started
-        </p>
-        <p className="text-lg font-light tracking-tight mb-1">
-          Migrate your fleet data to Supabase
-        </p>
-        <p className="text-sm font-light opacity-75 mb-4">
-          Go to Fleet → use the seed button to import all vehicles from your JSON file.
-        </p>
-        <Link
-          href="/admin/fleet"
-          className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-full px-5 py-2 text-[11px] tracking-[0.2em] uppercase font-medium transition-all"
-        >
-          Go to Fleet →
-        </Link>
-      </div>
     </div>
   );
 }

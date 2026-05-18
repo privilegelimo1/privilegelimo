@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+import withPWA from "@ducanh2912/next-pwa";
+const baseConfig: NextConfig = {
+  turbopack: {},
   reactCompiler: true,
   allowedDevOrigins: ["192.168.0.17"],
   pageExtensions: ["ts", "tsx", "mdx"],
@@ -29,10 +30,9 @@ const nextConfig: NextConfig = {
     ];
   },
 
-
   async redirects() {
     return [
-      // ── Chauffeur / general service pages ─────────────────────────────────
+      // ── Chauffeur / general service pages ──────────────────────────────
       {
         source: "/reliable-chauffeur-services-in-dubai",
         destination: "/services/corporate-chauffeur-services",
@@ -59,7 +59,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // ── Airport transfers ──────────────────────────────────────────────────
+      // ── Airport transfers ───────────────────────────────────────────────
       {
         source: "/reliable-airport-transfers",
         destination: "/services/airport-transfer",
@@ -86,7 +86,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // ── Bus & Van rental ───────────────────────────────────────────────────
+      // ── Bus & Van rental ────────────────────────────────────────────────
       {
         source: "/bus-and-van-rental-in-dubai",
         destination: "/services/bus-and-van-rental-in-dubai",
@@ -123,7 +123,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // ── Luxury van ────────────────────────────────────────────────────────
+      // ── Luxury van ──────────────────────────────────────────────────────
       {
         source: "/luxury-van-rental-dubai",
         destination: "/services/luxury-van-rental-in-dubai",
@@ -135,14 +135,14 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // ── Sightseeing / private driver ──────────────────────────────────────
+      // ── Sightseeing / private driver ────────────────────────────────────
       {
         source: "/services/private-driver-for-sightseeing-dubai",
         destination: "/services/private-driver-for-sightseeing-services",
         permanent: true,
       },
 
-      // ── Chauffeur services (old blog slugs → 404) ─────────────────────────
+      // ── Chauffeur services ──────────────────────────────────────────────
       {
         source: "/chauffeur-services-in-dubai",
         destination: "/services/corporate-chauffeur-services",
@@ -154,7 +154,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // ── Blog / news ────────────────────────────────────────────────────────
+      // ── Blog / news ─────────────────────────────────────────────────────
       {
         source: "/chauffeur-service-news-trends",
         destination: "/blog",
@@ -168,5 +168,11 @@ const nextConfig: NextConfig = {
     ];
   },
 };
+
+const nextConfig = withPWA({
+  dest: "public",
+  register: true,
+  disable: process.env.NODE_ENV === "development",
+})(baseConfig);
 
 export default nextConfig;

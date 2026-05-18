@@ -166,6 +166,9 @@ export default async function RootLayout({
             }),
           }}
         />
+
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
       </head>
       <body>
         {children}

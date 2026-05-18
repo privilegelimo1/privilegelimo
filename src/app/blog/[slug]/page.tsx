@@ -1,339 +1,296 @@
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowLeft, ArrowRight, Calendar, Clock, Tag, ArrowUpRight } from 'lucide-react'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import { getAllPosts, getPostBySlug } from '@/lib/blog'
-import TableOfContents from '@/components/TableOfContents'
+import { createClient } from "@/lib/supabase/server";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import TableOfContents from "@/components/blog/TableOfContents";
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const post = getPostBySlug(slug)
-  if (!post) return {}
+const roseGoldGradient = "linear-gradient(135deg, #b76e79, #e8a4a0, #c9956c)";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("blogs")
+    .select("title, meta_desc, cover_image, slug")
+    .eq("slug", slug)
+    .single();
+
+  if (!data) return {};
   return {
-    title:       `${post.title} Blog`,
-    description: post.description,
+    title:       data.title,
+    description: data.meta_desc,
+    alternates:  { canonical: `https://www.chauffeurdubai.ae/blog/${data.slug}` },
     openGraph: {
-  title:       post.title,
-  description: post.description,
-  url:         `https://www.privilegelimo.com/blog/${post.slug}`,
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "article",
-  images: post.image
-    ? [
-        {
-          url:    post.image.startsWith("http")
-                    ? post.image
-                    : `https://www.privilegelimo.com${post.image}`,
-          width:  1200,
-          height: 630,
-          alt:    post.title,
-          type:   "image/jpeg",
-        },
-      ]
-    : [
-        {
-          url:    "https://www.privilegelimo.com/og-image.jpg",
-          width:  1200,
-          height: 630,
-          alt:    "Privilege Limo | Luxury Chauffeur Service in Dubai",
-          type:   "image/jpeg",
-        },
-      ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       post.title,
-  description: post.description,
-  site:        "@privilegeuae",
-  images: post.image
-    ? [post.image.startsWith("http") ? post.image : `https://www.privilegelimo.com${post.image}`]
-    : ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-  }
-}
-
-const categoryColors: Record<string, string> = {
-  'Chauffeur Services':   'bg-neutral-900 text-white          border-neutral-900',
-  'Airport Transfers':    'bg-blue-50     text-blue-700       border-blue-100',
-  'Wedding Transport':    'bg-rose-50     text-rose-700       border-rose-100',
-  'Corporate Travel':     'bg-slate-50    text-slate-700      border-slate-200',
-  'Travel Tips':          'bg-amber-50    text-amber-700      border-amber-100',
-  'Dubai Guide':          'bg-orange-50   text-orange-700     border-orange-100',
-  'General':              'bg-neutral-50  text-neutral-600    border-neutral-200',
-}
-
-const components = {
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="text-2xl font-bold text-neutral-900 tracking-tight mt-12 mb-4 pb-2 border-b border-neutral-100" {...props} />
-  ),
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="text-xl font-semibold text-neutral-900 tracking-tight mt-8 mb-3" {...props} />
-  ),
-  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h4 className="text-base font-semibold text-neutral-900 mt-6 mb-2" {...props} />
-  ),
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-base text-neutral-600 leading-relaxed font-light mb-5" {...props} />
-  ),
-  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="space-y-2 mb-5 pl-5" {...props} />
-  ),
-  ol: (props: React.OlHTMLAttributes<HTMLOListElement>) => (
-    <ol className="space-y-2 mb-5 pl-5 list-decimal" {...props} />
-  ),
-  li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li className="text-base text-neutral-600 font-light leading-relaxed list-disc" {...props} />
-  ),
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a className="text-neutral-900 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 transition-all" {...props} />
-  ),
-  blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote className="border-l-2 border-neutral-200 pl-5 my-6 text-neutral-500 italic font-light" {...props} />
-  ),
-  code: (props: React.HTMLAttributes<HTMLElement>) => (
-    <code className="bg-neutral-100 text-neutral-700 text-sm px-1.5 py-0.5 rounded font-mono" {...props} />
-  ),
-  pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre className="bg-neutral-950 text-neutral-100 rounded-2xl p-6 overflow-x-auto text-sm font-mono my-6 leading-relaxed" {...props} />
-  ),
-  hr:  () => <hr className="border-neutral-100 my-10" />,
-  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img className="rounded-2xl w-full h-auto my-6" alt={props.alt ?? ''} {...props} />
-  ),
-}
-
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const post = getPostBySlug(slug)
-  if (!post) notFound()
-
-  const allPosts   = getAllPosts()
-  const currentIdx = allPosts.findIndex(p => p.slug === post.slug)
-  const related    = allPosts
-    .filter(p => p.slug !== post.slug && p.category === post.category)
-    .slice(0, 3)
-  const prev = allPosts[currentIdx - 1] ?? null
-  const next = allPosts[currentIdx + 1] ?? null
-
-  const articleSchema = {
-    '@context':       'https://schema.org',
-    '@type':          'Article',
-    headline:         post.title,
-    description:      post.description,
-    image:            post.image,
-    author:           { '@type': 'Person', name: post.author },
-    publisher:        {
-      '@type': 'Organization',
-      name: 'Privilege Limo',
-      logo: { '@type': 'ImageObject', url: 'https://creativewired.agency/logo.png' },
+      title:       data.title,
+      description: data.meta_desc,
+      images:      data.cover_image ? [{ url: data.cover_image }] : [],
     },
-    datePublished:    post.date,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://creativewired.agency/blog/${post.slug}` },
-  }
+  };
+}
+
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const supabase = await createClient();
+  const { data: post } = await supabase
+    .from("blogs")
+    .select("*")
+    .eq("slug", slug)
+    .eq("published", true)
+    .single();
+
+  if (!post) notFound();
 
   return (
-    <div className="w-full bg-white overflow-x-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-
-      <Navbar />
-
-      {/* HERO */}
-      <section className="pt-28 pb-12 px-5 md:px-12 lg:px-20 bg-white border-b border-neutral-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-2 mb-10">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1.5 text-[11px] text-neutral-400 hover:text-neutral-900 transition-colors uppercase tracking-[0.15em]"
-            >
-              <ArrowLeft className="w-3 h-3" /> Blog
-            </Link>
-            <span className="text-neutral-200">/</span>
-            <span className="text-[11px] text-neutral-400 uppercase tracking-[0.15em]">{post.category}</span>
+    <>
+      {/* ── HERO ── */}
+      {post.cover_image && (
+        <div className="relative w-full pt-16" style={{ background: "#1a0a0b" }}>
+          <img
+            src={post.cover_image}
+            alt={post.cover_alt || post.title}
+            className="w-full max-h-[480px] object-cover opacity-80"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)" }}
+          />
+          <div className="absolute bottom-0 left-0 right-0 px-4 pb-10">
+            <div className="max-w-5xl mx-auto">
+              {post.category && (
+                <span
+                  className="inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full text-white mb-4"
+                  style={{ background: roseGoldGradient }}
+                >
+                  {post.category}
+                </span>
+              )}
+              <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-3">
+                {post.title}
+              </h1>
+              <p className="text-white/75 text-sm">
+                {post.author && <>By <span className="text-white/80 font-medium">{post.author}</span> · </>}
+                {post.published_at && new Date(post.published_at).toLocaleDateString("en-AE", {
+                  year: "numeric", month: "long", day: "numeric",
+                })}
+                {post.reading_time && <> · {post.reading_time}</>}
+              </p>
+            </div>
           </div>
+        </div>
+      )}
 
-          <div className="max-w-3xl">
-            <div className="flex flex-wrap gap-2 mb-5">
-              <span className={`text-[10px] font-medium px-2.5 py-1 rounded-full border ${categoryColors[post.category] ?? categoryColors['General']}`}>
-                {post.category}
-              </span>
-              {post.tags.slice(0, 3).map((t, i) => (
-                <span key={i} className="text-[10px] px-2.5 py-1 rounded-full bg-neutral-50 border border-neutral-100 text-neutral-400">
-                  {t}
+      {/* ── CONTENT ── */}
+      <section
+        className="py-16 px-4"
+        style={{ background: "linear-gradient(180deg, #fff 0%, #fdf0ef 100%)" }}
+      >
+        <div className="max-w-5xl mx-auto">
+
+          {/* Header when no cover image */}
+          {!post.cover_image && (
+            <div className="mb-10 pt-16 max-w-3xl">
+              {post.category && (
+                <span
+                  className="inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full text-white mb-4"
+                  style={{ background: roseGoldGradient }}
+                >
+                  {post.category}
+                </span>
+              )}
+              <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 leading-tight mb-3">
+                {post.title}
+              </h1>
+              <p className="text-zinc-400 text-sm">
+                {post.author && <>By <span className="text-zinc-600 font-medium">{post.author}</span> · </>}
+                {post.published_at && new Date(post.published_at).toLocaleDateString("en-AE", {
+                  year: "numeric", month: "long", day: "numeric",
+                })}
+                {post.reading_time && <> · {post.reading_time}</>}
+              </p>
+            </div>
+          )}
+
+          {/* Tags */}
+          {post.tags?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-8 max-w-3xl">
+              {post.tags.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="text-[10px] font-semibold px-3 py-1 rounded-full border border-rose-200 text-rose-400 bg-rose-50"
+                >
+                  {tag}
                 </span>
               ))}
             </div>
+          )}
 
-            <h1 className="text-3xl md:text-5xl font-bold text-neutral-900 leading-tight tracking-tight mb-5">
-              {post.title}
-            </h1>
-            <p className="text-base md:text-lg text-neutral-500 font-light leading-relaxed mb-7">
-              {post.description}
-            </p>
+          {/* ── Two-column layout: article + TOC ── */}
+<div className="flex flex-col lg:flex-row gap-10 items-start">
 
-            <div className="flex flex-wrap items-center gap-5 text-[11px] text-neutral-400 pt-6 border-t border-neutral-100">
-              <span className="font-medium text-neutral-700 text-xs">{post.author}</span>
-              <span className="flex items-center gap-1.5">
-                <Calendar className="w-3 h-3" />
-                {new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-3 h-3" />
-                {post.readingTime}
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Article */}
+  <article id="blog-article" className="min-w-0 flex-1">
 
-           {/* FEATURED IMAGE */}
-      {post.image && (
-        <div className="px-5 md:px-12 lg:px-20 py-10 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden bg-neutral-100">
-              <Image src={post.image} alt={post.title} fill className="object-cover" priority />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* MOBILE TOC — below featured image, hidden on desktop */}
-      <div className="md:hidden px-5 pb-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <TableOfContents />
-        </div>
-      </div>
-
-      {/* CONTENT + SIDEBAR */}
-      <section className="py-14 px-5 md:px-12 lg:px-20 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-12 gap-12 md:gap-16">
-
-            <article className="md:col-span-8" id="blog-article">
-              <MDXRemote source={post.content} components={components} />
-
-              {post.tags.length > 0 && (
-                <div className="mt-12 pt-8 border-t border-neutral-100">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Tag className="w-3.5 h-3.5 text-neutral-400" />
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-400">Tags</span>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {post.tags.map((tag, i) => (
-                      <span key={i} className="text-[10px] px-2.5 py-1 rounded-full bg-neutral-50 border border-neutral-100 text-neutral-500">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </article>
-
-            <aside className="md:col-span-4 space-y-5">
-  {/* Desktop-only TOC — mobile version is above the article */}
-  <div className="hidden md:block">
-    <TableOfContents />
-  </div>
-
-           <div className="rounded-2xl bg-neutral-900 p-6 sticky top-24">
-  <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2">Book a Ride</p>
-  <p className="text-white text-sm font-semibold leading-snug mb-4">
-    Need a premium chauffeur in Dubai or the UAE?
-  </p>
-  <Link
-    href="/contact-us"
-    className="inline-flex items-center gap-2 bg-white text-neutral-900 text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-neutral-100 transition-colors"
-  >
-    Book Now
-    <ArrowUpRight className="w-3 h-3" />
-  </Link>
-</div>
-            </aside>
-
-          </div>
-        </div>
-      </section>
-
-      {/* RELATED POSTS */}
-      {related.length > 0 && (
-        <section className="py-16 px-5 md:px-12 lg:px-20 bg-neutral-50 border-t border-neutral-100">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-8">Related Articles</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {related.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/blog/${p.slug}`}
-                  className="group flex flex-col rounded-2xl bg-white border border-neutral-100 shadow-sm hover:shadow-md hover:border-neutral-300 transition-all p-6"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`text-[10px] font-medium px-2.5 py-1 rounded-full border ${categoryColors[p.category] ?? categoryColors['General']}`}>
-                      {p.category}
-                    </span>
-                    <ArrowUpRight className="w-4 h-4 text-neutral-200 group-hover:text-neutral-900 transition-colors" />
-                  </div>
-                  <h3 className="text-sm font-bold text-neutral-900 leading-snug mb-2 group-hover:text-neutral-600 transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs text-neutral-500 font-light line-clamp-2">{p.description}</p>
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-neutral-100 text-[11px] text-neutral-400">
-                    <span>{new Date(p.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
-                    <span>{p.readingTime}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* PREV / NEXT */}
-      <section className="py-10 px-5 md:px-12 lg:px-20 bg-white border-t border-neutral-100">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {prev ? (
-            <Link
-              href={`/blog/${prev.slug}`}
-              className="group flex flex-col gap-2 rounded-2xl border border-neutral-100 bg-white p-6 hover:border-neutral-300 hover:shadow-sm transition-all"
-            >
-              <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-neutral-400">
-                <ArrowLeft className="w-3 h-3" /> Previous
-              </div>
-              <p className="text-sm font-semibold text-neutral-900 group-hover:text-neutral-600 transition-colors leading-snug">
-                {prev.title}
-              </p>
-            </Link>
-          ) : <div />}
-
-          {next ? (
-            <Link
-              href={`/blog/${next.slug}`}
-              className="group flex flex-col gap-2 rounded-2xl border border-neutral-100 bg-white p-6 hover:border-neutral-300 hover:shadow-sm transition-all sm:items-end sm:text-right"
-            >
-              <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-neutral-400">
-                Next <ArrowRight className="w-3 h-3" />
-              </div>
-              <p className="text-sm font-semibold text-neutral-900 group-hover:text-neutral-600 transition-colors leading-snug">
-                {next.title}
-              </p>
-            </Link>
-          ) : <div />}
-        </div>
-      </section>
-
-      <Footer />
+    {/* TOC — collapsible dropdown on mobile, above article */}
+    <div className="lg:hidden mb-8">
+      <TableOfContents collapsible />
     </div>
-  )
+
+    <div
+      className="blog-content"
+      dangerouslySetInnerHTML={{ __html: post.content }}
+    />
+  </article>
+
+  {/* TOC — sticky sidebar on desktop */}
+  <aside className="hidden lg:block w-64 shrink-0 sticky top-24 self-start">
+    <TableOfContents />
+  </aside>
+</div>
+        </div>
+      </section>
+
+      {/* ── PROSE STYLES ── */}
+      <style>{`
+        .blog-content {
+          color: #3f3f46;
+          font-size: 1.0625rem;
+          line-height: 1.85;
+        }
+.blog-content hr {
+  border: none;
+  border-top: 1px solid #fce7e7;
+  margin: 2rem 0;
+}
+        /* Headings */
+        .blog-content h1,
+        .blog-content h2,
+        .blog-content h3,
+        .blog-content h4 {
+          font-weight: 700;
+          color: #18181b;
+          line-height: 1.25;
+          margin-top: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        .blog-content h1 { font-size: 2rem; }
+        .blog-content h2 {
+          font-size: 1.5rem;
+          padding-bottom: 0.5rem;
+        }
+        .blog-content h3 { font-size: 1.25rem; color: #b76e79; }
+        .blog-content h4 { font-size: 1.05rem; }
+
+        /* Paragraphs */
+        .blog-content p { margin-bottom: 1.5rem; }
+
+        /* Links */
+        .blog-content a {
+          color: #b76e79;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          font-weight: 500;
+        }
+        .blog-content a:hover { color: #9d5a65; }
+
+        /* Lists */
+        .blog-content ul,
+        .blog-content ol {
+          margin: 1.5rem 0;
+          padding-left: 1.75rem;
+        }
+        .blog-content ul { list-style-type: disc; }
+        .blog-content ol { list-style-type: decimal; }
+        .blog-content li { margin-bottom: 0.5rem; }
+        .blog-content li::marker { color: #b76e79; }
+
+        /* Blockquote */
+        .blog-content blockquote {
+          border-left: 4px solid #b76e79;
+          margin: 2rem 0;
+          padding: 1rem 1.5rem;
+          background: linear-gradient(135deg, #f9eded, #fdf4f0);
+          border-radius: 0 0.75rem 0.75rem 0;
+          color: #52525b;
+          font-style: italic;
+        }
+        .blog-content blockquote p { margin-bottom: 0; }
+
+        /* Code */
+        .blog-content code {
+          background: #f4f4f5;
+          color: #b76e79;
+          padding: 0.15em 0.4em;
+          border-radius: 0.3rem;
+          font-size: 0.875em;
+          font-family: ui-monospace, monospace;
+        }
+        .blog-content pre {
+          background: #18181b;
+          color: #e4e4e7;
+          padding: 1.25rem 1.5rem;
+          border-radius: 0.75rem;
+          overflow-x: auto;
+          margin: 2rem 0;
+          font-size: 0.875rem;
+          line-height: 1.7;
+        }
+        .blog-content pre code {
+          background: none;
+          color: inherit;
+          padding: 0;
+          font-size: inherit;
+        }
+
+        /* Images */
+        .blog-content img {
+          width: 100%;
+          border-radius: 0.75rem;
+          margin: 2rem 0;
+          object-fit: cover;
+        }
+
+        /* Tables */
+        .blog-content table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.9rem;
+        }
+        .blog-content th {
+          background: linear-gradient(135deg, #f9eded, #fdf4f0);
+          color: #b76e79;
+          font-weight: 700;
+          padding: 0.75rem 1rem;
+          text-align: left;
+          border-bottom: 2px solid #fce7e7;
+        }
+        .blog-content td {
+          padding: 0.75rem 1rem;
+          border-bottom: 1px solid #fce7e7;
+          color: #52525b;
+        }
+        .blog-content tr:last-child td { border-bottom: none; }
+
+        /* Strong / Em */
+        .blog-content strong { color: #18181b; font-weight: 700; }
+        .blog-content em { color: #71717a; }
+
+        /* First paragraph lead */
+        .blog-content > p:first-of-type {
+          font-size: 1.125rem;
+          color: #52525b;
+          font-weight: 400;
+        }
+      `}</style>
+    </>
+  );
 }

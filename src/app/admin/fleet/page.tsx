@@ -88,7 +88,7 @@ export default function AdminFleetPage() {
             disabled={seeding}
             className="bg-[#0a0a0a] hover:bg-[#333] disabled:opacity-50 text-white font-medium text-xs tracking-[0.2em] uppercase px-5 py-2.5 rounded-full transition-all"
           >
-            {seeding ? "Seeding…" : "⚡ Seed from JSON"}
+            {seeding ? "Seeding…" : "Seed Data"}
           </button>
           <Link
             href="/admin/fleet/new"
@@ -212,7 +212,7 @@ export default function AdminFleetPage() {
                 disabled={seeding}
                 className="inline-flex items-center gap-2 bg-[#0a0a0a] hover:bg-[#333] disabled:opacity-50 text-white text-[11px] tracking-[0.2em] uppercase font-medium px-5 py-2.5 rounded-full transition-colors"
               >
-                {seeding ? "Seeding…" : "⚡ Seed from JSON"}
+                {seeding ? "Seeding…" : "Seed Data"}
               </button>
               <Link
                 href="/admin/fleet/new"
