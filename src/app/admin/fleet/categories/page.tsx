@@ -2,17 +2,38 @@
 
 import { useState, useEffect } from "react"
 import { createClient } from "@/lib/supabase/client"
-import { Plus, Pencil, Trash2, Loader2, AlertCircle, Check, X, Tag, GripVertical, Image } from "lucide-react"
+import { Plus, Pencil, Trash2, Loader2, AlertCircle, Check, X, Tag, GripVertical, ChevronDown, ChevronUp } from "lucide-react"
 import ImageUploader from "@/components/admin/ImageUploader"
 
 export const dynamic = "force-dynamic"
 
 const roseGold = "linear-gradient(135deg, #b76e79, #e8a4a0, #c9956c)"
 const inputClass = "w-full bg-white border border-rose-100 rounded-xl px-4 py-2.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-100 transition-all text-sm shadow-sm"
+const textareaClass = `${inputClass} resize-none`
 const labelClass = "block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1.5"
 
-type Category = { id: string; name: string; slug: string; display_name: string; sort_order: number; hero_image: string | null }
-type FormData  = { name: string; slug: string; display_name: string; sort_order: number; hero_image: string }
+type Category = {
+  id: string
+  name: string
+  slug: string
+  display_name: string
+  sort_order: number
+  hero_image: string | null
+  meta_title: string | null
+  meta_description: string | null
+  og_image: string | null
+}
+
+type FormData = {
+  name: string
+  slug: string
+  display_name: string
+  sort_order: number
+  hero_image: string
+  meta_title: string
+  meta_description: string
+  og_image: string
+}
 
 function toSlug(v: string) {
   return v.toLowerCase().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-").trim()
@@ -25,7 +46,10 @@ export default function FleetCategoriesPage() {
   const [saving,     setSaving]     = useState(false)
   const [error,      setError]      = useState("")
   const [editing,    setEditing]    = useState<string | null>(null)
-  const [form,       setForm]       = useState<FormData>({ name: "", slug: "", display_name: "", sort_order: 99, hero_image: "" })
+  const [form,       setForm]       = useState<FormData>({
+    name: "", slug: "", display_name: "", sort_order: 99,
+    hero_image: "", meta_title: "", meta_description: "", og_image: "",
+  })
   const [confirmDel, setConfirmDel] = useState<string | null>(null)
   const [deleting,   setDeleting]   = useState<string | null>(null)
 
@@ -49,12 +73,17 @@ export default function FleetCategoriesPage() {
     }
   }
 
-  const openNew  = () => {
-    setForm({ name: "", slug: "", display_name: "", sort_order: cats.length + 1, hero_image: "" })
+  const openNew = () => {
+    setForm({ name: "", slug: "", display_name: "", sort_order: cats.length + 1, hero_image: "", meta_title: "", meta_description: "", og_image: "" })
     setEditing("new")
   }
   const openEdit = (c: Category) => {
-    setForm({ name: c.name, slug: c.slug, display_name: c.display_name, sort_order: c.sort_order, hero_image: c.hero_image ?? "" })
+    setForm({
+      name: c.name, slug: c.slug, display_name: c.display_name,
+      sort_order: c.sort_order, hero_image: c.hero_image ?? "",
+      meta_title: c.meta_title ?? "", meta_description: c.meta_description ?? "",
+      og_image: c.og_image ?? "",
+    })
     setEditing(c.id)
   }
   const cancel = () => { setEditing(null); setError("") }
@@ -64,11 +93,14 @@ export default function FleetCategoriesPage() {
     setSaving(true); setError("")
 
     const payload = {
-      name:         form.slug,
-      slug:         form.slug,
-      display_name: form.display_name || form.name,
-      sort_order:   form.sort_order,
-      hero_image:   form.hero_image.trim() || null,
+      name:             form.slug,
+      slug:             form.slug,
+      display_name:     form.display_name || form.name,
+      sort_order:       form.sort_order,
+      hero_image:       form.hero_image.trim() || null,
+      meta_title:       form.meta_title.trim() || null,
+      meta_description: form.meta_description.trim() || null,
+      og_image:         form.og_image.trim() || null,
     }
 
     if (editing === "new") {
@@ -146,7 +178,6 @@ export default function FleetCategoriesPage() {
             >
               <div className="flex items-center gap-3">
                 <GripVertical size={16} className="text-zinc-300" />
-                {/* Hero image thumbnail or fallback icon */}
                 {cat.hero_image ? (
                   <div className="w-10 h-7 rounded-lg overflow-hidden border border-rose-100 shrink-0">
                     <img src={cat.hero_image} alt="" className="w-full h-full object-cover" />
@@ -161,7 +192,9 @@ export default function FleetCategoriesPage() {
                   <p className="text-xs text-zinc-400">
                     <code className="bg-zinc-100 px-1.5 py-0.5 rounded-md">{cat.slug}</code>
                     <span className="ml-2">· order: {cat.sort_order}</span>
-                   
+                    {cat.meta_title && (
+                      <span className="ml-2 text-emerald-500">· SEO ✓</span>
+                    )}
                   </p>
                 </div>
               </div>
@@ -214,9 +247,16 @@ function InlineForm({ form, onChange, onSave, onCancel, saving, title }: {
   saving: boolean
   title: string
 }) {
+  const [seoOpen, setSeoOpen] = useState(false)
+
+  const metaTitleLen = form.meta_title.length
+  const metaDescLen  = form.meta_description.length
+
   return (
     <div className="bg-white rounded-2xl border-2 border-rose-200 shadow-sm p-5">
       <p className="text-sm font-bold text-zinc-700 mb-4">{title}</p>
+
+      {/* Core fields */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-3">
         <div>
           <label className={labelClass}>Name *</label>
@@ -258,21 +298,95 @@ function InlineForm({ form, onChange, onSave, onCancel, saving, title }: {
           />
         </div>
       </div>
-      
-{/* Hero Image */}
-<div className="mb-4">
-  <label className={labelClass}>Hero Image</label>
-  <ImageUploader
-    value={form.hero_image}
-    onChange={(url) => onChange("hero_image", url)}
-    bucket="vehicle-images"
-    folder="categories"
-  />
-  <p className="text-[10px] text-zinc-400 mt-1.5">
-    Displayed as the hero background on the /fleet/[slug] page.
-  </p>
-</div>
 
+      {/* Hero Image */}
+      <div className="mb-4">
+        <label className={labelClass}>Hero Image</label>
+        <ImageUploader
+          value={form.hero_image}
+          onChange={(url) => onChange("hero_image", url)}
+          bucket="vehicle-images"
+          folder="categories"
+        />
+        <p className="text-[10px] text-zinc-400 mt-1.5">
+          Displayed as the hero background on the /fleet/[slug] page.
+        </p>
+      </div>
+
+      {/* SEO accordion */}
+      <div className="border border-rose-100 rounded-xl overflow-hidden mb-4">
+        <button
+          type="button"
+          onClick={() => setSeoOpen((p) => !p)}
+          className="w-full flex items-center justify-between px-4 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:bg-rose-50/50 transition-all"
+        >
+          <span className="flex items-center gap-2">
+            SEO & Open Graph
+            {(form.meta_title || form.meta_description) && (
+              <span className="px-1.5 py-0.5 bg-emerald-100 text-emerald-600 rounded-md text-[10px] font-bold normal-case tracking-normal">
+                Filled
+              </span>
+            )}
+          </span>
+          {seoOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+        </button>
+
+        {seoOpen && (
+          <div className="px-4 pb-4 pt-1 space-y-3 border-t border-rose-100">
+            {/* Meta Title */}
+            <div>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className={labelClass + " mb-0"}>Meta Title</label>
+                <span className={`text-[10px] font-medium ${metaTitleLen > 60 ? "text-red-400" : "text-zinc-400"}`}>
+                  {metaTitleLen}/60
+                </span>
+              </div>
+              <input
+                type="text"
+                value={form.meta_title}
+                onChange={(e) => onChange("meta_title", e.target.value)}
+                placeholder={`${form.display_name || form.name} | Privilege Limo Dubai`}
+                className={inputClass}
+              />
+              <p className="text-[10px] text-zinc-400 mt-1">Ideal 50–60 characters. Defaults to display name if empty.</p>
+            </div>
+
+            {/* Meta Description */}
+            <div>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className={labelClass + " mb-0"}>Meta Description</label>
+                <span className={`text-[10px] font-medium ${metaDescLen > 160 ? "text-red-400" : "text-zinc-400"}`}>
+                  {metaDescLen}/160
+                </span>
+              </div>
+              <textarea
+                rows={3}
+                value={form.meta_description}
+                onChange={(e) => onChange("meta_description", e.target.value)}
+                placeholder="Hire premium business class vehicles in Dubai with professional chauffeurs..."
+                className={textareaClass}
+              />
+              <p className="text-[10px] text-zinc-400 mt-1">Ideal 120–160 characters. Shown in Google search results.</p>
+            </div>
+
+            {/* OG Image */}
+            <div>
+              <label className={labelClass}>OG Image</label>
+              <ImageUploader
+                value={form.og_image}
+                onChange={(url) => onChange("og_image", url)}
+                bucket="vehicle-images"
+                folder="og"
+              />
+              <p className="text-[10px] text-zinc-400 mt-1.5">
+                Shown when shared on WhatsApp, Twitter, LinkedIn. Recommended 1200×630px. Defaults to hero image if empty.
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Actions */}
       <div className="flex gap-2">
         <button
           onClick={onSave}
