@@ -13,16 +13,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const { data } = await supabase
     .from("seo_pages")
     .select("title, description, og_image, canonical, keywords")
-    .eq("page_path", "/services")
+    .eq("page_path", "/fleet")
     .single()
 
   const title =
-    data?.title ?? "Our Services | Luxury Chauffeur & Van Rental Dubai"
+    data?.title ?? "Our Fleet | Luxury Chauffeur Cars Dubai - Privilege Limo"
   const description =
     data?.description ??
-    "Explore all Privilege Limo chauffeur services in Dubai & UAE. Luxury chauffeur service, Mercedes Sprinter van rental, Mercedes V-Class, Vito, bus hire and more."
+    "Browse our full fleet of luxury chauffeur cars in Dubai. Business Class, First Class, Vans & SUVs. From AED 300. Book online today."
   const canonical =
-    data?.canonical ?? "https://www.privilegelimo.com/services"
+    data?.canonical ?? "https://www.privilegelimo.com/fleet"
   const ogImage =
     data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
 
@@ -44,10 +44,10 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical },
     openGraph: {
       title:
-        data?.title ?? "Our Services | Luxury Chauffeur & Transportation Services Dubai",
+        data?.title ?? "Our Fleet | Luxury Chauffeur Cars Dubai — Privilege Limo",
       description:
         data?.description ??
-        "Explore the full range of luxury chauffeur services by Privilege Limo — airport transfers, monthly rentals, corporate travel, van & bus hire, wedding cars, and more. Available 24/7 across Dubai and the UAE.",
+        "Browse our full fleet of luxury chauffeur cars in Dubai. Business Class, First Class, Vans & SUVs. From AED 300. Book online today.",
       url: canonical,
       siteName: "Privilege Luxury Travel LLC",
       locale: "en_AE",
@@ -65,10 +65,10 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title:
-        data?.title ?? "Our Services | Luxury Chauffeur & Transportation Services Dubai",
+        data?.title ?? "Our Fleet | Luxury Chauffeur Cars Dubai — Privilege Limo",
       description:
         data?.description ??
-        "Explore the full range of luxury chauffeur services by Privilege Limo — airport transfers, monthly rentals, corporate travel, van & bus hire, wedding cars, and more. Available 24/7 across Dubai and the UAE.",
+        "Browse our full fleet of luxury chauffeur cars in Dubai. Business Class, First Class, Vans & SUVs. From AED 300. Book online today.",
       site: "@privilegeuae",
       images: [ogImage],
     },
