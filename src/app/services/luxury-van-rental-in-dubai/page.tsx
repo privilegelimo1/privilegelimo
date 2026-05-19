@@ -856,7 +856,7 @@ export default function LuxuryVanRentalPage() {
                 <h3 className="text-sm text-[#0a0a0a] font-light group-hover:text-[#AB5461] leading-relaxed">
                   {b.title}
                 </h3>
-                <span className="mt-3 inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a]">
+                <span className="mt-3 inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a]">
                   Read More
                   <svg
                     className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300"
@@ -888,7 +888,7 @@ export default function LuxuryVanRentalPage() {
                 and travel together
               </span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               Families, corporate teams and delegations — we have the right van
               and the professional chauffeur ready for you.
             </p>
@@ -909,7 +909,7 @@ export default function LuxuryVanRentalPage() {
                 +971 50 920 0818
               </a>
             </div>
-            <p className="text-[#9a9a9a] text-xs font-light">
+            <p className="text-[#0a0a0a] text-xs font-light">
               Premium van hire across Dubai, Abu Dhabi, Sharjah and the wider UAE
               — with professional chauffeurs and fixed pricing.
             </p>

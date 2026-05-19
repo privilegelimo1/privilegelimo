@@ -285,7 +285,7 @@ export default function TestimonialsPage() {
       <section className="pt-40 pb-28 border-b border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-12">
-            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">
+            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors">
               Home
             </Link>
             <span className="text-[#d5d5d5]">/</span>
@@ -341,7 +341,7 @@ export default function TestimonialsPage() {
               ].map((s) => (
                 <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#AB5461] transition-colors duration-300">
                   <div className="text-4xl font-extralight text-[#0a0a0a] tracking-tight mb-2">{s.value}</div>
-                  <div className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">{s.label}</div>
+                  <div className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -361,7 +361,7 @@ export default function TestimonialsPage() {
           <span className="text-sm font-light text-[#0a0a0a] tracking-tight">Verified Google Reviews</span>
           <div className="flex items-center gap-1">
             <Stars count={5} />
-            <span className="text-xs text-[#9a9a9a] font-light ml-1">5.0</span>
+            <span className="text-xs text-[#0a0a0a] font-light ml-1">5.0</span>
           </div>
         </div>
         <span className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
@@ -455,7 +455,7 @@ export default function TestimonialsPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">clients in Dubai</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               Book Now and Travel in Comfort - On Your Next Trip.
               <br />
               Do You Want To Talk With Us? So Don't Be Late.
@@ -479,7 +479,7 @@ export default function TestimonialsPage() {
                 +971 50 920 0818
               </a>
             </div>
-            <p className="text-[#9a9a9a] text-xs font-light">
+            <p className="text-[#0a0a0a] text-xs font-light">
               We provide luxury transportation in UAE, ensuring you enjoy sophistication, comfort, and style in one of the world's most glamorous destinations.
             </p>
           </div>

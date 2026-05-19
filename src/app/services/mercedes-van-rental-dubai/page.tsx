@@ -300,7 +300,7 @@ export default function MercedesVanRentalPage() {
                 {/* Content */}
                 <div className="p-6">
                   <h3 className="text-base font-light text-[#0a0a0a] tracking-tight mb-1 leading-snug">{car.name}</h3>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a] font-light mb-3">{car.priceNote}</p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light mb-3">{car.priceNote}</p>
                   <p className="text-xs text-[#7a7a7a] font-light leading-relaxed mb-4 line-clamp-2">
                     {car.description}
                   </p>
@@ -434,7 +434,7 @@ export default function MercedesVanRentalPage() {
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   For larger groups or events, explore the Sprinter van rental in Dubai options available with Privilege Luxury Travel. These versatile Mercedes-Benz Sprinter vans offer flexible passenger capacities and are equipped with modern, high-end amenities to ensure a comfortable and enjoyable ride, no matter the distance. Choosing a Sprinter Van Rental in Dubai with a professional driver allows you to fully relax and experience the breathtaking sights of Dubai without the hassle of navigating busy city streets.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-8">
+                <p className="text-[#0a0a0a] text-sm font-light leading-relaxed mb-8">
                   Whether you're planning corporate transportation, family trips, or special events, Sprinter Van Rental In Dubai is the perfect solution for safe, stylish, and stress-free group travel.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-10">
@@ -590,7 +590,7 @@ export default function MercedesVanRentalPage() {
             {faqs.map((faq) => (
               <div key={faq.q} className="p-7 rounded-3xl bg-white border border-[#efefef]">
                 <h3 className="text-sm font-semibold text-[#0a0a0a] mb-2 tracking-tight">{faq.q}</h3>
-                <p className="text-sm text-[#9a9a9a] font-light leading-relaxed">{faq.a}</p>
+                <p className="text-sm text-[#0a0a0a] font-light leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -643,7 +643,7 @@ export default function MercedesVanRentalPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">in comfort</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               On your next trip - do you want to talk with us? So don't be late.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

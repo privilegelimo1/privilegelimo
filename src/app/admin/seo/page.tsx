@@ -76,7 +76,7 @@ export default function AdminSEOPage() {
 
   const field = (key: keyof SeoRow, label: string, rowCount = 1) => (
     <div key={key}>
-      <label className="block text-[10px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-1.5">
+      <label className="block text-[10px] font-semibold text-[#0a0a0a] uppercase tracking-wider mb-1.5">
         {label}
       </label>
       {rowCount > 1 ? (
@@ -102,7 +102,7 @@ export default function AdminSEOPage() {
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div>
           <h1 className="text-2xl font-light text-[#0a0a0a] tracking-tight">SEO Manager</h1>
-          <p className="text-sm text-[#9a9a9a] font-light mt-1">
+          <p className="text-sm text-[#0a0a0a] font-light mt-1">
             Manage metadata for every page
           </p>
         </div>
@@ -152,7 +152,7 @@ export default function AdminSEOPage() {
               <tr key={r.id} className="border-b border-[#f5f5f5] hover:bg-[#fafafa] transition-colors">
                 <td className="px-5 py-3 font-mono text-xs text-[#7a7a7a] max-w-[180px] truncate">{r.page_path}</td>
                 <td className="px-5 py-3 text-[#0a0a0a] text-sm max-w-[200px] truncate font-light">{r.title}</td>
-                <td className="px-5 py-3 text-[#9a9a9a] text-sm max-w-[240px] truncate hidden md:table-cell font-light">{r.description}</td>
+                <td className="px-5 py-3 text-[#0a0a0a] text-sm max-w-[240px] truncate hidden md:table-cell font-light">{r.description}</td>
                 <td className="px-5 py-3">
                   <div className="flex gap-3 justify-end">
                     <button
@@ -200,7 +200,7 @@ export default function AdminSEOPage() {
               </h2>
               <button
                 onClick={() => setEditing(null)}
-                className="text-[#9a9a9a] hover:text-[#0a0a0a] text-xl font-light"
+                className="text-[#0a0a0a] hover:text-[#0a0a0a] text-xl font-light"
               >
                 ×
               </button>

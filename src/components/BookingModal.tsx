@@ -98,7 +98,7 @@ export default function BookingModal({
 
   // ── Shared tiny input style ──────────────────────────────────────────────
   const inp = "w-full pl-8 pr-3 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#AB5461] focus:outline-none text-xs text-[#0a0a0a] placeholder:text-[#c0c0c0] bg-white";
-  const lbl = "text-[9px] font-semibold text-[#9a9a9a] uppercase tracking-[0.25em] mb-1 block";
+  const lbl = "text-[9px] font-semibold text-[#0a0a0a] uppercase tracking-[0.25em] mb-1 block";
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
@@ -258,7 +258,7 @@ export default function BookingModal({
 
                   {/* Price pill */}
                   <div className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#fdf8ec] border border-[#e8d9a0]">
-                    <span className="text-[9px] text-[#9a9a9a] uppercase tracking-[0.25em] font-light">Est. Price</span>
+                    <span className="text-[9px] text-[#0a0a0a] uppercase tracking-[0.25em] font-light">Est. Price</span>
                     <span className="text-sm font-medium text-[#AB5461]">{displayPrice(bookingType)}</span>
                   </div>
                 </>
@@ -304,7 +304,7 @@ export default function BookingModal({
                             <option key={n} value={n}>{n} pax</option>
                           ))}
                         </select>
-                        <ChevronDown size={11} className="absolute right-2 top-1/2 -translate-y-1/2 text-[#9a9a9a] pointer-events-none" />
+                        <ChevronDown size={11} className="absolute right-2 top-1/2 -translate-y-1/2 text-[#0a0a0a] pointer-events-none" />
                       </div>
                     </div>
                   </div>
@@ -352,7 +352,7 @@ export default function BookingModal({
                         ["Price",    displayPrice(bookingType)],
                       ].map(([k, v]) => (
                         <div key={k} className="flex justify-between gap-2">
-                          <span className="text-[#9a9a9a]">{k}</span>
+                          <span className="text-[#0a0a0a]">{k}</span>
                           <span className="text-[#0a0a0a] font-medium text-right truncate">{v}</span>
                         </div>
                       ))}

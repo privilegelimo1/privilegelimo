@@ -24,7 +24,7 @@ export async function generateMetadata({
   return {
     title:       data.title,
     description: data.meta_desc,
-    alternates:  { canonical: `https://www.chauffeurdubai.ae/blog/${data.slug}` },
+    alternates:  { canonical: `https://www.privilegelimo.com/blog/${data.slug}` },
     openGraph: {
       title:       data.title,
       description: data.meta_desc,

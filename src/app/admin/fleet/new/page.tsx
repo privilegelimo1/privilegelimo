@@ -14,7 +14,7 @@ export default async function NewVehiclePage() {
     <div className="px-6 py-8 max-w-4xl">
       <div className="mb-8">
         <h1 className="text-2xl font-light text-[#0a0a0a] tracking-tight">Add Vehicle</h1>
-        <p className="text-sm text-[#9a9a9a] font-light mt-1">Add a new vehicle to the fleet</p>
+        <p className="text-sm text-[#0a0a0a] font-light mt-1">Add a new vehicle to the fleet</p>
       </div>
       <VehicleForm categories={categories ?? []} />
     </div>

@@ -406,7 +406,7 @@ export default function AirportTransferPage() {
                 <h3 className="text-sm font-light text-[#0a0a0a] mb-2 tracking-tight">
                   {a.name}
                 </h3>
-                <p className="text-xs text-[#9a9a9a] font-light leading-relaxed">{a.detail}</p>
+                <p className="text-xs text-[#0a0a0a] font-light leading-relaxed">{a.detail}</p>
               </div>
             ))}
           </div>
@@ -593,7 +593,7 @@ export default function AirportTransferPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">in Dubai Today</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               Pre-book your ride to or from any UAE airport.
               <br />
               Fixed price · Professional driver · On time.

@@ -5,11 +5,35 @@ import { ArrowUpRight, Calendar, Clock } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Blog | Luxury Travel Guides & Chauffeur Tips — Chauffeur Dubai",
-  description:
-    "Expert guides on luxury chauffeur services, airport transfers, corporate travel, and premium car hire across Dubai, Abu Dhabi, and the UAE.",
-  alternates: { canonical: "https://www.chauffeurdubai.ae/blog" },
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical")
+    .eq("page", "blog")
+    .single()
+
+  return {
+    title:       data?.title       ?? "Blog | Luxury Travel Guides — Chauffeur Dubai",
+    description: data?.description ?? "",
+    alternates:  { canonical: data?.canonical ?? "https://www.privilegelimo.com/blog" },
+    openGraph: {
+      title:       data?.title       ?? "",
+      description: data?.description ?? "",
+      url:         data?.canonical   ?? "https://www.privilegelimo.com/blog",
+      siteName:    "Privilege Luxury Travel LLC",
+      locale:      "en_AE",
+      type:        "website",
+      images:      data?.og_image ? [{ url: data.og_image, width: 1200, height: 630, type: "image/jpeg" }] : [],
+    },
+    twitter: {
+      card:        "summary_large_image",
+      title:       data?.title       ?? "",
+      description: data?.description ?? "",
+      site:        "@privilegeuae",
+      images:      data?.og_image ? [data.og_image] : [],
+    },
+  }
 }
 
 export const dynamic = "force-dynamic"

@@ -123,7 +123,7 @@ export default function WhyUsPage() {
       <section className="pt-40 pb-28 border-b border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-12">
-            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">
+            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors">
               Home
             </Link>
             <span className="text-[#d5d5d5]">/</span>
@@ -148,7 +148,7 @@ export default function WhyUsPage() {
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-lg mb-4">
                 Welcome to Privilege Luxury Travel LLC, a premium transportation company committed to delivering world-class chauffeur service in Dubai, reliable airport transfer UAE, professional business transfer solutions, and luxury car rental with driver services for travelers who demand excellence.
               </p>
-              <p className="text-[#9a9a9a] text-sm font-light leading-relaxed max-w-lg mb-10">
+              <p className="text-[#0a0a0a] text-sm font-light leading-relaxed max-w-lg mb-10">
                 Built on a foundation of trust, quality, and hospitality, Privilege Luxury Travel has grown into one of the UAE's most reputable names in luxury ground transportation. Our mission is simple - to create a seamless, stylish, and comfortable travel experience for every client.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -177,7 +177,7 @@ export default function WhyUsPage() {
               {stats.map((s) => (
                 <div key={s.label} className="p-8 rounded-3xl border border-[#efefef] text-center hover:border-[#AB5461] transition-colors duration-300">
                   <div className="text-4xl font-extralight text-[#0a0a0a] tracking-tight mb-2">{s.value}</div>
-                  <div className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">{s.label}</div>
+                  <div className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -248,7 +248,7 @@ export default function WhyUsPage() {
                 <span className="text-[9px] tracking-[0.4em] uppercase text-[#AB5461] mb-2 block font-light">{s.sub}</span>
                 <h3 className="text-base md:text-lg font-light text-[#0a0a0a] mb-3 tracking-tight group-hover:text-[#AB5461] transition-colors">{s.title}</h3>
                 <p className="text-[#7a7a7a] text-sm font-light leading-relaxed mb-4">{s.desc}</p>
-                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors">
+                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors">
                   Explore
                   <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -363,7 +363,7 @@ export default function WhyUsPage() {
                 ].map((item) => (
                   <div key={item.val} className="text-center p-3 rounded-2xl bg-[#fafafa] border border-[#efefef]">
                     <div className="text-xl font-light text-[#0a0a0a] mb-1">{item.num}</div>
-                    <div className="text-[8px] tracking-[0.2em] uppercase text-[#9a9a9a]">{item.val}</div>
+                    <div className="text-[8px] tracking-[0.2em] uppercase text-[#0a0a0a]">{item.val}</div>
                   </div>
                 ))}
               </div>
@@ -471,10 +471,10 @@ export default function WhyUsPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">in Comfort</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-3 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-3 max-w-sm mx-auto leading-relaxed">
               Chauffeur Service in Dubai - Unparalleled Service and Convenience
             </p>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               On Your Next Trip - Do You Want To Talk With Us?
               <br />So Don't Be Late.
             </p>
@@ -497,7 +497,7 @@ export default function WhyUsPage() {
                 Contact Now
               </a>
             </div>
-            <p className="text-[#9a9a9a] text-xs font-light">
+            <p className="text-[#0a0a0a] text-xs font-light">
               We provide luxury transportation in UAE, ensuring you enjoy a sophisticated with comfort, and style in one of the world's most glamorous destinations.
             </p>
           </div>

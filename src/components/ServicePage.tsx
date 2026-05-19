@@ -61,11 +61,11 @@ export default function ServicePage({
       <section className="pt-40 pb-28 bg-white border-b border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-12">
-            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">
+            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors">
               Home
             </Link>
             <span className="text-[#d5d5d5]">/</span>
-            <Link href="/services" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">
+            <Link href="/services" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors">
               Services
             </Link>
             <span className="text-[#d5d5d5]">/</span>
@@ -190,7 +190,7 @@ export default function ServicePage({
                   0{i + 1}
                 </span>
                 <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">{item.title}</h3>
-                <p className="text-sm text-[#9a9a9a] leading-relaxed font-light">{item.desc}</p>
+                <p className="text-sm text-[#0a0a0a] leading-relaxed font-light">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -241,7 +241,7 @@ export default function ServicePage({
               </div>
               <Link
                 href="/#fleet"
-                className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2"
+                className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2"
               >
                 View Full Fleet
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -260,9 +260,9 @@ export default function ServicePage({
                     <span className="text-[9px] tracking-[0.3em] uppercase text-[#d5d5d5]">Image</span>
                     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#AB5461]/30 to-transparent" />
                   </div>
-                  <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">{v.category}</span>
+                  <span className="text-[9px] tracking-[0.3em] uppercase text-[#0a0a0a] block mb-2">{v.category}</span>
                   <h3 className="text-sm font-semibold text-[#0a0a0a] leading-tight mb-2">{v.name}</h3>
-                  <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-4 flex-1">
+                  <p className="text-xs text-[#0a0a0a] font-light leading-relaxed mb-4 flex-1">
                     {v.description.substring(0, 70)}...
                   </p>
                   <div className="flex items-center justify-between pt-4 border-t border-[#f4f4f4]">
@@ -300,7 +300,7 @@ export default function ServicePage({
               >
                 <summary className="flex items-center justify-between px-8 py-6 cursor-pointer list-none">
                   <span className="text-sm font-medium text-[#0a0a0a] tracking-tight pr-6">{item.q}</span>
-                  <span className="text-[#9a9a9a] text-xl flex-shrink-0 group-open:rotate-45 transition-transform duration-300 leading-none">+</span>
+                  <span className="text-[#0a0a0a] text-xl flex-shrink-0 group-open:rotate-45 transition-transform duration-300 leading-none">+</span>
                 </summary>
                 <p className="px-8 pb-7 text-sm text-[#7a7a7a] leading-relaxed font-light">{item.a}</p>
               </details>
@@ -317,7 +317,7 @@ export default function ServicePage({
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Book your {title} today
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               Available 24/7 across Dubai and the UAE. Fixed pricing, instant WhatsApp confirmation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -176,7 +176,7 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
             {faq.q}
           </span>
           <span
-            className={`text-[#9a9a9a] text-xl flex-shrink-0 transition-transform duration-300 leading-none ${
+            className={`text-[#0a0a0a] text-xl flex-shrink-0 transition-transform duration-300 leading-none ${
               open ? "rotate-45" : ""
             }`}
           >
@@ -436,7 +436,7 @@ export default function HomePage() {
           <h3 className="text-base font-semibold text-[#0a0a0a] mb-2 tracking-tight">
             {car.name}
           </h3>
-          <p className="text-sm text-[#9a9a9a] leading-relaxed font-light mb-5 flex-1">
+          <p className="text-sm text-[#0a0a0a] leading-relaxed font-light mb-5 flex-1">
             {car.description}
           </p>
           <div className="flex flex-wrap gap-2 mb-6">
@@ -453,13 +453,13 @@ export default function HomePage() {
               <svg className="w-3.5 h-3.5 text-[#0a0a0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
-              <span className="text-xs text-[#9a9a9a] font-light">{car.passengers}</span>
+              <span className="text-xs text-[#0a0a0a] font-light">{car.passengers}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <svg className="w-3.5 h-3.5 text-[#0a0a0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
               </svg>
-              <span className="text-xs text-[#9a9a9a] font-light">{car.luggage}</span>
+              <span className="text-xs text-[#0a0a0a] font-light">{car.luggage}</span>
             </div>
             <Link
               href={`/fleet/${car.classSlug}/${car.slug}`}
@@ -479,7 +479,7 @@ export default function HomePage() {
           {/* Fleet CTA */}
           <AnimateIn delay={0.2}>
             <div className="mt-16 text-center">
-              <p className="text-sm text-[#9a9a9a] font-light mb-6">
+              <p className="text-sm text-[#0a0a0a] font-light mb-6">
                 Need help choosing the right vehicle for your journey?
               </p>
               <a
@@ -583,7 +583,7 @@ export default function HomePage() {
             <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">
               {s.title}
             </h3>
-            <p className="text-sm text-[#9a9a9a] leading-relaxed font-light flex-1">
+            <p className="text-sm text-[#0a0a0a] leading-relaxed font-light flex-1">
               {s.shortDesc}
             </p>
           </div>
@@ -629,7 +629,7 @@ export default function HomePage() {
                 No exceptions.
               </h2>
               <div className="max-w-xs">
-                <p className="text-[#9a9a9a] text-sm leading-relaxed font-light mb-8">
+                <p className="text-[#0a0a0a] text-sm leading-relaxed font-light mb-8">
                   From the moment you book to the moment you arrive - every aspect
                   of your experience is curated with absolute care and professionalism.
                 </p>
@@ -675,7 +675,7 @@ export default function HomePage() {
                   <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">
                     {r.title}
                   </h3>
-                  <p className="text-sm text-[#9a9a9a] leading-relaxed font-light">
+                  <p className="text-sm text-[#0a0a0a] leading-relaxed font-light">
                     {r.desc}
                   </p>
                 </div>
@@ -759,7 +759,7 @@ export default function HomePage() {
                 <br />
                 chauffeur today
               </h2>
-              <p className="text-[#9a9a9a] text-sm font-light max-w-sm mx-auto leading-relaxed">
+              <p className="text-[#0a0a0a] text-sm font-light max-w-sm mx-auto leading-relaxed">
                 Fill in your details and we will send your booking request directly
                 via WhatsApp for instant confirmation.
               </p>
@@ -774,7 +774,7 @@ export default function HomePage() {
                 <input type="email" name="email" placeholder="Email Address (optional)" value={formData.email} onChange={handleChange}
                   className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="datetime-local" name="date" required value={formData.date} onChange={handleChange}
-                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
+                  className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="text" name="pickup" placeholder="Pickup Location" required value={formData.pickup} onChange={handleChange}
                   className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm placeholder:text-[#c0c0c0] outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white" />
                 <input type="text" name="dropoff" placeholder="Drop-off Location" value={formData.dropoff} onChange={handleChange}
@@ -782,7 +782,7 @@ export default function HomePage() {
               </div>
 
               <select name="service" required value={formData.service} onChange={handleChange}
-                className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white">
+                className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white">
                 <option value="">Select Service</option>
                 <option value="Airport Transfer">Airport Transfer</option>
                 <option value="Corporate Travel">Corporate Travel</option>
@@ -794,7 +794,7 @@ export default function HomePage() {
               </select>
 
               <select name="vehicle" value={formData.vehicle} onChange={handleChange}
-                className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#9a9a9a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white">
+                className="border border-[#AB5461]/50 rounded-2xl px-6 py-4 text-[#0a0a0a] text-sm outline-none focus:border-[#AB5461] transition-colors duration-300 w-full bg-white">
                 <option value="">Preferred Vehicle (optional)</option>
                 {fleet.map((v) => (
                   <option key={v.slug} value={v.name}>

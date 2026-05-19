@@ -223,7 +223,7 @@ export default async function FleetPage() {
               <div key={s.num} className="p-7 rounded-3xl bg-white border border-[#efefef]">
                 <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-4 block">{s.num}</span>
                 <h3 className="text-sm font-semibold text-[#0a0a0a] mb-2 tracking-tight">{s.title}</h3>
-                <p className="text-xs text-[#9a9a9a] font-light leading-relaxed">{s.desc}</p>
+                <p className="text-xs text-[#0a0a0a] font-light leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -242,7 +242,7 @@ export default async function FleetPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">perfect vehicle for you</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               Tell us your occasion, group size, and budget — and we'll match you
               with the ideal vehicle from our fleet instantly.
             </p>

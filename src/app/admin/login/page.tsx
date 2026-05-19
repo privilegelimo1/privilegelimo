@@ -50,13 +50,13 @@ export default function AdminLoginPage() {
           <h1 className="text-lg font-light text-[#0a0a0a] mb-1 tracking-tight">
             Sign in
           </h1>
-          <p className="text-sm text-[#9a9a9a] font-light mb-6">
+          <p className="text-sm text-[#0a0a0a] font-light mb-6">
             Enter your credentials to continue
           </p>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-2">
+              <label className="block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-2">
                 Email
               </label>
               <input
@@ -71,7 +71,7 @@ export default function AdminLoginPage() {
             </div>
 
             <div>
-              <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-2">
+              <label className="block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-2">
                 Password
               </label>
               <input

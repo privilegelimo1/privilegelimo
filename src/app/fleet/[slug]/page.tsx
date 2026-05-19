@@ -152,7 +152,7 @@ export default async function FleetClassPage({
           {cars.length === 0 ? (
             <div className="flex flex-col items-center text-center py-24">
               <p className="text-[10px] tracking-[0.4em] uppercase text-[#0a0a0a] mb-3">No vehicles</p>
-              <p className="text-sm text-[#9a9a9a] font-light mb-6">No vehicles are currently listed in this class.</p>
+              <p className="text-sm text-[#0a0a0a] font-light mb-6">No vehicles are currently listed in this class.</p>
               <Link
                 href="/fleet"
                 className="text-[11px] tracking-[0.3em] uppercase text-[#AB5461] border border-[#AB5461]/30 px-6 py-3 rounded-full hover:bg-[#AB5461] hover:text-white transition-all"
@@ -253,7 +253,7 @@ export default async function FleetClassPage({
             <br />
             <span className="text-[#AB5461] italic font-extralight">24/7 to assist you</span>
           </h2>
-          <p className="text-sm text-[#9a9a9a] font-light mb-10 max-w-sm mx-auto">
+          <p className="text-sm text-[#0a0a0a] font-light mb-10 max-w-sm mx-auto">
             Not sure which vehicle is right for your journey? Call or message us instantly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

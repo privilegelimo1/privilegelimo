@@ -152,7 +152,7 @@ export default function VehicleForm({
     opts?: { type?: string; placeholder?: string }
   ) => (
     <div>
-      <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
+      <label className="block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-1.5">
         {label}
       </label>
       <input
@@ -172,7 +172,7 @@ export default function VehicleForm({
 
   const textareaField = (key: keyof Vehicle, label: string, rows = 3) => (
     <div>
-      <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
+      <label className="block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-1.5">
         {label}
       </label>
       <textarea
@@ -202,7 +202,7 @@ export default function VehicleForm({
             className={`px-4 py-2 text-xs font-medium rounded-t-lg transition-all ${
               tab === t.id
                 ? "bg-[#f9f0f1] text-[#AB5461] border border-[#f0dde0] border-b-[#f9f0f1]"
-                : "text-[#9a9a9a] hover:text-[#0a0a0a]"
+                : "text-[#0a0a0a] hover:text-[#0a0a0a]"
             }`}
           >
             {t.label}
@@ -218,7 +218,7 @@ export default function VehicleForm({
             {/* Name + Slug */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
+                <label className="block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-1.5">
                   Name
                 </label>
                 <input
@@ -235,7 +235,7 @@ export default function VehicleForm({
             {/* Category */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
+                <label className="block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-1.5">
                   Fleet Class
                 </label>
                 <select
@@ -258,7 +258,7 @@ export default function VehicleForm({
               {inputField("luggage",    "Luggage",    { type: "number" })}
               {inputField("sort_order", "Sort Order", { type: "number" })}
               <div>
-                <label className="block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-1.5">
+                <label className="block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-1.5">
                   Badge
                 </label>
                 <input
@@ -299,7 +299,7 @@ export default function VehicleForm({
             {/* Images */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                   Images
                 </label>
                 <button
@@ -348,7 +348,7 @@ export default function VehicleForm({
             {/* Specs */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                   Specs
                 </label>
                 <button
@@ -400,7 +400,7 @@ export default function VehicleForm({
             {/* Features */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                   Features
                 </label>
                 <button

@@ -205,7 +205,7 @@ export default async function FleetDetailPage({
 
               {/* Badges */}
               <div className="flex items-center gap-2 mb-6">
-                <span className="text-[9px] tracking-[0.35em] uppercase text-[#9a9a9a] border border-[#ebebeb] px-4 py-1.5 rounded-full">
+                <span className="text-[9px] tracking-[0.35em] uppercase text-[#0a0a0a] border border-[#ebebeb] px-4 py-1.5 rounded-full">
                   {slug.replace(/-/g, " ")}
                 </span>
                 {vehicle.is_featured && (
@@ -249,7 +249,7 @@ export default async function FleetDetailPage({
                   </div>
                 ) : (
                   <div className="flex-1 flex items-center px-5 py-4 rounded-2xl border border-[#efefef] bg-[#fafafa]">
-                    <span className="text-sm text-[#9a9a9a] font-light tracking-wide">Contact us for pricing</span>
+                    <span className="text-sm text-[#0a0a0a] font-light tracking-wide">Contact us for pricing</span>
                   </div>
                 )}
                 {vehicle.passengers && (
@@ -353,7 +353,7 @@ export default async function FleetDetailPage({
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-5">
                 Every journey in the {vehicle.name} is prepared to concierge-level standards — sanitized, inspected, and ready to deliver an exceptional experience from the moment you step in.
               </p>
-              <p className="text-[#9a9a9a] text-sm leading-relaxed font-light">
+              <p className="text-[#0a0a0a] text-sm leading-relaxed font-light">
                 Available 24 hours a day across Dubai, Abu Dhabi, Sharjah and all UAE emirates — with fixed pricing confirmed before every journey.
               </p>
               {features.length > 0 && (
@@ -413,7 +413,7 @@ export default async function FleetDetailPage({
               <div key={s.title} className="p-8 rounded-3xl bg-white border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500">
                 <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light mb-5 block">0{i + 1}</span>
                 <h3 className="text-base font-semibold text-[#0a0a0a] mb-3 tracking-tight">{s.title}</h3>
-                <p className="text-sm text-[#9a9a9a] leading-relaxed font-light">{s.desc}</p>
+                <p className="text-sm text-[#0a0a0a] leading-relaxed font-light">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -442,7 +442,7 @@ export default async function FleetDetailPage({
                 <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light">0{i + 1}</span>
                 <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300">{u.label}</h3>
                 <p className="text-[9px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light">{u.sub}</p>
-                <span className="text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors mt-auto flex items-center gap-1 pt-2">
+                <span className="text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors mt-auto flex items-center gap-1 pt-2">
                   Learn more
                   <svg className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -475,7 +475,7 @@ export default async function FleetDetailPage({
                 {[{ value: "10+", label: "Years" }, { value: "50+", label: "Vehicles" }, { value: "24/7", label: "Available" }].map((s) => (
                   <div key={s.label} className="text-center p-5 rounded-2xl bg-white border border-[#efefef]">
                     <div className="text-2xl font-light text-[#AB5461] mb-1">{s.value}</div>
-                    <div className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a]">{s.label}</div>
+                    <div className="text-[9px] tracking-[0.3em] uppercase text-[#0a0a0a]">{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -497,7 +497,7 @@ export default async function FleetDetailPage({
                   <p className="text-sm text-[#5a5a5a] font-light leading-relaxed italic mb-4">&quot;{t.quote}&quot;</p>
                   <div>
                     <p className="text-xs font-medium text-[#0a0a0a]">{t.name}</p>
-                    <p className="text-[9px] tracking-[0.2em] uppercase text-[#9a9a9a] mt-0.5">{t.role}</p>
+                    <p className="text-[9px] tracking-[0.2em] uppercase text-[#0a0a0a] mt-0.5">{t.role}</p>
                   </div>
                 </div>
               ))}
@@ -522,7 +522,7 @@ export default async function FleetDetailPage({
               <details key={i} className="group rounded-2xl border border-[#ebebeb] overflow-hidden open:border-[#0a0a0a] transition-all duration-300 bg-white">
                 <summary className="flex items-center justify-between px-8 py-6 cursor-pointer list-none">
                   <span className="text-sm font-medium text-[#0a0a0a] tracking-tight pr-6">{faq.q}</span>
-                  <span className="text-[#9a9a9a] text-xl flex-shrink-0 group-open:rotate-45 transition-transform duration-300 leading-none">+</span>
+                  <span className="text-[#0a0a0a] text-xl flex-shrink-0 group-open:rotate-45 transition-transform duration-300 leading-none">+</span>
                 </summary>
                 <p className="px-8 pb-7 text-sm text-[#7a7a7a] leading-relaxed font-light">{faq.a}</p>
               </details>
@@ -544,7 +544,7 @@ export default async function FleetDetailPage({
                   <span className="text-[#AB5461] italic font-extralight">you might prefer</span>
                 </h2>
               </div>
-              <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2">
+              <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors hidden md:flex items-center gap-2">
                 View Full Fleet
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -562,12 +562,12 @@ export default async function FleetDetailPage({
                     )}
                   </div>
                   <div className="p-6">
-                    <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-2">{v.class_slug.replace(/-/g, " ")}</span>
+                    <span className="text-[9px] tracking-[0.3em] uppercase text-[#0a0a0a] block mb-2">{v.class_slug.replace(/-/g, " ")}</span>
                     <div className="flex items-center justify-between mb-2 gap-4">
                       <h3 className="text-sm font-semibold text-[#0a0a0a]">{v.name}</h3>
                       <span className="text-sm text-[#AB5461] font-light whitespace-nowrap">{v.transfer_price || "Contact"}</span>
                     </div>
-                    <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">
+                    <p className="text-xs text-[#0a0a0a] font-light leading-relaxed mb-5">
                       {(v.description || "").substring(0, 75)}...
                     </p>
                     <span className="text-[10px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-2">
@@ -594,7 +594,7 @@ export default async function FleetDetailPage({
               <br />
               <span className="text-[#AB5461] italic font-extralight">today</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               Available 24/7 across Dubai and the UAE. Fixed pricing, instant WhatsApp confirmation, and a chauffeur who exceeds every expectation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

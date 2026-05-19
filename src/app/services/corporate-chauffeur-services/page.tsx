@@ -379,7 +379,7 @@ export default function CorporateChauffeurServicePage() {
                 <h3 className="text-sm font-light text-[#0a0a0a] mb-2 tracking-tight">
                   {u.name}
                 </h3>
-                <p className="text-xs text-[#9a9a9a] font-light leading-relaxed">{u.detail}</p>
+                <p className="text-xs text-[#0a0a0a] font-light leading-relaxed">{u.detail}</p>
               </div>
             ))}
           </div>
@@ -569,7 +569,7 @@ export default function CorporateChauffeurServicePage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">in Dubai Today</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               Executive transport for meetings, airport transfers and business events.
               <br />
               Professional driver · Premium fleet · On time.

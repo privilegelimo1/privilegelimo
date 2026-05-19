@@ -125,7 +125,7 @@ export default function RelatedServices({
               <p className="text-[10px] tracking-[0.15em] uppercase text-[#0a0a0a] font-light">
                 {s.sub}
               </p>
-              <span className="mt-auto pt-4 text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors flex items-center gap-1.5">
+              <span className="mt-auto pt-4 text-[9px] tracking-[0.25em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors flex items-center gap-1.5">
                 Learn more
                 <svg
                   className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform"

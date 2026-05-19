@@ -405,7 +405,7 @@ export default function MercedesSprinterRentalPage() {
                   {r.title}
                 </h3>
                 <p className="text-sm text-[#7a7a7a] font-light leading-relaxed mb-4">{r.desc}</p>
-                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors">
+                <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] group-hover:text-[#AB5461] transition-colors">
                   Read More
                   <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -429,7 +429,7 @@ export default function MercedesSprinterRentalPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">in Comfort</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               On Your Next Trip - Do You Want To Talk With Us?
               <br />So Don't Be Late.
             </p>

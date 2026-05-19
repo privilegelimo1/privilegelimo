@@ -74,7 +74,7 @@ export default function FleetBookingForm({
   const inputClass =
     "w-full px-4 py-3.5 rounded-2xl border border-[#efefef] bg-white text-sm text-[#0a0a0a] font-light placeholder:text-[#c0c0c0] focus:outline-none focus:border-[#AB5461] transition-colors duration-200";
   const labelClass =
-    "block text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light mb-2";
+    "block text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-2";
 
   return (
     <form

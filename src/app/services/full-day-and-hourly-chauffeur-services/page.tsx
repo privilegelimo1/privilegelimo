@@ -399,7 +399,7 @@ export default function HourlyChauffeurServicePage() {
                   0{i + 1}
                 </p>
                 <h3 className="text-sm font-light text-[#0a0a0a] tracking-tight mb-3">{item.title}</h3>
-                <p className="text-[12px] leading-[1.85] text-[#9a9a9a] font-light">{item.text}</p>
+                <p className="text-[12px] leading-[1.85] text-[#0a0a0a] font-light">{item.text}</p>
               </div>
             ))}
           </div>
@@ -432,7 +432,7 @@ export default function HourlyChauffeurServicePage() {
                   {step.n}
                 </div>
                 <h3 className="text-sm font-light text-[#0a0a0a] tracking-tight mb-2">{step.title}</h3>
-                <p className="text-[12px] leading-[1.85] text-[#9a9a9a] font-light">{step.desc}</p>
+                <p className="text-[12px] leading-[1.85] text-[#0a0a0a] font-light">{step.desc}</p>
               </div>
             ))}
           </div>

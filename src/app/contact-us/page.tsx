@@ -122,7 +122,7 @@ export default function ContactPage() {
       <section className="pt-40 pb-20 border-b border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-12">
-            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors">
+            <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors">
               Home
             </Link>
             <span className="text-[#d5d5d5]">/</span>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                   {/* Name + Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                         Full Name *
                       </label>
                       <input
@@ -223,7 +223,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -238,7 +238,7 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                    <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                       Email Address
                     </label>
                     <input
@@ -252,7 +252,7 @@ export default function ContactPage() {
                   {/* Vehicle + Date */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                         Vehicle Type *
                       </label>
                       <select
@@ -268,7 +268,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                         Date & Time *
                       </label>
                       <input
@@ -283,7 +283,7 @@ export default function ContactPage() {
                   {/* Pickup + Dropoff */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                         Pickup Location *
                       </label>
                       <input
@@ -295,7 +295,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                      <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                         Drop-off Location *
                       </label>
                       <input
@@ -310,7 +310,7 @@ export default function ContactPage() {
 
                   {/* Passengers */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                    <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                       Number of Passengers
                     </label>
                     <input
@@ -325,7 +325,7 @@ export default function ContactPage() {
 
                   {/* Message */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a] font-light">
+                    <label className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
                       Additional Notes
                     </label>
                     <textarea

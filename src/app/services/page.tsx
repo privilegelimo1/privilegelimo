@@ -540,7 +540,7 @@ export default function ServicesPage() {
               {faqs.map((faq) => (
                 <div key={faq.q} className="p-7 rounded-3xl bg-white border border-[#efefef] hover:border-[#e8d9a0] transition-colors duration-300">
                   <h3 className="text-sm font-semibold text-[#0a0a0a] mb-2 tracking-tight">{faq.q}</h3>
-                  <p className="text-sm text-[#9a9a9a] font-light leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-[#0a0a0a] font-light leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -581,7 +581,7 @@ export default function ServicesPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">luxury ride?</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               Contact us on WhatsApp for the fastest response, or call us directly — available 24 hours a day, 7 days a week.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

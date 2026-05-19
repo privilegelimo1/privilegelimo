@@ -126,7 +126,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <div className="shrink-0">
                     <p className="text-sm font-semibold text-[#3d3d3d]">Filter by Fleet Class</p>
-                    <p className="text-xs text-[#9a9a9a] mt-1">
+                    <p className="text-xs text-[#0a0a0a] mt-1">
                       {activeClass
                         ? `Showing: ${availableClasses.find((c) => c.slug === activeClass)?.display_name} — ${visibleVehiclesCount} vehicle${visibleVehiclesCount > 1 ? "s" : ""}`
                         : `Showing all ${fleet.length} vehicles across ${availableClasses.length} classes`}
@@ -260,7 +260,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                           <Link href={`/fleet/${v.class_slug}/${v.slug}`} className="block">
                             <div className="flex items-start justify-between mb-3">
                               <div>
-                                <span className="text-[9px] tracking-[0.3em] uppercase text-[#9a9a9a] block mb-1.5">
+                                <span className="text-[9px] tracking-[0.3em] uppercase text-[#0a0a0a] block mb-1.5">
                                   {v.category}
                                 </span>
                                 <h3 className="text-base font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300">
@@ -272,7 +272,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
                               </span>
                             </div>
 
-                            <p className="text-xs text-[#9a9a9a] font-light leading-relaxed mb-5">
+                            <p className="text-xs text-[#0a0a0a] font-light leading-relaxed mb-5">
                               {shortDesc}{shortDesc.length >= 85 ? "..." : ""}
                             </p>
 
@@ -328,7 +328,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
 
           {/* Empty state */}
           {visibleCategories.length === 0 && (
-            <div className="text-center py-20 text-[#9a9a9a] text-sm">
+            <div className="text-center py-20 text-[#0a0a0a] text-sm">
               No vehicles found.
             </div>
           )}

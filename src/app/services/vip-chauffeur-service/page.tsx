@@ -313,7 +313,7 @@ export default function VipChauffeurServicePage() {
                 <h3 className="text-base font-light text-[#0a0a0a] tracking-tight mb-3">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#9a9a9a] font-light leading-relaxed">
+                <p className="text-xs text-[#0a0a0a] font-light leading-relaxed">
                   {item.text}
                 </p>
               </div>
@@ -352,7 +352,7 @@ export default function VipChauffeurServicePage() {
                 <h3 className="text-sm font-light text-[#0a0a0a] tracking-tight mb-2">
                   {step.title}
                 </h3>
-                <p className="text-xs text-[#9a9a9a] font-light leading-relaxed">
+                <p className="text-xs text-[#0a0a0a] font-light leading-relaxed">
                   {step.desc}
                 </p>
               </div>

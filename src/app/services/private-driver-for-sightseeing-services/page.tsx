@@ -541,7 +541,7 @@ export default function PrivateDriverSightseeingPage() {
                 <h3 className="text-sm text-[#0a0a0a] font-light group-hover:text-[#AB5461] leading-relaxed">
                   {b.title}
                 </h3>
-                <span className="mt-3 inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#9a9a9a]">
+                <span className="mt-3 inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a]">
                   Read More
                   <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -565,7 +565,7 @@ export default function PrivateDriverSightseeingPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">privately and in comfort</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               Half day, full day or multi-day — tell us what you want to see and we will take care of everything else.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -585,7 +585,7 @@ export default function PrivateDriverSightseeingPage() {
                 +971 50 920 0818
               </a>
             </div>
-            <p className="text-[#9a9a9a] text-xs font-light">
+            <p className="text-[#0a0a0a] text-xs font-light">
               Private sightseeing tours available across Dubai, Abu Dhabi, Sharjah and the wider UAE — with professional drivers, premium vehicles and fully flexible itineraries.
             </p>
           </div>

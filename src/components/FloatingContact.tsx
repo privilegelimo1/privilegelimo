@@ -74,7 +74,7 @@ export default function ChatWidget() {
                 </div>
                 <div>
                   <p className="font-bold text-[#0a0a0a] text-sm">WhatsApp</p>
-                  <p className="text-[#9a9a9a] text-xs font-light">Chat with us instantly</p>
+                  <p className="text-[#0a0a0a] text-xs font-light">Chat with us instantly</p>
                 </div>
               </a>
 
@@ -88,7 +88,7 @@ export default function ChatWidget() {
                 </div>
                 <div>
                   <p className="font-bold text-[#0a0a0a] text-sm">Call Us</p>
-                  <p className="text-[#9a9a9a] text-xs font-light">+971 50 920 0818</p>
+                  <p className="text-[#0a0a0a] text-xs font-light">+971 50 920 0818</p>
                 </div>
               </a>
 

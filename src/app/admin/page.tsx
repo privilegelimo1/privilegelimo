@@ -44,7 +44,7 @@ export default async function AdminPage() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-light text-[#0a0a0a] tracking-tight">Dashboard</h1>
-        <p className="text-sm text-[#9a9a9a] font-light mt-1">
+        <p className="text-sm text-[#0a0a0a] font-light mt-1">
           Manage your fleet, blog and SEO — Privilege Limo
         </p>
       </div>

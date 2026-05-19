@@ -82,7 +82,7 @@ async function logout() {
       <div className="px-3 py-4 border-t border-[#f5f5f5]">
         <button
           onClick={logout}
-          className="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm text-[#9a9a9a] hover:bg-[#fafafa] hover:text-red-500 transition-all"
+          className="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm text-[#0a0a0a] hover:bg-[#fafafa] hover:text-red-500 transition-all"
         >
           <LogOut size={15} className="shrink-0" />
           Sign out

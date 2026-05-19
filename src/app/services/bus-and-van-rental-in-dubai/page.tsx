@@ -308,7 +308,7 @@ export default function BusVanRentalPage() {
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   Luxury Bus and Van Rental in Dubai, UAE at an affordable price so that you can enjoy the ride without any worries. You can have a good and happy ride with our Bus and Van rental services in Dubai to share a wonderful experience with them. They will help you with the timely pickup and drop so that you will not feel any inconvenience during this trip. Our services are characterized by professionalism hence our drivers will be punctual, friendly, and courteous and know all the major routes across Dubai. Hence they will help you reach any location easily.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-8">
+                <p className="text-[#0a0a0a] text-sm font-light leading-relaxed mb-8">
                   Privilege Luxury Travel stands at the forefront of the luxury transportation sector in the United Arab Emirates, specifically in Dubai, a city renowned for its grandeur and opulence. Established with the mission of providing unparalleled travel experiences, Privilege Luxury Travel is committed to delivering high-quality service that caters to the diverse needs of its clientele. With an emphasis on comfort and elegance, the company aims to make every journey a memorable adventure.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-10">
@@ -349,7 +349,7 @@ export default function BusVanRentalPage() {
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   The reputation of Privilege Luxury Travel has been cultivated through years of dedicated service, positioning it as a trusted name among local and international travelers alike. Their commitment to excellence is reflected in their meticulous attention to detail, ensuring that every vehicle is not only pristine but also equipped with top-of-the-line amenities. This level of care is crucial in a market where luxury is not merely expected but is a fundamental aspect of the travel experience.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-8">
+                <p className="text-[#0a0a0a] text-sm font-light leading-relaxed mb-8">
                   Privilege Luxury Travel offers an extensive range of transportation options tailored to varying group sizes and travel requirements. From luxury sedans for intimate gatherings and corporate meetings to spacious buses and vans designed for larger groups, their fleet accommodates all styles of travel. Each vehicle is complemented by professionally trained chauffeurs who embody the essence of hospitality and professionalism, ensuring that clients receive not just a ride, but a luxurious journey through the captivating landscapes of Dubai.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-10">
@@ -422,10 +422,10 @@ export default function BusVanRentalPage() {
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   When planning group travel in Dubai, selecting luxury bus and van rentals offers a multitude of benefits that elevate the entire experience. One of the primary advantages is the unparalleled comfort that these vehicles provide. With spacious seating, high-quality materials, and climate control, passengers can relax and enjoy their journey without the constraints often found in standard transportation options.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-4">
+                <p className="text-[#0a0a0a] text-sm font-light leading-relaxed mb-4">
                   In addition to comfort, luxury rentals ensure convenience for travelers. Large groups need transportation that accommodates everyone while simplifying logistics. Luxury buses and vans are designed to host various group sizes, making it easier to coordinate pick-ups and drop-offs. This level of convenience is particularly beneficial for corporate events, weddings, and city tours, where time efficiency is crucial.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-8">
+                <p className="text-[#0a0a0a] text-sm font-light leading-relaxed mb-8">
                   The luxury amenities featured in these vehicles further distinguish them from standard rentals. Modern buses and vans often come equipped with advanced entertainment systems, Wi-Fi, and refreshments, ensuring a pleasant atmosphere for passengers. These features contribute positively to the travel experience, allowing groups to socialize and relax throughout their journey.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-10">
@@ -466,10 +466,10 @@ export default function BusVanRentalPage() {
                 <p className="text-[#6a6a6a] text-sm font-light leading-relaxed mb-4">
                   Dubai stands out as a premier luxury travel destination, captivating visitors with its dazzling array of attractions and experiences. As one of the globe's most affluent cities, it offers an extensive range of opulent hotels, each promising state-of-the-art amenities and unmatched service. The Burj Al Arab, a symbol of luxury in itself, alongside the iconic Atlantis, The Palm, showcases Dubai's dedication to extravagance, providing guests with unparalleled comfort and stunning views.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-4">
+                <p className="text-[#0a0a0a] text-sm font-light leading-relaxed mb-4">
                   In addition to these luxurious accommodations, Dubai is home to some of the world's most revered landmarks. The awe-inspiring Burj Khalifa, towering over the city skyline, offers a breathtaking observation deck that allows visitors to take in panoramic views of the city. The Dubai Mall, an expansive shopping extravaganza, features high-end retailers along with gourmet dining options, making it a shopping haven for those seeking luxury brands.
                 </p>
-                <p className="text-[#9a9a9a] text-sm font-light leading-relaxed mb-8">
+                <p className="text-[#0a0a0a] text-sm font-light leading-relaxed mb-8">
                   High-end shopping experiences abound in Dubai, particularly in the many luxurious retail environments. From unique boutiques to international luxury brands, shopping enthusiasts are sure to find what they desire. The Gold Souk, with its dazzling displays of gold and jewelry, stands out as a must-visit destination. Such experiences are complemented perfectly by the ease of transportation provided by luxury bus and van rentals.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-10">
@@ -603,7 +603,7 @@ export default function BusVanRentalPage() {
               {faqs.map((faq) => (
                 <div key={faq.q} className="p-7 rounded-3xl bg-white border border-[#efefef]">
                   <h3 className="text-sm font-semibold text-[#0a0a0a] mb-2 tracking-tight">{faq.q}</h3>
-                  <p className="text-sm text-[#9a9a9a] font-light leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-[#0a0a0a] font-light leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -644,7 +644,7 @@ export default function BusVanRentalPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">in comfort</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-10 max-w-sm mx-auto leading-relaxed">
               On your next trip - do you want to talk with us? So don't be late.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

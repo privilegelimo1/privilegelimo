@@ -395,7 +395,7 @@ export default function EventTransportationPage() {
                 <h3 className="text-sm font-light text-[#0a0a0a] mb-2 tracking-tight">
                   {e.name}
                 </h3>
-                <p className="text-xs text-[#9a9a9a] font-light leading-relaxed">{e.detail}</p>
+                <p className="text-xs text-[#0a0a0a] font-light leading-relaxed">{e.detail}</p>
               </div>
             ))}
           </div>
@@ -583,7 +583,7 @@ export default function EventTransportationPage() {
               <br />
               <span className="text-[#AB5461] italic font-extralight">With Privilege Limo</span>
             </h2>
-            <p className="text-[#9a9a9a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-[#0a0a0a] text-sm font-light mb-8 max-w-sm mx-auto leading-relaxed">
               From a single VIP arrival to full-scale
               <br />
               guest fleet coordination — we handle it all.

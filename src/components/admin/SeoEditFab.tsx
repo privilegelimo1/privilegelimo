@@ -63,7 +63,7 @@ export default function SeoEditFab() {
 
   const field = (key: keyof SeoRow, label: string, rows = 1) => (
     <div key={key}>
-      <label className="block text-[10px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-1">
+      <label className="block text-[10px] font-semibold text-[#0a0a0a] uppercase tracking-wider mb-1">
         {label}
       </label>
       {rows > 1 ? (
@@ -105,7 +105,7 @@ export default function SeoEditFab() {
                 <p className="font-medium text-[#0a0a0a] text-sm">Edit SEO</p>
                 <p className="font-mono text-[10px] text-[#0a0a0a] mt-0.5">{pathname}</p>
               </div>
-              <button onClick={() => setOpen(false)} className="p-1.5 rounded-lg text-[#9a9a9a] hover:bg-[#f5f5f5] transition-all">
+              <button onClick={() => setOpen(false)} className="p-1.5 rounded-lg text-[#0a0a0a] hover:bg-[#f5f5f5] transition-all">
                 <X size={15} />
               </button>
             </div>

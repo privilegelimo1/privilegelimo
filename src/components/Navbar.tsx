@@ -148,7 +148,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-medium text-[#0a0a0a] group-hover:text-white transition-colors">Call & Book</p>
-                  <p className="text-[11px] text-[#9a9a9a] group-hover:text-white/60 font-light transition-colors">+971 50 920 0818 · Instant confirmation</p>
+                  <p className="text-[11px] text-[#0a0a0a] group-hover:text-white/60 font-light transition-colors">+971 50 920 0818 · Instant confirmation</p>
                 </div>
                 <svg className="w-4 h-4 text-[#ccc] group-hover:text-white group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -167,7 +167,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-medium text-[#0a0a0a]">Send Booking on WhatsApp</p>
-                  <p className="text-[11px] text-[#9a9a9a] font-light">Fill a quick form · We reply instantly</p>
+                  <p className="text-[11px] text-[#0a0a0a] font-light">Fill a quick form · We reply instantly</p>
                 </div>
                 <svg className="w-4 h-4 text-[#ccc] group-hover:text-[#25D366] group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -186,7 +186,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
           <div className="p-8 max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setStep("options")}
-              className="flex items-center gap-1.5 text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a] hover:text-[#0a0a0a] transition-colors mb-6"
+              className="flex items-center gap-1.5 text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a] hover:text-[#0a0a0a] transition-colors mb-6"
             >
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -209,7 +209,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
               {/* Name + Phone */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a]">Name *</label>
+                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a]">Name *</label>
                   <input
                     name="name" value={form.name} onChange={handleChange} required
                     placeholder="Your name"
@@ -217,7 +217,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a]">Phone *</label>
+                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a]">Phone *</label>
                   <input
                     name="phone" value={form.phone} onChange={handleChange} required
                     placeholder="+971 ..."
@@ -228,7 +228,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
 
               {/* Service */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a]">Service</label>
+                <label className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a]">Service</label>
                 <select
                   name="service" value={form.service} onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-[#efefef] text-sm text-[#0a0a0a] focus:outline-none focus:border-[#AB5461] transition-colors font-light bg-white"
@@ -242,7 +242,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
 
               {/* Date */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a]">Date & Time</label>
+                <label className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a]">Date & Time</label>
                 <input
                   type="datetime-local" name="date" value={form.date} onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-[#efefef] text-sm text-[#0a0a0a] focus:outline-none focus:border-[#AB5461] transition-colors font-light"
@@ -252,7 +252,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
               {/* Pickup + Dropoff */}
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a]">Pickup Location *</label>
+                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a]">Pickup Location *</label>
                   <input
                     name="pickup" value={form.pickup} onChange={handleChange} required
                     placeholder="Hotel, address or area"
@@ -260,7 +260,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a]">Drop-off Location *</label>
+                  <label className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a]">Drop-off Location *</label>
                   <input
                     name="dropoff" value={form.dropoff} onChange={handleChange} required
                     placeholder="Destination"
@@ -271,7 +271,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
 
               {/* Notes */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] tracking-[0.2em] uppercase text-[#9a9a9a]">Additional Notes</label>
+                <label className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a]">Additional Notes</label>
                 <textarea
                   name="notes" value={form.notes} onChange={handleChange} rows={2}
                   placeholder="Number of passengers, flight number, special requests..."
@@ -388,7 +388,7 @@ export default function Navbar() {
                       <Link key={s.href} href={s.href} onClick={() => setServicesOpen(false)}
                         className={`group flex flex-col gap-1 p-3 rounded-2xl transition-all duration-200 ${active ? "bg-[#fdf8ec] border border-[#e8d9a0]" : "hover:bg-[#fafafa] border border-transparent hover:border-[#efefef]"}`}>
                         <div className={`text-[11px] tracking-wide font-medium transition-colors ${active ? "text-[#AB5461]" : "text-[#0a0a0a] group-hover:text-[#AB5461]"}`}>{s.label}</div>
-                        <div className="text-[10px] text-[#9a9a9a] font-light">{s.desc}</div>
+                        <div className="text-[10px] text-[#0a0a0a] font-light">{s.desc}</div>
                       </Link>
                     );
                   })}
@@ -421,7 +421,7 @@ export default function Navbar() {
                       <Link key={f.href} href={f.href} onClick={() => setFleetOpen(false)}
                         className={`group flex flex-col gap-1 p-3 rounded-2xl transition-all duration-200 ${active ? "bg-[#fdf8ec] border border-[#e8d9a0]" : "hover:bg-[#fafafa] border border-transparent hover:border-[#efefef]"}`}>
                         <div className={`text-[11px] tracking-wide font-medium transition-colors ${active ? "text-[#AB5461]" : "text-[#0a0a0a] group-hover:text-[#AB5461]"}`}>{f.label}</div>
-                        <div className="text-[10px] text-[#9a9a9a] font-light">{f.desc}</div>
+                        <div className="text-[10px] text-[#0a0a0a] font-light">{f.desc}</div>
                       </Link>
                     );
                   })}
@@ -498,7 +498,7 @@ export default function Navbar() {
                         <Link key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
                           className={`flex flex-col gap-0.5 px-3 py-2.5 rounded-xl transition-colors ${active ? "bg-[#fdf8ec] text-[#AB5461]" : "hover:bg-[#fafafa] text-[#4a4a4a]"}`}>
                           <div className="text-[11px] tracking-wide font-medium">{s.label}</div>
-                          <div className="text-[9px] text-[#9a9a9a] font-light">{s.desc}</div>
+                          <div className="text-[9px] text-[#0a0a0a] font-light">{s.desc}</div>
                         </Link>
                       );
                     })}
@@ -525,7 +525,7 @@ export default function Navbar() {
                         <Link key={f.href} href={f.href} onClick={() => setMenuOpen(false)}
                           className={`flex flex-col gap-0.5 px-3 py-2.5 rounded-xl transition-colors ${active ? "bg-[#fdf8ec] text-[#AB5461]" : "hover:bg-[#fafafa] text-[#4a4a4a]"}`}>
                           <div className="text-[11px] tracking-wide font-medium">{f.label}</div>
-                          <div className="text-[9px] text-[#9a9a9a] font-light">{f.desc}</div>
+                          <div className="text-[9px] text-[#0a0a0a] font-light">{f.desc}</div>
                         </Link>
                       );
                     })}

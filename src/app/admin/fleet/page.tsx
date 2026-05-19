@@ -78,7 +78,7 @@ export default function AdminFleetPage() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-light text-[#0a0a0a] tracking-tight">Fleet</h1>
-          <p className="text-sm text-[#9a9a9a] font-light mt-1">
+          <p className="text-sm text-[#0a0a0a] font-light mt-1">
             {vehicles.length} vehicles across {Object.keys(grouped).length} categories
           </p>
         </div>
@@ -202,7 +202,7 @@ export default function AdminFleetPage() {
         {/* Empty state */}
         {vehicles.length === 0 && (
           <div className="bg-white rounded-2xl border border-[#efefef] py-20 text-center">
-            <p className="text-[#9a9a9a] font-light mb-1">No vehicles yet</p>
+            <p className="text-[#0a0a0a] font-light mb-1">No vehicles yet</p>
             <p className="text-[#0a0a0a] text-sm font-light mb-5">
               Seed from your fleet.json or add manually
             </p>
