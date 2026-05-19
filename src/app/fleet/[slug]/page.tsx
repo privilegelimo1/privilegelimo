@@ -32,36 +32,44 @@ export async function generateMetadata({
   const supabase = await createClient();
   const { data: category } = await supabase
     .from("vehicle_categories")
-    .select("slug, display_name, description, hero_image")
+    .select("slug, display_name, description, hero_image, meta_title, meta_description, og_image") // ← add new fields
     .eq("slug", slug)
     .single();
   if (!category) return {};
 
-  const heroImage = category.hero_image
-    ? category.hero_image.startsWith("http")
-      ? category.hero_image
-      : `https://www.privilegelimo.com${category.hero_image}`
-    : "https://www.privilegelimo.com/og-image.jpg";
+  // OG image priority: og_image → hero_image → default
+  const ogImage =
+    category.og_image ??
+    category.hero_image ??
+    "https://www.privilegelimo.com/og-image.jpg";
+
+  const fullOgImage = ogImage.startsWith("http")
+    ? ogImage
+    : `https://www.privilegelimo.com${ogImage}`;
+
+  // Title/desc priority: custom SEO fields → auto-generated fallback
+  const metaTitle       = category.meta_title       ?? `${category.display_name} Chauffeur Dubai`
+  const metaDescription = category.meta_description ?? category.description ?? ""
 
   return {
-    title: `${category.display_name} Chauffeur Dubai`,
-    description: category.description ?? "",
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: `https://www.privilegelimo.com/fleet/${slug}` },
     openGraph: {
-      title: `${category.display_name} Chauffeur Dubai`,
-      description: category.description ?? "",
+      title: metaTitle,
+      description: metaDescription,
       url: `https://www.privilegelimo.com/fleet/${slug}`,
       siteName: "Privilege Luxury Travel LLC",
       locale: "en_AE",
       type: "website",
-      images: [{ url: heroImage, width: 1200, height: 630, alt: `${category.display_name} Chauffeur Dubai`, type: "image/jpeg" }],
+      images: [{ url: fullOgImage, width: 1200, height: 630, alt: metaTitle, type: "image/jpeg" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category.display_name} Chauffeur Dubai`,
-      description: category.description ?? "",
+      title: metaTitle,
+      description: metaDescription,
       site: "@privilegeuae",
-      images: [heroImage],
+      images: [fullOgImage],
     },
     other: { "og:logo": "https://www.privilegelimo.com/logo.webp" },
   };
