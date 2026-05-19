@@ -3,40 +3,65 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
-  title: "Client Reviews & Testimonials | Privilege Luxury Travel Dubai",
-  description:
-    "Read real Google reviews from our clients. 5-star chauffeur service, luxury van rentals, airport transfers and more - trusted by hundreds across Dubai and UAE.",
-  alternates: { canonical: "https://www.privilegelimo.com/testimonials" },
-  openGraph: {
-  title:       "Client Reviews Dubai | Privilege Limo Testimonials",
-  description: "Read what our clients say about Privilege Limo. Trusted by executives, tourists, and corporate clients across Dubai and the UAE for premium chauffeur services. Real reviews, real experiences.",
-  url:         "https://www.privilegelimo.com/testimonials",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Client Testimonials | Privilege Limo Dubai",
-      type:   "image/jpeg",
-    },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Client Testimonials | Privilege Luxury Travel LLC Dubai",
-  description: "Read what our clients say about Privilege Limo. Trusted by executives, tourists, and corporate clients across Dubai and the UAE for premium chauffeur services. Real reviews, real experiences.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
+import { createClient } from "@/lib/supabase/server"
 
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical")
+    .eq("page_path", "/testimonials")
+    .single()
+
+  const title =
+    data?.title ?? "Client Reviews & Testimonials | Privilege Luxury Travel Dubai"
+  const description =
+    data?.description ??
+    "Read real Google reviews from our clients. 5-star chauffeur service, luxury van rentals, airport transfers and more - trusted by hundreds across Dubai and UAE."
+  const canonical =
+    data?.canonical ?? "https://www.privilegelimo.com/testimonials"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ?? "Client Reviews Dubai | Privilege Limo Testimonials",
+      description:
+        data?.description ??
+        "Read what our clients say about Privilege Limo. Trusted by executives, tourists, and corporate clients across Dubai and the UAE for premium chauffeur services. Real reviews, real experiences.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Client Testimonials | Privilege Limo Dubai",
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ?? "Client Testimonials | Privilege Luxury Travel LLC Dubai",
+      description:
+        data?.description ??
+        "Read what our clients say about Privilege Limo. Trusted by executives, tourists, and corporate clients across Dubai and the UAE for premium chauffeur services. Real reviews, real experiences.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 // ─── DATA - only reviews with actual text ────────────────────────────────────
 

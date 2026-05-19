@@ -6,42 +6,68 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
-export const metadata: Metadata = {
-  title: "VIP Chauffeur Service Dubai | Private Luxury Car with Driver",
-  description:
-    "Premium chauffeur service in Dubai for VIP individuals, private clients, celebrity travel, yacht arrivals and exclusive events. Professional chauffeur service.",
-  alternates: {
-    canonical: "https://www.privilegelimo.com/services/vip-chauffeur-service",
-  },
-  openGraph: {
-  title:       "VIP Chauffeur Service Dubai | Exclusive Luxury Private Driver UAE",
-  description: "Experience the pinnacle of luxury with Privilege Limo's VIP chauffeur service in Dubai — discreet professional drivers, premium vehicles, and fully personalised itinerary management. Available 24/7 for elite clients across the UAE.",
-  url:         "https://www.privilegelimo.com/services/vip-chauffeur-service",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "VIP Chauffeur Service Dubai | Privilege Limo",
-      type:   "image/jpeg",
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical")
+    .eq("page_path", "/services/vip-chauffeur-service")
+    .single()
+
+  const title =
+    data?.title ?? "VIP Chauffeur Service Dubai | Private Luxury Car with Driver"
+  const description =
+    data?.description ??
+    "Premium chauffeur service in Dubai for VIP individuals, private clients, celebrity travel, yacht arrivals and exclusive events. Professional chauffeur service."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/vip-chauffeur-service"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ??
+        "VIP Chauffeur Service Dubai | Exclusive Luxury Private Driver UAE",
+      description:
+        data?.description ??
+        "Experience the pinnacle of luxury with Privilege Limo's VIP chauffeur service in Dubai — discreet professional drivers, premium vehicles, and fully personalised itinerary management. Available 24/7 for elite clients across the UAE.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "VIP Chauffeur Service Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
     },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "VIP Chauffeur Service Dubai | Exclusive Luxury Private Driver UAE",
-  description: "Experience the pinnacle of luxury with Privilege Limo's VIP chauffeur service in Dubai — discreet professional drivers, premium vehicles, and fully personalised itinerary management. Available 24/7 for elite clients across the UAE.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ??
+        "VIP Chauffeur Service Dubai | Exclusive Luxury Private Driver UAE",
+      description:
+        data?.description ??
+        "Experience the pinnacle of luxury with Privilege Limo's VIP chauffeur service in Dubai — discreet professional drivers, premium vehicles, and fully personalised itinerary management. Available 24/7 for elite clients across the UAE.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 const pillars = [
   {

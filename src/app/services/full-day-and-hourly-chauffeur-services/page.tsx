@@ -7,42 +7,68 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
-export const metadata: Metadata = {
-  title: "Hourly Chauffeur Dubai | Full Day Driver Hire Service Dubai",
-  description:
-    "Book an hourly or full day chauffeur service in Dubai. Flexible as-directed hire with luxury sedans, SUVs and vans for business, sightseeing & personal travel.",
-  alternates: {
-    canonical: "https://www.privilegelimo.com/services/full-day-and-hourly-chauffeur-services ",
-  },
- openGraph: {
-  title:       "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire UAE",
-  description: "Book Privilege Limo by the hour or full day in Dubai — premium vehicles, professional chauffeurs, and total flexibility. Perfect for business meetings, events, shopping trips, and city travel across the UAE. Available 24/7.",
-  url:         "https://www.privilegelimo.com/services/full-day-and-hourly-chauffeur-services",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Hourly & Full Day Chauffeur Service Dubai | Privilege Limo",
-      type:   "image/jpeg",
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical")
+    .eq("page_path", "/services/full-day-and-hourly-chauffeur-services")
+    .single()
+
+  const title =
+    data?.title ?? "Hourly Chauffeur Dubai | Full Day Driver Hire Service Dubai"
+  const description =
+    data?.description ??
+    "Book an hourly or full day chauffeur service in Dubai. Flexible as-directed hire with luxury sedans, SUVs and vans for business, sightseeing & personal travel."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/full-day-and-hourly-chauffeur-services"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ??
+        "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire UAE",
+      description:
+        data?.description ??
+        "Book Privilege Limo by the hour or full day in Dubai — premium vehicles, professional chauffeurs, and total flexibility. Perfect for business meetings, events, shopping trips, and city travel across the UAE. Available 24/7.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Hourly & Full Day Chauffeur Service Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
     },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire UAE",
-  description: "Book Privilege Limo by the hour or full day in Dubai — premium vehicles, professional chauffeurs, and total flexibility. Perfect for business meetings, events, shopping trips, and city travel across the UAE. Available 24/7.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ??
+        "Hourly & Full Day Chauffeur Service Dubai | As Directed Hire UAE",
+      description:
+        data?.description ??
+        "Book Privilege Limo by the hour or full day in Dubai — premium vehicles, professional chauffeurs, and total flexibility. Perfect for business meetings, events, shopping trips, and city travel across the UAE. Available 24/7.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 const packages = [
   {

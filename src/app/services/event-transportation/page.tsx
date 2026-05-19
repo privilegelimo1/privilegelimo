@@ -7,54 +7,80 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
-export const metadata: Metadata = {
-  title: "Event Transportation Dubai | VIP Chauffeur Service Dubai",
-  description:
-    "Premium event transportation in Dubai for conferences, exhibitions, weddings, private and corporate events. Luxury buses, VIP vans, sedans & chauffeur service.",
-  keywords: [
-    "event transportation Dubai",
-    "event chauffeur service Dubai",
-    "corporate event transport Dubai",
-    "wedding car service Dubai",
-    "luxury bus rental Dubai events",
-    "VIP event transport Dubai",
-    "conference transportation Dubai",
-    "group transport Dubai events",
-  ],
-  alternates: {
-    canonical: "https://www.privilegelimo.com/services/event-transportation",
-  },
-  openGraph: {
-  title:       "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur UAE",
-  description: "Seamless luxury event transportation in Dubai for conferences, weddings, exhibitions, and private functions. Professional VIP chauffeurs, luxury coaches, and executive fleets — fully coordinated for your event. Book 24/7.",
-  url:         "https://www.privilegelimo.com/services/event-transportation",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Event Transportation Dubai | Privilege Limo",
-      type:   "image/jpeg",
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/event-transportation")
+    .single()
+
+  const title =
+    data?.title ?? "Event Transportation Dubai | VIP Chauffeur Service Dubai"
+  const description =
+    data?.description ??
+    "Premium event transportation in Dubai for conferences, exhibitions, weddings, private and corporate events. Luxury buses, VIP vans, sedans & chauffeur service."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/event-transportation"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "event transportation Dubai",
+      "event chauffeur service Dubai",
+      "corporate event transport Dubai",
+      "wedding car service Dubai",
+      "luxury bus rental Dubai events",
+      "VIP event transport Dubai",
+      "conference transportation Dubai",
+      "group transport Dubai events",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ??
+        "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur UAE",
+      description:
+        data?.description ??
+        "Seamless luxury event transportation in Dubai for conferences, weddings, exhibitions, and private functions. Professional VIP chauffeurs, luxury coaches, and executive fleets — fully coordinated for your event. Book 24/7.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Event Transportation Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
     },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur UAE",
-  description: "Seamless luxury event transportation in Dubai for conferences, weddings, exhibitions, and private functions. Professional VIP chauffeurs, luxury coaches, and executive fleets — fully coordinated for your event. Book 24/7.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ??
+        "Event Transportation Dubai | Luxury Group & VIP Event Chauffeur UAE",
+      description:
+        data?.description ??
+        "Seamless luxury event transportation in Dubai for conferences, weddings, exhibitions, and private functions. Professional VIP chauffeurs, luxury coaches, and executive fleets — fully coordinated for your event. Book 24/7.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 

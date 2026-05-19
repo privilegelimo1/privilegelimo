@@ -5,73 +5,72 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
-// ─── METADATA ─────────────────────────────────────────────────────────────────
+/// ─── METADATA ─────────────────────────────────────────────────────────────────
 
-export const metadata: Metadata = {
-  title: "Luxury Van Rental Dubai | V-Class, Vito & Sprinter with Driver — Privilege Limo",
-  description:
-    "Book a luxury van rental in Dubai with a professional chauffeur. Mercedes V-Class, Vito Tourer, V 300 Tiffany, Sprinter Avant Garde VIP, Business Class VIP & more. Groups of 7 to 19. Available 24/7.",
-  keywords: [
-    "luxury van rental dubai",
-    "mercedes v class rental dubai",
-    "mercedes vito rental dubai",
-    "mercedes sprinter rental dubai",
-    "van with driver dubai",
-    "luxury van hire dubai",
-    "mercedes v class with driver",
-    "sprinter van rental dubai",
-    "group transfer dubai",
-    "vip van dubai",
-    "corporate van hire dubai",
-    "mercedes sprinter rent dubai",
-    "luxury minivan dubai",
-    "van chauffeur service dubai",
-    "mercedes benz van rent",
-    "mercedes sprinter rent in dubai",
-    "7 seater van dubai",
-    "11 seater van dubai",
-    "19 seater van dubai",
-    "family van hire dubai",
-    "event transport dubai",
-    "airport van transfer dubai",
-    "mercedes v300 tiffany dubai",
-    "sprinter avant garde dubai",
-  ],
-  alternates: {
-    canonical: "https://www.privilegelimo.com/services/luxury-van-rental-in-dubai",
-  },
-  openGraph: {
-    title: "Luxury Van Rental Dubai | V-Class, Vito & Sprinter with Driver — Privilege Limo",
-    description:
-      "Book a luxury van rental in Dubai with a professional chauffeur. Mercedes V-Class, Vito, Sprinter Avant Garde VIP & more — airport transfers, corporate groups, weddings and events. From AED 350.",
-    url: "https://www.privilegelimo.com/services/luxury-van-rental-in-dubai",
-    siteName: "Privilege Luxury Travel LLC",
-    locale: "en_AE",
-    type: "website",
-    images: [
-      {
-        url: "https://www.privilegelimo.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Luxury Van Rental in Dubai | Privilege Limo",
-        type: "image/jpeg",
-      },
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/luxury-van-rental-in-dubai")
+    .single()
+
+  const title       = data?.title       ?? "Luxury Van Rental Dubai | V-Class, Vito & Sprinter with Driver — Privilege Limo"
+  const description = data?.description ?? "Book a luxury van rental in Dubai with a professional chauffeur. Mercedes V-Class, Vito Tourer, V 300 Tiffany, Sprinter Avant Garde VIP, Business Class VIP & more. Groups of 7 to 19. Available 24/7."
+  const canonical   = data?.canonical   ?? "https://www.privilegelimo.com/services/luxury-van-rental-in-dubai"
+  const ogImage     = data?.og_image    ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "luxury van rental dubai",
+      "mercedes v class rental dubai",
+      "mercedes vito rental dubai",
+      "mercedes sprinter rental dubai",
+      "van with driver dubai",
+      "luxury van hire dubai",
+      "mercedes v class with driver",
+      "sprinter van rental dubai",
+      "group transfer dubai",
+      "vip van dubai",
+      "corporate van hire dubai",
+      "mercedes sprinter rent dubai",
+      "luxury minivan dubai",
+      "van chauffeur service dubai",
+      "mercedes benz van rent",
+      "mercedes sprinter rent in dubai",
+      "7 seater van dubai",
+      "11 seater van dubai",
+      "19 seater van dubai",
+      "family van hire dubai",
+      "event transport dubai",
+      "airport van transfer dubai",
+      "mercedes v300 tiffany dubai",
+      "sprinter avant garde dubai",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Luxury Van Rental Dubai | V-Class, Vito & Sprinter with Driver — Privilege Limo",
-    description:
-      "Book a luxury van rental in Dubai with a professional chauffeur. Mercedes V-Class, Vito, Sprinter Avant Garde VIP & more. From AED 350. Available 24/7.",
-    site: "@privilegeuae",
-    images: ["https://www.privilegelimo.com/og-image.jpg"],
-  },
-  other: {
-    "og:logo": "https://www.privilegelimo.com/logo.webp",
-  },
-};
-
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url:      canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale:   "en_AE",
+      type:     "website",
+      images:   [{ url: ogImage, width: 1200, height: 630, alt: title, type: "image/jpeg" }],
+    },
+    twitter: {
+      card:        "summary_large_image",
+      title,
+      description,
+      site:        "@privilegeuae",
+      images:      [ogImage],
+    },
+    other: { "og:logo": "https://www.privilegelimo.com/logo.webp" },
+  }
+}
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
 type VanVehicle = {

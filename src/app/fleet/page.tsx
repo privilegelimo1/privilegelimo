@@ -8,49 +8,75 @@ import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Our Fleet | Luxury Chauffeur Vehicles Dubai",
-  description:
-    "Browse our full fleet of luxury chauffeur vehicles in Dubai - Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur.",
-  keywords: [
-    "luxury car hire Dubai",
-    "chauffeur fleet Dubai",
-    "Mercedes S-Class hire Dubai",
-    "BMW 7 Series chauffeur Dubai",
-    "Mercedes V-Class Dubai",
-    "luxury van hire Dubai",
-    "VIP car Dubai",
-  ],
-  alternates: { canonical: "https://www.privilegelimo.com/fleet" },
-  openGraph: {
-    title:       "Our Fleet | Luxury Chauffeur Vehicles Dubai",
-    description: "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai — Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
-    url:         "https://www.privilegelimo.com/fleet",
-    siteName:    "Privilege Luxury Travel LLC",
-    locale:      "en_AE",
-    type:        "website",
-    images: [
-      {
-        url:    "https://www.privilegelimo.com/og-image.jpg",
-        width:  1200,
-        height: 630,
-        alt:    "Luxury Chauffeur Fleet Dubai | Privilege Limo",
-        type:   "image/jpeg",
-      },
-    ],
-  },
-  twitter: {
-    card:        "summary_large_image",
-    title:       "Our Fleet | Luxury Chauffeur Vehicles Dubai",
-    description: "Browse Privilege Limo's full fleet of luxury chauffeur vehicles in Dubai — Mercedes S-Class, BMW 7 Series, V-Class, Sprinter, and more. All with professional chauffeur. Book 24/7.",
-    site:        "@privilegeuae",
-    images:      ["https://www.privilegelimo.com/og-image.jpg"],
-  },
-  other: {
-    "og:logo": "https://www.privilegelimo.com/logo.webp",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services")
+    .single()
 
+  const title =
+    data?.title ?? "Our Services | Luxury Chauffeur & Van Rental Dubai"
+  const description =
+    data?.description ??
+    "Explore all Privilege Limo chauffeur services in Dubai & UAE. Luxury chauffeur service, Mercedes Sprinter van rental, Mercedes V-Class, Vito, bus hire and more."
+  const canonical =
+    data?.canonical ?? "https://www.privilegelimo.com/services"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "luxury chauffeur service dubai",
+      "mercedes van rental dubai",
+      "mercedes sprinter rental dubai",
+      "airport transfer dubai",
+      "bus rental dubai",
+      "car with driver dubai",
+      "privilege limo services",
+      "luxury transport dubai",
+      "corporate chauffeur dubai",
+      "vip transfer dubai",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ?? "Our Services | Luxury Chauffeur & Transportation Services Dubai",
+      description:
+        data?.description ??
+        "Explore the full range of luxury chauffeur services by Privilege Limo — airport transfers, monthly rentals, corporate travel, van & bus hire, wedding cars, and more. Available 24/7 across Dubai and the UAE.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Luxury Chauffeur Services Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ?? "Our Services | Luxury Chauffeur & Transportation Services Dubai",
+      description:
+        data?.description ??
+        "Explore the full range of luxury chauffeur services by Privilege Limo — airport transfers, monthly rentals, corporate travel, van & bus hire, wedding cars, and more. Available 24/7 across Dubai and the UAE.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 const WA_SVG = (
   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />

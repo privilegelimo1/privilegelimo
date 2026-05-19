@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
@@ -34,64 +35,89 @@ type Vehicle = {
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
-export const metadata: Metadata = {
-  title: "Monthly Car Rental Dubai | Luxury Chauffeur Service UAE",
-  description:
-    "Monthly car rental with driver in Dubai. Long-term chauffeur for executives, families and businesses across UAE. Luxury sedans, SUVs and vans on monthly basis.",
-  keywords: [
-    "monthly car rental with driver dubai",
-    "long term chauffeur hire dubai",
-    "monthly chauffeur service dubai",
-    "monthly driver rental dubai",
-    "rent a car with driver monthly dubai",
-    "monthly car hire with driver uae",
-    "executive driver monthly dubai",
-    "personal driver monthly dubai",
-    "long term car hire with driver uae",
-    "monthly limousine service dubai",
-    "corporate driver hire monthly dubai",
-    "monthly driver service uae",
-    "dedicated chauffeur monthly dubai",
-    "monthly vehicle with driver dubai",
-    "car with driver monthly contract dubai",
-    "monthly chauffeur hire uae",
-    "personal chauffeur dubai monthly",
-    "long-term driver rental uae",
-    "monthly rental mercedes with driver",
-    "business driver hire monthly dubai",
-  ],
-  alternates: {
-    canonical: "https://www.privilegelimo.com/services/monthly-car-rental-with-driver",
-  },
-  openGraph: {
-  title:       "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
-  description: "Dedicated monthly car rental with driver packages across Dubai and the UAE. Same driver, same vehicle, same standard — every day. Ideal for executives, expats and corporate clients.",
-  url:         "https://www.privilegelimo.com/services/monthly-car-rental-with-driver",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Monthly Car Rental with Driver Dubai | Privilege Limo",
-      type:   "image/jpeg",
-    },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
-  description: "Dedicated monthly car rental with driver packages across Dubai and the UAE. Same driver, same vehicle, same standard — every day. Ideal for executives, expats and corporate clients.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
 
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/monthly-car-rental-with-driver")
+    .single()
+
+  const title =
+    data?.title ?? "Monthly Car Rental Dubai | Luxury Chauffeur Service UAE"
+  const description =
+    data?.description ??
+    "Monthly car rental with driver in Dubai. Long-term chauffeur for executives, families and businesses across UAE. Luxury sedans, SUVs and vans on monthly basis."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/monthly-car-rental-with-driver"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "monthly car rental with driver dubai",
+      "long term chauffeur hire dubai",
+      "monthly chauffeur service dubai",
+      "monthly driver rental dubai",
+      "rent a car with driver monthly dubai",
+      "monthly car hire with driver uae",
+      "executive driver monthly dubai",
+      "personal driver monthly dubai",
+      "long term car hire with driver uae",
+      "monthly limousine service dubai",
+      "corporate driver hire monthly dubai",
+      "monthly driver service uae",
+      "dedicated chauffeur monthly dubai",
+      "monthly vehicle with driver dubai",
+      "car with driver monthly contract dubai",
+      "monthly chauffeur hire uae",
+      "personal chauffeur dubai monthly",
+      "long-term driver rental uae",
+      "monthly rental mercedes with driver",
+      "business driver hire monthly dubai",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ??
+        "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
+      description:
+        data?.description ??
+        "Dedicated monthly car rental with driver packages across Dubai and the UAE. Same driver, same vehicle, same standard — every day. Ideal for executives, expats and corporate clients.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Monthly Car Rental with Driver Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ??
+        "Monthly Car Rental with Driver Dubai | Long-Term Chauffeur Service UAE",
+      description:
+        data?.description ??
+        "Dedicated monthly car rental with driver packages across Dubai and the UAE. Same driver, same vehicle, same standard — every day. Ideal for executives, expats and corporate clients.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
 const seoKeywords = [

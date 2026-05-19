@@ -2,40 +2,65 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { createClient } from "@/lib/supabase/server"
 
-export const metadata: Metadata = {
-  title: "Contact Us | Book Luxury Chauffeur Service Dubai",
-  description:
-    "Get in touch with Privilege Luxury Travel LLC. Book a luxury chauffeur, van, sprinter or bus in Dubai. Available 24/7 via WhatsApp, phone or email.",
-  alternates: { canonical: "https://www.privilegelimo.com/contact-us" },
-  openGraph: {
-  title:       "Contact Us | Privilege Luxury Travel LLC Dubai",
-  description: "Get in touch with Privilege Limo — available 24/7 for bookings, enquiries, and corporate accounts. Call, WhatsApp, or email our team in Dubai. Fast response guaranteed.",
-  url:         "https://www.privilegelimo.com/contact-us",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Contact Privilege Limo Dubai | 24/7 Luxury Chauffeur Service",
-      type:   "image/jpeg",
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical")
+    .eq("page_path", "/contact-us")
+    .single()
+
+  const title =
+    data?.title ?? "Contact Us | Book Luxury Chauffeur Service Dubai"
+  const description =
+    data?.description ??
+    "Get in touch with Privilege Luxury Travel LLC. Book a luxury chauffeur, van, sprinter or bus in Dubai. Available 24/7 via WhatsApp, phone or email."
+  const canonical =
+    data?.canonical ?? "https://www.privilegelimo.com/contact-us"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ?? "Contact Us | Privilege Luxury Travel LLC Dubai",
+      description:
+        data?.description ??
+        "Get in touch with Privilege Limo — available 24/7 for bookings, enquiries, and corporate accounts. Call, WhatsApp, or email our team in Dubai. Fast response guaranteed.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Contact Privilege Limo Dubai | 24/7 Luxury Chauffeur Service",
+          type: "image/jpeg",
+        },
+      ],
     },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Contact Us | Privilege Luxury Travel LLC Dubai",
-  description: "Get in touch with Privilege Limo — available 24/7 for bookings, enquiries, and corporate accounts. Call, WhatsApp, or email our team in Dubai. Fast response guaranteed.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ?? "Contact Us | Privilege Luxury Travel LLC Dubai",
+      description:
+        data?.description ??
+        "Get in touch with Privilege Limo — available 24/7 for bookings, enquiries, and corporate accounts. Call, WhatsApp, or email our team in Dubai. Fast response guaranteed.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 

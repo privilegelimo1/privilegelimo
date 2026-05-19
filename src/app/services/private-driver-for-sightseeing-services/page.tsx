@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
 
 // ─── TYPE ─────────────────────────────────────────────────────────────────────
@@ -34,61 +35,88 @@ type Vehicle = {
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
-export const metadata: Metadata = {
-  title: "Private Driver with Car Dubai -Sightseeing Chauffeur Service",
-  description:
-    "Explore Dubai in comfort with private driver for sightseeing. Customised city tours in luxury vehicles - Burj Khalifa, Palm Jumeirah, Old Dubai, Desert & more.",
-  keywords: [
-    "private driver for sightseeing dubai",
-    "dubai city tour with driver",
-    "private sightseeing tour dubai",
-    "hire a driver for a day dubai",
-    "private driver dubai tour",
-    "luxury city tour dubai",
-    "dubai tour with private chauffeur",
-    "private driver hire dubai",
-    "sightseeing car hire dubai",
-    "dubai day trip with driver",
-    "private guided tour dubai by car",
-    "hire car with driver for sightseeing uae",
-    "burj khalifa tour with driver",
-    "palm jumeirah tour dubai",
-    "old dubai tour with driver",
-    "full day driver hire dubai",
-    "half day sightseeing dubai",
-    "private driver abu dhabi tour",
-    "dubai desert tour with driver",
-    "tourist driver dubai",
-  ],
-  alternates: { canonical: "/services/private-driver-for-sightseeing-services" },
-  openGraph: {
-  title:       "Private Driver for Sightseeing Dubai | Personal Chauffeur City Tours UAE",
-  description: "Explore Dubai in style with a private driver. Visit the Burj Khalifa, Palm Jumeirah, Dubai Frame, and more at your own pace — fully flexible sightseeing tours with a professional chauffeur. Book 24/7.",
-  url:         "https://www.privilegelimo.com/services/private-driver-for-sightseeing-services",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Private Driver for Sightseeing Dubai | Privilege Limo",
-      type:   "image/jpeg",
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/private-driver-for-sightseeing-services")
+    .single()
+
+  const title =
+    data?.title ?? "Private Driver with Car Dubai -Sightseeing Chauffeur Service"
+  const description =
+    data?.description ??
+    "Explore Dubai in comfort with private driver for sightseeing. Customised city tours in luxury vehicles - Burj Khalifa, Palm Jumeirah, Old Dubai, Desert & more."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/private-driver-for-sightseeing-services"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "private driver for sightseeing dubai",
+      "dubai city tour with driver",
+      "private sightseeing tour dubai",
+      "hire a driver for a day dubai",
+      "private driver dubai tour",
+      "luxury city tour dubai",
+      "dubai tour with private chauffeur",
+      "private driver hire dubai",
+      "sightseeing car hire dubai",
+      "dubai day trip with driver",
+      "private guided tour dubai by car",
+      "hire car with driver for sightseeing uae",
+      "burj khalifa tour with driver",
+      "palm jumeirah tour dubai",
+      "old dubai tour with driver",
+      "full day driver hire dubai",
+      "half day sightseeing dubai",
+      "private driver abu dhabi tour",
+      "dubai desert tour with driver",
+      "tourist driver dubai",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ??
+        "Private Driver for Sightseeing Dubai | Personal Chauffeur City Tours UAE",
+      description:
+        data?.description ??
+        "Explore Dubai in style with a private driver. Visit the Burj Khalifa, Palm Jumeirah, Dubai Frame, and more at your own pace — fully flexible sightseeing tours with a professional chauffeur. Book 24/7.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Private Driver for Sightseeing Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
     },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Private Driver for Sightseeing Dubai | Personal Chauffeur City Tours UAE",
-  description: "Explore Dubai in style with a private driver. Visit the Burj Khalifa, Palm Jumeirah, Dubai Frame, and more at your own pace — fully flexible sightseeing tours with a professional chauffeur. Book 24/7.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ??
+        "Private Driver for Sightseeing Dubai | Personal Chauffeur City Tours UAE",
+      description:
+        data?.description ??
+        "Explore Dubai in style with a private driver. Visit the Burj Khalifa, Palm Jumeirah, Dubai Frame, and more at your own pace — fully flexible sightseeing tours with a professional chauffeur. Book 24/7.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 

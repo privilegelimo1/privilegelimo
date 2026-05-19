@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import { fleet } from "@/data/index";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
+
 
 // ─── FILTERED DATA ────────────────────────────────────────────────────────────
 
@@ -50,73 +52,97 @@ type Vehicle = {
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
-export const metadata: Metadata = {
-  title: "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
-  description:
-    "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
-  keywords: [
-    "rent a car with driver",
-    "airport transfer dubai",
-    "limousine rental dubai",
-    "mercedes s class rent",
-    "mercedes v class rent with driver",
-    "chauffeur hire in dubai",
-    "mercedes sprinter rent in dubai",
-    "mercedes van chauffeur service",
-    "mercedes benz van rent",
-    "chauffeur service abu dhabi",
-    "luxury bus booking in dubai",
-    "mercedes vito rental dubai",
-    "mercedes v class rental dubai",
-    "mercedes sprinter rental dubai",
-    "chauffeur service dubai",
-    "car hire in dubai with driver",
-    "sprinter van rental dubai",
-    "mercedes sprinter rent dubai",
-    "mercedes van rental dubai",
-    "car hire with driver in dubai",
-  ],
-  alternates: { canonical: "/services/luxury-chauffeur-service-in-dubai" },
-  openGraph: {
-    title:       "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
-    description: "Discover Premium chauffeur services in Dubai. Luxury Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
-    url:         "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai",
-    siteName:    "Privilege Luxury Travel LLC",
-    locale:      "en_AE",
-    type:        "website",
-    images: [
-      {
-        url:    "https://www.privilegelimo.com/og-image.jpg",
-        width:  1200,
-        height: 630,
-        alt:    "Luxury Chauffeur Service in Dubai | Privilege Limo",
-        type:   "image/jpeg",
-      },
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/luxury-chauffeur-service-in-dubai")
+    .single()
+
+  const title =
+    data?.title ?? "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE"
+  const description =
+    data?.description ??
+    "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/luxury-chauffeur-service-in-dubai"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "rent a car with driver",
+      "airport transfer dubai",
+      "limousine rental dubai",
+      "mercedes s class rent",
+      "mercedes v class rent with driver",
+      "chauffeur hire in dubai",
+      "mercedes sprinter rent in dubai",
+      "mercedes van chauffeur service",
+      "mercedes benz van rent",
+      "chauffeur service abu dhabi",
+      "luxury bus booking in dubai",
+      "mercedes vito rental dubai",
+      "mercedes v class rental dubai",
+      "mercedes sprinter rental dubai",
+      "chauffeur service dubai",
+      "car hire in dubai with driver",
+      "sprinter van rental dubai",
+      "mercedes sprinter rent dubai",
+      "mercedes van rental dubai",
+      "car hire with driver in dubai",
     ],
-  },
-  twitter: {
-    card:        "summary_large_image",
-    title:       "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
-    description: "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
-    site:        "@privilegeuae",
-    images:      ["https://www.privilegelimo.com/og-image.jpg"],
-  },
-  other: {
-    "og:logo": "https://www.privilegelimo.com/logo.webp",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ?? "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
+      description:
+        data?.description ??
+        "Discover Premium chauffeur services in Dubai. Luxury Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Luxury Chauffeur Service in Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ?? "Luxury Chauffeur Service in Dubai | Chauffeur Driven Cars UAE",
+      description:
+        data?.description ??
+        "Discover the pinnacle of comfort with luxury chauffeur services in Dubai. Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-};
-
+  }
+}
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 

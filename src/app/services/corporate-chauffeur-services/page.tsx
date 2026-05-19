@@ -7,54 +7,82 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview"
+import { createClient } from "@/lib/supabase/server"
+
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
-export const metadata: Metadata = {
-  title: "Corporate Chauffeur Dubai | Executive Transport Service",
-  description:
-    "Premium corporate chauffeur service in Dubai for executives, client meetings, roadshows, airport transfers and business events. Professional drivers Available",
-  keywords: [
-    "corporate chauffeur service Dubai",
-    "executive chauffeur Dubai",
-    "business chauffeur Dubai",
-    "corporate car service Dubai",
-    "executive car hire Dubai",
-    "business transport Dubai",
-    "hourly chauffeur Dubai",
-    "corporate limousine Dubai",
-  ],
-  alternates: {
-    canonical: "https://www.privilegelimo.com/services/corporate-chauffeur-services",
-  },
-  openGraph: {
-  title:       "Corporate Chauffeur Service Dubai | Executive Business Transport UAE",
-  description: "Premium corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows, and VIP guest movement. Discreet, punctual, and professional — trusted by leading businesses across the UAE.",
-  url:         "https://www.privilegelimo.com/services/corporate-chauffeur-services",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Corporate Chauffeur Service Dubai | Privilege Limo",
-      type:   "image/jpeg",
+
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/corporate-chauffeur-services")
+    .single()
+
+  const title =
+    data?.title ?? "Corporate Chauffeur Dubai | Executive Transport Service"
+  const description =
+    data?.description ??
+    "Premium corporate chauffeur service in Dubai for executives, client meetings, roadshows, airport transfers and business events. Professional drivers Available"
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/corporate-chauffeur-services"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "corporate chauffeur service Dubai",
+      "executive chauffeur Dubai",
+      "business chauffeur Dubai",
+      "corporate car service Dubai",
+      "executive car hire Dubai",
+      "business transport Dubai",
+      "hourly chauffeur Dubai",
+      "corporate limousine Dubai",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ??
+        "Corporate Chauffeur Service Dubai | Executive Business Transport UAE",
+      description:
+        data?.description ??
+        "Premium corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows, and VIP guest movement. Discreet, punctual, and professional — trusted by leading businesses across the UAE.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Corporate Chauffeur Service Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
     },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Corporate Chauffeur Service Dubai | Executive Business Transport UAE",
-  description: "Premium corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows, and VIP guest movement. Discreet, punctual, and professional — trusted by leading businesses across the UAE.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ??
+        "Corporate Chauffeur Service Dubai | Executive Business Transport UAE",
+      description:
+        data?.description ??
+        "Premium corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows, and VIP guest movement. Discreet, punctual, and professional — trusted by leading businesses across the UAE.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 

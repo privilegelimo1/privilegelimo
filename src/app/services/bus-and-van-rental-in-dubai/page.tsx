@@ -8,56 +8,86 @@ import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import { fleet } from "@/data/index";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
-export const metadata: Metadata = {
-  title: "Bus and Van Rental Dubai | Luxury Coach Hire UAE",
-  description:
-    "Privilege Luxury Travel LLC provides affordable luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire.",
-  keywords: [
-    "van rental in dubai",
-    "luxury van rental in dubai",
-    "sprinter van rental in dubai",
-    "mercedes sprinter rental dubai",
-    "14 seat van rental in dubai",
-    "mercedes vito rental dubai",
-    "mercedes v class rental dubai",
-    "luxury coach bus rental in dubai",
-    "luxury bus rental dubai",
-    "scania bus rental in dubai",
-    "scania luxury bus rent in dubai",
-    "king long luxury bus for rent in dubai",
-    "bus rental dubai",
-    "group transport dubai",
-  ],
-  alternates: { canonical: "/services/bus-and-van-rental-in-dubai" },
-  openGraph: {
-  title:       "Bus and Van Rental Dubai | Luxury Coach Hire UAE",
-  description: "Rent a luxury bus or van in Dubai with professional driver. Mercedes Sprinter, V-Class, coaches up to 50 seats — perfect for corporate events, group transfers, airport pickups & tours.",
-  url:         "https://www.privilegelimo.com/services/bus-and-van-rental-in-dubai",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Bus and Van Rental Dubai | Privilege Limo",
-      type:   "image/jpeg",
+
+// METADATA –––––––––––––––––––––––
+
+
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/bus-and-van-rental-in-dubai")
+    .single()
+
+  const title =
+    data?.title ?? "Bus and Van Rental Dubai | Luxury Coach Hire UAE"
+  const description =
+    data?.description ??
+    "Privilege Luxury Travel LLC provides affordable luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/bus-and-van-rental-in-dubai"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "van rental in dubai",
+      "luxury van rental in dubai",
+      "sprinter van rental in dubai",
+      "mercedes sprinter rental dubai",
+      "14 seat van rental in dubai",
+      "mercedes vito rental dubai",
+      "mercedes v class rental dubai",
+      "luxury coach bus rental in dubai",
+      "luxury bus rental dubai",
+      "scania bus rental in dubai",
+      "scania luxury bus rent in dubai",
+      "king long luxury bus for rent in dubai",
+      "bus rental dubai",
+      "group transport dubai",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ?? "Bus and Van Rental Dubai | Luxury Coach Hire UAE",
+      description:
+        data?.description ??
+        "Rent a luxury bus or van in Dubai with professional driver. Mercedes Sprinter, V-Class, coaches up to 50 seats — perfect for corporate events, group transfers, airport pickups & tours.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Bus and Van Rental Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
     },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Bus and Van Rental Dubai | Luxury Coach Hire UAE",
-  description: "Rent a luxury bus or van in Dubai with professional driver. Mercedes Sprinter, V-Class, coaches up to 50 seats — perfect for corporate events, group transfers, airport pickups & tours.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ?? "Bus and Van Rental Dubai | Luxury Coach Hire UAE",
+      description:
+        data?.description ??
+        "Rent a luxury bus or van in Dubai with professional driver. Mercedes Sprinter, V-Class, coaches up to 50 seats — perfect for corporate events, group transfers, airport pickups & tours.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 

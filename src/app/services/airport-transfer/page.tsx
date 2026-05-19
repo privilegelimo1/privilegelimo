@@ -7,55 +7,79 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedServices from "@/components/RelatedServices";
 import FleetPreview from "@/components/FleetPreview";
+import { createClient } from "@/lib/supabase/server"
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
-export const metadata: Metadata = {
-  title: "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
-  description:
-    "Book premium airport transfer in Dubai for DXB, DWC, Abu Dhabi and Sharjah. Luxury chauffeur service with flight tracking, meet & greet, and 24/7 availability.",
-  keywords: [
-    "airport transfer Dubai",
-    "DXB airport transfer",
-    "DWC airport transfer",
-    "Dubai airport chauffeur service",
-    "luxury airport pickup Dubai",
-    "Dubai airport drop off service",
-    "Dubai airport limo service",
-    "private airport transfer Dubai",
-  ],
-  alternates: {
-    canonical: "https://www.privilegelimo.com/services/airport-transfer",
-  },
-  openGraph: {
-  title:       "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
-  description: "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
-  url:         "https://www.privilegelimo.com/services/airport-transfer",
-  siteName:    "Privilege Luxury Travel LLC",
-  locale:      "en_AE",
-  type:        "website",
-  images: [
-    {
-      url:    "https://www.privilegelimo.com/og-image.jpg",
-      width:  1200,
-      height: 630,
-      alt:    "Airport Transfer Dubai | Privilege Limo",
-      type:   "image/jpeg",
-    },
-  ],
-},
-twitter: {
-  card:        "summary_large_image",
-  title:       "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
-  description: "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
-  site:        "@privilegeuae",
-  images:      ["https://www.privilegelimo.com/og-image.jpg"],
-},
-other: {
-  "og:logo": "https://www.privilegelimo.com/logo.webp",
-},
-};
 
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/services/airport-transfer")
+    .single()
+
+  const title =
+    data?.title ?? "Airport Transfer Dubai | DXB & DWC Chauffeur Service"
+  const description =
+    data?.description ??
+    "Book premium airport transfer in Dubai for DXB, DWC, Abu Dhabi and Sharjah. Luxury chauffeur service with flight tracking, meet & greet, and 24/7 availability."
+  const canonical =
+    data?.canonical ??
+    "https://www.privilegelimo.com/services/airport-transfer"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "airport transfer Dubai",
+      "DXB airport transfer",
+      "DWC airport transfer",
+      "Dubai airport chauffeur service",
+      "luxury airport pickup Dubai",
+      "Dubai airport drop off service",
+      "Dubai airport limo service",
+      "private airport transfer Dubai",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ?? "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
+      description:
+        data?.description ??
+        "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
+      url: canonical,
+      siteName: "Privilege Luxury Travel LLC",
+      locale: "en_AE",
+      type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Airport Transfer Dubai | Privilege Limo",
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ?? "Airport Transfer Dubai | DXB & DWC Chauffeur Service",
+      description:
+        data?.description ??
+        "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
+  }
+}
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 
 const stats = [

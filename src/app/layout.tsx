@@ -2,65 +2,67 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { headers } from "next/headers";
 import FloatingContactWrapper from "@/components/FloatingContactWrapper";
+import { createClient } from "@/lib/supabase/server"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.privilegelimo.com"),
-  title: "Privilege Limo | Luxury Chauffeur Services in Dubai",
-  description:
-    "Dubai's most trusted luxury chauffeur services. Premium airport transfers, corporate travel, weddings, VIP transfer & events across Dubai, Abu Dhabi & Sharjah.",
-  keywords: [
-    "luxury chauffeur Dubai",
-    "chauffeur service Dubai",
-    "airport transfer Dubai",
-    "airport transfer UAE",
-    "rent a car with driver Dubai",
-    "car hire with driver Dubai",
-    "corporate transfer Dubai",
-    "business transfer Dubai",
-    "limousine service Dubai",
-    "limo service Dubai",
-    "Mercedes Sprinter rental Dubai",
-    "luxury van rental Dubai",
-    "luxury bus rental Dubai",
-    "chauffeur driven cars Dubai",
-    "VIP transportation Dubai",
-    "wedding car Dubai",
-    "minivan rental Dubai",
-    "luxury car rental Dubai with driver",
-    "DXB airport transfer",
-    "chauffeur hire Dubai",
-    "Privilege Luxury Travel",
-    "privilegelimo.com",
-  ],
-  openGraph: {
-    title: "Privilege Limo | Luxury Chauffeur Service in Dubai",
-    description:
-      "25 years of premium chauffeur services in Dubai. Airport transfers, corporate travel, weddings & VIP events. Available 24/7.",
-    url: "https://www.privilegelimo.com",
-    siteName: "Privilege Luxury Travel LLC",
-    locale: "en_AE",
-    type: "website",
-    images: [
-      {
-        url: "https://www.privilegelimo.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Privilege Limo | Luxury Chauffeur Service in Dubai",
-        type: "image/jpeg",
-      },
+export async function generateMetadata(): Promise<Metadata> {
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from("page_seo")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/")
+    .single()
+
+  const title       = data?.title       ?? "Privilege Limo | Luxury Chauffeur Services in Dubai"
+  const description = data?.description ?? "Dubai's most trusted luxury chauffeur services. Premium airport transfers, corporate travel, weddings, VIP transfer & events across Dubai, Abu Dhabi & Sharjah."
+  const ogImage     = data?.og_image    ?? "https://www.privilegelimo.com/og-image.jpg"
+
+  return {
+    metadataBase: new URL("https://www.privilegelimo.com"),
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "luxury chauffeur Dubai",
+      "chauffeur service Dubai",
+      "airport transfer Dubai",
+      "airport transfer UAE",
+      "rent a car with driver Dubai",
+      "car hire with driver Dubai",
+      "corporate transfer Dubai",
+      "business transfer Dubai",
+      "limousine service Dubai",
+      "limo service Dubai",
+      "Mercedes Sprinter rental Dubai",
+      "luxury van rental Dubai",
+      "luxury bus rental Dubai",
+      "chauffeur driven cars Dubai",
+      "VIP transportation Dubai",
+      "wedding car Dubai",
+      "minivan rental Dubai",
+      "luxury car rental Dubai with driver",
+      "DXB airport transfer",
+      "chauffeur hire Dubai",
+      "Privilege Luxury Travel",
+      "privilegelimo.com",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Privilege Limo | Luxury Chauffeur Service in Dubai",
-    description: "Premium chauffeur & limousine services across Dubai & UAE. Book now.",
-    site: "@privilegeuae",
-    images: ["https://www.privilegelimo.com/og-image.jpg"],
-  },
-  other: {
-    "og:logo": "https://www.privilegelimo.com/logo.webp",
-  },
-};
+    openGraph: {
+      title,
+      description,
+      url:      "https://www.privilegelimo.com",
+      siteName: "Privilege Luxury Travel LLC",
+      locale:   "en_AE",
+      type:     "website",
+      images:   [{ url: ogImage, width: 1200, height: 630, alt: title, type: "image/jpeg" }],
+    },
+    twitter: {
+      card:        "summary_large_image",
+      title,
+      description,
+      site:        "@privilegeuae",
+      images:      [ogImage],
+    },
+    other: { "og:logo": "https://www.privilegelimo.com/logo.webp" },
+  }
+}
 
 export default async function RootLayout({
   children,
