@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const supabase = await createClient()
   const { data } = await supabase
-    .from("page_seo")
+    .from("seo_pages")
     .select("title, description, og_image, canonical, keywords")
     .eq("page_path", "/services")
     .single()
