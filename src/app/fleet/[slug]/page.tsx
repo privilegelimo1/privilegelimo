@@ -151,7 +151,7 @@ export default async function FleetClassPage({
         <div className="max-w-7xl mx-auto px-6">
           {cars.length === 0 ? (
             <div className="flex flex-col items-center text-center py-24">
-              <p className="text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0] mb-3">No vehicles</p>
+              <p className="text-[10px] tracking-[0.4em] uppercase text-[#0a0a0a] mb-3">No vehicles</p>
               <p className="text-sm text-[#9a9a9a] font-light mb-6">No vehicles are currently listed in this class.</p>
               <Link
                 href="/fleet"
@@ -200,14 +200,14 @@ export default async function FleetClassPage({
                       <div className="rounded-2xl bg-[#fafafa] border border-[#f0f0f0] px-4 py-3 mb-5 space-y-1.5">
                         {car.price_5hr && (
                           <div className="flex justify-between items-center">
-                            <span className="text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0]">5 Hour</span>
+                            <span className="text-[10px] tracking-[0.15em] uppercase text-[#0a0a0a]">5 Hour</span>
                             <span className="text-xs font-medium text-[#5a5a5a]">{car.price_5hr}</span>
                           </div>
                         )}
                         {car.price_5hr && car.price_10hr && <div className="h-px bg-[#efefef]" />}
                         {car.price_10hr && (
                           <div className="flex justify-between items-center">
-                            <span className="text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0]">10 Hour</span>
+                            <span className="text-[10px] tracking-[0.15em] uppercase text-[#0a0a0a]">10 Hour</span>
                             <span className="text-xs font-medium text-[#5a5a5a]">{car.price_10hr}</span>
                           </div>
                         )}
@@ -247,7 +247,7 @@ export default async function FleetClassPage({
       {/* ── BOTTOM CTA ────────────────────────────────────────── */}
       <section className="py-20 bg-gradient-to-b from-[#AB5461]/7 to-[#ab5461]/3">
         <div className="max-w-3xl mx-auto px-6 rounded-3xl md:p-16 border border-[#AB4561]/50 text-center">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Need Help Choosing?</span>
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Need Help Choosing?</span>
           <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight mb-4">
             Our team is available
             <br />

@@ -384,14 +384,14 @@ function VanCard({ van }: { van: VanVehicle }) {
         </p>
 
         {/* Feature label */}
-        <p className="text-[10px] tracking-[0.15em] text-[#b0b0b0] font-light">
+        <p className="text-[10px] tracking-[0.15em] text-[#0a0a0a] font-light">
           {van.featureLabel}
         </p>
 
         {/* Footer */}
         <div className="pt-4 border-t border-[#f0f0f0] flex items-end justify-between gap-3 mt-auto">
           <div className="flex flex-col">
-            <span className="text-[9px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light mb-0.5">
+            <span className="text-[9px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-0.5">
               {van.priceNote}
             </span>
             <span className="text-xl font-extralight text-[#AB5461] tracking-tight">
@@ -439,11 +439,11 @@ export default function LuxuryVanRentalPage() {
 
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 mb-8">
-                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
+                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors">
                   Home
                 </Link>
                 <span className="text-[#ddd]">/</span>
-                <Link href="/services" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
+                <Link href="/services" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors">
                   Services
                 </Link>
                 <span className="text-[#ddd]">/</span>
@@ -534,7 +534,7 @@ export default function LuxuryVanRentalPage() {
       <section className="py-28 bg-gradient-to-b from-[#AB5461]/3 to-[#AB5461]/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-16">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               Our Van &amp; Coach Fleet in Dubai
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
@@ -835,7 +835,7 @@ export default function LuxuryVanRentalPage() {
       {/* ── BLOG LINKS ────────────────────────────────────────────── */}
       <section className="py-16 bg-gradient-to-b from-[#AB5461]/6 to-[#AB5461]/5">
         <div className="max-w-7xl mx-auto px-6">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-3 block">
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-3 block">
             More About Van Rentals
           </span>
           <h2 className="text-xl md:text-2xl font-light text-[#0a0a0a] tracking-tight mb-8">
@@ -850,7 +850,7 @@ export default function LuxuryVanRentalPage() {
                 rel="noreferrer"
                 className="group p-6 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 bg-white"
               >
-                <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-2">
+                <span className="text-[9px] tracking-[0.4em] uppercase text-[#0a0a0a] block mb-2">
                   Article
                 </span>
                 <h3 className="text-sm text-[#0a0a0a] font-light group-hover:text-[#AB5461] leading-relaxed">
@@ -878,7 +878,7 @@ export default function LuxuryVanRentalPage() {
       <section className="py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#AB5461]/4">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461]/50 text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               CALL US 24/7
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
@@ -921,7 +921,7 @@ export default function LuxuryVanRentalPage() {
       {/* ── SEO KEYWORDS CLOUD ──────────────────────────────────────── */}
       <section className="py-16 bg-gradient-to-b from-[#AB5461]/4 to-[#AB5461]/3">
         <div className="max-w-7xl mx-auto px-6">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-6 block">
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-6 block">
             Our Services
           </span>
           <div className="flex flex-wrap gap-2">

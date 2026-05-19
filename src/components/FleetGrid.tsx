@@ -92,7 +92,7 @@ export default function FleetGrid({ fleet, categories }: Props) {
           {/* Section header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Full Collection</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Full Collection</span>
               <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
                 Every vehicle,
                 <span className="text-[#AB5461] italic font-extralight"> every occasion</span>
@@ -278,19 +278,19 @@ export default function FleetGrid({ fleet, categories }: Props) {
 
                             <div className="flex items-center gap-4 mb-5 pb-5 border-b border-[#f5f5f5]">
                               <div className="flex items-center gap-1.5">
-                                <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                <svg className="w-3.5 h-3.5 text-[#0a0a0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                                 </svg>
                                 <span className="text-[10px] text-[#7a7a7a] font-light">{v.passengers} pax</span>
                               </div>
                               <div className="flex items-center gap-1.5">
-                                <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                <svg className="w-3.5 h-3.5 text-[#0a0a0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                                 </svg>
                                 <span className="text-[10px] text-[#7a7a7a] font-light">{v.luggage} bags</span>
                               </div>
                               {feature && (
-                                <span className="text-[9px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light truncate">
+                                <span className="text-[9px] tracking-[0.15em] uppercase text-[#0a0a0a] font-light truncate">
                                   · {feature}
                                 </span>
                               )}

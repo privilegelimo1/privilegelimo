@@ -99,7 +99,7 @@ export default function BookingButton({
 
   const isValid = name && phone && date && pickup;
 
-  const inputClass = "w-full border border-[#e8d9a0] rounded-xl px-3 py-2.5 text-sm text-[#0a0a0a] focus:outline-none focus:border-[#AB5461] bg-[#fdf8ec]/50 placeholder:text-[#b0b0b0]";
+  const inputClass = "w-full border border-[#e8d9a0] rounded-xl px-3 py-2.5 text-sm text-[#0a0a0a] focus:outline-none focus:border-[#AB5461] bg-[#fdf8ec]/50 placeholder:text-[#0a0a0a]";
   const labelClass = "text-[10px] font-semibold text-[#9a9a9a] uppercase tracking-[0.3em] mb-1.5 block";
 
   return (
@@ -284,7 +284,7 @@ export default function BookingButton({
                     </svg>
                     Send Booking via WhatsApp
                   </button>
-                  <p className="text-center text-[11px] text-[#b0b0b0] mt-2 font-light">Opens WhatsApp · Confirmed within minutes</p>
+                  <p className="text-center text-[11px] text-[#0a0a0a] mt-2 font-light">Opens WhatsApp · Confirmed within minutes</p>
                 </div>
               </>
             )}

@@ -235,7 +235,7 @@ export default function HourlyChauffeurServicePage() {
               <div className="flex items-center gap-2 mb-8">
                 <Link
                   href="/services"
-                  className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+                  className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors"
                 >
                   Services
                 </Link>
@@ -308,7 +308,7 @@ export default function HourlyChauffeurServicePage() {
       {/* ── PACKAGES STRIP ─────────────────────────────────── */}
       <section className="bg-[#fafafa] border-t border-[#efefef] py-14 sm:py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-6 block font-light">
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-6 block font-light">
             Booking Options
           </span>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -395,7 +395,7 @@ export default function HourlyChauffeurServicePage() {
                 key={item.title}
                 className="bg-white rounded-3xl p-6 border border-[#AB5461]/30"
               >
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light mb-4">
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mb-4">
                   0{i + 1}
                 </p>
                 <h3 className="text-sm font-light text-[#0a0a0a] tracking-tight mb-3">{item.title}</h3>
@@ -556,7 +556,7 @@ export default function HourlyChauffeurServicePage() {
       {/* ── FINAL CTA ──────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/3">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] font-light block mb-5">
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] font-light block mb-5">
             Book Your Chauffeur
           </span>
           <h2 className="text-3xl md:text-5xl font-light text-[#0a0a0a] tracking-tight leading-tight">

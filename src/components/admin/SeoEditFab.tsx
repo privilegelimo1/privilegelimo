@@ -103,7 +103,7 @@ export default function SeoEditFab() {
             <div className="flex items-center justify-between px-6 py-4 border-b border-[#f0f0f0] sticky top-0 bg-white z-10">
               <div>
                 <p className="font-medium text-[#0a0a0a] text-sm">Edit SEO</p>
-                <p className="font-mono text-[10px] text-[#b0b0b0] mt-0.5">{pathname}</p>
+                <p className="font-mono text-[10px] text-[#0a0a0a] mt-0.5">{pathname}</p>
               </div>
               <button onClick={() => setOpen(false)} className="p-1.5 rounded-lg text-[#9a9a9a] hover:bg-[#f5f5f5] transition-all">
                 <X size={15} />
@@ -119,10 +119,10 @@ export default function SeoEditFab() {
               {field("og_image",    "OG Image URL")}
               {field("canonical",   "Canonical URL")}
               <div className="flex gap-6 text-xs">
-                <span className={row.title.length > 60 ? "text-red-500" : "text-[#b0b0b0]"}>
+                <span className={row.title.length > 60 ? "text-red-500" : "text-[#0a0a0a]"}>
                   Title: {row.title.length}/60
                 </span>
-                <span className={row.description.length > 160 ? "text-red-500" : "text-[#b0b0b0]"}>
+                <span className={row.description.length > 160 ? "text-red-500" : "text-[#0a0a0a]"}>
                   Desc: {row.description.length}/160
                 </span>
               </div>

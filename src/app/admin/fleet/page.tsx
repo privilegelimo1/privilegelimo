@@ -110,20 +110,20 @@ export default function AdminFleetPage() {
         {Object.entries(grouped).map(([classSlug, items]) => (
           <div key={classSlug}>
             <div className="flex items-center gap-3 mb-4">
-              <p className="text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0] font-medium">
+              <p className="text-[10px] tracking-[0.4em] uppercase text-[#0a0a0a] font-medium">
                 {classLabels[classSlug] ?? classSlug}
               </p>
               <div className="flex-1 h-px bg-[#f0f0f0]" />
-              <span className="text-[10px] text-[#b0b0b0]">{items.length}</span>
+              <span className="text-[10px] text-[#0a0a0a]">{items.length}</span>
             </div>
 
             <div className="bg-white rounded-2xl border border-[#efefef] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
               {/* Table header */}
               <div className="grid grid-cols-12 px-5 py-3 border-b border-[#f5f5f5] bg-[#fafafa]">
-                <div className="col-span-5 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">Vehicle</div>
-                <div className="col-span-2 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">Pax</div>
-                <div className="col-span-2 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">From</div>
-                <div className="col-span-2 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">Status</div>
+                <div className="col-span-5 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-medium">Vehicle</div>
+                <div className="col-span-2 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-medium">Pax</div>
+                <div className="col-span-2 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-medium">From</div>
+                <div className="col-span-2 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-medium">Status</div>
                 <div className="col-span-1" />
               </div>
 
@@ -151,7 +151,7 @@ export default function AdminFleetPage() {
                     </div>
                     <div className="min-w-0">
                       <p className="font-medium text-[#0a0a0a] text-sm truncate">{v.name}</p>
-                      <p className="text-[11px] text-[#b0b0b0] truncate mt-0.5">
+                      <p className="text-[11px] text-[#0a0a0a] truncate mt-0.5">
                         /fleet/{v.class_slug}/{v.slug}
                       </p>
                     </div>
@@ -203,7 +203,7 @@ export default function AdminFleetPage() {
         {vehicles.length === 0 && (
           <div className="bg-white rounded-2xl border border-[#efefef] py-20 text-center">
             <p className="text-[#9a9a9a] font-light mb-1">No vehicles yet</p>
-            <p className="text-[#b0b0b0] text-sm font-light mb-5">
+            <p className="text-[#0a0a0a] text-sm font-light mb-5">
               Seed from your fleet.json or add manually
             </p>
             <div className="flex items-center justify-center gap-3">

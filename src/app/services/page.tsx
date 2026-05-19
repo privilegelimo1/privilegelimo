@@ -304,7 +304,7 @@ export default function ServicesPage() {
 
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 mb-8">
-                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
+                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors">
                   Home
                 </Link>
                 <span className="text-[#ddd]">/</span>
@@ -330,7 +330,7 @@ export default function ServicesPage() {
                 From executive airport transfers to luxury group travel across the UAE, Privilege Limo offers a full suite of premium transportation services — all with professional chauffeurs, fixed pricing, and 24/7 availability.
               </p>
 
-              <p className="mt-2 text-[11px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light max-w-lg">
+              <p className="mt-2 text-[11px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light max-w-lg">
                 Airport Transfers · Corporate Travel · Weddings · Group Tours · Monthly Hire
               </p>
 
@@ -359,7 +359,7 @@ export default function ServicesPage() {
                 {stats.map((s) => (
                   <div key={s.label} className="rounded-2xl border border-[#f0e8ea] bg-[#f9f4f5] px-4 py-4 text-center">
                     <p className="text-xl font-light text-[#AB5461] tracking-tight">{s.value}</p>
-                    <p className="mt-1 text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light leading-snug">{s.label}</p>
+                    <p className="mt-1 text-[9px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light leading-snug">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -514,7 +514,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div className="lg:sticky lg:top-32 lg:self-start">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">FAQ</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">FAQ</span>
               <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Common questions
                 <br />
@@ -553,7 +553,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-3 block">Coverage</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-3 block">Coverage</span>
               <h3 className="text-xl font-light text-[#0a0a0a] tracking-tight">
                 Dubai · Abu Dhabi · Sharjah · All UAE Emirates
               </h3>
@@ -573,7 +573,7 @@ export default function ServicesPage() {
       <section className="py-24 border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               CALL US 24/7
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
@@ -616,7 +616,7 @@ export default function ServicesPage() {
                   rel="noreferrer"
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
-                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
+                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#0a0a0a] block mb-1.5">{c.label}</span>
                   <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}

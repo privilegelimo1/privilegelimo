@@ -168,14 +168,14 @@ export default function MercedesSprinterRentalPage() {
         <div className="flex items-center gap-2 mb-8">
           <Link
             href="/"
-            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+            className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors"
           >
             Home
           </Link>
           <span className="text-[#ddd]">/</span>
           <Link
             href="/services/luxury-chauffeur-service-in-dubai"
-            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+            className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors"
           >
             Our Fleet
           </Link>
@@ -421,7 +421,7 @@ export default function MercedesSprinterRentalPage() {
       <section className="py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               CALL US 24/7
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">

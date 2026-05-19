@@ -381,7 +381,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
             <AnimateIn direction="left">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
                 Our Fleet
               </span>
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
@@ -396,7 +396,7 @@ export default function HomePage() {
               <p className="text-[10px] tracking-[0.3em] uppercase text-[#AB5461] md:text-right">
                 All prices for transfer within Dubai
                 <br />
-                <span className="text-[#b0b0b0]">Subject to seasonal change</span>
+                <span className="text-[#0a0a0a]">Subject to seasonal change</span>
               </p>
             </AnimateIn>
           </div>
@@ -450,13 +450,13 @@ export default function HomePage() {
           {/* Footer */}
           <div className="flex items-center gap-4 pt-5 border-t border-[#f4f4f4]">
             <div className="flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-3.5 h-3.5 text-[#0a0a0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
               <span className="text-xs text-[#9a9a9a] font-light">{car.passengers}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5 text-[#b0b0b0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-3.5 h-3.5 text-[#0a0a0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
               </svg>
               <span className="text-xs text-[#9a9a9a] font-light">{car.luggage}</span>
@@ -501,7 +501,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <AnimateIn direction="left">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
                 Welcome to Privilege
               </span>
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight mb-8">
@@ -544,7 +544,7 @@ export default function HomePage() {
                     <div className="text-3xl font-extralight text-[#0a0a0a] mb-2 tracking-tight">
                       {s.value}
                     </div>
-                    <div className="text-[10px] tracking-[0.35em] uppercase text-[#b0b0b0]">
+                    <div className="text-[10px] tracking-[0.35em] uppercase text-[#0a0a0a]">
                       {s.label}
                     </div>
                   </div>
@@ -559,7 +559,7 @@ export default function HomePage() {
   <div className="max-w-7xl mx-auto px-6">
     <AnimateIn>
       <div className="mb-16">
-        <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+        <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
           What We Offer
         </span>
         <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
@@ -653,7 +653,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="max-w-xl mb-20">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
                 Why Privilege Limo
               </span>
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
@@ -690,7 +690,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="max-w-xl mb-20">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
                 Client Stories
               </span>
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
@@ -716,7 +716,7 @@ export default function HomePage() {
                   </p>
                   <footer>
                     <span className="text-sm font-medium text-[#0a0a0a] block">{t.name}</span>
-                    <span className="text-xs text-[#b0b0b0] tracking-wide font-light">{t.date}</span>
+                    <span className="text-xs text-[#0a0a0a] tracking-wide font-light">{t.date}</span>
                   </footer>
                 </blockquote>
               </AnimateIn>
@@ -730,7 +730,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6">
           <AnimateIn>
             <div className="mb-20 text-center">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">FAQ</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">FAQ</span>
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.1] tracking-tight">
                 Everything you need
                 <br />
@@ -751,7 +751,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-16">
-              <span className="text-[10px] tracking-[0.5em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.5em] uppercase text-[#0a0a0a] mb-5 block">
                 Ready to Ride
               </span>
               <h2 className="text-4xl md:text-5xl font-light text-[#0a0a0a] leading-[1.08] tracking-tight mb-4">
@@ -826,7 +826,7 @@ export default function HomePage() {
               ].map((c) => (
                 <a key={c.label} href={c.href} target={c.href.startsWith("https") ? "_blank" : undefined} rel="noreferrer"
                   className="group p-6 rounded-2xl border border-[#AB5461] hover:border-[#AB5461]/50 transition-all duration-300">
-                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-2">{c.label}</span>
+                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#0a0a0a] block mb-2">{c.label}</span>
                   <span className="text-sm text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors duration-300">{c.value}</span>
                 </a>
               ))}

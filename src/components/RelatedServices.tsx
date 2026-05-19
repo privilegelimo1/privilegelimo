@@ -96,7 +96,7 @@ export default function RelatedServices({
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-4 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-4 block">
               Explore More
             </span>
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
@@ -122,7 +122,7 @@ export default function RelatedServices({
               <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300 leading-snug">
                 {s.title}
               </h3>
-              <p className="text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light">
+              <p className="text-[10px] tracking-[0.15em] uppercase text-[#0a0a0a] font-light">
                 {s.sub}
               </p>
               <span className="mt-auto pt-4 text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors flex items-center gap-1.5">

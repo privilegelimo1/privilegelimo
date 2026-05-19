@@ -463,7 +463,7 @@ export default function WhyUsPage() {
       <section className="py-24 border-t border-[#efefef] bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461]/50 text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               CALL US 24/7
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-2">

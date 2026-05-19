@@ -135,7 +135,7 @@ export default function VipChauffeurServicePage() {
               <div className="flex items-center gap-2 mb-8">
                 <Link
                   href="/services"
-                  className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] hover:text-[#AB5461] font-light transition-colors"
+                  className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] hover:text-[#AB5461] font-light transition-colors"
                 >
                   Services
                 </Link>
@@ -218,7 +218,7 @@ export default function VipChauffeurServicePage() {
                 className="bg-white rounded-2xl p-5 border border-[#efefef]"
               >
                 <p className="text-sm font-light text-[#0a0a0a] tracking-tight">{item.label}</p>
-                <p className="mt-1.5 text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light">
+                <p className="mt-1.5 text-[10px] tracking-[0.15em] uppercase text-[#0a0a0a] font-light">
                   {item.sub}
                 </p>
               </div>
@@ -272,7 +272,7 @@ export default function VipChauffeurServicePage() {
                   className="rounded-2xl bg-[#fafafa] border border-[#efefef] px-5 py-4"
                 >
                   <p className="text-sm font-light text-[#0a0a0a]">{item.label}</p>
-                  <p className="mt-1 text-[10px] tracking-[0.15em] uppercase text-[#b0b0b0] font-light">
+                  <p className="mt-1 text-[10px] tracking-[0.15em] uppercase text-[#0a0a0a] font-light">
                     {item.sub}
                   </p>
                 </div>

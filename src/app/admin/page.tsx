@@ -57,7 +57,7 @@ export default async function AdminPage() {
             href={s.href}
             className="bg-white rounded-2xl border border-[#efefef] shadow-[0_2px_8px_rgba(0,0,0,0.03)] p-5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#e0e0e0] transition-all"
           >
-            <p className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-2">
+            <p className="text-[9px] tracking-[0.35em] uppercase text-[#0a0a0a] font-light mb-2">
               {s.label}
             </p>
             <p className="text-3xl font-extralight tracking-tight" style={{ color: s.color }}>
@@ -69,7 +69,7 @@ export default async function AdminPage() {
 
       {/* Quick Actions */}
       <div className="mb-8">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0] font-light mb-4">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-[#0a0a0a] font-light mb-4">
           Quick Actions
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

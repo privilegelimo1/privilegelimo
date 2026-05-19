@@ -270,7 +270,7 @@ export default function WeddingLimoPage() {
         <div className="flex items-center gap-2 mb-8">
           <Link
             href="/services"
-            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+            className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors"
           >
             Services
           </Link>
@@ -294,7 +294,7 @@ export default function WeddingLimoPage() {
           shuttles and full wedding fleet management.
         </p>
 
-        <p className="mt-2 text-[11px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light max-w-lg">
+        <p className="mt-2 text-[11px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light max-w-lg">
           Decorated bridal cars · Full fleet hire · Guest shuttles · Multi-venue coverage
         </p>
 
@@ -328,7 +328,7 @@ export default function WeddingLimoPage() {
               <p className="text-xl font-light text-[#AB5461] tracking-tight">
                 {s.value}
               </p>
-              <p className="mt-1 text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light leading-snug">
+              <p className="mt-1 text-[9px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light leading-snug">
                 {s.label}
               </p>
             </div>
@@ -568,7 +568,7 @@ export default function WeddingLimoPage() {
       <section className="py-24 bg-gradient-to-b from-[#AB5461]/4 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461]/30 text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               YOUR WEDDING DAY
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">

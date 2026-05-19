@@ -160,14 +160,14 @@ export default function BusVanRentalPage() {
         <div className="flex items-center gap-2 mb-8">
           <Link
             href="/"
-            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+            className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors"
           >
             Home
           </Link>
           <span className="text-[#ddd]">/</span>
           <Link
             href="/services"
-            className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+            className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors"
           >
             Services
           </Link>
@@ -265,7 +265,7 @@ export default function BusVanRentalPage() {
       <section className="py-10 bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mx-auto text-center pt-20 pb-16">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               Experience the Best of Dubai
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
@@ -578,7 +578,7 @@ export default function BusVanRentalPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">FAQ</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">FAQ</span>
               <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Common questions
                 <br />
@@ -616,7 +616,7 @@ export default function BusVanRentalPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-3 block">Coverage</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-3 block">Coverage</span>
               <h3 className="text-xl font-light text-[#0a0a0a] tracking-tight">
                 Dubai · Abu Dhabi · Sharjah · All UAE Emirates
               </h3>
@@ -636,7 +636,7 @@ export default function BusVanRentalPage() {
       <section className="py-24 bg-gradient-to-b from-[#AB5461]/5 to-[#ab5461]/3">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               CALL US 24/7
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
@@ -679,7 +679,7 @@ export default function BusVanRentalPage() {
                   rel="noreferrer"
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
-                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
+                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#0a0a0a] block mb-1.5">{c.label}</span>
                   <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}
@@ -692,7 +692,7 @@ export default function BusVanRentalPage() {
       {/* ── SEO KEYWORDS ──────────────────────────────────────────── */}
       <section className="py-16 bg-gradient-to-b from-[#AB5461]/3 to-[#ab5461]/2">
         <div className="max-w-7xl mx-auto px-6">
-          <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-6 block">
+          <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-6 block">
             Our Services
           </span>
           <div className="flex flex-wrap gap-2">

@@ -146,7 +146,7 @@ export default function FleetPreview({ categoryId, classSlug }: Props) {
                         {car.transfer_price ?? "Contact"}
                       </span>
                     </div>
-                    <p className="text-xs text-[#b3b3b3] mb-4 font-light">
+                    <p className="text-xs text-[#0a0a0a] mb-4 font-light">
                       Up to {car.passengers} passenger{car.passengers > 1 ? "s" : ""} · {car.luggage} bags
                     </p>
                     <p className="text-[13px] leading-[1.85] text-[#777] font-light mb-6 line-clamp-2">

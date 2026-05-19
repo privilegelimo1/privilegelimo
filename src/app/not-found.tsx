@@ -29,7 +29,7 @@ export default function NotFound() {
           <div className="flex items-center gap-2 mb-12">
             <Link
               href="/"
-              className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors"
+              className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors"
             >
               Home
             </Link>
@@ -91,7 +91,7 @@ export default function NotFound() {
 
           {/* ── QUICK LINKS ── */}
           <div className="border-t border-[#efefef] pt-8">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               You might be looking for
             </span>
             <div className="flex flex-wrap gap-2">

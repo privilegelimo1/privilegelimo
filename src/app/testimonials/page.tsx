@@ -364,7 +364,7 @@ export default function TestimonialsPage() {
             <span className="text-xs text-[#9a9a9a] font-light ml-1">5.0</span>
           </div>
         </div>
-        <span className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light">
           All reviews are from real Google clients
         </span>
       </div>
@@ -386,7 +386,7 @@ export default function TestimonialsPage() {
                   <Avatar name={r.name} />
                   <div>
                     <div className="text-sm font-medium text-[#0a0a0a] tracking-tight">{r.name}</div>
-                    <div className="text-[10px] text-[#b0b0b0] font-light mt-0.5">{r.badge}</div>
+                    <div className="text-[10px] text-[#0a0a0a] font-light mt-0.5">{r.badge}</div>
                   </div>
                   <div className="ml-auto flex flex-col items-end gap-1">
                     <Stars count={r.rating} />
@@ -423,7 +423,7 @@ export default function TestimonialsPage() {
                   <Avatar name={r.name} />
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-medium text-[#0a0a0a] tracking-tight truncate">{r.name}</div>
-                    <div className="text-[9px] text-[#b0b0b0] font-light mt-0.5">{r.badge}</div>
+                    <div className="text-[9px] text-[#0a0a0a] font-light mt-0.5">{r.badge}</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between mb-3">
@@ -447,7 +447,7 @@ export default function TestimonialsPage() {
       <section className="py-24 bg-gradient-to-b from-[#AB5461]/8 to-[#ab5461]/3 pb-8">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#AB5461] text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               CALL US 24/7
             </span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">

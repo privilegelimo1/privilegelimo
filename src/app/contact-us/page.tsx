@@ -175,7 +175,7 @@ export default function ContactPage() {
                   className="group flex items-center justify-between px-6 py-4 rounded-2xl border border-[#efefef] bg-white hover:border-[#AB5461] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300"
                 >
                   <div>
-                    <div className="text-[9px] tracking-[0.35em] uppercase text-[#b0b0b0] font-light mb-0.5">{c.tag}</div>
+                    <div className="text-[9px] tracking-[0.35em] uppercase text-[#0a0a0a] font-light mb-0.5">{c.tag}</div>
                     <div className="text-sm font-light text-[#0a0a0a]">{c.value}</div>
                   </div>
                   <svg className="w-4 h-4 text-[#d0d0d0] group-hover:text-[#AB5461] group-hover:translate-x-0.5 transition-all duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -355,7 +355,7 @@ export default function ContactPage() {
                     </a>
                   </div>
 
-                  <p className="text-[10px] text-[#b0b0b0] font-light">
+                  <p className="text-[10px] text-[#0a0a0a] font-light">
                     * Required fields. We'll confirm your booking within 30 minutes.
                   </p>
                 </form>
@@ -380,7 +380,7 @@ export default function ContactPage() {
                 <a href="mailto:booking@privilegelimo.com" className="text-sm text-[#7a7a7a] font-light hover:text-[#AB5461] transition-colors block">
                   booking@privilegelimo.com
                 </a>
-                <p className="text-xs text-[#b0b0b0] font-light mt-2">We respond within 1–2 hours.</p>
+                <p className="text-xs text-[#0a0a0a] font-light mt-2">We respond within 1–2 hours.</p>
               </MiniCard>
 
               <MiniCard tag="Phone" title="Call Us 24/7">
@@ -444,7 +444,7 @@ export default function ContactPage() {
               title="Privilege Luxury Travel LLC — Suite 45, Shraifi One Building, Za'abeel St, Dubai"
             />
           </div>
-          <p className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light mt-4 text-center">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mt-4 text-center">
             Suite# 45, Shraifi One Building, Za'abeel St, Dubai, UAE
           </p>
         </div>

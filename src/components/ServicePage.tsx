@@ -110,7 +110,7 @@ export default function ServicePage({
             </div>
 
             <div className="bg-[#fafafa] rounded-3xl border border-[#f0f0f0] p-10">
-              <span className="text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0] mb-6 block">
+              <span className="text-[10px] tracking-[0.4em] uppercase text-[#0a0a0a] mb-6 block">
                 Service Highlights
               </span>
               <ul className="flex flex-col gap-4">
@@ -135,7 +135,7 @@ export default function ServicePage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
                 About This Service
               </span>
               <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] mb-6 tracking-tight leading-tight">
@@ -145,7 +145,7 @@ export default function ServicePage({
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light">{longDescription}</p>
             </div>
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
                 Ideal For
               </span>
               <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] mb-8 tracking-tight leading-tight">
@@ -171,7 +171,7 @@ export default function ServicePage({
       <section className="py-28 bg-white border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-16">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
               Why Privilege Limo
             </span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight leading-tight">
@@ -202,7 +202,7 @@ export default function ServicePage({
         <section className="py-20 bg-white border-t border-[#efefef]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-xl mb-12">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">
                 Coverage
               </span>
               <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight">Airports we serve</h2>
@@ -232,7 +232,7 @@ export default function ServicePage({
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-end justify-between mb-14">
               <div>
-                <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Our Fleet</span>
+                <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Our Fleet</span>
                 <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight">
                   Recommended vehicles
                   <br />
@@ -285,7 +285,7 @@ export default function ServicePage({
       <section className="py-28 bg-white border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">FAQ</span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">FAQ</span>
             <h2 className="text-3xl md:text-4xl font-light text-[#0a0a0a] tracking-tight">
               Common questions about
               <br />
@@ -313,7 +313,7 @@ export default function ServicePage({
       <section className="py-24 bg-white border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Ready to Book</span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Ready to Book</span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Book your {title} today
             </h2>
@@ -350,7 +350,7 @@ export default function ServicePage({
                   rel="noreferrer"
                   className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#0a0a0a] transition-all duration-300"
                 >
-                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
+                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#0a0a0a] block mb-1.5">{c.label}</span>
                   <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}

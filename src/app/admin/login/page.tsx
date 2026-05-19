@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
               Privilege Limo
             </span>
           </div>
-          <p className="text-[10px] tracking-[0.4em] uppercase text-[#b0b0b0]">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-[#0a0a0a]">
             Admin Portal
           </p>
         </div>

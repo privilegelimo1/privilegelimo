@@ -192,11 +192,11 @@ export default async function FleetDetailPage({
 
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 mb-8">
-                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">Home</Link>
+                <Link href="/" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors">Home</Link>
                 <span className="text-[#ddd]">/</span>
-                <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">Fleet</Link>
+                <Link href="/fleet" className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors">Fleet</Link>
                 <span className="text-[#ddd]">/</span>
-                <Link href={`/fleet/${slug}`} className="text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-light hover:text-[#AB5461] transition-colors">
+                <Link href={`/fleet/${slug}`} className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light hover:text-[#AB5461] transition-colors">
                   {slug.replace(/-/g, " ")}
                 </Link>
                 <span className="text-[#ddd]">/</span>
@@ -245,7 +245,7 @@ export default async function FleetDetailPage({
                 {vehicle.transfer_price ? (
                   <div className="flex-1 flex items-baseline gap-2 px-5 py-4 rounded-2xl border border-[#efefef] bg-[#fafafa]">
                     <span className="text-2xl font-light text-[#0a0a0a] tracking-tight">{vehicle.transfer_price}</span>
-                    <span className="text-[10px] text-[#b0b0b0] tracking-wide font-light">starting from</span>
+                    <span className="text-[10px] text-[#0a0a0a] tracking-wide font-light">starting from</span>
                   </div>
                 ) : (
                   <div className="flex-1 flex items-center px-5 py-4 rounded-2xl border border-[#efefef] bg-[#fafafa]">
@@ -255,13 +255,13 @@ export default async function FleetDetailPage({
                 {vehicle.passengers && (
                   <div className="px-5 py-4 rounded-2xl border border-[#efefef] bg-[#fafafa] text-center min-w-[72px]">
                     <span className="text-xl font-light text-[#0a0a0a] block">{vehicle.passengers}</span>
-                    <span className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0]">Pax</span>
+                    <span className="text-[9px] tracking-[0.2em] uppercase text-[#0a0a0a]">Pax</span>
                   </div>
                 )}
                 {vehicle.luggage && (
                   <div className="px-5 py-4 rounded-2xl border border-[#efefef] bg-[#fafafa] text-center min-w-[72px]">
                     <span className="text-xl font-light text-[#0a0a0a] block">{vehicle.luggage}</span>
-                    <span className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0]">Bags</span>
+                    <span className="text-[9px] tracking-[0.2em] uppercase text-[#0a0a0a]">Bags</span>
                   </div>
                 )}
               </div>
@@ -306,7 +306,7 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="lg:sticky lg:top-32">
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Quick Booking</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Quick Booking</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-5">
                 Reserve your
                 <br />
@@ -343,7 +343,7 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">About This Vehicle</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">About This Vehicle</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-6 tracking-tight leading-tight">
                 The {vehicle.name}
                 <br />
@@ -365,7 +365,7 @@ export default async function FleetDetailPage({
               )}
             </div>
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Every Booking Includes</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Every Booking Includes</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] mb-8 tracking-tight leading-tight">
                 Standard
                 <br />
@@ -401,7 +401,7 @@ export default async function FleetDetailPage({
       <section className="py-24 border-t border-[#efefef] bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-14">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Our Standards</span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Our Standards</span>
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               What sets every journey
               <br />
@@ -424,7 +424,7 @@ export default async function FleetDetailPage({
       <section className="py-24 border-t border-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-14">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Perfect For</span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Perfect For</span>
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight">
               Where the {vehicle.name}
               <br />
@@ -441,7 +441,7 @@ export default async function FleetDetailPage({
               <Link key={u.label} href={u.href} className="group p-8 rounded-3xl border border-[#efefef] hover:border-[#0a0a0a] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 flex flex-col gap-3">
                 <span className="text-[#AB5461] text-[10px] tracking-[0.4em] font-light">0{i + 1}</span>
                 <h3 className="text-sm font-semibold text-[#0a0a0a] tracking-tight group-hover:text-[#AB5461] transition-colors duration-300">{u.label}</h3>
-                <p className="text-[9px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light">{u.sub}</p>
+                <p className="text-[9px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light">{u.sub}</p>
                 <span className="text-[9px] tracking-[0.25em] uppercase text-[#9a9a9a] group-hover:text-[#AB5461] transition-colors mt-auto flex items-center gap-1 pt-2">
                   Learn more
                   <svg className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -459,7 +459,7 @@ export default async function FleetDetailPage({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Why Privilege Limo</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Why Privilege Limo</span>
               <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight leading-tight mb-6">
                 Dubai&apos;s most trusted
                 <br />
@@ -510,7 +510,7 @@ export default async function FleetDetailPage({
       <section className="py-28 border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">FAQ</span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">FAQ</span>
             <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight">
               Common questions about
               <br />
@@ -537,7 +537,7 @@ export default async function FleetDetailPage({
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-end justify-between mb-12">
               <div>
-                <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Explore More</span>
+                <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Explore More</span>
                 <h2 className="text-3xl font-light text-[#0a0a0a] tracking-tight">
                   Similar vehicles
                   <br />
@@ -588,7 +588,7 @@ export default async function FleetDetailPage({
       <section className="py-24 bg-white border-t border-[#efefef]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-12 md:p-16 rounded-3xl border border-[#efefef] text-center shadow-[0_4px_30px_rgba(0,0,0,0.05)]">
-            <span className="text-[10px] tracking-[0.45em] uppercase text-[#b0b0b0] mb-5 block">Ready to Book</span>
+            <span className="text-[10px] tracking-[0.45em] uppercase text-[#0a0a0a] mb-5 block">Ready to Book</span>
             <h2 className="text-4xl font-light text-[#0a0a0a] tracking-tight mb-4">
               Reserve your {vehicle.name}
               <br />
@@ -613,7 +613,7 @@ export default async function FleetDetailPage({
                 { label: "Email", value: "booking@privilegelimo.com", href: "mailto:booking@privilegelimo.com" },
               ].map((c) => (
                 <a key={c.label} href={c.href} target={c.href.startsWith("https") ? "_blank" : undefined} rel="noreferrer" className="group p-5 rounded-2xl border border-[#f0f0f0] hover:border-[#AB5461] transition-all duration-300">
-                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#b0b0b0] block mb-1.5">{c.label}</span>
+                  <span className="text-[9px] tracking-[0.4em] uppercase text-[#0a0a0a] block mb-1.5">{c.label}</span>
                   <span className="text-xs text-[#0a0a0a] font-light group-hover:text-[#AB5461] transition-colors">{c.value}</span>
                 </a>
               ))}

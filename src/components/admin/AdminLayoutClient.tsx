@@ -47,7 +47,7 @@ async function logout() {
           </div>
           <div>
             <p className="text-xs font-semibold text-[#0a0a0a]">Privilege Limo</p>
-            <p className="text-[9px] tracking-[0.3em] uppercase text-[#b0b0b0]">Admin</p>
+            <p className="text-[9px] tracking-[0.3em] uppercase text-[#0a0a0a]">Admin</p>
           </div>
         </div>
       </div>

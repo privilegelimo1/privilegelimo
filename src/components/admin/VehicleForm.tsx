@@ -323,7 +323,7 @@ export default function VehicleForm({
                   form.images.map((img, i) => (
                     <div key={i} className="relative">
                       <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-[10px] tracking-[0.2em] uppercase text-[#b0b0b0] font-light">
+                        <span className="text-[10px] tracking-[0.2em] uppercase text-[#0a0a0a] font-light">
                           Image {i + 1}{i === 0 ? " · Cover" : ""}
                         </span>
                         <button
@@ -384,7 +384,7 @@ export default function VehicleForm({
                   </div>
                 ))}
                 {form.specs.length === 0 && (
-                  <p className="text-xs text-[#b0b0b0] font-light py-2">No specs added yet</p>
+                  <p className="text-xs text-[#0a0a0a] font-light py-2">No specs added yet</p>
                 )}
               </div>
             </div>
@@ -429,7 +429,7 @@ export default function VehicleForm({
                   </div>
                 ))}
                 {form.features.length === 0 && (
-                  <p className="text-xs text-[#b0b0b0] font-light py-2">No features added yet</p>
+                  <p className="text-xs text-[#0a0a0a] font-light py-2">No features added yet</p>
                 )}
               </div>
             </div>
@@ -446,10 +446,10 @@ export default function VehicleForm({
             {inputField("meta_title",      "Meta Title (fallback)")}
             {textareaField("meta_desc",    "Meta Description (fallback)", 2)}
             <div className="flex gap-6 text-xs">
-              <span className={(form.seo_title || form.meta_title).length > 60 ? "text-red-500" : "text-[#b0b0b0]"}>
+              <span className={(form.seo_title || form.meta_title).length > 60 ? "text-red-500" : "text-[#0a0a0a]"}>
                 Title: {(form.seo_title || form.meta_title).length}/60
               </span>
-              <span className={(form.seo_description || form.meta_desc).length > 160 ? "text-red-500" : "text-[#b0b0b0]"}>
+              <span className={(form.seo_description || form.meta_desc).length > 160 ? "text-red-500" : "text-[#0a0a0a]"}>
                 Desc: {(form.seo_description || form.meta_desc).length}/160
               </span>
             </div>
@@ -471,7 +471,7 @@ export default function VehicleForm({
             <button
               onClick={deleteVehicle}
               disabled={deleting}
-              className="text-xs font-medium text-[#b0b0b0] hover:text-red-500 disabled:opacity-50 transition-colors"
+              className="text-xs font-medium text-[#0a0a0a] hover:text-red-500 disabled:opacity-50 transition-colors"
             >
               {deleting ? "Deleting…" : "Delete vehicle"}
             </button>

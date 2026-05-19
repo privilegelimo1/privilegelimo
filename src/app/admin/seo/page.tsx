@@ -141,9 +141,9 @@ export default function AdminSEOPage() {
         <table className="w-full text-sm">
           <thead className="bg-[#fafafa] border-b border-[#f0f0f0]">
             <tr>
-              <th className="text-left px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">Path</th>
-              <th className="text-left px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium">Title</th>
-              <th className="text-left px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-[#b0b0b0] font-medium hidden md:table-cell">Description</th>
+              <th className="text-left px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-medium">Path</th>
+              <th className="text-left px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-medium">Title</th>
+              <th className="text-left px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-medium hidden md:table-cell">Description</th>
               <th className="px-5 py-3" />
             </tr>
           </thead>
@@ -163,7 +163,7 @@ export default function AdminSEOPage() {
                     </button>
                     <button
                       onClick={() => remove(r.id!)}
-                      className="text-xs font-medium text-[#b0b0b0] hover:text-red-500 transition-colors"
+                      className="text-xs font-medium text-[#0a0a0a] hover:text-red-500 transition-colors"
                     >
                       Delete
                     </button>
@@ -173,7 +173,7 @@ export default function AdminSEOPage() {
             ))}
             {filtered.length === 0 && (
               <tr>
-                <td colSpan={4} className="px-5 py-12 text-center text-[#b0b0b0] text-sm font-light">
+                <td colSpan={4} className="px-5 py-12 text-center text-[#0a0a0a] text-sm font-light">
                   {rows.length === 0
                     ? 'No SEO entries yet. Click "⚡ Seed Fleet Pages" to auto-populate.'
                     : "No results match your search."}
@@ -182,7 +182,7 @@ export default function AdminSEOPage() {
             )}
           </tbody>
         </table>
-        <div className="px-5 py-3 text-[10px] text-[#b0b0b0] border-t border-[#f5f5f5]">
+        <div className="px-5 py-3 text-[10px] text-[#0a0a0a] border-t border-[#f5f5f5]">
           {filtered.length} of {rows.length} pages
         </div>
       </div>
@@ -194,7 +194,7 @@ export default function AdminSEOPage() {
             <div className="flex items-center justify-between px-6 py-4 border-b border-[#f0f0f0] sticky top-0 bg-white z-10">
               <h2 className="font-light text-[#0a0a0a] text-lg tracking-tight">
                 {editing.id ? "Edit" : "Add"} SEO{" "}
-                <span className="font-mono text-xs text-[#b0b0b0]">
+                <span className="font-mono text-xs text-[#0a0a0a]">
                   {editing.page_path || "new page"}
                 </span>
               </h2>
@@ -216,10 +216,10 @@ export default function AdminSEOPage() {
               {field("og_image",    "OG Image URL")}
               {field("canonical",   "Canonical URL")}
               <div className="flex gap-6 text-xs">
-                <span className={editing.title.length > 60 ? "text-red-500" : "text-[#b0b0b0]"}>
+                <span className={editing.title.length > 60 ? "text-red-500" : "text-[#0a0a0a]"}>
                   Title: {editing.title.length}/60
                 </span>
-                <span className={editing.description.length > 160 ? "text-red-500" : "text-[#b0b0b0]"}>
+                <span className={editing.description.length > 160 ? "text-red-500" : "text-[#0a0a0a]"}>
                   Description: {editing.description.length}/160
                 </span>
               </div>
