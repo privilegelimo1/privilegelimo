@@ -4,35 +4,80 @@ import Image from "next/image"
 import { ArrowUpRight, Calendar, Clock } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
 import type { Metadata } from "next"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 export async function generateMetadata(): Promise<Metadata> {
   const supabase = await createClient()
   const { data } = await supabase
     .from("seo_pages")
-    .select("title, description, og_image, canonical")
-    .eq("page", "blog")
+    .select("title,description,og_title,og_desc,og_image,canonical")
+    .eq("page_path", "blog")
     .single()
 
   return {
-    title:       data?.title       ?? "Blog | Luxury Travel Guides — Chauffeur Dubai",
-    description: data?.description ?? "",
-    alternates:  { canonical: data?.canonical ?? "https://www.privilegelimo.com/blog" },
-    openGraph: {
-      title:       data?.title       ?? "",
-      description: data?.description ?? "",
-      url:         data?.canonical   ?? "https://www.privilegelimo.com/blog",
-      siteName:    "Privilege Luxury Travel LLC",
-      locale:      "en_AE",
-      type:        "website",
-      images:      data?.og_image ? [{ url: data.og_image, width: 1200, height: 630, type: "image/jpeg" }] : [],
-    },
-    twitter: {
-      card:        "summary_large_image",
-      title:       data?.title       ?? "",
-      description: data?.description ?? "",
-      site:        "@privilegeuae",
-      images:      data?.og_image ? [data.og_image] : [],
-    },
+    title: data?.title ?? "Blog | Luxury Travel Guides — Chauffeur Dubai",
+
+description: data?.description ?? "",
+
+alternates: {
+  canonical:
+    data?.canonical ??
+    "https://www.privilegelimo.com/blog",
+},
+
+openGraph: {
+  title:
+    data?.og_title ??
+    data?.title ??
+    "Blog | Luxury Travel Guides — Chauffeur Dubai",
+
+  description:
+    data?.og_desc ??
+    data?.description ??
+    "",
+
+  url:
+    data?.canonical ??
+    "https://www.privilegelimo.com/blog",
+
+  siteName: "Privilege Luxury Travel LLC",
+
+  locale: "en_AE",
+
+  type: "website",
+
+  images: data?.og_image
+    ? [
+        {
+          url: data.og_image,
+          width: 1200,
+          height: 630,
+          type: "image/jpeg",
+        },
+      ]
+    : [],
+},
+
+twitter: {
+  card: "summary_large_image",
+
+  title:
+    data?.og_title ??
+    data?.title ??
+    "Blog | Luxury Travel Guides — Chauffeur Dubai",
+
+  description:
+    data?.og_desc ??
+    data?.description ??
+    "",
+
+  site: "@privilegelimo",
+
+  images: data?.og_image
+    ? [data.og_image]
+    : [],
+},
   }
 }
 
@@ -93,6 +138,7 @@ export default async function BlogPage() {
 
   return (
     <div className="w-full bg-white overflow-x-hidden">
+      <Navbar/>
 
       {/* HERO */}
       <section className="pt-28 pb-16 px-5 md:px-12 lg:px-20 border-b border-rose-100">
@@ -251,7 +297,7 @@ export default async function BlogPage() {
           WhatsApp Us Now <ArrowUpRight className="w-4 h-4" />
         </a>
       </section>
-
+      <Footer />
     </div>
   )
 }
