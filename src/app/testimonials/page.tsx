@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Read what our clients say about Privilege Limo. Trusted by executives, tourists, and corporate clients across Dubai and the UAE for premium chauffeur services. Real reviews, real experiences.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [
@@ -50,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title:
-        data?.title ?? "Client Testimonials | Privilege Luxury Travel LLC Dubai",
+        data?.title ?? "Client Testimonials | Privilege Limo Dubai",
       description:
         data?.description ??
         "Read what our clients say about Privilege Limo. Trusted by executives, tourists, and corporate clients across Dubai and the UAE for premium chauffeur services. Real reviews, real experiences.",

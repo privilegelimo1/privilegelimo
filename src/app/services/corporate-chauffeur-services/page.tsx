@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Premium corporate chauffeur service in Dubai for executive meetings, airport transfers, roadshows, and VIP guest movement. Discreet, punctual, and professional — trusted by leading businesses across the UAE.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

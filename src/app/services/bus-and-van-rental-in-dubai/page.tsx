@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     data?.title ?? "Bus and Van Rental Dubai | Luxury Coach Hire UAE"
   const description =
     data?.description ??
-    "Privilege Luxury Travel LLC provides affordable luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire."
+    "Privilege Limo provides affordable luxury bus and van rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses, King Long Luxury Bus hire."
   const canonical =
     data?.canonical ??
     "https://www.privilegelimo.com/services/bus-and-van-rental-in-dubai"
@@ -60,7 +60,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Rent a luxury bus or van in Dubai with professional driver. Mercedes Sprinter, V-Class, coaches up to 50 seats — perfect for corporate events, group transfers, airport pickups & tours.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [
@@ -224,7 +224,7 @@ export default function BusVanRentalPage() {
 
         {/* Description */}
         <p className="mt-6 text-sm leading-[1.9] text-[#7a7a7a] font-light max-w-lg">
-          Privilege Luxury Travel LLC provides affordable luxury bus and van
+          Privilege Limo provides affordable luxury bus and van
           rental in Dubai, UAE. Mercedes Sprinter Van, Scania Luxury Buses,
           King Long Luxury Bus hire — city tours by luxury coaches across
           the UAE.
@@ -327,7 +327,7 @@ export default function BusVanRentalPage() {
                 <div className="inline-flex items-center gap-2 mb-5">
                   <div className="h-px w-5 bg-[#AB5461]" />
                   <span className="text-[#AB5461] text-[9px] tracking-[0.45em] uppercase font-light">
-                    Privilege Luxury Travel LLC
+                    Privilege Limo
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-[2.25rem] font-light text-[#0a0a0a] mb-4 tracking-tight leading-tight">

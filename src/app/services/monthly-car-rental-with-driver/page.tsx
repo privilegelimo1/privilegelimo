@@ -89,7 +89,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Dedicated monthly car rental with driver packages across Dubai and the UAE. Same driver, same vehicle, same standard — every day. Ideal for executives, expats and corporate clients.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     data?.title ?? "Contact Us | Book Luxury Chauffeur Service Dubai"
   const description =
     data?.description ??
-    "Get in touch with Privilege Luxury Travel LLC. Book a luxury chauffeur, van, sprinter or bus in Dubai. Available 24/7 via WhatsApp, phone or email."
+    "Get in touch with Privilege Limo. Book a luxury chauffeur, van, sprinter or bus in Dubai. Available 24/7 via WhatsApp, phone or email."
   const canonical =
     data?.canonical ?? "https://www.privilegelimo.com/contact-us"
   const ogImage =
@@ -28,12 +28,12 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical },
     openGraph: {
       title:
-        data?.title ?? "Contact Us | Privilege Luxury Travel LLC Dubai",
+        data?.title ?? "Contact Us | Privilege Limo Dubai",
       description:
         data?.description ??
         "Get in touch with Privilege Limo — available 24/7 for bookings, enquiries, and corporate accounts. Call, WhatsApp, or email our team in Dubai. Fast response guaranteed.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [
@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title:
-        data?.title ?? "Contact Us | Privilege Luxury Travel LLC Dubai",
+        data?.title ?? "Contact Us | Privilege Limo Dubai",
       description:
         data?.description ??
         "Get in touch with Privilege Limo — available 24/7 for bookings, enquiries, and corporate accounts. Call, WhatsApp, or email our team in Dubai. Fast response guaranteed.",
@@ -466,7 +466,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Privilege Luxury Travel LLC — Suite 45, Shraifi One Building, Za'abeel St, Dubai"
+              title="Privilege Limo — Suite 45, Shraifi One Building, Za'abeel St, Dubai"
             />
           </div>
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#0a0a0a] font-light mt-4 text-center">

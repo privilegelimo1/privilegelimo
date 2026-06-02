@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     data?.title ?? "Why Choose Privilege Limo | Dubai Chauffeur Service"
   const description =
     data?.description ??
-    "Privilege Luxury Travel LLC is Dubai's trusted choice for luxury chauffeur services, airport transfers, business transportation, and premium car rentals."
+    "Privilege Limo is Dubai's trusted choice for luxury chauffeur services, airport transfers, business transportation, and premium car rentals."
   const canonical =
     data?.canonical ?? "https://www.privilegelimo.com/why-us"
   const ogImage =
@@ -29,12 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical },
     openGraph: {
       title:
-        data?.title ?? "Why Choose Us | Privilege Luxury Travel LLC Dubai",
+        data?.title ?? "Why Choose Us | Privilege Limo Dubai",
       description:
         data?.description ??
         "Discover what sets Privilege Limo apart — professional chauffeurs, luxury fleet, punctual service, 24/7 availability, and years of trust across Dubai and the UAE. Your comfort is our standard.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [
@@ -50,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title:
-        data?.title ?? "Why Choose Us | Privilege Luxury Travel LLC Dubai",
+        data?.title ?? "Why Choose Us | Privilege Limo Dubai",
       description:
         data?.description ??
         "Discover what sets Privilege Limo apart — professional chauffeurs, luxury fleet, punctual service, 24/7 availability, and years of trust across Dubai and the UAE. Your comfort is our standard.",
@@ -160,7 +160,7 @@ export default function WhyUsPage() {
               <div className="inline-flex items-center gap-3 mb-8">
                 <div className="h-px w-8 bg-[#AB5461]" />
                 <span className="text-[#AB5461] text-[10px] tracking-[0.5em] uppercase font-light">
-                  Privilege Luxury Travel LLC
+                  Privilege Limo
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[68px] font-extralight text-[#0a0a0a] leading-[1.04] tracking-tight mb-6">
@@ -171,7 +171,7 @@ export default function WhyUsPage() {
                 Services in Dubai
               </h1>
               <p className="text-[#7a7a7a] text-base font-light leading-relaxed max-w-lg mb-4">
-                Welcome to Privilege Luxury Travel LLC, a premium transportation company committed to delivering world-class chauffeur service in Dubai, reliable airport transfer UAE, professional business transfer solutions, and luxury car rental with driver services for travelers who demand excellence.
+                Welcome to Privilege Limo, a premium transportation company committed to delivering world-class chauffeur service in Dubai, reliable airport transfer UAE, professional business transfer solutions, and luxury car rental with driver services for travelers who demand excellence.
               </p>
               <p className="text-[#0a0a0a] text-sm font-light leading-relaxed max-w-lg mb-10">
                 Built on a foundation of trust, quality, and hospitality, Privilege Luxury Travel has grown into one of the UAE's most reputable names in luxury ground transportation. Our mission is simple - to create a seamless, stylish, and comfortable travel experience for every client.
@@ -229,8 +229,8 @@ export default function WhyUsPage() {
 
           {/* Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <MiniCard tag="Who We Are" title="Privilege Luxury Travel LLC">
-              <p>Privilege Luxury Travel LLC is a team of dedicated professionals with years of experience in the transportation and hospitality sector. We understand the importance of punctuality, safety, and comfort - and we combine all three to deliver a truly premium travel experience.</p>
+            <MiniCard tag="Who We Are" title="Privilege Limo">
+              <p>Privilege Limo is a team of dedicated professionals with years of experience in the transportation and hospitality sector. We understand the importance of punctuality, safety, and comfort - and we combine all three to deliver a truly premium travel experience.</p>
             </MiniCard>
 
             <MiniCard tag="Who We Serve" title="From Individuals to VIPs">
@@ -414,7 +414,7 @@ export default function WhyUsPage() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <MiniCard tag="Our Vision" title="Most Trusted Luxury Chauffeur in Dubai">
-              <p>At Privilege Luxury Travel LLC, our vision is to become the most trusted and preferred provider of luxury chauffeur service in Dubai and premium ground transportation across the UAE.</p>
+              <p>At Privilege Limo, our vision is to become the most trusted and preferred provider of luxury chauffeur service in Dubai and premium ground transportation across the UAE.</p>
               <p>We aim to redefine the standards of comfort, professionalism, and reliability by offering exceptional travel experiences that reflect Dubai's world-class hospitality.</p>
             </MiniCard>
 
@@ -448,7 +448,7 @@ export default function WhyUsPage() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <MiniCard tag="Mission Statement" title="Superior-Quality Chauffeur Services">
-              <p>The mission of Privilege Luxury Travel LLC is to deliver superior-quality chauffeur services in Dubai, dependable airport transfer UAE, and professional business transfer solutions that exceed client expectations.</p>
+              <p>The mission of Privilege Limo is to deliver superior-quality chauffeur services in Dubai, dependable airport transfer UAE, and professional business transfer solutions that exceed client expectations.</p>
               <p>We are dedicated to providing luxury transportation that prioritizes safety, punctuality, comfort, and exceptional customer service.</p>
             </MiniCard>
 

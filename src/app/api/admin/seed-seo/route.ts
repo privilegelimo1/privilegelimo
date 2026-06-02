@@ -8,7 +8,7 @@ const DOMAIN = "https://www.privilegelimo.com";
 const staticPages = [
   {
     page_path: "/",
-    title: "Luxury Chauffeur Service Dubai | Privilege Luxury Travel LLC",
+    title: "Luxury Chauffeur Service Dubai | Privilege Limo",
     description: "Premium chauffeur-driven cars in Dubai, Abu Dhabi & Sharjah. Airport transfers, hourly hire & corporate travel. Available 24/7. Book online or call now.",
     keywords: "chauffeur Dubai, luxury car hire Dubai, airport transfer Dubai, private driver Dubai",
     og_title: "Privilege Limo | Luxury Chauffeur Service Dubai",
@@ -68,7 +68,7 @@ const staticPages = [
   },
   {
     page_path: "/services",
-    title: "Chauffeur Services Dubai | Privilege Luxury Travel LLC",
+    title: "Chauffeur Services Dubai | Privilege Limo",
     description: "Explore our chauffeur services in Dubai — airport transfers, hourly hire, corporate travel, weddings, tours & monthly packages. Book 24/7.",
     keywords: "chauffeur services Dubai, airport transfer Dubai, corporate car hire Dubai, wedding car Dubai",
     og_title: "Chauffeur Services Dubai | Privilege Limo",
@@ -138,9 +138,9 @@ const staticPages = [
   },
   {
     page_path: "/about",
-    title: "About Us | Privilege Luxury Travel LLC Dubai",
+    title: "About Us | Privilege Limo Dubai",
     description: "25+ years of luxury chauffeur excellence in Dubai. Learn about Privilege Limo — our story, values and commitment to world-class service.",
-    keywords: "about Privilege Limo, luxury chauffeur Dubai company, Privilege Luxury Travel LLC",
+    keywords: "about Privilege Limo, luxury chauffeur Dubai company, Privilege Limo",
     og_title: "About Privilege Limo Dubai",
     og_desc: "25+ years of luxury chauffeur excellence in Dubai.",
     og_image: `${DOMAIN}/og-image.jpg`,
@@ -148,7 +148,7 @@ const staticPages = [
   },
   {
     page_path: "/contact-us",
-    title: "Contact Us | Privilege Luxury Travel LLC Dubai",
+    title: "Contact Us | Privilege Limo Dubai",
     description: "Get in touch with Privilege Limo — available 24/7 for bookings, enquiries and corporate accounts. Call, WhatsApp or email our team in Dubai.",
     keywords: "contact Privilege Limo, book chauffeur Dubai, WhatsApp chauffeur Dubai, Privilege Limo phone",
     og_title: "Contact Privilege Limo Dubai",

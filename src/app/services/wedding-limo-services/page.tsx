@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Make your special day unforgettable with Privilege Limo's luxury wedding chauffeur service in Dubai — bridal cars, groom transport, guest shuttles, and full wedding fleet hire. Elegant, reliable, and tailored to your day.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

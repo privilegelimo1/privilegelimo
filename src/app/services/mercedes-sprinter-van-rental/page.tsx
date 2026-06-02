@@ -80,7 +80,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Rent a Mercedes Sprinter van with professional chauffeur in Dubai. Up to 19 passengers, airport transfers, corporate events & group travel. Fixed rates, 24/7 available.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

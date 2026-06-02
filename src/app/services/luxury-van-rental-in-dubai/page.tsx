@@ -56,7 +56,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url:      canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale:   "en_AE",
       type:     "website",
       images:   [{ url: ogImage, width: 1200, height: 630, alt: title, type: "image/jpeg" }],

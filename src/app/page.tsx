@@ -512,7 +512,7 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-[#7a7a7a] text-sm leading-relaxed font-light mb-6">
-                Welcome to Privilege Luxury Travel LLC, your trusted partner for
+                Welcome to Privilege Limo, your trusted partner for
                 world-class chauffeur service in Dubai. We redefine luxury travel
                 by combining elegance, comfort, and professionalism in every journey.
               </p>

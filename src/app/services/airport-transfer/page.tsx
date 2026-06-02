@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Luxury airport transfer service in Dubai with professional chauffeurs, flight tracking, meet & greet and premium vehicles.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

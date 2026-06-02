@@ -75,7 +75,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Explore the full range of luxury chauffeur services by Privilege Limo — airport transfers, monthly rentals, corporate travel, van & bus hire, wedding cars, and more. Available 24/7 across Dubai and the UAE.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

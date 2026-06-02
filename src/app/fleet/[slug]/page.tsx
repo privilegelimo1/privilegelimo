@@ -59,7 +59,7 @@ export async function generateMetadata({
       title: metaTitle,
       description: metaDescription,
       url: `https://www.privilegelimo.com/fleet/${slug}`,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [{ url: fullOgImage, width: 1200, height: 630, alt: metaTitle, type: "image/jpeg" }],

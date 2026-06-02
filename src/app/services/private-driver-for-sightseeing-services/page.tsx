@@ -88,7 +88,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Explore Dubai in style with a private driver. Visit the Burj Khalifa, Palm Jumeirah, Dubai Frame, and more at your own pace — fully flexible sightseeing tours with a professional chauffeur. Book 24/7.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

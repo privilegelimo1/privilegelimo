@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Experience the pinnacle of luxury with Privilege Limo's VIP chauffeur service in Dubai — discreet professional drivers, premium vehicles, and fully personalised itinerary management. Available 24/7 for elite clients across the UAE.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

@@ -66,7 +66,7 @@ export async function generateMetadata({
       title: `${vehicle.name} Chauffeur Dubai`,
       description,
       url: `https://www.privilegelimo.com/fleet/${vehicle.class_slug}/${vehicle.slug}`,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

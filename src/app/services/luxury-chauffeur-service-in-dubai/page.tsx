@@ -104,7 +104,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Discover Premium chauffeur services in Dubai. Luxury Chauffeur driven Mercedes, BMW, SUVs, vans and buses for airport transfers, business and city tours.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

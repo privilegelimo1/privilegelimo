@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url:      "https://www.privilegelimo.com",
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale:   "en_AE",
       type:     "website",
       images:   [{ url: ogImage, width: 1200, height: 630, alt: title, type: "image/jpeg" }],
@@ -88,7 +88,7 @@ export default async function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Privilege Luxury Travel LLC",
+              name: "Privilege Limo",
               alternateName: "Privilege Limo",
               description:
                 "Dubai's most trusted luxury chauffeur service. Premium airport transfers, corporate travel, weddings and VIP events across UAE.",

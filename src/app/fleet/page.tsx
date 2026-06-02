@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Browse our full fleet of luxury chauffeur cars in Dubai. Business Class, First Class, Vans & SUVs. From AED 300. Book online today.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

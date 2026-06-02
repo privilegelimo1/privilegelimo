@@ -41,7 +41,7 @@ openGraph: {
     data?.canonical ??
     "https://www.privilegelimo.com/blog",
 
-  siteName: "Privilege Luxury Travel LLC",
+  siteName: "Privilege Limo",
 
   locale: "en_AE",
 

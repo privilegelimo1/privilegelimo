@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Seamless luxury event transportation in Dubai for conferences, weddings, exhibitions, and private functions. Professional VIP chauffeurs, luxury coaches, and executive fleets — fully coordinated for your event. Book 24/7.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [

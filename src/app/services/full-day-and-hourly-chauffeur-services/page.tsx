@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
         data?.description ??
         "Book Privilege Limo by the hour or full day in Dubai — premium vehicles, professional chauffeurs, and total flexibility. Perfect for business meetings, events, shopping trips, and city travel across the UAE. Available 24/7.",
       url: canonical,
-      siteName: "Privilege Luxury Travel LLC",
+      siteName: "Privilege Limo",
       locale: "en_AE",
       type: "website",
       images: [
