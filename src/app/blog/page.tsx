@@ -7,77 +7,81 @@ import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
+
+// METADATA –––––––––––––––––––––––
+
 export async function generateMetadata(): Promise<Metadata> {
   const supabase = await createClient()
   const { data } = await supabase
     .from("seo_pages")
-    .select("title,description,og_title,og_desc,og_image,canonical")
-    .eq("page_path", "blog")
+    .select("title, description, og_image, canonical, keywords")
+    .eq("page_path", "/blog")
     .single()
 
-  return {
-    title: data?.title ?? "Blog | Luxury Travel Guides — Chauffeur Dubai",
-
-description: data?.description ?? "",
-
-alternates: {
-  canonical:
-    data?.canonical ??
-    "https://www.privilegelimo.com/blog",
-},
-
-openGraph: {
-  title:
-    data?.og_title ??
-    data?.title ??
-    "Blog | Luxury Travel Guides — Chauffeur Dubai",
-
-  description:
-    data?.og_desc ??
+  const title =
+    data?.title ?? "Luxury Chauffeur Services | Blogs & Guides Dubai"
+  const description =
     data?.description ??
-    "",
-
-  url:
+    "Discover the best luxury chauffeur services in Dubai with our comprehensive guides and tips for an unforgettable experience."
+  const canonical =
     data?.canonical ??
-    "https://www.privilegelimo.com/blog",
+    "https://www.privilegelimo.com/blog"
+  const ogImage =
+    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
 
-  siteName: "Privilege Limo",
-
-  locale: "en_AE",
-
-  type: "website",
-
-  images: data?.og_image
-    ? [
+  return {
+    title,
+    description,
+    keywords: data?.keywords ?? [
+      "van rental in dubai",
+      "luxury van rental in dubai",
+      "sprinter van rental in dubai",
+      "mercedes sprinter rental dubai",
+      "14 seat van rental in dubai",
+      "mercedes vito rental dubai",
+      "mercedes v class rental dubai",
+      "luxury coach bus rental in dubai",
+      "luxury bus rental dubai",
+      "scania bus rental in dubai",
+      "scania luxury bus rent in dubai",
+      "king long luxury bus for rent in dubai",
+      "bus rental dubai",
+      "group transport dubai",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      title:
+        data?.title ?? "Luxury Chauffeur Services | Blogs & Guides Dubai",
+      description:
+        data?.description ??
+        "Discover the best luxury chauffeur services in Dubai with our comprehensive guides and tips for an unforgettable experience.",
+      url: canonical,
+      siteName: "Privilege Limo",
+      locale: "en_AE",
+      type: "website",
+      images: [
         {
-          url: data.og_image,
+          url: ogImage,
           width: 1200,
           height: 630,
+          alt: "Luxury Chauffeur Services | Blogs & Guides Dubai",
           type: "image/jpeg",
         },
-      ]
-    : [],
-},
-
-twitter: {
-  card: "summary_large_image",
-
-  title:
-    data?.og_title ??
-    data?.title ??
-    "Blog | Luxury Travel Guides — Chauffeur Dubai",
-
-  description:
-    data?.og_desc ??
-    data?.description ??
-    "",
-
-  site: "@privilegelimo",
-
-  images: data?.og_image
-    ? [data.og_image]
-    : [],
-},
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        data?.title ?? "Luxury Chauffeur Services | Blogs & Guides Dubai",
+      description:
+        data?.description ??
+        "Discover the best luxury chauffeur services in Dubai with our comprehensive guides and tips for an unforgettable experience.",
+      site: "@privilegeuae",
+      images: [ogImage],
+    },
+    other: {
+      "og:logo": "https://www.privilegelimo.com/logo.webp",
+    },
   }
 }
 

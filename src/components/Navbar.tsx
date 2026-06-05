@@ -38,6 +38,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Why Us", href: "/why-us" },
   { label: "Testimonials", href: "/testimonials" },
+  { label: "Blogs", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ];
 
