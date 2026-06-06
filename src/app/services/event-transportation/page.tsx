@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     data?.canonical ??
     "https://www.privilegelimo.com/services/event-transportation"
   const ogImage =
-    data?.og_image ?? "https://www.privilegelimo.com/og-image.jpg"
+    data?.og_image ?? "https://www.privilegelimo.com/logo.webp"
 
   return {
     title,

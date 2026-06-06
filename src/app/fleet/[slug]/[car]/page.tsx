@@ -47,7 +47,7 @@ export async function generateMetadata({
     ? imageUrl.startsWith("http")
       ? imageUrl
       : `https://www.privilegelimo.com${imageUrl}`
-    : "https://www.privilegelimo.com/og-image.jpg";
+    : "https://www.privilegelimo.com/logo.webp";
 
   return {
     title: `${vehicle.name} Chauffeur Service Dubai`,

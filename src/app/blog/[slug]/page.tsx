@@ -27,6 +27,10 @@ export async function generateMetadata({
     alternates:  { canonical: `https://www.privilegelimo.com/blog/${data.slug}` },
     openGraph: {
       title:       data.meta_title || data.title,
+      url:         `https://www.privilegelimo.com/blog/${data.slug}`,
+      siteName:    "Privilege Limo Blog",
+      locale:      "en_AE",
+      type:        "article",
       description: data.meta_desc,
       images:      data.cover_image ? [{ url: data.cover_image }] : [],
     },

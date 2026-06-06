@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title       = data?.title       ?? "Luxury Van Rental Dubai | V-Class, Vito & Sprinter with Driver — Privilege Limo"
   const description = data?.description ?? "Book a luxury van rental in Dubai with a professional chauffeur. Mercedes V-Class, Vito Tourer, V 300 Tiffany, Sprinter Avant Garde VIP, Business Class VIP & more. Groups of 7 to 19. Available 24/7."
   const canonical   = data?.canonical   ?? "https://www.privilegelimo.com/services/luxury-van-rental-in-dubai"
-  const ogImage     = data?.og_image    ?? "https://www.privilegelimo.com/og-image.jpg"
+  const ogImage     = data?.og_image    ?? "https://www.privilegelimo.com/logo.webp"
 
   return {
     title,

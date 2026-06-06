@@ -41,7 +41,7 @@ export async function generateMetadata({
   const ogImage =
     category.og_image ??
     category.hero_image ??
-    "https://www.privilegelimo.com/og-image.jpg";
+    "https://www.privilegelimo.com/logo.webp";
 
   const fullOgImage = ogImage.startsWith("http")
     ? ogImage

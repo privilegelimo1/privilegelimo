@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const title       = data?.title       ?? "Privilege Limo | Luxury Chauffeur Services in Dubai"
   const description = data?.description ?? "Dubai's most trusted luxury chauffeur services. Premium airport transfers, corporate travel, weddings, VIP transfer & events across Dubai, Abu Dhabi & Sharjah."
-  const ogImage     = data?.og_image    ?? "https://www.privilegelimo.com/og-image.jpg"
+  const ogImage     = data?.og_image    ?? "https://www.privilegelimo.com/logo.webp"
 
   return {
     metadataBase: new URL("https://www.privilegelimo.com"),
