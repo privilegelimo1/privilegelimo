@@ -155,7 +155,7 @@ export default function FleetPreview({ categoryId, classSlug }: Props) {
 
                     <div className="flex gap-3">
                       <Link
-                        href={`/fleet/${car.categorySlug}/${car.slug}`}
+                        href={`/fleet/${car.class_slug}/${car.slug}`}
                         className="flex-1 inline-flex items-center justify-center px-5 py-3.5 rounded-full bg-[#AB5461] text-xs font-medium text-white hover:bg-[#964754] transition-colors"
                       >
                         View & Book

@@ -11,8 +11,7 @@ import { fleet } from "@/data/index";
 import NextImage from "next/image";
 import { buildWhatsAppURL, buildBookingMessage, buildQuickEnquiry } from "@/lib/whatsapp";
 import BookingModal from "@/components/BookingModal";
-import { createClient } from "@/lib/supabase/server"
-import { Metadata } from "next";
+
 
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
@@ -307,21 +306,32 @@ className="group inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white
           transition={{ delay: 1.8 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[#AB5461] text-[9px] tracking-[0.4em] uppercase font-black">Scroll</span>
+            
+          <span className="text-[#AB5461] text-[16px] tracking-[0.4em] uppercase font-black">Scroll</span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <svg
-              className="w-6 h-6 text-[#AB5461]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </motion.div>
+  animate={{ y: [0, 8, 0] }}
+  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+  className="flex flex-col -gap-2"
+>
+  <svg
+    className="w-6 h-6 text-[#AB5461]"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+  <svg
+    className="w-6 h-6 -mt-3 text-[#AB5461]"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+</motion.div>
         </motion.div>
 
       </motion.div>

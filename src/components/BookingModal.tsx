@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   X, Phone, User, Mail, Calendar, Clock, Users,
-  ChevronDown, MessageCircle, MapPin, CheckCircle,
+  ChevronDown, MessageCircle, MapPin, CheckCircle, Car,
 } from "lucide-react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
+import { fleet } from "@/data/index";
 
 const goldGradient = "linear-gradient(135deg, #AB5461, #e8c97a, #b8943e)";
 
@@ -44,10 +45,35 @@ export default function BookingModal({
   const [endDate, setEndDate]                 = useState<Date | undefined>();
   const [showCalendar, setShowCalendar]       = useState(false);
   const [showEndCalendar, setShowEndCalendar] = useState(false);
+
+  // ── Fleet selection state ──────────────────────────────────────────────────
+  const [selectedClass, setSelectedClass]     = useState<string>("");
+  const [selectedVehicle, setSelectedVehicle] = useState<string>("");
+
   const [form, setForm] = useState({
     name: "", phone: "", email: "", passengers: "1",
     pickup: "", dropoff: "", time: "", notes: "",
   });
+
+  // ── Derive unique classes from fleet data ──────────────────────────────────
+  const fleetClasses = useMemo(() => {
+  const seen = new Set<string>();
+  const classes: { classSlug: string; category: string }[] = [];
+  for (const car of fleet) {
+    if (!car.classSlug || !car.category) continue;
+    if (!seen.has(car.classSlug)) {
+      seen.add(car.classSlug);
+      classes.push({ classSlug: car.classSlug, category: car.category });
+    }
+  }
+  return classes;
+}, []);
+
+  // ── Vehicles filtered by selected class ────────────────────────────────────
+ const vehiclesInClass = useMemo(
+  () => fleet.filter((car) => car.classSlug != null && car.classSlug === selectedClass),
+  [selectedClass]
+);
 
   if (!isOpen) return null;
 
@@ -70,10 +96,13 @@ export default function BookingModal({
 
   const handleSubmit = () => {
     if (!form.name || !form.phone) return;
+    const chosenVehicle = selectedVehicle
+      ? fleet.find((c) => c.slug === selectedVehicle)?.name ?? selectedVehicle
+      : carName;
     const msg = [
       `New Booking Request — Privilege Limo`,
       ``,
-      `Vehicle: ${carName} (${carCategory})`,
+      `Vehicle: ${chosenVehicle} (${carCategory})`,
       `Booking Type: ${bookingTypes.find((b) => b.value === bookingType)?.label}`,
       `Price: ${displayPrice(bookingType)}`,
       ``,
@@ -98,6 +127,7 @@ export default function BookingModal({
 
   // ── Shared tiny input style ──────────────────────────────────────────────
   const inp = "w-full pl-8 pr-3 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#AB5461] focus:outline-none text-xs text-[#0a0a0a] placeholder:text-[#c0c0c0] bg-white";
+  const sel = "w-full pl-8 pr-7 py-2 rounded-lg border border-[#e8d9a0] focus:border-[#AB5461] focus:outline-none text-xs text-[#0a0a0a] appearance-none bg-white";
   const lbl = "text-[9px] font-semibold text-[#0a0a0a] uppercase tracking-[0.25em] mb-1 block";
 
   return (
@@ -117,8 +147,13 @@ export default function BookingModal({
             </div>
             <h2 className="text-lg font-light text-[#0a0a0a] mb-2 tracking-tight">Request Sent</h2>
             <p className="text-[#7a7a7a] text-xs leading-relaxed mb-6 max-w-xs font-light">
-              Your request for the <span className="font-medium text-[#0a0a0a]">{carName}</span> has
-              been sent. Our team will confirm shortly.
+              Your request for the{" "}
+              <span className="font-medium text-[#0a0a0a]">
+                {selectedVehicle
+                  ? fleet.find((c) => c.slug === selectedVehicle)?.name ?? carName
+                  : carName}
+              </span>{" "}
+              has been sent. Our team will confirm shortly.
             </p>
             <button
               onClick={onClose}
@@ -137,7 +172,11 @@ export default function BookingModal({
                 <p className="text-[9px] font-light uppercase tracking-[0.4em] text-[#AB5461]">
                   Reserve · Privilege Limo
                 </p>
-                <h2 className="text-sm font-light text-[#0a0a0a] tracking-tight mt-0.5">{carName}</h2>
+                <h2 className="text-sm font-light text-[#0a0a0a] tracking-tight mt-0.5">
+                  {selectedVehicle
+                    ? fleet.find((c) => c.slug === selectedVehicle)?.name ?? carName
+                    : carName}
+                </h2>
               </div>
               <button
                 onClick={onClose}
@@ -161,6 +200,7 @@ export default function BookingModal({
               {/* STEP 1 */}
               {step === 1 && (
                 <>
+                  
                   {/* Booking type — compact pill grid */}
                   <div>
                     <label className={lbl}>Booking Type</label>
@@ -189,6 +229,75 @@ export default function BookingModal({
                       ))}
                     </div>
                   </div>
+
+                  {/* ── FLEET CLASS DROPDOWN ──────────────────────── */}
+                  <div>
+                    <label className={lbl}>Vehicle Class</label>
+                    <div className="relative">
+                      <Car size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461] pointer-events-none" />
+                      <select
+                        value={selectedClass}
+                        onChange={(e) => {
+                          setSelectedClass(e.target.value);
+                          setSelectedVehicle(""); // reset vehicle when class changes
+                        }}
+                        className={sel}
+                      >
+                        <option value="">Select a vehicle class</option>
+                        {fleetClasses.map(({ classSlug, category }) => (
+                          <option key={classSlug} value={classSlug}>
+                            {category}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown size={11} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#0a0a0a] pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* ── VEHICLE DROPDOWN (appears after class selected) ── */}
+                  {selectedClass && (
+                    <div>
+                      <label className={lbl}>Select Vehicle</label>
+                      <div className="relative">
+                        <Car size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#AB5461] pointer-events-none" />
+                        <select
+                          value={selectedVehicle}
+                          onChange={(e) => setSelectedVehicle(e.target.value)}
+                          className={sel}
+                        >
+                          <option value="">Choose a vehicle</option>
+                          {vehiclesInClass.map((car) => (
+                            <option key={car.slug} value={car.slug}>
+                              {car.name}
+                              {car.priceLabel ? ` — ${car.priceLabel}` : ""}
+                            </option>
+                          ))}
+                        </select>
+                        <ChevronDown size={11} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#0a0a0a] pointer-events-none" />
+                      </div>
+                      {/* Show selected vehicle quick specs */}
+                      {selectedVehicle && (() => {
+                        const car = fleet.find((c) => c.slug === selectedVehicle);
+                        return car ? (
+                          <div className="mt-1.5 flex items-center gap-3 px-3 py-2 rounded-lg bg-[#fdf8ec] border border-[#e8d9a0] text-[10px] text-[#0a0a0a]">
+                            <span>{car.passengers} passengers</span>
+                            <span className="text-[#e8d9a0]">·</span>
+                            <span>{car.luggage} luggage</span>
+                            {car.features?.[0] && (
+                              <>
+                                <span className="text-[#e8d9a0]">·</span>
+                                <span className="text-[#AB5461]">{car.features[0]}</span>
+                              </>
+                            )}
+                          </div>
+                        ) : null;
+                      })()}
+                    </div>
+                  )}
+
+                  {/* Divider */}
+                  <div className="h-px bg-[#f4f4f4]" />
+
 
                   {/* Date */}
                   <div>
@@ -264,10 +373,9 @@ export default function BookingModal({
                 </>
               )}
 
-              {/* STEP 2 */}
+              {/* STEP 2 — unchanged */}
               {step === 2 && (
                 <>
-                  {/* Name + Phone side by side */}
                   <div className="grid grid-cols-2 gap-2">
                     <div>
                       <label className={lbl}>Full Name *</label>
@@ -285,7 +393,6 @@ export default function BookingModal({
                     </div>
                   </div>
 
-                  {/* Email + Passengers side by side */}
                   <div className="grid grid-cols-2 gap-2">
                     <div>
                       <label className={lbl}>Email</label>
@@ -309,7 +416,6 @@ export default function BookingModal({
                     </div>
                   </div>
 
-                  {/* Pickup */}
                   <div>
                     <label className={lbl}>{needsRoute ? "Pickup Location" : "Base Location"}</label>
                     <div className="relative">
@@ -320,7 +426,6 @@ export default function BookingModal({
                     </div>
                   </div>
 
-                  {/* Drop-off */}
                   {needsRoute && (
                     <div>
                       <label className={lbl}>Drop-off Location</label>
@@ -332,7 +437,6 @@ export default function BookingModal({
                     </div>
                   )}
 
-                  {/* Notes */}
                   <div>
                     <label className={lbl}>Notes</label>
                     <textarea name="notes" rows={2}
@@ -346,7 +450,9 @@ export default function BookingModal({
                   <div className="rounded-xl p-3 bg-[#fdf8ec] border border-[#e8d9a0]">
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-[10px]">
                       {[
-                        ["Vehicle",  carName],
+                        ["Vehicle",  selectedVehicle
+                          ? fleet.find((c) => c.slug === selectedVehicle)?.name ?? carName
+                          : carName],
                         ["Type",     bookingTypes.find((b) => b.value === bookingType)?.label ?? ""],
                         ["Date",     selectedDate ? format(selectedDate, "dd MMM yyyy") : "—"],
                         ["Price",    displayPrice(bookingType)],
