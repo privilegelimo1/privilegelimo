@@ -16,17 +16,17 @@ export async function generateMetadata({
   const supabase = await createClient();
   const { data } = await supabase
     .from("blogs")
-    .select("title, meta_desc, cover_image, slug")
+    .select("title, meta_title, meta_desc, cover_image, slug")
     .eq("slug", slug)
     .single();
 
   if (!data) return {};
   return {
-    title:       data.title,
+    title:       data.meta_title || data.title,
     description: data.meta_desc,
     alternates:  { canonical: `https://www.privilegelimo.com/blog/${data.slug}` },
     openGraph: {
-      title:       data.title,
+      title:       data.meta_title || data.title,
       description: data.meta_desc,
       images:      data.cover_image ? [{ url: data.cover_image }] : [],
     },
