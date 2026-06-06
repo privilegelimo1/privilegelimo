@@ -20,6 +20,7 @@ type Blog = {
   id:           string
   slug:         string
   title:        string
+  meta_title:   string
   meta_desc:    string
   seo_keywords: string
   excerpt:      string
@@ -468,6 +469,11 @@ export default function EditBlogPage() {
           {/* SEO */}
           <div className="bg-white rounded-2xl border border-rose-100 shadow-sm p-5 space-y-4">
             <p className="text-xs font-bold uppercase tracking-widest text-zinc-400">SEO</p>
+            <Field
+              label="Meta Title" value={post.meta_title}
+              onChange={(v) => update("meta_title", v)}
+              rows={3} counter={160}
+            />
             <Field
               label="Meta Description" value={post.meta_desc}
               onChange={(v) => update("meta_desc", v)}

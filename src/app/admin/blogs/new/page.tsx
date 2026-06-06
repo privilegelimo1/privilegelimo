@@ -19,6 +19,7 @@ const CATEGORIES = [
 type NewBlog = {
   slug:         string
   title:        string
+  meta_title:   string
   meta_desc:    string
   seo_keywords: string
   excerpt:      string
@@ -63,7 +64,7 @@ function Field({ label, value, onChange, rows, mono, hint, counter }: {
 }
 
 const empty = (): NewBlog => ({
-  slug: "", title: "", meta_desc: "", seo_keywords: "",
+  slug: "", title: "", meta_title: "", meta_desc: "", seo_keywords: "",
   excerpt: "", content: "", cover_image: "", cover_alt: "",
   author: "Chauffeur Dubai", category: "", tags: [],
   published: false, featured: false,
@@ -322,6 +323,8 @@ export default function NewBlogPage() {
           {/* SEO */}
           <div className="bg-white rounded-2xl border border-rose-100 shadow-sm p-5 space-y-4">
             <p className="text-xs font-bold uppercase tracking-widest text-zinc-400">SEO</p>
+            <Field label="Meta Title" value={post.meta_title}
+              onChange={(v) => update("meta_title", v)} rows={3} counter={60} />
             <Field label="Meta Description" value={post.meta_desc}
               onChange={(v) => update("meta_desc", v)} rows={3} counter={160} />
             <Field label="SEO Keywords" hint="(comma separated)" value={post.seo_keywords}
