@@ -472,7 +472,7 @@ export default function EditBlogPage() {
             <Field
               label="Meta Title" value={post.meta_title}
               onChange={(v) => update("meta_title", v)}
-              rows={3} counter={160}
+              rows={3} counter={60}
             />
             <Field
               label="Meta Description" value={post.meta_desc}
